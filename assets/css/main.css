@@ -75,6 +75,7 @@ hr.small {
     float: left;
     height: 60px;
     margin: 20px 40px;
+    margin-right: 0px;
     padding: 0;
     position: relative;
     text-indent: -9999px;
@@ -193,6 +194,7 @@ hr.small {
         background: url(/assets/img/logo_light_smaller.png) no-repeat;
         height: 45px;
         margin: 27px 40px;
+        margin-right: -10px;
         width: 225px;
     }
     .header-navbar-logo:after {
