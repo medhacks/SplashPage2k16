@@ -14,8 +14,6 @@
 </head>
 <body id="page-top">
     <div class="header-navbar ">
-        <a id="mlh-trust-badge" style="display:block;max-width:100px;position: absolute; left: 5px;min-width:55px;width:10%;z-index:10000" href="https://mlh.io/seasons/na-2017/events?utm_source=na-2017&utm_medium=TrustBadge&utm_campaign=na-2017&utm_content=white" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg" alt="Major League Hacking 2017 Hackathon Season" style="width:100%"></a>
-        <div class='filler-div' style="position: relative;width: 10%; max-width:75px; height: 100%; float: left;"></div>
         <h1 class="header-navbar-logo">MedHacks</h1>
 
         <div class="header-navbar-hamburger"></div>
@@ -53,6 +51,8 @@
           <a id="fbicon" href="http://facebook.com/MedHacks" target="_blank" class="fa fa-facebook" style="font-size: 30px;"></a>
         </div>
     </div>
+
+    <a id="mlh-trust-badge" style="display:block;max-width:105px;position: absolute; left: 5px;min-width:55px;width:10%;z-index:10000" href="https://mlh.io/seasons/na-2017/events?utm_source=na-2017&utm_medium=TrustBadge&utm_campaign=na-2017&utm_content=white" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2017/white.svg" alt="Major League Hacking 2017 Hackathon Season" style="width:100%"></a>
 
     <div class="filler" style="height: 100%;width: 100%"></div>
 
@@ -205,17 +205,25 @@
          }, 500); 
     }
 
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
     $( window ).resize(function() {
         if($(window).width() < 1040) {
-            var logoWidth = parseInt($(".header-navbar-logo").css("width"));
-            //$('.filler-div').css("position", "absolute");
-            $('#mlh-trust-badge').css("width", logoWidth * 0.4);
             $('#sponsor-column').removeClass('column-border-right');
         } else {
             $('#mlh-trust-badge').css("width", "10%");
-            $('.filler-div').css("position", "relative");
             $('#sponsor-column').addClass('column-border-right');
         }
+
+        var logoWidth = parseInt($(".header-navbar-logo").css("width"));
+        if (isMobile()) {
+            $('#mlh-trust-badge').css("width", logoWidth * 0.2);
+        } else {
+            $('#mlh-trust-badge').css("width", logoWidth * 0.29);
+        }
+
     });
 
     $(window).scroll(function() {
@@ -302,6 +310,10 @@
 
                 $(window).scroll(updateHeaderScroll); 
 
+                var logoWidth = parseInt($(".header-navbar-logo").css("width"));
+                $('#mlh-trust-badge').css("width", logoWidth * 0.29);
+
+
               });
 
             })(window, window.document);
@@ -349,18 +361,18 @@
         if(isMobile()) {
                                                                                                             
             //$('.header-navbar').addClass('header-navbar-scrolled');
-            $('.header-navbar-logo').css('margin', 10);                                                                                                
+            $('.header-navbar-logo').css('margin', 10);                                           
+            $('.header-navbar-logo').css('margin-left', 10);                                                                                                
             $('.header-navbar-hamburger').css('margin', 10);  
             $('.header-navbar').css('height', 70);                                                                                              
             $('.header-text-byline-caption').css('font-size', 14); 
             $('.header-text-byline-caption').css('margin', 5); 
             $('.header-text-headline').css('margin-bottom', 0); 
 
-                                                                                           var width = parseInt($(".header-navbar-logo").css("width"));
-            $('.filler-div').css("position", "absolute");
-            //$('#mlh-trust-badge').css("width", width * 0.05);
-            $('#mlh-trust-badge').css("width", "10px");
-                                                                                           $('#sponsor-column').removeClass('column-border-right');
+            var width = parseInt($(".header-navbar-logo").css("width"));
+            $('#mlh-trust-badge').css("width", (width * 0.2) + "px");
+            //$('#mlh-trust-badge').css("width", "10px");
+            $('#sponsor-column').removeClass('column-border-right');
         }
     });
     </script>
