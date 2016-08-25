@@ -677,7 +677,7 @@ hr.small {
 .sponsor-section {
     background-color: #efefef;
     width: 100%;
-    margin-top: -50px;
+    margin-top: -30px;
     padding-bottom: 20px; 
     position: relative;
     overflow: hidden;
@@ -753,6 +753,19 @@ hr.small {
     margin: 4px 0;
 }
 
+
+.table-col {
+    position: relative;
+    width: calc(50%);
+    float: left;
+    padding: 10px;
+    padding-top: 0px;
+    margin-top: 5px;
+}
+
+#schedule {
+    font-size: 18px;
+}
 
 /* Sponsors */
 
@@ -867,5 +880,5 @@ h3 {
 
 .column-border-right {
     width: 49%; 
-    border-right: 2px #193d56 solid;
+    border-right: 1px #193d56 solid;
 }
