@@ -210,7 +210,7 @@ hr.small {
 
 /*@media only screen and (max-device-width: 736px) {*/
 
-@media only screen and (max-width: 836px) {
+@media only screen and (max-width: 900px) {
     .header-navbar-hamburger {
         cursor: pointer;
         float: right;

@@ -20,6 +20,7 @@
         <ul class="header-navbar-items">
             <li class="header-navbar-item"><a href="#about" class="header-navbar-link">About</a></li>
             <li class="header-navbar-item"><a href="#faq" class="header-navbar-link">FAQ</a></li>
+            <li class="header-navbar-item"><a href="#schedule" class="header-navbar-link">Schedule</a></li>
             <li class="header-navbar-item"><a href="#fakebox" onclick="goSponsor()" class="header-navbar-link">Sponsor</a></li>
             <li class="header-navbar-item"><a href="#apply" class="header-navbar-link">Apply</a></li>
             <li class="header-navbar-item"><a href="mailto:info@medhacks.org" class="header-navbar-link">Contact</a></li>
@@ -303,7 +304,7 @@
     }
 
     $( window ).resize(function() {
-        if($(window).width() < 1040) {
+        if($(window).width() < 1200) {
             $('#sponsor-column').removeClass('column-border-right');
         } else {
             $('#mlh-trust-badge').css("width", "10%");
