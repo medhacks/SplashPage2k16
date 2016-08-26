@@ -189,7 +189,7 @@ hr.small {
     }
 }
 
-@media all and (max-width: 950px) {
+@media all and (max-width: 1000px) {
     .header-navbar-logo {
         background: url(/assets/img/logo_light_smaller.png) no-repeat;
         height: 45px;
@@ -204,6 +204,10 @@ hr.small {
         font-size: 16px;
         margin-top: 23px;
         padding: 8px 12px 16px;
+    }
+    
+    .day-table {
+        width: 100%;
     }
 }
 
@@ -763,8 +767,16 @@ hr.small {
     margin-top: 5px;
 }
 
+
 #schedule {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.day-table {
+    position: relative;
+    float: left;
+    width: 100%;
 }
 
 /* Sponsors */
@@ -819,7 +831,7 @@ h3 {
 }
 
 .sponsor img {
-    max-height: 60px;
+    height: 60px;
 }
 
 .sponsor,
@@ -880,5 +892,5 @@ h3 {
 
 .column-border-right {
     width: 49%; 
-    border-right: 1px #193d56 solid;
+    /*border-right: 1px #193d56 solid;*/
 }
