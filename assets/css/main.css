@@ -189,6 +189,29 @@ hr.small {
     }
 }
 
+.day-table {
+    position: relative;
+    float: left;
+    width: 33%;
+}
+
+.about-icon {
+    position: relative;
+    width: 50%;
+    margin: 0px 25%;
+}
+
+.about-col {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.about-col-para {
+    font-size: 18px;
+    margin: 0px 12.5%;
+}
+
 @media all and (max-width: 1000px) {
     .header-navbar-logo {
         background: url(/assets/img/logo_light_smaller.png) no-repeat;
@@ -726,6 +749,10 @@ hr.small {
     .faq-column {
         width: 98%;
     }
+    .about-col {
+        width: 100%;
+    }
+    
 }
 
 .faq-box {
@@ -771,12 +798,6 @@ hr.small {
 #schedule {
     font-size: 16px;
     line-height: 24px;
-}
-
-.day-table {
-    position: relative;
-    float: left;
-    width: 100%;
 }
 
 /* Sponsors */
