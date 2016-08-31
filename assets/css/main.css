@@ -762,6 +762,14 @@ hr.small {
     margin: 16px 0;
     padding: 24px;
     width: 100%;
+    overflow: hidden;
+    
+    transform: translateZ(0);
+    -moz-transition: height 0.5s;
+    -o-transition: height 0.5s;
+    -m-transition: height 0.5s;
+    -webkit-transition: height 0.5s;
+    transition: height 0.5s;
 }
 
 .faq-box h3 {

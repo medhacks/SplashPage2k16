@@ -165,7 +165,7 @@
                             <div class='table-item'>6:30pm-7:30pm</div>
                             <div class='table-item'>7:45pm-8:45pm</div>
                             <div class='table-item'>8:45pm-10:30pm</div>
-                            <div class='table-item'>10:15pm</div>
+                            <div class='table-item'>9:15pm</div>
                             <div class='table-item'>10:30pm</div>
                         </div>
                         <div class='table-col' style='text-align: left'>
@@ -245,7 +245,21 @@
         </div>
     </div>
     
-    <div id="sponsor-section" class="sponsor-section" style='text-align: center'>
+    <div id="about" class="about">
+        <hr class="small" style="border-top: 1px solid #193d56;margin-top: 20px;margin-bottom: 25px;max-width: 90%;">
+        <h2>Featured Speaker</h2>
+        <div class="container" style='max-width: 900px'>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <img style='margin: 20px' src="assets/img/Dave.jpg">
+                    <p class="lead info-para">Dave McClure is a venture capitalist and founding partner at 500 Startups, a venture capital firm &amp; startup incubator headquartered in Silicon Valley founded by PayPal and Google alumni, with over $200M in assets under management. Dave has been geeking out in Silicon Valley for twenty-five years as a developer, entrepreneur, startup advisor &amp; investor, blogger, and internet marketing nerd.</p>
+                </div>
+            </div>
+        </div>
+        <hr class="small" style="border-top: 1px solid #193d56;margin-top: 20px;margin-bottom: -10px;max-width: 90%;">
+    </div>
+    
+    <div id="sponsor-section" class="sponsor-section" style='text-align: center;'>
         <hr class="small" style="border-top: 1px solid #193d56;margin-top: 20px;margin-bottom: 25px;max-width: 90%;">
         <div class="faq-column column-border-right" id='sponsor-column'>
             <h3>Sponsors</h3>
@@ -265,8 +279,8 @@
         <div class="faq-column" style='margin-left: -1%;'>
             <h3>Partners</h3>
             <a href="http://www.hopkinsmedicine.org/som/" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/jhsom.png" alt="Hopkins Medicine"></a>
-            <a href="http://tedco.md" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/tedco.png" alt="Tedco"></a>
-            <a href="http://studentaffairs.jhu.edu/careers/" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/jhcareer.png" alt="JHU Careers"></a>
+            <!--a href="http://tedco.md" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/tedco.png" alt="Tedco"></a-->
+            <!--a href="http://studentaffairs.jhu.edu/careers/" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/jhcareer.png" alt="JHU Careers"></a-->
             <a href="http://www.bme.jhu.edu" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/jhu-bme.png" alt="JHU Biomedical Engineering"></a>
             <a href="http://www.jhsph.edu" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/jhusph.png" alt="Johns Hopkins School of Public Health"></a>
             <a href="https://mlh.io" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/mlh.png" alt="Major League Hacking"></a>
@@ -276,7 +290,7 @@
             <a href="http://icm.jhu.edu" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/ICM.png" alt="JHU ICM"></a>
             <a href="http://nursing.jhu.edu" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/jhson.png" alt="JHU School of Nursing"></a>
             <a href="http://www.johnshopkinssolutions.com" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/jhhs.png" alt="Johns Hopkins Healthcare Solutions"></a>
-            <a href="https://venturewell.org" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/venturewell.png" alt="Venture Well"></a>
+            <!--a href="https://venturewell.org" class="sponsor" target="_blank"><img class='sponsor-img' src="assets/img/partners/venturewell.png" alt="Venture Well"></a-->
         </div>
     </div>
 
@@ -294,7 +308,8 @@
 
     $('#fakebox').css('top', ($('#sponsorbox').position().top - 100) + 'px');
     resizeSchedule();
-
+    //closeFAQs();
+        
     function resizeSchedule() {
         for (var i = 0; i < 3; i++) {
             var table = $(".day-table").eq(i).children("div").eq(1);
@@ -309,6 +324,35 @@
             }
         }
     }
+     
+    /**function closeFAQs() {
+        $(".faq-box").each(function() {
+            var height = parseInt($(this).children("h3").outerHeight(true));
+            $(this).css("height", height + 30);
+        });
+        
+        setTimeout(function() {
+            $(".sponsor-section").css("opacity", 1);
+        }, 500);
+    }
+        
+    $(".faq-box").click(function() {
+        var height1 = parseInt($(this).children("h3").outerHeight(true));
+        var height2 = 0;
+        $(this).children("p").each(function() {
+            height2 += parseInt($(this).outerHeight(true));
+        });
+        $(this).css("height", height1 + height2 + 30);
+        $(this).css("position", "absolute");
+        $(this).css("z-index", "1000");
+        $(".sponsor-section").css("opacity", 0);
+    });
+        
+    $(".faq-box").hover(function() {
+        
+    }, function () {
+        closeFAQs();
+    });**/
         
     $(function() {
 
