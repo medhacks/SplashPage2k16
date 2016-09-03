@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @font-face {
+                font-family: custom;
+                src: url(assets/css/Raleway-Light.ttf);
+            }
+            
+            .container {
+                width: 100%;
+                max-width: 600px;
+                margin: auto;
+                
+                text-align: center;
+            }
+            
+            h1 {
+                color: rgba(25, 61, 86, 1);
+                font-family: custom;
+            }
+            
+            .inputText {
+                position: relative;
+                display: block;
+                width: 75%;
+                height: 1.2em;
+                border: none;
+                border-bottom: 2px solid rgba(25, 61, 86, 0.5);
+                font-family: custom;
+                font-size: 1.5em;
+                color: rgba(25, 61, 86, 0.75);
+                
+                -webkit-transition: border-bottom 0.5s, color 0.5s;
+                -m-transition: border-bottom 0.5s, color 0.5s;
+                -moz-transition: border-bottom 0.5s, color 0.5s;
+                -o-transition: border-bottom 0.5s, color 0.5s;
+                transition: border-bottom 0.5s, color 0.5s;
+
+                overflow: auto;
+            }
+            
+            .inputText:focus {
+                outline: none;
+                border-bottom: 2px solid rgba(25, 61, 86, 1);
+                color: rgba(25, 61, 86, 1);                
+            }
+            
+            textarea[class='inputText'] {
+                height: 5em;
+                resize: none;
+                width: 100%;
+            }
+            
+            .short {
+                width: 50%;
+            }
+                        
+            .check {
+                position: relative;
+                font-family: custom;
+                font-size: 1.5em;
+                color: rgba(25, 61, 86, 0.25);
+                margin: 5px 20px;
+                margin-top: 0px;
+                padding: 0px;
+                display: inline-block;
+                text-decoration: none;
+                cursor: pointer; 
+                cursor: hand;
+                
+                -webkit-transition: color 0.25s;
+                -m-transition: color 0.25s;
+                -moz-transition: color 0.25s;
+                -o-transition: color 0.25s;
+                transition: color 0.25s;
+            }
+            
+            .button {
+                position: relative;
+                width: 100px;
+                border: 2px solid rgba(25, 61, 86, 0.5);
+                background-color: white;
+                font-family: custom;
+                font-size: 1.5em;
+                margin: 10px auto;
+                color: rgba(25, 61, 86, 0.5);
+                
+                -webkit-transition: border 0.25s, color 0.25s;
+                -m-transition: border 0.25s, color 0.25s;
+                -moz-transition: border 0.25s, color 0.25s;
+                -o-transition: border 0.25s, color 0.25s;
+                transition: border 0.25s, color 0.25s;
+            }
+            
+            .button:active {
+                border: 2px solid rgba(25, 61, 86, 1);
+                color: rgba(25, 61, 86, 1);
+                
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form>
+                <h1>Create a Pitch</h1>
+                <input class="inputText" type="text" id="title" placeholder="Pitch Title"><br>
+                <textarea class="inputText" rows="10" cols="50" placeholder="Pitch Description"></textarea><br>
+                <input class="inputText short" type="text" id="email" placeholder="Email"><br>
+                <input class="inputText short" type="text" id="phone" placeholder="Phone Number"><br>
+                <div class="check" href="#" data-clicked="0">#medtech</div>
+                <div class="check" href="#" data-clicked="0">#hardware</div>
+                <div class="check" href="#" data-clicked="0">#software</div>
+                <div class="check" href="#" data-clicked="0">#globalhealth</div>
+                <div class="check" href="#" data-clicked="0">#publichealth</div>
+                <div class="check" href="#" data-clicked="0">#devices</div></br>
+                <input class="button" type="submit" value="Submit">
+            </form>
+        </div>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+        <script>
+            Parse.initialize("vicmart-server-test");
+            Parse.serverURL = "https://vicmart-server-test.herokuapp.com/";
+            var Pitch = Parse.Object.extend("TestPitch");
+            
+            $(".check").click(function() {
+                if ($(this).data("clicked") == 0) {
+                    $(this).css("color", "rgba(25, 61, 86, 1)");
+                    $(this).data("clicked", 1);
+                } else  {
+                    $(this).css("color", "rgba(25, 61, 86, 0.25)");
+                    $(this).data("clicked", 0);
+                }
+            });
+            
+            $(".button").click(function() {
+                var title = $("#title").val();
+                var description = $("textarea").val();
+                var email = $("#email").val();
+                var phone = $("#phone").val();
+                var checks = [];
+                
+                $(".check").each(function(index) {
+                    checks.push($(".check").eq(index).data("clicked")); 
+                });
+                
+                var savedPitch = new Pitch();
+                savedPitch.set("title", title);
+                savedPitch.set("description", description);
+                savedPitch.set("email", email);
+                savedPitch.set("phone", phone);
+                savedPitch.set("checks", checks);
+                
+                savedPitch.save(null, {  
+                    success: function(savedPitch) {
+                        console.log('New object created with objectId: ' + savedPitch.id);
+                    },
+                    error: function(savedPitch, error) {
+                        console.log('Failed to create new object, with error code: ' + error.message);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
+
