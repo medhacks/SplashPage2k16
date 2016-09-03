@@ -116,7 +116,7 @@
                 <div class="check" href="#" data-clicked="0">#globalhealth</div>
                 <div class="check" href="#" data-clicked="0">#publichealth</div>
                 <div class="check" href="#" data-clicked="0">#devices</div></br>
-                <input class="button" type="submit" value="Submit">
+                <input class="button" type="submit" value="Submit" id="submit">
             </form>
         </div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -157,6 +157,7 @@
                 savedPitch.save(null, {  
                     success: function(savedPitch) {
                         console.log('New object created with objectId: ' + savedPitch.id);
+                        $("#submit").attr("value", "Saved");
                     },
                     error: function(savedPitch, error) {
                         console.log('Failed to create new object, with error code: ' + error.message);
