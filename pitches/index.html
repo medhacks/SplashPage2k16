@@ -8,10 +8,16 @@
                 src: url(../assets/css/Raleway-Light.ttf);
             }
             
+            body, html {
+                margin: 0px;
+                padding: 0px;
+            }
+            
             .container {
                 width: 100%;
-                max-width: 600px;
-                margin: auto;
+                max-width: 800px;
+                margin: 0px auto;
+                padding: 0px;
                 
                 text-align: center;
             }
@@ -102,10 +108,12 @@
             .pitch {
                 font-family: custom;
                 font-size: 1.25em;
-                font-color: rgba(25, 61, 86, 1);
+                color: rgba(25, 61, 86, 0.75);
                 text-align: left;
-                margin: 20px;
+                margin: 30px 20px;
+                padding: 0px;
                 line-height: 1.25em;
+                overflow: hidden;
             }
             
             .subtitle {
@@ -114,12 +122,46 @@
             
             .description {
                 font-style: italic;
+                margin: 10px 10px;
             }
             
             .underline {
                 width: 100%;
-                border-bottom: 2px solid rgba(25, 61, 86, 1);
+                border-bottom: 2px solid rgba(25, 61, 86, 0.5);
+                padding: 0px;
+                margin: 0px;
             }
+            
+            .hashtags {
+                font-size: 0.75em;
+                color: rgba(25, 61, 86, 0.25);
+                margin-left: 10px;
+            }
+            
+            @media screen and (max-width: 550px) {
+                .pitch{
+                    margin: 40px 0px;
+                }
+                
+                .underline {
+                    padding: 0px 10px;
+                }
+                
+                .subtitle {
+                    padding: 0px 10px;
+                }
+                
+                .hashtags {
+                    display: block;
+                    margin: 0px;
+                }
+            }
+            
+            .hidden {
+                height: 0px;
+                margin: 0px;
+            }
+            
         </style>
     </head>
     <body>
@@ -146,12 +188,25 @@
             })
             
             $(".check").click(function() {
+                var index = $(".check").index(this);
                 if ($(this).data("clicked") == 0) {
                     $(this).css("color", "rgba(25, 61, 86, 1)");
                     $(this).data("clicked", 1);
+                    $(".pitch").each(function() {
+                        var checks = $(this).data("checked");
+                        if (checks[index] == 0) {
+                            $(this).removeClass("hidden");
+                        }
+                    });
                 } else  {
                     $(this).css("color", "rgba(25, 61, 86, 0.25)");
                     $(this).data("clicked", 0);
+                    $(".pitch").each(function() {
+                        var checks = $(this).data("checked");
+                        if (checks[index] == 0) {
+                            $(this).addClass("hidden");
+                        }
+                    });
                 }
             });
             
@@ -160,10 +215,17 @@
                     console.log("Successfully retrieved " + results.length + " pitches.");
                     for (var i = 0; i < results.length; i++) {
                         var object = results[i];
-                        console.log(object.id + ' - ' + object.get('title'));
+                        var checks = object.get("checks");
+                        var hashtags = "";
                         
-                        newItem = "<div class='pitch'><div class='subtitle underline'>" + object.get('title') + "</div>";
-                        newItem += "<span class='description'>" + object.get('description') + "</span></br>";
+                        for (var j = 0; j < checks.length; j++) {
+                            if(checks[j] == 1) {
+                                hashtags += $(".check").eq(j).text() + " ";
+                            }
+                        }
+                        
+                        newItem = "<div class='pitch' data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
+                        newItem += "<div class='description'>" + object.get('description') + "</div>";
                         newItem += "<span class='subtitle'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + object.get('phone') + "</br>";
                         
                         $(".container").append(newItem);
