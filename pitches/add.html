@@ -34,9 +34,8 @@
                 color: rgba(25, 61, 86, 0.75);
                 
                 -webkit-transition: border-bottom 0.5s, color 0.5s;
-                -m-transition: border-bottom 0.5s, color 0.5s;
+                -ms-transition: border-bottom 0.5s, color 0.5s;
                 -moz-transition: border-bottom 0.5s, color 0.5s;
-                -o-transition: border-bottom 0.5s, color 0.5s;
                 transition: border-bottom 0.5s, color 0.5s;
 
                 overflow: auto;
@@ -71,10 +70,14 @@
                 cursor: pointer; 
                 cursor: hand;
                 
+                -webkit-user-select: none;  
+                -moz-user-select: none;   
+                -ms-user-select: none;    
+                user-select: none;
+                
                 -webkit-transition: color 0.25s;
-                -m-transition: color 0.25s;
+                -ms-transition: color 0.25s;
                 -moz-transition: color 0.25s;
-                -o-transition: color 0.25s;
                 transition: color 0.25s;
             }
             
@@ -88,13 +91,12 @@
                 color: rgba(25, 61, 86, 0.5);
                 
                 -webkit-transition: border 0.25s, color 0.25s;
-                -m-transition: border 0.25s, color 0.25s;
+                -ms-transition: border 0.25s, color 0.25s;
                 -moz-transition: border 0.25s, color 0.25s;
-                -o-transition: border 0.25s, color 0.25s;
                 transition: border 0.25s, color 0.25s;
             }
             
-            .button:active {
+            .button:active, .button:hover {
                 border: 2px solid rgba(25, 61, 86, 1);
                 color: rgba(25, 61, 86, 1);                
             }
