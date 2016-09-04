@@ -5,7 +5,7 @@
         <style>
             @font-face {
                 font-family: custom;
-                src: url(assets/css/Raleway-Light.ttf);
+                src: url(../assets/css/Raleway-Light.ttf);
             }
             
             .container {
@@ -96,26 +96,41 @@
             
             .button:active {
                 border: 2px solid rgba(25, 61, 86, 1);
-                color: rgba(25, 61, 86, 1);
-                
-                
+                color: rgba(25, 61, 86, 1);                
+            }
+            
+            .pitch {
+                font-family: custom;
+                font-size: 1.25em;
+                font-color: rgba(25, 61, 86, 1);
+                text-align: left;
+                margin: 20px;
+                line-height: 1.25em;
+            }
+            
+            .subtitle {
+                font-weight: bold;
+            }
+            
+            .description {
+                font-style: italic;
+            }
+            
+            .underline {
+                width: 100%;
+                border-bottom: 2px solid rgba(25, 61, 86, 1);
             }
         </style>
     </head>
     <body>
         <div class="container">
-            <h1>Create a Pitch</h1>
-            <input class="inputText" type="text" id="title" placeholder="Pitch Title"><br>
-            <textarea class="inputText" rows="10" cols="50" placeholder="Pitch Description"></textarea><br>
-            <input class="inputText short" type="text" id="email" placeholder="Email"><br>
-            <input class="inputText short" type="text" id="phone" placeholder="Phone Number"><br>
+            <h1>View Pitches</h1>
             <div class="check" href="#" data-clicked="0">#medtech</div>
             <div class="check" href="#" data-clicked="0">#hardware</div>
             <div class="check" href="#" data-clicked="0">#software</div>
             <div class="check" href="#" data-clicked="0">#globalhealth</div>
             <div class="check" href="#" data-clicked="0">#publichealth</div>
             <div class="check" href="#" data-clicked="0">#devices</div></br>
-            <button class="button" type="button">Submit</button>
         </div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
@@ -123,6 +138,12 @@
             Parse.initialize("vicmart-server-test");
             Parse.serverURL = "https://vicmart-server-test.herokuapp.com/";
             var Pitch = Parse.Object.extend("TestPitch");
+            var pitchQuery = new Parse.Query(Pitch);
+            
+            $(".check").each(function() {
+                $(this).css("color", "rgba(25, 61, 86, 1)");
+                $(this).data("clicked", 1);
+            })
             
             $(".check").click(function() {
                 if ($(this).data("clicked") == 0) {
@@ -134,37 +155,23 @@
                 }
             });
             
-            $(".button").click(function() {
-                var title = $("#title").val();
-                var description = $("textarea").val();
-                var email = $("#email").val();
-                var phone = $("#phone").val();
-                var checks = [];
-                
-                $(".check").each(function(index) {
-                    checks.push($(".check").eq(index).data("clicked")); 
-                });
-                
-                var savedPitch = new Pitch();
-                savedPitch.set("title", title);
-                savedPitch.set("description", description);
-                savedPitch.set("email", email);
-                savedPitch.set("phone", phone);
-                savedPitch.set("checks", checks);
-                
-                savedPitch.save(null, {  
-                    success: function(savedPitch) {
-                        console.log('New object created with objectId: ' + savedPitch.id);
-                        $(".button").text("Saved. Refreshing...");
-                        $(".button").css("width", "250px");
-                        setTimeout(function() {
-                            location.reload();
-                        }, 2500);
-                    },
-                    error: function(savedPitch, error) {
-                        console.log('Failed to create new object, with error code: ' + error.message);
+            pitchQuery.find({
+                success: function(results) {
+                    console.log("Successfully retrieved " + results.length + " pitches.");
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        console.log(object.id + ' - ' + object.get('title'));
+                        
+                        newItem = "<div class='pitch'><div class='subtitle underline'>" + object.get('title') + "</div>";
+                        newItem += "<span class='description'>" + object.get('description') + "</span></br>";
+                        newItem += "<span class='subtitle'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + object.get('phone') + "</br>";
+                        
+                        $(".container").append(newItem);
                     }
-                });
+                },
+                error: function(error) {
+                    console.log("Error: " + error.code + " " + error.message);
+                }
             });
         </script>
     </body>
