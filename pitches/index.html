@@ -84,7 +84,7 @@
                         
                         newItem = "<div class='pitch' data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
                         newItem += "<div class='description'>" + object.get('description') + "</div>";
-                        newItem += "<span class='subtitle'>" + object.get('name') + "</span><a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br>";
+                        newItem += "<span class='subtitle'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br>";
                         
                         $(".container").append(newItem);
                     }

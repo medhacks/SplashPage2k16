@@ -1,5 +1,10 @@
 /* Global Styles. */
 
+@font-face {
+    font-family: custom;
+    src: url(Raleway-Light.ttf);
+}
+
 html,
 body {
     width: 100%;
@@ -7,7 +12,7 @@ body {
 }
 
 body {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: custom;
     font-weight: 300;
     overflow-x: hidden;
 }
@@ -212,7 +217,7 @@ hr.small {
     margin: 0px 12.5%;
 }
 
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1050px) {
     .header-navbar-logo {
         background: url(/assets/img/logo_light_smaller.png) no-repeat;
         height: 45px;
