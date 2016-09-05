@@ -474,13 +474,14 @@
                 };
         }());
 
-        if(!isMobile()) {
+        if(true) {
             (function(window, document, undefined) {
 
               $(document).ready(function() {
                   
                 var running = false,
-                    $header = $('.header-navbar');
+                    $header = $('.header-navbar'),
+                    $headerlogo = $('.header-navbar-logo');;
 
                 function updateHeaderScroll() {
 
@@ -494,6 +495,7 @@
                   window.requestAnimationFrame(function() {
 
                     $header.toggleClass('header-navbar-scrolled', $(window).scrollTop() > $(window).height() - 100 && $(window).scrollTop() < $(document).height() - $(window).height());
+                    $headerlogo.toggleClass('header-navbar-logo-gone', $(window).scrollTop() < $(window).height() - 100);
                     running = false;
                   });
                 }

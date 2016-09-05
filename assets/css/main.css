@@ -103,6 +103,10 @@ hr.small {
     transition: .4s opacity ease-out;
 }
 
+.header-navbar-logo-gone {
+    background: none;
+}
+
 .header-navbar-items {
     float: right;
     list-style: none;
