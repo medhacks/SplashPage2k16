@@ -2,178 +2,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            @font-face {
-                font-family: custom;
-                src: url(../assets/css/Raleway-Light.ttf);
-            }
-            
-            body, html {
-                margin: 0px;
-                padding: 0px;
-            }
-            
-            .container {
-                width: 100%;
-                max-width: 800px;
-                margin: 0px auto;
-                padding: 0px;
-                
-                text-align: center;
-            }
-            
-            h1 {
-                color: rgba(25, 61, 86, 1);
-                font-family: custom;
-            }
-            
-            .inputText {
-                position: relative;
-                display: block;
-                width: 75%;
-                height: 1.2em;
-                border: none;
-                border-bottom: 2px solid rgba(25, 61, 86, 0.5);
-                font-family: custom;
-                font-size: 1.5em;
-                color: rgba(25, 61, 86, 0.75);
-                
-                -webkit-transition: border-bottom 0.5s, color 0.5s;
-                -ms-transition: border-bottom 0.5s, color 0.5s;
-                -moz-transition: border-bottom 0.5s, color 0.5s;
-                transition: border-bottom 0.5s, color 0.5s;
-
-                overflow: auto;
-            }
-            
-            .inputText:focus {
-                outline: none;
-                border-bottom: 2px solid rgba(25, 61, 86, 1);
-                color: rgba(25, 61, 86, 1);                
-            }
-            
-            textarea[class='inputText'] {
-                height: 5em;
-                resize: none;
-                width: 100%;
-            }
-            
-            .short {
-                width: 50%;
-            }
-                        
-            .check {
-                position: relative;
-                font-family: custom;
-                font-size: 1.5em;
-                color: rgba(25, 61, 86, 0.25);
-                margin: 5px 20px;
-                margin-top: 0px;
-                padding: 0px;
-                display: inline-block;
-                text-decoration: none;
-                cursor: pointer; 
-                cursor: hand;
-                
-                -webkit-user-select: none;  
-                -moz-user-select: none;   
-                -ms-user-select: none;    
-                user-select: none;  
-                
-                -webkit-transition: color 0.25s;
-                -ms-transition: color 0.25s;
-                -moz-transition: color 0.25s;
-                transition: color 0.25s;
-            }
-            
-            .button {
-                position: relative;
-                width: 100px;
-                border: 2px solid rgba(25, 61, 86, 0.5);
-                background-color: white;
-                font-family: custom;
-                font-size: 1.5em;
-                margin: 10px auto;
-                color: rgba(25, 61, 86, 0.5);
-                
-                -webkit-transition: border 0.25s, color 0.25s;
-                -ms-transition: border 0.25s, color 0.25s;
-                -moz-transition: border 0.25s, color 0.25s;
-                transition: border 0.25s, color 0.25s;
-            }
-            
-            .button:active {
-                border: 2px solid rgba(25, 61, 86, 1);
-                color: rgba(25, 61, 86, 1);                
-            }
-            
-            .pitch {
-                font-family: custom;
-                font-size: 1.25em;
-                color: rgba(25, 61, 86, 0.75);
-                text-align: left;
-                margin: 30px 20px;
-                margin-top: 0px;
-                padding: 0px;
-                line-height: 1.25em;
-                overflow: hidden;
-                position: relative;
-                height: auto;
-                
-            }
-            
-            .subtitle {
-                font-weight: bold;
-            }
-            
-            .description {
-                font-style: italic;
-                margin: 10px 10px;
-            }
-            
-            .underline {
-                width: 100%;
-                border-bottom: 2px solid rgba(25, 61, 86, 0.5);
-                padding: 0px;
-                margin: 0px;
-            }
-            
-            .hashtags {
-                font-size: 0.75em;
-                color: rgba(25, 61, 86, 0.25);
-                margin-left: 10px;
-            }
-            
-            @media screen and (max-width: 550px) {
-                .pitch{
-                    margin: 40px 0px;
-                }
-                
-                .underline {
-                    padding: 0px 10px;
-                }
-                
-                .subtitle {
-                    padding: 0px 10px;
-                }
-                
-                .hashtags {
-                    display: block;
-                    margin: 0px;
-                }
-                
-                .check {
-                    width: 85%;
-                }
-            }
-            
-            .hidden {
-                height: 0px;
-                margin-top: 0px;
-                margin-bottom: 0px;
-            }
-            
-        </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <div class="container">
@@ -183,7 +12,7 @@
             <div class="check" href="#" data-clicked="0">#software</div>
             <div class="check" href="#" data-clicked="0">#globalhealth</div>
             <div class="check" href="#" data-clicked="0">#publichealth</div>
-            <div class="check" href="#" data-clicked="0">#devices</div></br></br>
+            <div class="check" href="#" data-clicked="0" id="lastcheck">#devices</div>
         </div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
@@ -242,6 +71,9 @@
                         var checks = object.get("checks");
                         var hashtags = "";
                         var count = 0;
+
+                        var phone = object.get('phone');
+                        var newPhone = phone.substring(0, 3) + "-" + phone.substring(3, 6) + "-" + phone.substring(6, phone.length);
                         
                         for (var j = 0; j < checks.length; j++) {
                             if(checks[j] == 1) {
@@ -252,7 +84,7 @@
                         
                         newItem = "<div class='pitch' data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
                         newItem += "<div class='description'>" + object.get('description') + "</div>";
-                        newItem += "<span class='subtitle'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + object.get('phone') + "</br>";
+                        newItem += "<span class='subtitle'>" + object.get('name') + "</span><a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br>";
                         
                         $(".container").append(newItem);
                     }

@@ -2,129 +2,7 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            @font-face {
-                font-family: custom;
-                src: url(../assets/css/Raleway-Light.ttf);
-            }
-            
-            .container {
-                width: 100%;
-                max-width: 600px;
-                margin: auto;
-                
-                text-align: center;
-            }
-            
-            h1 {
-                color: rgba(25, 61, 86, 1);
-                font-family: custom;
-            }
-            
-            .inputText {
-                position: relative;
-                display: block;
-                width: 75%;
-                height: 1.2em;
-                border: none;
-                border-bottom: 2px solid rgba(25, 61, 86, 0.5);
-                border-radius: 0px;
-                font-family: custom;
-                font-size: 1.5em;
-                color: rgba(25, 61, 86, 0.75);
-                
-                -webkit-transition: border-bottom 0.5s, color 0.5s;
-                -ms-transition: border-bottom 0.5s, color 0.5s;
-                -moz-transition: border-bottom 0.5s, color 0.5s;
-                transition: border-bottom 0.5s, color 0.5s;
-
-                overflow: auto;
-            }
-            
-            .inputText:focus {
-                outline: none;
-                border-bottom: 2px solid rgba(25, 61, 86, 1);
-                color: rgba(25, 61, 86, 1);                
-            }
-            
-            textarea[class='inputText'] {
-                height: 5em;
-                resize: none;
-                width: 100%;
-            }
-            
-            .short {
-                width: 50%;
-            }
-            
-            .check {
-                position: relative;
-                font-family: custom;
-                font-size: 1.5em;
-                color: rgba(25, 61, 86, 0.25);
-                margin: 5px 20px;
-                margin-top: 0px;
-                padding: 0px;
-                display: inline-block;
-                text-decoration: none;
-                cursor: pointer; 
-                cursor: hand;
-                
-                -webkit-user-select: none;  
-                -moz-user-select: none;   
-                -ms-user-select: none;    
-                user-select: none;
-                
-                -webkit-transition: color 0.25s;
-                -ms-transition: color 0.25s;
-                -moz-transition: color 0.25s;
-                transition: color 0.25s;
-            }
-            
-            .button {
-                position: relative;
-                border: 2px solid rgba(25, 61, 86, 0.5);
-                background-color: white;
-                font-family: custom;
-                font-size: 1.5em;
-                margin: 10px auto;
-                color: rgba(25, 61, 86, 0.5);
-                
-                -webkit-transition: border 0.25s, color 0.25s;
-                -ms-transition: border 0.25s, color 0.25s;
-                -moz-transition: border 0.25s, color 0.25s;
-                transition: border 0.25s, color 0.25s;
-            }
-            
-            .button:active, .button:hover {
-                border: 2px solid rgba(25, 61, 86, 1);
-                color: rgba(25, 61, 86, 1);                
-            }
-            
-            @media screen and (max-width: 550px) {
-                .short{
-                    width: 92.5%;
-                    margin: 0px;
-                }
-                
-                .inputText {
-                    width: 92.5%;
-                    margin: 0px;
-                }
-                
-                textarea[class='inputText'] {
-                    width: 94%;
-                    padding: 10px;
-                }
-            }
-            
-            .error {
-                font-family: custom;
-                font-size: 1.5em;
-                color: red;
-                margin: 10px;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <div class="container">
@@ -133,7 +11,7 @@
             <textarea class="inputText" rows="10" cols="50" placeholder="Pitch Description"></textarea><br></br>
             <input class="inputText short" type="text" id="name" placeholder="Your Name"><br>
             <input class="inputText short" type="text" id="email" placeholder="Email"><br>
-            <input class="inputText short" type="text" id="phone" placeholder="Phone Number" maxlength="10"><br></br>
+            <input class="inputText short" type="text" id="phone" placeholder="Phone Number"><br></br>
             <div class="check" href="#" data-clicked="0">#medtech</div>
             <div class="check" href="#" data-clicked="0">#hardware</div>
             <div class="check" href="#" data-clicked="0">#software</div>
@@ -166,10 +44,10 @@
                 var description = $("textarea").val();
                 var name = $("#name").val();
                 var email = $("#email").val();
-                var phone = $("#phone").val();
+                var phone = $("#phone").val().replace(/\D/g, '');
                 var checks = [];
                 var oneCheck = false;    
-            
+                            
                 $(".check").each(function(index) {
                     checks.push($(".check").eq(index).data("clicked")); 
                     if ($(".check").eq(index).data("clicked") == 1) {
