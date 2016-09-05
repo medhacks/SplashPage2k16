@@ -21,7 +21,9 @@
             Parse.serverURL = "https://vicmart-server-test.herokuapp.com/";
             var Pitch = Parse.Object.extend("TestPitch");
             var pitchQuery = new Parse.Query(Pitch);
-            
+            var d = new Date();
+            var prevTime;
+        
             $(".check").each(function() {
                 $(this).css("color", "rgba(25, 61, 86, 1)");
                 $(this).data("clicked", 1);
@@ -63,36 +65,51 @@
                 }
             });
             
-            pitchQuery.find({
-                success: function(results) {
-                    console.log("Successfully retrieved " + results.length + " pitches.");
-                    for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        var checks = object.get("checks");
-                        var hashtags = "";
-                        var count = 0;
+            query();
+            function query() {
+                pitchQuery.find({
+                    success: function(results) {
+                        prevTime = d.getTime();
+                        setTimeout(refresh, 5000);
 
-                        var phone = object.get('phone');
-                        var newPhone = phone.substring(0, 3) + "-" + phone.substring(3, 6) + "-" + phone.substring(6, phone.length);
-                        
-                        for (var j = 0; j < checks.length; j++) {
-                            if(checks[j] == 1) {
-                                hashtags += $(".check").eq(j).text() + " ";
-                                count++;
+                        console.log("Successfully retrieved " + results.length + " pitches.");
+                        for (var i = 0; i < results.length; i++) {
+                            var object = results[i];
+                            var checks = object.get("checks");
+                            var hashtags = "";
+                            var count = 0;
+
+                            var phone = object.get('phone');
+                            var newPhone = phone.substring(0, 3) + "-" + phone.substring(3, 6) + "-" + phone.substring(6, phone.length);
+
+                            for (var j = 0; j < checks.length; j++) {
+                                if(checks[j] == 1) {
+                                    hashtags += $(".check").eq(j).text() + " ";
+                                    count++;
+                                }
                             }
+
+                            newItem = "<div class='pitch' data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
+                            newItem += "<div class='description'>" + object.get('description') + "</div>";
+                            newItem += "<span class='subtitle'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br>";
+
+                            $(".container").append(newItem);
                         }
-                        
-                        newItem = "<div class='pitch' data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
-                        newItem += "<div class='description'>" + object.get('description') + "</div>";
-                        newItem += "<span class='subtitle'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br>";
-                        
-                        $(".container").append(newItem);
+                    },
+                    error: function(error) {
+                        console.log("Error: " + error.code + " " + error.message);
                     }
-                },
-                error: function(error) {
-                    console.log("Error: " + error.code + " " + error.message);
-                }
-            });
+                });
+            }
+            
+            function refresh () {
+                var queryDate = new Date();
+                queryDate.setTime(prevTime);
+                
+                var pitchQuery = new Parse.Query(Pitch);
+                pitchQuery.greaterThanOrEqualTo("createdAt", queryDate);
+                query();
+            }
         </script>
     </body>
 </html>

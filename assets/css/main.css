@@ -76,7 +76,8 @@ hr.small {
 }
 
 .header-navbar-logo {
-    background: url(/assets/img/logo_light.png) no-repeat;
+    background: url(../img/logo_light.png) no-repeat;
+    background-size: 100% 100%;
     cursor: pointer;
     float: left;
     height: 60px;
@@ -89,7 +90,8 @@ hr.small {
 }
 
 .header-navbar-logo:after {
-    background: url('/assets/img/logo_dark.png') no-repeat;
+    background: url(../img/logo_dark.png) no-repeat;
+    background-size: 100% 100%;
     bottom: 0;
     content: '';
     display: block;
