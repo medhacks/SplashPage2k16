@@ -84,10 +84,10 @@
                 savedPitch.save(null, {  
                     success: function(savedPitch) {
                         console.log('New object created with objectId: ' + savedPitch.id);
-                        $(".button").text("Saved. Refreshing...");
+                        $(".button").text("Saved. Redirecting...");
                         setTimeout(function() {
-                            location.reload();
-                        }, 2500);
+                            location.replace("index.html");
+                        }, 1500);
                     },
                     error: function(savedPitch, error) {
                         console.log('Failed to create new object, with error code: ' + error.message);

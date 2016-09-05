@@ -34,7 +34,8 @@ h1 {
     font-family: custom;
     font-size: 1.5em;
     color: rgba(25, 61, 86, 0.75);
-
+    background-color: rgba(0, 0, 0, 0);
+    
     -webkit-transition: border-bottom 0.5s, color 0.5s;
     -ms-transition: border-bottom 0.5s, color 0.5s;
     -moz-transition: border-bottom 0.5s, color 0.5s;
@@ -95,14 +96,15 @@ textarea[class='inputText'] {
     font-size: 1.5em;
     margin: 10px auto;
     color: rgba(25, 61, 86, 0.5);
-
+    background-color: rgba(0, 0, 0, 0);
+    
     -webkit-transition: border 0.25s, color 0.25s;
     -ms-transition: border 0.25s, color 0.25s;
     -moz-transition: border 0.25s, color 0.25s;
     transition: border 0.25s, color 0.25s;
 }
 
-.button:active {
+.button:active, .button:hover {
     border: 2px solid rgba(25, 61, 86, 1);
     color: rgba(25, 61, 86, 1);                
 }
