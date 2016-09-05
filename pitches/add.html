@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+        <div class='progress'></div>
         <div class="container">
             <h1>Create a Pitch</h1>
             <input class="inputText" type="text" id="title" placeholder="Pitch Title"><br>
@@ -28,14 +29,51 @@
             Parse.serverURL = "https://vicmart-server-test.herokuapp.com/";
             var Pitch = Parse.Object.extend("TestPitch");
             var prevLength = 0;
+            var prog = 0;
+            var alldone = [0, 0, 0, 0, 0, 0];
+            var checks = 0;
             
             $(".check").click(function() {
                 if ($(this).data("clicked") == 0) {
                     $(this).css("color", "rgba(25, 61, 86, 1)");
                     $(this).data("clicked", 1);
+                    checks++;
+                    if (alldone[5] == 0) {
+                        alldone[5] = 1;
+                        prog += 20;
+                        $(".progress").css("width", prog + "%"); 
+                        $(".progress").css("background-color", "rgba(25, 61, 86, 1)");
+                    }
                 } else  {
                     $(this).css("color", "rgba(25, 61, 86, 0.25)");
                     $(this).data("clicked", 0);
+                    checks--;
+                    if (checks == 0) {
+                        alldone[5] = 0;
+                        prog -= 20;
+                        $(".progress").css("width", prog + "%");
+                        $(".progress").css("background-color", "rgba(25, 61, 86, 1)");                        
+                    }
+                }
+            });
+            
+            $(".inputText").keyup(function() {
+                var index = $(".inputText").index(this);
+                
+                if (alldone[index] == 0 && $(this).val().length > 0) {
+                    if ((index == 3 && alldone[4] == 0) || (index == 4 && alldone[3] == 0) || (index < 3 || index > 4)) {
+                        prog += 20;
+                        $(".progress").css("width", prog + "%"); 
+                        $(".progress").css("background-color", "rgba(25, 61, 86, 1)");
+                    } 
+                    alldone[index] = 1;
+                } else if (alldone[index] == 1 && $(this).val().length == 0) {
+                    if ((index == 3 && alldone[4] == 0) || (index == 4 && alldone[3] == 0) || (index < 3 || index > 4)) {
+                        prog -= 20;
+                        $(".progress").css("width", prog + "%"); 
+                        $(".progress").css("background-color", "rgba(25, 61, 86, 1)");
+                    } 
+                    alldone[index] = 0;
                 }
             });
             
@@ -58,18 +96,23 @@
                 $(".error").text("");
                 if (!title)  {
                     $(".error").text("Please enter a pitch title.");
+                    $(".progress").css("background-color", "red");
                     return;
                 } else if (!description) {
                     $(".error").text("Please enter a pitch description.");
+                    $(".progress").css("background-color", "red");                    
                     return;
                 } else if (!name) {
                     $(".error").text("Please enter your name.");
+                    $(".progress").css("background-color", "red");
                     return;
                 } else if (!email && !phone) {
                     $(".error").text("Please enter your email or phone number.");
+                    $(".progress").css("background-color", "red");
                     return;
                 } else if (!oneCheck) {
                     $(".error").text("Please select at least one catagory.");
+                    $(".progress").css("background-color", "red");
                     return;                    
                 }
                 

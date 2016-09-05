@@ -201,3 +201,16 @@ textarea[class='inputText'] {
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
+.progress {
+    position: fixed;
+    width: 0%;
+    height: 3px;
+    top: 0;
+    background-color: rgba(25, 61, 86, 1);
+    
+    -webkit-transition: width 0.5s, background-color 0.5s;
+    -ms-transition: width 0.5s, background-color 0.5s;
+    -moz-transition: width 0.5s, background-color 0.5s;
+    transition: width 0.5s, background-color 0.5s;
+}
