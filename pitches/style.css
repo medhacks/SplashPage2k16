@@ -179,7 +179,10 @@ textarea[class='inputText'] {
 
     .subtitle {
         padding: 0px 0px;
-        padding-left: 10px;
+    }
+    
+    .contact-info {
+        margin: 10px;
     }
 
     .hashtags {
