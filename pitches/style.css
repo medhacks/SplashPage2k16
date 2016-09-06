@@ -179,6 +179,11 @@ textarea[class='inputText'] {
 
     .subtitle {
         padding: 0px 0px;
+        padding-left: 10px;
+    }
+    
+    .no-move {
+        padding-left: 0px;
     }
     
     .contact-info {
