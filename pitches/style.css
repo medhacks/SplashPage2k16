@@ -235,12 +235,12 @@ textarea[class='inputText'] {
 .bubble {
     position: relative;
     float: left;
-    width: 0.5em;
-    height: 0.5em;
+    width: 1em;
+    height: 1em;
     border-radius: 1em;
     margin: 1em 1em;
     background-color: rgba(25, 61, 86, 1);
-    transform: translateZ(0);
+    opacity: 0.25;
     
     -webkit-transition: all 0.25s linear;
     -ms-transition: all 0.25s linear;
