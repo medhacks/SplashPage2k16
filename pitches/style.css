@@ -214,3 +214,25 @@ textarea[class='inputText'] {
     -moz-transition: width 0.5s, background-color 0.5s;
     transition: width 0.5s, background-color 0.5s;
 }
+
+.loading {
+    position: relative;
+    display: table;
+    margin: 20% auto;
+}
+
+.bubble {
+    position: relative;
+    float: left;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 1em;
+    margin: 1em 1em;
+    background-color: rgba(25, 61, 86, 1);
+    transform: translateZ(0);
+    
+    -webkit-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+}
