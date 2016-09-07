@@ -149,6 +149,18 @@ textarea[class='inputText'] {
 
 }
 
+.exit {
+    position: absolute;
+    top: calc(50% - 0em);
+    right: 1em;
+    background-color: black;
+    width: 1em;
+    height: 1em;
+    margin: 1em 1e
+    background: url(../assets/img/x.png) no-repeat;
+    background-size: 100% 100%;
+}
+
 .subtitle {
     font-weight: bold;
 }
