@@ -26,8 +26,9 @@ h1 {
 .inputText {
     position: relative;
     display: block;
-    width: 75%;
+    width: calc(75% - 1em);
     height: 1.2em;
+    padding-right: 1em;
     border: none;
     border-bottom: 2px solid rgba(25, 61, 86, 0.5);
     border-radius: 0px;
@@ -36,18 +37,35 @@ h1 {
     color: rgba(25, 61, 86, 0.75);
     background-color: rgba(0, 0, 0, 0);
     
-    -webkit-transition: border-bottom 0.5s, color 0.5s;
-    -ms-transition: border-bottom 0.5s, color 0.5s;
-    -moz-transition: border-bottom 0.5s, color 0.5s;
-    transition: border-bottom 0.5s, color 0.5s;
+    -webkit-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
 
     overflow: auto;
+    background-position: right;
 }
 
 .inputText:focus {
     outline: none;
     border-bottom: 2px solid rgba(25, 61, 86, 1);
     color: rgba(25, 61, 86, 1);                
+}
+
+.inputTextGood {
+    background: url(../assets/img/checkmark.png) no-repeat;
+    background-size: auto 1em;
+    background-position: right;
+}
+
+.inputTextGoodLarge {
+    background: url(../assets/img/checkmark.png) no-repeat;
+    background-size: auto 1em;
+    background-position: right;
+    
+    height: 5em;
+    resize: none;
+    width: 100%;
 }
 
 textarea[class='inputText'] {
@@ -57,7 +75,7 @@ textarea[class='inputText'] {
 }
 
 .short {
-    width: 50%;
+    width: calc(50% - 1em);
 }
 
 .check {
@@ -157,20 +175,23 @@ textarea[class='inputText'] {
     .short{
         width: 92.5%;
         margin: 0px;
+        padding-left: 5px;
     }
 
     .inputText {
         width: 92.5%;
         margin: 0px;
+        padding-left: 5px;
     }
 
     textarea[class='inputText'] {
         width: 94%;
-        padding: 10px;
+        padding-left: 5px;
     }
     
     .pitch{
-        margin: 40px 0px;
+        margin: 60px 0px;
+        margin-top: 0px;
     }
 
     .underline {
@@ -180,6 +201,14 @@ textarea[class='inputText'] {
     .subtitle {
         padding: 0px 0px;
         padding-left: 10px;
+    }
+    
+    .no-move {
+        padding-left: 0px;
+    }
+    
+    .contact-info {
+        margin: 10px;
     }
 
     .hashtags {
@@ -192,7 +221,7 @@ textarea[class='inputText'] {
     }
     
     #lastcheck {
-        margin-bottom: 0px;
+        margin-bottom: 20px;
     }
 }
 
@@ -200,6 +229,8 @@ textarea[class='inputText'] {
     height: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .progress {
@@ -213,4 +244,26 @@ textarea[class='inputText'] {
     -ms-transition: width 0.5s, background-color 0.5s;
     -moz-transition: width 0.5s, background-color 0.5s;
     transition: width 0.5s, background-color 0.5s;
+}
+
+.loading {
+    position: relative;
+    display: table;
+    margin: 20% auto;
+}
+
+.bubble {
+    position: relative;
+    float: left;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    margin: 1em 1em;
+    background-color: rgba(25, 61, 86, 1);
+    opacity: 0.25;
+    
+    -webkit-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    transition: all 0.25s linear;
 }
