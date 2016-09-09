@@ -7,13 +7,21 @@
     <body>
         <div class="container">
             <h1>Edit Pitches</h1>
-            <div class="check" href="#" data-clicked="0">#medtech</div>
-            <div class="check" href="#" data-clicked="0">#hardware</div>
-            <div class="check" href="#" data-clicked="0">#software</div>
-            <div class="check" href="#" data-clicked="0">#globalhealth</div>
-            <div class="check" href="#" data-clicked="0">#publichealth</div>
-            <div class="check" href="#" data-clicked="0" id="lastcheck">#devices</div>
-            <div class="loading">
+            <div class="logins">
+            <h3>Log in to edit pitches</h3>
+                <input class="inputText short middle" type="text" id="user" placeholder="Username"><br>
+                <input class="inputText short middle" type="password" id="pass" placeholder="Password"><br>
+                <div class="error" style="font-size: 16px"></div>
+                <button class="button" type="button" id="login" style="display: block;">Log in</button>
+            </div>
+            
+            <div class="check invisible" href="#" data-clicked="0">#medtech</div>
+            <div class="check invisible" href="#" data-clicked="0">#hardware</div>
+            <div class="check invisible" href="#" data-clicked="0">#software</div>
+            <div class="check invisible" href="#" data-clicked="0">#globalhealth</div>
+            <div class="check invisible" href="#" data-clicked="0">#publichealth</div>
+            <div class="check invisible" href="#" data-clicked="0" id="lastcheck">#devices</div>
+            <div class="loading invisible">
                 <div class="bubble"></div>
                 <div class="bubble"></div>
                 <div class="bubble"></div>
@@ -71,7 +79,28 @@
                 }
             });
             
-            query();
+            $("#login").click(function() {
+                var user = $("#user").val();
+                var pass = $("#pass").val();
+                $(".error").text("");
+                 
+                Parse.User.logIn(user, pass, {
+                    success: function(user) {
+                        $(".invisible").each(function() {
+                            $(this).removeClass("invisible");
+                        });     
+                        $(".logins").remove();
+                        query(); 
+                    },
+                    error: function(user, error) {
+                        console.log("Error: " + error.code + " " + error.message);
+                        $(".error").text("Invalid username and/or password");
+                    }
+                });
+                
+                
+            });
+            
             function query() {
                 pitchQuery.find({
                     success: function(results) {

@@ -23,6 +23,11 @@ h1 {
     font-family: custom;
 }
 
+h3 {
+    color: rgba(25, 61, 86, 1);
+    font-family: custom;
+}
+
 .inputText {
     position: relative;
     display: block;
@@ -76,6 +81,10 @@ textarea[class='inputText'] {
 
 .short {
     width: calc(50% - 1em);
+}
+
+.middle {
+    margin: 0 auto;
 }
 
 .check {
@@ -247,6 +256,10 @@ textarea[class='inputText'] {
     margin-bottom: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
+}
+
+.invisible {
+    opacity: 0;
 }
 
 .progress {
