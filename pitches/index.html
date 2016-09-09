@@ -23,12 +23,26 @@
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
         <script>
             Parse.initialize("vicmart-server-test");
-            Parse.serverURL = "https://vicmart-server-test.herokuapp.com/";
+            Parse.serverURL = "https://vicmart-server-test.herokuapp.com";
             var Pitch = Parse.Object.extend("TestPitch");
             var pitchQuery = new Parse.Query(Pitch);
             var d = new Date();
             var prevTime;
             var counter = 0;
+            var stop = false;
+            
+            /**var user = new Parse.User();
+            user.set("username", "medhacks");
+            user.set("password", "er1c");
+
+            user.signUp(null, {
+              success: function(user) {
+                console.log('saved user');
+              },
+              error: function(user, error) {
+                alert("Error: " + error.code + " " + error.message);
+              }
+            });**/
             
             $(".check").each(function() {
                 $(this).css("color", "rgba(25, 61, 86, 1)");
@@ -77,6 +91,7 @@
                     success: function(results) {
                         prevTime = d.getTime();
                         $(".loading").remove();
+                        stop = true;
                         //setTimeout(refresh, 5000);
 
                         console.log("Successfully retrieved " + results.length + " pitches.");
@@ -137,7 +152,9 @@
                 if (counter > 5) {
                     counter = 0;
                 }
-                setTimeout(loading, 250);
+                if (!stop) {
+                    setTimeout(loading, 250);
+                }
             }
         </script>
     </body>

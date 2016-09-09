@@ -95,15 +95,42 @@
                                     count++;
                                 }
                             }
-
-                            newItem = "<div class='pitch' data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
+                            
+                            newItem = "<div class='pitch' data-obj=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
                             newItem += "<div class='description'>" + object.get('description') + "</div>";
-                            newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='exit'></div></div>";
+                            newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='exit' onclick='deletePitch(this)'></div></div>";
 
                             $(".container").append(newItem);
                         }
                     },
                     error: function(error) {
+                        console.log("Error: " + error.code + " " + error.message);
+                    }
+                });
+            }
+            
+            function deletePitch(elem) {
+                var id = $(elem).parent().parent().data("obj");
+                var parent = $(elem).parent().parent();
+                
+                var pitchQuery = new Parse.Query(Pitch);
+                pitchQuery.get(id, {
+                    success: function(object) {
+                        console.log('retrieved');
+                        var title = object.get("title");
+                        if (confirm("Are you sure you want to delete the pitch '" + title + "'?")) {
+                            object.destroy({
+                                success: function(object) {
+                                    console.log("destroyed pitch " + title);
+                                    $(parent).remove();
+                                },
+                                error: function(object, error) {
+                                    console.log("Error: " + error.code + " " + error.message);
+                                }
+                            });
+                        }
+                    },
+                    error: function(object, error) {
                         console.log("Error: " + error.code + " " + error.message);
                     }
                 });

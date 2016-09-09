@@ -151,14 +151,18 @@ textarea[class='inputText'] {
 
 .exit {
     position: absolute;
-    top: calc(50% - 0em);
-    right: 1em;
-    background-color: black;
+    top: calc(50% - 1em);
+    right: 0em;
     width: 1em;
     height: 1em;
-    margin: 1em 1e
+    margin: 0em 1em;
+    margin-right: 0.5em;
+    padding: 1em 1em;
     background: url(../assets/img/x.png) no-repeat;
-    background-size: 100% 100%;
+    background-size: 50% 50%;
+    background-position: center;
+    cursor: pointer; 
+    cursor: hand;
 }
 
 .subtitle {
@@ -262,6 +266,12 @@ textarea[class='inputText'] {
     position: relative;
     display: table;
     margin: 20% auto;
+}
+
+.space {
+    position: relative;
+    display: table;
+    margin: 0px auto;
 }
 
 .bubble {
