@@ -31,18 +31,18 @@
             var counter = 0;
             var stop = false;
             
-            /**var user = new Parse.User();
-            user.set("username", "master");
-            user.set("password", "memehacks");
-
-            user.signUp(null, {
-              success: function(user) {
-                console.log('saved user');
-              },
-              error: function(user, error) {
-                alert("Error: " + error.code + " " + error.message);
-              }
-            });**/
+            alternate();
+            function alternate() {
+                $(".pitch").each(function() {
+                    var index = $(".pitch").index($(this));
+                    
+                    if (index % 2 == 0) {
+                        $(this).css("background-color", "rgba(25, 61, 86, 0.75)");
+                    } else {
+                        $(this).css("background-color", "rgba(25, 61, 86, 0)");                        
+                    }
+                });
+            }
             
             $(".check").each(function() {
                 $(this).css("color", "rgba(25, 61, 86, 1)");
