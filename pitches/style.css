@@ -144,6 +144,7 @@ textarea[class='inputText'] {
 }
 
 .pitch {
+    position: relative;
     font-family: custom;
     font-size: 1.25em;
     color: rgba(25, 61, 86, 0.75);
@@ -154,10 +155,7 @@ textarea[class='inputText'] {
     line-height: 1.25em;
     overflow: hidden;
     position: relative;
-    height: auto;
-    border-radius: 0px;
-    
-    
+    border-radius: 5px;
 }
 
 .exit {
@@ -217,8 +215,8 @@ textarea[class='inputText'] {
     }
     
     .pitch{
-        margin: 60px 0px;
-        margin-top: 0px;
+        padding: 15px 0px;
+        border-radius: 0px;
     }
 
     .underline {
@@ -243,9 +241,6 @@ textarea[class='inputText'] {
         margin: 0px;
     }
 
-    .check {
-        width: 85%;
-    }
     
     #lastcheck {
         margin-bottom: 20px;

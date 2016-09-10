@@ -31,13 +31,11 @@
             var counter = 0;
             var stop = false;
             
-            alternate();
             function alternate() {
-                $(".pitch").each(function() {
-                    var index = $(".pitch").index($(this));
-                    
+                $(".pitch-alternate").each(function() {
+                    var index = $(".pitch-alternate").index($(this));
                     if (index % 2 == 0) {
-                        $(this).css("background-color", "rgba(25, 61, 86, 0.75)");
+                        $(this).css("background-color", "rgba(25, 61, 86, 0.15)");
                     } else {
                         $(this).css("background-color", "rgba(25, 61, 86, 0)");                        
                     }
@@ -63,6 +61,8 @@
                             $(this).data("score", score);
                             if (score > 0) {
                                 $(this).removeClass("hidden");
+                                $(this).addClass("pitch-alternate");
+                                alternate();
                             }
                         }
                     });
@@ -79,6 +79,8 @@
                             $(this).data("score", score);
                             if (score == 0) {
                                 $(this).addClass("hidden");
+                                $(this).removeClass("pitch-alternate");
+                                alternate();
                             }
                         }
                     });
@@ -111,12 +113,14 @@
                                 }
                             }
 
-                            newItem = "<div class='pitch' data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
+                            newItem = "<div class='pitch pitch-alternate' data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
                             newItem += "<div class='description'>" + object.get('description') + "</div>";
                             newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div>";
 
                             $(".container").append(newItem);
                         }
+                        
+                        alternate();
                     },
                     error: function(error) {
                         console.log("Error: " + error.code + " " + error.message);
