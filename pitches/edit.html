@@ -133,32 +133,43 @@
                     success: function(results) {
                         prevTime = d.getTime();
                         $(".loading").remove();
-                        //setTimeout(refresh, 5000);
+                        setTimeout(refresh, 5000);
+                        var newPitches = 0;
 
-                        console.log("Successfully retrieved " + results.length + " pitches.");
                         for (var i = 0; i < results.length; i++) {
                             var object = results[i];
-                            var checks = object.get("checks");
-                            var hashtags = "";
-                            var count = 0;
+                            if (!$("#" + object.id).length) {
+                                newPitches++;
+                                var checks = object.get("checks");
+                                var hashtags = "";
+                                var count = 0;
 
-                            var phone = object.get('phone');
-                            var newPhone = phone.substring(0, 3) + "-" + phone.substring(3, 6) + "-" + phone.substring(6, phone.length);
+                                var phone = object.get('phone');
+                                var newPhone = phone.substring(0, 3) + "-" + phone.substring(3, 6) + "-" + phone.substring(6, phone.length);
 
-                            for (var j = 0; j < checks.length; j++) {
-                                if(checks[j] == 1) {
-                                    hashtags += $(".check").eq(j).text() + " ";
-                                    count++;
+                                for (var j = 0; j < checks.length; j++) {
+                                    if(checks[j] == 1) {
+                                        hashtags += $(".check").eq(j).text() + " ";
+                                        count++;
+                                    }
                                 }
-                            }
-                            
-                            newItem = "<div class='pitch pitch-alternate' data-obj=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
-                            newItem += "<div class='description'>" + object.get('description') + "</div>";
-                            newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='approve' onclick='approvePitch(this)'></div><div class='exit' onclick='deletePitch(this, true)'></div></div>";
 
-                            $(".container").append(newItem);
+                                newItem = "<div class='pitch pitch-alternate' id=" + object.id + " data-obj=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
+                                newItem += "<div class='description'>" + object.get('description') + "</div>";
+                                newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='approve' onclick='approvePitch(this)'></div><div class='exit' onclick='deletePitch(this, true)'></div></div>";
+
+                                $(".container").append(newItem);
+                            }
                         }
+
                         alternate();
+                        if (newPitches > 0) {
+                            if (newPitches == 1) {
+                                notify("Pulled " + newPitches + " new pitch.");
+                            } else {
+                                notify("Pulled " + newPitches + " new pitches.");                                
+                            }
+                        }
                     },
                     error: function(error) {
                         console.log("Error: " + error.code + " " + error.message);
@@ -272,11 +283,7 @@
             }
             
             function refresh () {
-                var queryDate = new Date();
-                queryDate.setTime(prevTime);
-                
                 var pitchQuery = new Parse.Query(Pitch);
-                pitchQuery.greaterThanOrEqualTo("createdAt", queryDate);
                 query();
             }
             

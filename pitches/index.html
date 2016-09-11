@@ -35,6 +35,7 @@
             var prevTime;
             var counter = 0;
             var stop = false;
+            var first = false;
             
             function alternate() {
                 $(".pitch-alternate").each(function() {
@@ -45,6 +46,14 @@
                         $(this).css("background-color", "rgba(25, 61, 86, 0)");                        
                     }
                 });
+            }
+            
+            function randomize() {
+                for (var i = $(".pitch").length - 1; i > 0; i--) {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    $(".pitch").eq(i).insertAfter($(".pitch").eq(j));
+                    $(".pitch").eq(j).insertAfter($(".pitch").eq(i));
+                }
             }
             
             $(".check").each(function() {
@@ -93,6 +102,7 @@
             });
             
             query();
+            
             function query() {
                 pitchQuery.find({
                     success: function(results) {
@@ -101,6 +111,10 @@
                         stop = true;
                         setTimeout(refresh, 5000);
                         var newPitches = 0;
+                        var IDs = [];
+                        $(".pitch").each(function(){ 
+                            IDs.push(this.id); 
+                        });
                         
                         for (var i = 0; i < results.length; i++) {
                             var object = results[i];
@@ -125,16 +139,29 @@
                                 newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div>";
 
                                 $(".container").append(newItem);
+                            } else {
+                                var index = IDs.indexOf(object.id);
+                                if (index > -1) {
+                                    IDs.splice(index, 1);
+                                }
                             }
+                        }
+                        
+                        if (IDs.length > 0) {
+                            notify("Removed " + IDs.length + " pitch(es).", false);
+                            for (var z = 0; z < IDs.length; z++) {
+                                $("#" + IDs[z]).remove();
+                            }
+                        }
+                        
+                        if (!first) {
+                            randomize();
+                            first = true;
                         }
                         
                         alternate();
                         if (newPitches > 0) {
-                            if (newPitches == 1) {
-                                notify("Pulled " + newPitches + " new pitch.");
-                            } else {
-                                notify("Pulled " + newPitches + " new pitches.");                                
-                            }
+                            notify("Pulled " + newPitches + " new pitch(es).", false);                                
                         }
                     },
                     error: function(error) {
@@ -185,7 +212,11 @@
                     var height = parseInt($(".notification").outerHeight());
                     $(".notification").css("top", -1 * height);
                 }, 2000);
-             }
+            }
+            
+            function getRandom(min, max) {
+                return Math.random() * (max - min) + min;
+            }
         </script>
     </body>
 </html>
