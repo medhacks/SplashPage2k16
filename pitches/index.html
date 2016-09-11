@@ -10,6 +10,7 @@
             <form action="add.html">
                 <button class="button corner-button" type="submit">Add Pitch</button>
             </form>
+            <hr class='line' noshade/>
             <div class="check" href="#" data-clicked="0">#medtech</div>
             <div class="check" href="#" data-clicked="0">#hardware</div>
             <div class="check" href="#" data-clicked="0">#software</div>
@@ -27,7 +28,7 @@
         <script>
             Parse.initialize("vicmart-server-test");
             Parse.serverURL = "https://vicmart-server-test.herokuapp.com";
-            var Pitch = Parse.Object.extend("TestPitch");
+            var Pitch = Parse.Object.extend("Pitch");
             var pitchQuery = new Parse.Query(Pitch);
             var d = new Date();
             var prevTime;

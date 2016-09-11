@@ -5,10 +5,17 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+        <div class="notification">Fake message</div>
         <div class="container">
             <h1>Edit Pitches</h1>
+            <form action="index.html">
+                <button class="button corner-button" type="submit">View Pitches</button>
+            </form>
+            <hr class='line' noshade/>
+            <button class="button invisible" type="submit" onclick="approveAll()">Approve All</button>
+            <button class="button invisible" type="submit" onclick="deleteAll()">Delete All</button></br>
             <div class="logins">
-            <h3>Log in to edit pitches</h3>
+                <h3>Log in to edit pitches</h3>
                 <input class="inputText short middle" type="text" id="user" placeholder="Username"><br>
                 <input class="inputText short middle" type="password" id="pass" placeholder="Password"><br>
                 <div class="error" style="font-size: 16px"></div>
@@ -37,6 +44,18 @@
             var d = new Date();
             var prevTime;
             var counter = 0;
+            var logging = false;
+
+            function alternate() {
+                $(".pitch-alternate").each(function() {
+                    var index = $(".pitch-alternate").index($(this));
+                    if (index % 2 == 0) {
+                        $(this).css("background-color", "rgba(25, 61, 86, 0.15)");
+                    } else {
+                        $(this).css("background-color", "rgba(25, 61, 86, 0)");                        
+                    }
+                });
+            }
             
             $(".check").each(function() {
                 $(this).css("color", "rgba(25, 61, 86, 1)");
@@ -80,27 +99,35 @@
             });
             
             $("#login").click(function() {
-                var user = $("#user").val();
-                var pass = $("#pass").val();
-                $(".error").text("");
-                 
-                Parse.User.logIn(user, pass, {
-                    success: function(user) {
-                        $(".invisible").each(function() {
-                            $(this).removeClass("invisible");
-                        });     
-                        $(".logins").remove();
-                        query(); 
-                    },
-                    error: function(user, error) {
-                        console.log("Error: " + error.code + " " + error.message);
-                        $(".error").text("Invalid username and/or password");
-                    }
-                });
-                
-                
+                login()
             });
-            
+                
+            function login() {
+                if (!logging) {
+                    logging = true;
+                    var user = $("#user").val();
+                    var pass = $("#pass").val();
+                    $(".error").text("");
+                    $(".button").eq(1).text("Logging in...");
+                    Parse.User.logIn(user, pass, {
+                        success: function(user) {
+                            $(".invisible").each(function() {
+                                $(this).removeClass("invisible");
+                            });     
+                            $(".logins").remove();
+                            $(".button").eq(1).text("Approve All");
+                            query(); 
+                        },
+                        error: function(user, error) {
+                            console.log("Error: " + error.code + " " + error.message);
+                            notify("Invalid username and/or password", true);
+                            $(".button").eq(1).text("Log in");
+                            logging = false;
+                        }
+                    });
+                }
+            }
+
             function query() {
                 pitchQuery.find({
                     success: function(results) {
@@ -125,12 +152,13 @@
                                 }
                             }
                             
-                            newItem = "<div class='pitch' data-obj=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
+                            newItem = "<div class='pitch pitch-alternate' data-obj=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
                             newItem += "<div class='description'>" + object.get('description') + "</div>";
-                            newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='exit' onclick='deletePitch(this)'></div></div>";
+                            newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='approve' onclick='approvePitch(this)'></div><div class='exit' onclick='deletePitch(this, true)'></div></div>";
 
                             $(".container").append(newItem);
                         }
+                        alternate();
                     },
                     error: function(error) {
                         console.log("Error: " + error.code + " " + error.message);
@@ -138,29 +166,107 @@
                 });
             }
             
-            function deletePitch(elem) {
+            function approveAll() {
+                $(".approve").each(function() {
+                    approvePitch(this);
+                });
+                notify("Approved all pitches", false);
+            }
+            
+            function approvePitch(elem) {
                 var id = $(elem).parent().parent().data("obj");
                 var parent = $(elem).parent().parent();
+                
+                $(parent).children(".contact-info").children(".approve").css("visibility", "hidden");
+                $(parent).children(".contact-info").children(".exit").css("visibility", "hidden");
+                
+                var finalPitch = Parse.Object.extend("Pitch");
                 
                 var pitchQuery = new Parse.Query(Pitch);
                 pitchQuery.get(id, {
                     success: function(object) {
-                        console.log('retrieved');
                         var title = object.get("title");
-                        if (confirm("Are you sure you want to delete the pitch '" + title + "'?")) {
+                        newPitch = new finalPitch();
+                        
+                        newPitch.set("title", object.get("title"));
+                        newPitch.set("description", object.get("description"));
+                        newPitch.set("name", object.get("name"));
+                        newPitch.set("email", object.get("email"));
+                        newPitch.set("phone", object.get("phone"));
+                        newPitch.set("checks", object.get("checks"));
+                        
+                        newPitch.save(null, {  
+                            success: function(newPitch) {
+                                console.log('New object created with objectId: ' + newPitch.id);
+                                object.destroy({
+                                    success: function(object) {
+                                        notify("Approved pitch titled " + title, false);
+                                        $(parent).remove();
+                                        alternate();
+                                    },
+                                    error: function(object, error) {
+                                        notify("Could not delete old object", true);
+                                        $(parent).children(".contact-info").children(".approve").css("visibility", "visible");
+                                        $(parent).children(".contact-info").children(".exit").css("visibility", "visible");
+                                    }
+                                });
+                            },
+                            error: function(newPitch, error) {
+                                notify("Could not create new instance of object", true);
+                                $(parent).children(".contact-info").children(".approve").css("visibility", "visible");
+                                $(parent).children(".contact-info").children(".exit").css("visibility", "visible");
+                            }
+                        });
+                    },
+                    error: function(object, error) {
+                        notify("Object no longer exists", true);
+                        $(parent).remove();
+                        alternate();
+                    }
+                });
+            }
+
+            function deleteAll() {
+                $(".exit").each(function() {
+                    deletePitch(this, false);
+                });
+                notify("Destroyed all pitches.", false)
+            }
+            
+            function deletePitch(elem, prompt) {
+                var id = $(elem).parent().parent().data("obj");
+                var parent = $(elem).parent().parent();
+                
+                $(parent).children(".contact-info").children(".approve").css("visibility", "hidden");
+                $(parent).children(".contact-info").children(".exit").css("visibility", "hidden");
+
+                
+                var pitchQuery = new Parse.Query(Pitch);
+                pitchQuery.get(id, {
+                    success: function(object) {
+                        var title = object.get("title");
+                        if (!prompt || confirm("Are you sure you want to delete the pitch '" + title + "'?")) {
                             object.destroy({
                                 success: function(object) {
-                                    console.log("destroyed pitch " + title);
+                                    notify("Destroyed pitch titled " + title, false);
                                     $(parent).remove();
+                                    alternate();
                                 },
                                 error: function(object, error) {
-                                    console.log("Error: " + error.code + " " + error.message);
+                                    notify("Could not delete object", true);
+                                    $(parent).children(".contact-info").children(".approve").css("visibility", "visible");
+                                    $(parent).children(".contact-info").children(".exit").css("visibility", "visible");
                                 }
                             });
                         }
+                        
+                        $(parent).children(".contact-info").children(".approve").css("visibility", "visible");
+                        $(parent).children(".contact-info").children(".exit").css("visibility", "visible");
                     },
                     error: function(object, error) {
-                        console.log("Error: " + error.code + " " + error.message);
+                        notify("Object no longer exists", true);
+                        $(parent).remove();
+                        alternate();
                     }
                 });
             }
@@ -173,6 +279,21 @@
                 pitchQuery.greaterThanOrEqualTo("createdAt", queryDate);
                 query();
             }
+            
+            function notify(message, error) {
+                $(".notification").css("top", "0px");
+                if (error) {
+                    $(".notification").css("background-color", "red");
+                    $(".notification").text("[ERROR] " + message);
+                } else {
+                    $(".notification").css("background-color", "rgb(25, 61, 86)");
+                    $(".notification").text(message);
+                }
+                setTimeout(function() {
+                    var height = parseInt($(".notification").outerHeight());
+                    $(".notification").css("top", -1 * height);
+                }, 2000);
+             }
             
             setTimeout(loading, 250);
             function loading() {
@@ -195,6 +316,12 @@
                 }
                 setTimeout(loading, 250);
             }
+            
+            $(document).keypress(function(e) {
+                if(e.which == 13) {
+                    login();
+                }
+            });
         </script>
     </body>
 </html>

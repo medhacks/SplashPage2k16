@@ -4,10 +4,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body>        
         <div class='progress'></div>
+        <div class="notification">Fake message</div>
         <div class="container">
             <h1>Create a Pitch</h1>
+            <hr class='line' noshade/>
             <form action="index.html">
                 <button class="button corner-button" type="submit">View Pitches</button>
             </form>
@@ -24,6 +26,7 @@
             <div class="check" href="#" data-clicked="0">#devices</div></br>
             <div class="error"></div>
             <button class="button" type="button">Submit</button>
+            <div class="disclaimer">Your pitch will be reviewed by a committee before posted to the Medhacks website. Any pitch that does not comply to our code of conduct will be removed from our servers indefinitely.</div>
         </div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
@@ -35,6 +38,7 @@
             var prog = 0;
             var alldone = [0, 0, 0, 0, 0, 0];
             var checks = 0;
+            var saving = false;
             
             $(".check").click(function() {
                 if ($(this).data("clicked") == 0) {
@@ -88,66 +92,85 @@
             });
             
             $(".button").click(function() {
-                var title = $("#title").val();
-                var description = $("textarea").val();
-                var name = $("#name").val();
-                var email = $("#email").val();
-                var phone = $("#phone").val().replace(/\D/g, '');
-                var checks = [];
-                var oneCheck = false;    
-                            
-                $(".check").each(function(index) {
-                    checks.push($(".check").eq(index).data("clicked")); 
-                    if ($(".check").eq(index).data("clicked") == 1) {
-                        oneCheck = true;
+                if (!saving) {
+                    saving = true;
+                    var title = $("#title").val();
+                    var description = $("textarea").val();
+                    var name = $("#name").val();
+                    var email = $("#email").val();
+                    var phone = $("#phone").val().replace(/\D/g, '');
+                    var checks = [];
+                    var oneCheck = false;    
+
+                    $(".check").each(function(index) {
+                        checks.push($(".check").eq(index).data("clicked")); 
+                        if ($(".check").eq(index).data("clicked") == 1) {
+                            oneCheck = true;
+                        }
+                    });
+
+                    $(".error").text("");
+                    if (!title)  {
+                        notify("Please enter a pitch title", true);
+                        saving = false;
+                        return;
+                    } else if (!description) {
+                        notify("Please enter a pitch description.", true);
+                        saving = false;
+                        return;
+                    } else if (!name) {
+                        notify("Please enter your name.", true);
+                        saving = false;
+                        return;
+                    } else if (!email && !phone) {
+                        notify("Please enter your email or phone number.", true);
+                        saving = false;
+                        return;
+                    } else if (!oneCheck) {
+                        notify("Please select at least one category.", true);
+                        saving = false;
+                        return;                    
                     }
-                });
-                
-                $(".error").text("");
-                if (!title)  {
-                    $(".error").text("Please enter a pitch title.");
-                    $(".progress").css("background-color", "red");
-                    return;
-                } else if (!description) {
-                    $(".error").text("Please enter a pitch description.");
-                    $(".progress").css("background-color", "red");                    
-                    return;
-                } else if (!name) {
-                    $(".error").text("Please enter your name.");
-                    $(".progress").css("background-color", "red");
-                    return;
-                } else if (!email && !phone) {
-                    $(".error").text("Please enter your email or phone number.");
-                    $(".progress").css("background-color", "red");
-                    return;
-                } else if (!oneCheck) {
-                    $(".error").text("Please select at least one catagory.");
-                    $(".progress").css("background-color", "red");
-                    return;                    
+
+                    var savedPitch = new Pitch();
+                    savedPitch.set("title", title);
+                    savedPitch.set("description", description);
+                    savedPitch.set("name", name);
+                    savedPitch.set("email", email);
+                    savedPitch.set("phone", phone);
+                    savedPitch.set("checks", checks);
+                    $(".button").eq(1).text("Saving...");
+
+                    savedPitch.save(null, {  
+                        success: function(savedPitch) {
+                            console.log('New object created with objectId: ' + savedPitch.id);
+                            $(".button").eq(1).text("Saved. Redirecting...");
+                            setTimeout(function() {
+                                location.replace("index.html");
+                            }, 1500);
+                        },
+                        error: function(savedPitch, error) {
+                            notify('Failed to create new object, with error code: ' + error.message, true);
+                            saving = false;
+                        }
+                    });
                 }
-                
-                var savedPitch = new Pitch();
-                savedPitch.set("title", title);
-                savedPitch.set("description", description);
-                savedPitch.set("name", name);
-                savedPitch.set("email", email);
-                savedPitch.set("phone", phone);
-                savedPitch.set("checks", checks);
-                $(".button").text("Saving...");
-                
-                savedPitch.save(null, {  
-                    success: function(savedPitch) {
-                        console.log('New object created with objectId: ' + savedPitch.id);
-                        $(".button").text("Saved. Redirecting...");
-                        setTimeout(function() {
-                            location.replace("index.html");
-                        }, 1500);
-                    },
-                    error: function(savedPitch, error) {
-                        console.log('Failed to create new object, with error code: ' + error.message);
-                    }
-                });
             });
+            
+            function notify(message, error) {
+                $(".notification").css("top", "0px");
+                if (error) {
+                    $(".notification").css("background-color", "red");
+                    $(".notification").text("[ERROR] " + message);
+                } else {
+                    $(".notification").css("background-color", "rgb(25, 61, 86)");
+                    $(".notification").text(message);
+                }
+                setTimeout(function() {
+                    var height = parseInt($(".notification").outerHeight());
+                    $(".notification").css("top", -1 * height);
+                }, 2000);
+             }
         </script>
     </body>
 </html>
