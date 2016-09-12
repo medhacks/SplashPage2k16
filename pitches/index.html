@@ -109,7 +109,6 @@
                         prevTime = d.getTime();
                         $(".loading").remove();
                         stop = true;
-                        setTimeout(refresh, 5000);
                         var newPitches = 0;
                         var IDs = [];
                         $(".pitch").each(function(){ 
@@ -157,12 +156,16 @@
                         if (!first) {
                             randomize();
                             first = true;
+                            refresh();
+                        } else {
+                            setTimeout(refresh, 0);
+                            if (newPitches > 0) {
+                                notify("Pulled " + newPitches + " new pitch(es).", false);                                
+                            }
                         }
                         
                         alternate();
-                        if (newPitches > 0) {
-                            notify("Pulled " + newPitches + " new pitch(es).", false);                                
-                        }
+                        
                     },
                     error: function(error) {
                         console.log("Error: " + error.code + " " + error.message);

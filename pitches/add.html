@@ -131,7 +131,8 @@
                         saving = false;
                         return;                    
                     }
-
+                    
+                    for (var i = 0; i < 1000; i++) {
                     var savedPitch = new Pitch();
                     savedPitch.set("title", title);
                     savedPitch.set("description", description);
@@ -146,7 +147,7 @@
                             console.log('New object created with objectId: ' + savedPitch.id);
                             $(".button").eq(1).text("Saved. Redirecting...");
                             setTimeout(function() {
-                                location.replace("index.html");
+                                //location.replace("index.html");
                             }, 1500);
                         },
                         error: function(savedPitch, error) {
@@ -154,6 +155,7 @@
                             saving = false;
                         }
                     });
+                    }
                 }
             });
             
