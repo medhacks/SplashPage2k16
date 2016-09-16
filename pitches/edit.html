@@ -61,7 +61,7 @@
             $(".check").click(function() {
                 var index = $(".check").index(this);
                 if ($(this).data("clicked") == 0) {
-                    $(this).css("color", "rgba(25, 61, 86, 1)");
+                    $(this).css("background-color", "rgba(239, 239, 239, 1)");
                     $(this).data("clicked", 1);
                     $(".pitch").each(function() {
                         if (!$(this).hasClass("pitch-nav")) {
@@ -78,7 +78,7 @@
                         }
                     });
                 } else  {
-                    $(this).css("color", "rgba(25, 61, 86, 0.25)");
+                    $(this).css("background-color", "rgba(239, 239, 239, 0.5)");
                     $(this).data("clicked", 0);
                     $(".pitch").each(function() {
                         if (!$(this).hasClass("pitch-nav")) {

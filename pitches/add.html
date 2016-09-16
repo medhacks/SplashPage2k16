@@ -41,12 +41,12 @@
             var saving = false;
             
             $(".check").each(function() {
-                $(this).css("color", "rgba(239, 239, 239, 0.25)");
+                $(this).css("background-color", "rgba(239, 239, 239, 0.5)");
             })
             
             $(".check").click(function() {
                 if ($(this).data("clicked") == 0) {
-                    $(this).css("color", "rgba(239, 239, 239, 1)");
+                    $(this).css("background-color", "rgba(239, 239, 239, 1)");
                     $(this).data("clicked", 1);
                     checks++;
                     if (alldone[5] == 0) {
@@ -55,7 +55,7 @@
                         $(".progress").css("width", prog + "%"); 
                     }
                 } else  {
-                    $(this).css("color", "rgba(239, 239, 239, 0.25)");
+                    $(this).css("background-color", "rgba(239, 239, 239, 0.5)");
                     $(this).data("clicked", 0);
                     checks--;
                     if (checks == 0) {

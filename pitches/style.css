@@ -104,11 +104,14 @@ textarea[class='inputText'] {
 .check {
     position: relative;
     font-family: custom;
-    font-size: 1.5em;
-    color: #efefef;
-    margin: 5px 20px;
-    margin-top: 0px;
+    font-size: 0.75em;
+    background-color: #efefef;
+    height: 7em;
+    width: 7em;
+    border-radius: 7em;
     padding: 0px;
+    line-height: 7em;
+    margin: 5px 20px;
     display: inline-block;
     text-decoration: none;
     cursor: pointer; 
@@ -119,14 +122,10 @@ textarea[class='inputText'] {
     -ms-user-select: none;    
     user-select: none;  
 
-    -webkit-transition: color 0.25s;
-    -ms-transition: color 0.25s;
-    -moz-transition: color 0.25s;
-    transition: color 0.25s;
-}
-
-#lastcheck {
-    margin-bottom: 1em;
+    -webkit-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    transition: all 0.25s;
 }
 
 .button {
@@ -157,13 +156,13 @@ textarea[class='inputText'] {
     width: 150px;
     font-size: 1em;
     padding: 0px;
-    border: 1px solid rgba(25, 61, 86, 0.5);
+    border: 1px solid rgba(239, 239, 239, 0.5);
     
     position: relative;
-    background-color: #efefef;
+    background-color: rgba(25, 61, 86, 1);
     font-family: custom;
     margin: 5px 0px;
-    color: rgba(25, 61, 86, 0.5);
+    color: rgba(239, 239, 239, 0.5);
     cursor: pointer; 
     cursor: hand;
     
@@ -189,8 +188,8 @@ textarea[class='inputText'] {
 
 .active-switch {
     z-index: 1;
-    background-color: rgb(25, 61, 86);
-    color: #efefef;
+    background-color: rgb(239, 239, 239);
+    color: rgba(25, 61, 86, 1);
 }
 
 .corner-button {
@@ -213,7 +212,6 @@ textarea[class='inputText'] {
     font-size: 1.25em;
     text-align: left;
     padding: 0px;
-    top: -15px;
     line-height: 1.25em;
     overflow: hidden;
     position: relative;
