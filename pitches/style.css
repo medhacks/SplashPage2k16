@@ -75,19 +75,19 @@ h3 {
 }
 
 .inputTextGood {
-    background: url(../assets/img/checkmark.png) no-repeat;
+    background: url(../assets/img/checkmark_white.png) no-repeat;
     background-size: auto 1em;
     background-position: right;
 }
 
 .inputTextGoodLarge {
-    background: url(../assets/img/checkmark.png) no-repeat;
+    background: url(../assets/img/checkmark_white.png) no-repeat;
     background-size: auto 1em;
     background-position: right;
     
     height: 5em;
     resize: none;
-    width: 100%;
+    width: calc(100% - 1.25em);
 }
 
 textarea[class='inputText'] {
@@ -199,7 +199,7 @@ textarea[class='inputText'] {
     position: absolute;
     top: 0px;
     margin: 0px;
-    right: 0px;
+    right: 10px;
 }
 
 .error {
@@ -227,6 +227,10 @@ textarea[class='inputText'] {
     -ms-transition: all 0.25s;
     -moz-transition: all 0.25s;
     transition: all 0.25s;
+}
+
+#approved {
+    margin-top: 100px;
 }
 
 .exit {
@@ -350,11 +354,7 @@ textarea[class='inputText'] {
 }
 
 .hidden {
-    height: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    display: none;
 }
 
 .invisible {
@@ -367,7 +367,7 @@ textarea[class='inputText'] {
 .progress {
     position: fixed;
     width: 0%;
-    height: 3px;
+    height: 5px;
     top: 0;
     background-color: rgba(239, 239, 239, 1);
     
@@ -396,7 +396,7 @@ textarea[class='inputText'] {
     height: 1em;
     border-radius: 1em;
     margin: 1em 1em;
-    background-color: rgba(25, 61, 86, 1);
+    background-color: rgba(239, 239, 239, 1);
     opacity: 0.25;
     
     -webkit-transition: all 0.25s;

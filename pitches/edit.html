@@ -28,10 +28,14 @@
             <div class="check invisible" href="#" data-clicked="0">#globalhealth</div>
             <div class="check invisible" href="#" data-clicked="0">#publichealth</div>
             <div class="check invisible" href="#" data-clicked="0" id="lastcheck">#devices</div>
-            <div class="pitch pitch-nav">
-                <div class='subtitle underline nav-text'>All Pitches</div>
+            <div class="pitch pitch-nav" id="unapproved">
+                <div class='subtitle underline nav-text'>Unapproved Pitches</div>
                 <div class='exit nav official-exit' onclick='deleteAll()'></div>
                 <div class='approve nav' onclick='approveAll()' style="margin-right: 2px"></div>
+            </div>
+        
+            <div class="pitch pitch-nav official invisible" id="approved">
+                <div class='subtitle underline nav-text'>Approved Pitches</div>
             </div>
             <div class="loading invisible">
                 <div class="bubble"></div>
@@ -52,6 +56,8 @@
             var prevTime;
             var counter = 0;
             var logging = false;
+            
+            $("#approved").addClass("invisible");
             
             $(".check").each(function() {
                 $(this).css("color", "rgba(25, 61, 86, 1)");
@@ -105,23 +111,21 @@
                 if (index == 0) {
                     $(".official").addClass("invisible");
                     $(".official").removeClass("pitch-alternate");
-                    $(".nav").removeClass("invisible");
                 } else {
                     $(".official").removeClass("invisible");                    
                     $(".official").addClass("pitch-alternate");
-                    $(".nav").addClass("invisible");
                 }
             });
             
             $(".nav").hover(function() {
                 var index = $(".nav").index($(this));
                 if (index == 1) {
-                    $(".nav-text").text("Approve All");    
+                    $(".nav-text").eq(0).text("Approve All Unapproved");    
                 } else {
-                    $(".nav-text").text("Delete All");    
+                    $(".nav-text").eq(0).text("Delete All Unapproved");    
                 }
             }, function() {
-                $(".nav-text").text("All Pitches");                    
+                $(".nav-text").eq(0).text("Unapproved Pitches");                    
             });
             
             $("#login").click(function() {
@@ -138,7 +142,9 @@
                     Parse.User.logIn(user, pass, {
                         success: function(user) {
                             $(".invisible").each(function() {
-                                $(this).removeClass("invisible");
+                                if ($(this).attr("id") != "approved") {
+                                    $(this).removeClass("invisible");
+                                }
                             });     
                             $(".logins").remove();
                             $(".button").eq(1).text("Approve All");
@@ -154,11 +160,13 @@
                 }
             }
 
-            query();
+            /**query();
             $(".logins").remove();
             $(".invisible").each(function() {
-                $(this).removeClass("invisible");
-            }); 
+                if ($(this).attr("id") != "approved") {
+                    $(this).removeClass("invisible");
+                }
+            }); **/
             function query() {
                 pitchQuery.find({
                     success: function(results) {
@@ -188,7 +196,7 @@
                                 newItem += "<div class='content'><div class='description' style='padding-right: 60px'>" + object.get('description') + "</div>";
                                 newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='approve' onclick='approvePitch(this)'></div><div class='exit' onclick='deletePitch(this, true, false)'></div></div></div>";
 
-                                $(".container").append(newItem);
+                                $("#unapproved").after(newItem);
                             }
                         }
 
