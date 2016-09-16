@@ -12,8 +12,8 @@
                 <button class="button corner-button" type="submit">View Pitches</button>
             </form>
             <hr class='line' noshade/>
-            <button class="button invisible" type="submit" onclick="approveAll()">Approve All</button>
-            <button class="button invisible" type="submit" onclick="deleteAll()">Delete All</button></br>
+            <button class="invisible switch-button btn-left active-switch" type="submit">Unapproved</button>
+            <button class="invisible switch-button btn-right" type="submit">All</button></br>
             <div class="logins">
                 <h3>Log in to edit pitches</h3>
                 <input class="inputText short middle" type="text" id="user" placeholder="Username"><br>
@@ -28,6 +28,11 @@
             <div class="check invisible" href="#" data-clicked="0">#globalhealth</div>
             <div class="check invisible" href="#" data-clicked="0">#publichealth</div>
             <div class="check invisible" href="#" data-clicked="0" id="lastcheck">#devices</div>
+            <div class="pitch pitch-nav">
+                <div class='subtitle underline nav-text'>All Pitches</div>
+                <div class='exit nav official-exit' onclick='deleteAll()'></div>
+                <div class='approve nav' onclick='approveAll()'></div>
+            </div>
             <div class="loading invisible">
                 <div class="bubble"></div>
                 <div class="bubble"></div>
@@ -40,22 +45,13 @@
             Parse.initialize("vicmart-server-test");
             Parse.serverURL = "https://vicmart-server-test.herokuapp.com/";
             var Pitch = Parse.Object.extend("TestPitch");
+            var officialPitch = Parse.Object.extend("Pitch");
             var pitchQuery = new Parse.Query(Pitch);
+            var officialPitchQuery = new Parse.Query(officialPitch);
             var d = new Date();
             var prevTime;
             var counter = 0;
             var logging = false;
-
-            function alternate() {
-                $(".pitch-alternate").each(function() {
-                    var index = $(".pitch-alternate").index($(this));
-                    if (index % 2 == 0) {
-                        $(this).css("background-color", "rgba(25, 61, 86, 0.15)");
-                    } else {
-                        $(this).css("background-color", "rgba(25, 61, 86, 0)");                        
-                    }
-                });
-            }
             
             $(".check").each(function() {
                 $(this).css("color", "rgba(25, 61, 86, 1)");
@@ -68,14 +64,16 @@
                     $(this).css("color", "rgba(25, 61, 86, 1)");
                     $(this).data("clicked", 1);
                     $(".pitch").each(function() {
-                        var checks = $(this).data("checked").split(",");
-                        var score = $(this).data("score");
-                        
-                        if (checks[index] == "1") {
-                            score++;
-                            $(this).data("score", score);
-                            if (score > 0) {
-                                $(this).removeClass("hidden");
+                        if (!$(this).hasClass("pitch-nav")) {
+                            var checks = $(this).data("checked").split(",");
+                            var score = $(this).data("score");
+
+                            if (checks[index] == "1") {
+                                score++;
+                                $(this).data("score", score);
+                                if (score > 0) {
+                                    $(this).removeClass("hidden");
+                                }
                             }
                         }
                     });
@@ -83,19 +81,47 @@
                     $(this).css("color", "rgba(25, 61, 86, 0.25)");
                     $(this).data("clicked", 0);
                     $(".pitch").each(function() {
-                        var checks = $(this).data("checked").split(",");
-                        var score = $(this).data("score");
-                        var height = $(this).css("height");
-                        
-                        if (checks[index] == "1") {
-                            score--;
-                            $(this).data("score", score);
-                            if (score == 0) {
-                                $(this).addClass("hidden");
+                        if (!$(this).hasClass("pitch-nav")) {
+                            var checks = $(this).data("checked").split(",");
+                            var score = $(this).data("score");
+                            var height = $(this).css("height");
+
+                            if (checks[index] == "1") {
+                                score--;
+                                $(this).data("score", score);
+                                if (score == 0) {
+                                    $(this).addClass("hidden");
+                                }
                             }
                         }
                     });
                 }
+            });
+            
+            $(".switch-button").click(function() {
+                $(".switch-button").removeClass("active-switch");             
+                $(this).addClass("active-switch");
+                var index = $(".switch-button").index($(this));
+                if (index == 0) {
+                    $(".official").addClass("invisible");
+                    $(".official").removeClass("pitch-alternate");
+                    $(".nav").removeClass("invisible");
+                } else {
+                    $(".official").removeClass("invisible");                    
+                    $(".official").addClass("pitch-alternate");
+                    $(".nav").addClass("invisible");
+                }
+            });
+            
+            $(".nav").hover(function() {
+                var index = $(".nav").index($(this));
+                if (index == 1) {
+                    $(".nav-text").text("Approve All");    
+                } else {
+                    $(".nav-text").text("Delete All");    
+                }
+            }, function() {
+                $(".nav-text").text("All Pitches");                    
             });
             
             $("#login").click(function() {
@@ -128,8 +154,58 @@
                 }
             }
 
+            query();
+            $(".logins").remove();
+            $(".invisible").each(function() {
+                $(this).removeClass("invisible");
+            }); 
             function query() {
                 pitchQuery.find({
+                    success: function(results) {
+                        prevTime = d.getTime();
+                        $(".loading").remove();
+                        var newPitches = 0;
+
+                        for (var i = 0; i < results.length; i++) {
+                            var object = results[i];
+                            if (!$("#" + object.id).length) {
+                                newPitches++;
+                                var checks = object.get("checks");
+                                var hashtags = "";
+                                var count = 0;
+
+                                var phone = object.get('phone');
+                                var newPhone = phone.substring(0, 3) + "-" + phone.substring(3, 6) + "-" + phone.substring(6, phone.length);
+
+                                for (var j = 0; j < checks.length; j++) {
+                                    if(checks[j] == 1) {
+                                        hashtags += $(".check").eq(j).text() + " ";
+                                        count++;
+                                    }
+                                }
+
+                                newItem = "<div class='pitch pitch-alternate' id=" + object.id + " data-obj=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
+                                newItem += "<div class='content'><div class='description' style='padding-right: 60px'>" + object.get('description') + "</div>";
+                                newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='approve' onclick='approvePitch(this)'></div><div class='exit' onclick='deletePitch(this, true, false)'></div></div></div>";
+
+                                $(".container").append(newItem);
+                            }
+                        }
+
+                        if (newPitches > 0) {
+                            if (newPitches == 1) {
+                                notify("Pulled " + newPitches + " new pitch.");
+                            } else {
+                                notify("Pulled " + newPitches + " new pitches.");                                
+                            }
+                        }
+                    },
+                    error: function(error) {
+                        console.log("Error: " + error.code + " " + error.message);
+                    }
+                });
+                
+                officialPitchQuery.find({
                     success: function(results) {
                         prevTime = d.getTime();
                         $(".loading").remove();
@@ -154,15 +230,14 @@
                                     }
                                 }
 
-                                newItem = "<div class='pitch pitch-alternate' id=" + object.id + " data-obj=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
-                                newItem += "<div class='description'>" + object.get('description') + "</div>";
-                                newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='approve' onclick='approvePitch(this)'></div><div class='exit' onclick='deletePitch(this, true)'></div></div>";
+                                newItem = "<div class='pitch pitch-alternate official invisible' id=" + object.id + " data-obj=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
+                                newItem += "<div class='content'><div class='description' style='padding-right: 60px'>" + object.get('description') + "</div>";
+                                newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='exit official-exit' onclick='deletePitch(this, true, true)'></div></div></div>";
 
                                 $(".container").append(newItem);
                             }
                         }
 
-                        alternate();
                         if (newPitches > 0) {
                             if (newPitches == 1) {
                                 notify("Pulled " + newPitches + " new pitch.");
@@ -179,7 +254,9 @@
             
             function approveAll() {
                 $(".approve").each(function() {
-                    approvePitch(this);
+                    if (!$(this).hasClass("nav")) {
+                        approvePitch(this);
+                    }
                 });
                 notify("Approved all pitches", false);
             }
@@ -213,7 +290,6 @@
                                     success: function(object) {
                                         notify("Approved pitch titled " + title, false);
                                         $(parent).remove();
-                                        alternate();
                                     },
                                     error: function(object, error) {
                                         notify("Could not delete old object", true);
@@ -232,19 +308,22 @@
                     error: function(object, error) {
                         notify("Object no longer exists", true);
                         $(parent).remove();
-                        alternate();
                     }
                 });
             }
 
             function deleteAll() {
+                var count = 0;
                 $(".exit").each(function() {
-                    deletePitch(this, false);
+                    if (!$(this).hasClass("official-exit")) {
+                        deletePitch(this, false, false);
+                        count++;
+                    }
                 });
-                notify("Destroyed all pitches.", false)
+                notify("Destroyed " + count + " unapproved pitch(es).", false)
             }
             
-            function deletePitch(elem, prompt) {
+            function deletePitch(elem, prompt, official) {
                 var id = $(elem).parent().parent().data("obj");
                 var parent = $(elem).parent().parent();
                 
@@ -253,6 +332,10 @@
 
                 
                 var pitchQuery = new Parse.Query(Pitch);
+                if (official == true) {
+                    pitchQuery = new Parse.Query(officialPitch);    
+                }
+                
                 pitchQuery.get(id, {
                     success: function(object) {
                         var title = object.get("title");
@@ -261,7 +344,6 @@
                                 success: function(object) {
                                     notify("Destroyed pitch titled " + title, false);
                                     $(parent).remove();
-                                    alternate();
                                 },
                                 error: function(object, error) {
                                     notify("Could not delete object", true);
@@ -277,7 +359,6 @@
                     error: function(object, error) {
                         notify("Object no longer exists", true);
                         $(parent).remove();
-                        alternate();
                     }
                 });
             }
@@ -291,9 +372,11 @@
                 $(".notification").css("top", "0px");
                 if (error) {
                     $(".notification").css("background-color", "red");
+                    $(".notification").css("color", "#efefef");
                     $(".notification").text("[ERROR] " + message);
                 } else {
-                    $(".notification").css("background-color", "rgb(25, 61, 86)");
+                    $(".notification").css("background-color", "rgb(239, 239, 239)");
+                    $(".notification").css("color", "rgba(25, 61, 86, 1)");
                     $(".notification").text(message);
                 }
                 setTimeout(function() {

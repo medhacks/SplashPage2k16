@@ -3,10 +3,23 @@
     src: url(../assets/css/Raleway-Light.ttf);
 }
 
+@font-face {
+    font-family: custom-light;
+    src: url(../assets/css/Raleway-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: custom-thin;
+    src: url(../assets/css/Raleway-Thin.ttf);
+}
+
+
 body, html {
     margin: 0px;
     padding: 0px;
     background-color: #efefef;
+    background-color: rgba(25, 61, 86, 1);
+
 }
 
 .container {
@@ -16,17 +29,16 @@ body, html {
     padding: 0px;
 
     text-align: center;
-    background-color: #efefef;
     position: relative;
 }
 
 h1 {
-    color: rgba(25, 61, 86, 1);
+    color: rgba(239, 239, 239, 1);
     font-family: custom;
 }
 
 h3 {
-    color: rgba(25, 61, 86, 1);
+    color: rgba(239, 239, 239, 1);
     font-family: custom;
 }
 
@@ -37,11 +49,11 @@ h3 {
     height: 1.2em;
     padding-right: 1em;
     border: none;
-    border-bottom: 2px solid rgba(25, 61, 86, 0.5);
+    border-bottom: 1px solid rgba(239, 239, 239, 0.5);
     border-radius: 0px;
     font-family: custom;
     font-size: 1.5em;
-    color: rgba(25, 61, 86, 0.75);
+    color: rgba(239, 239, 239, 0.75);
     background-color: rgba(0, 0, 0, 0);
     
     -webkit-transition: all 0.5s;
@@ -55,8 +67,8 @@ h3 {
 
 .inputText:focus {
     outline: none;
-    border-bottom: 2px solid rgba(25, 61, 86, 1);
-    color: rgba(25, 61, 86, 1);                
+    border-bottom: 1px solid rgba(239, 239, 239, 1);
+    color: rgba(239, 239, 239, 1);                
 }
 
 .inputTextGood {
@@ -93,7 +105,7 @@ textarea[class='inputText'] {
     position: relative;
     font-family: custom;
     font-size: 1.5em;
-    color: rgba(25, 61, 86, 0.15);
+    color: #efefef;
     margin: 5px 20px;
     margin-top: 0px;
     padding: 0px;
@@ -119,13 +131,39 @@ textarea[class='inputText'] {
 
 .button {
     position: relative;
-    border: 2px solid rgba(25, 61, 86, 0.5);
-    background-color: white;
+    border: 1px solid rgba(239, 239, 239, 1);
     font-family: custom;
     font-size: 1.5em;
     margin: 10px auto;
-    color: rgba(25, 61, 86, 0.5);
+    color: rgba(239, 239, 239, 1);
     background-color: rgba(0, 0, 0, 0);
+    cursor: pointer; 
+    cursor: hand;
+    border-radius: 3px;
+    
+    -webkit-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.button:active, .button:hover {
+    border: 1px solid rgba(239, 239, 239, 1);
+    background-color: rgba(239, 239, 239, 1);   
+    color: rgba(25, 61, 86, 1);
+}
+
+.switch-button {
+    width: 150px;
+    font-size: 1em;
+    padding: 0px;
+    border: 1px solid rgba(25, 61, 86, 0.5);
+    
+    position: relative;
+    background-color: #efefef;
+    font-family: custom;
+    margin: 5px 0px;
+    color: rgba(25, 61, 86, 0.5);
     cursor: pointer; 
     cursor: hand;
     
@@ -135,9 +173,24 @@ textarea[class='inputText'] {
     transition: border 0.25s, color 0.25s;
 }
 
-.button:active, .button:hover {
-    border: 2px solid rgba(25, 61, 86, 1);
-    color: rgba(25, 61, 86, 1);                
+.switch-button:active, .switch-button: hover {
+    font-size: 1em;
+}
+
+.btn-left {
+    border-radius: 5px 0px 0px 5px;
+    margin-right: -2.5px;
+}
+
+.btn-right {
+    border-radius: 0px 5px 5px 0px;
+    margin-left: -2.5px;
+}
+
+.active-switch {
+    z-index: 1;
+    background-color: rgb(25, 61, 86);
+    color: #efefef;
 }
 
 .corner-button {
@@ -156,16 +209,18 @@ textarea[class='inputText'] {
 
 .pitch {
     position: relative;
-    font-family: custom;
+    font-family: custom-thin;
     font-size: 1.25em;
-    color: rgba(25, 61, 86, 0.75);
     text-align: left;
-    padding: 15px 20px;
-    margin: 0px;
+    padding: 0px;
     top: -15px;
     line-height: 1.25em;
     overflow: hidden;
     position: relative;
+    
+    border-radius: 10px;
+    margin: 10px;
+    color: rgba(25, 61, 86, 1);
 }
 
 .exit {
@@ -200,26 +255,49 @@ textarea[class='inputText'] {
     cursor: hand;
 }
 
+.nav {
+    top: calc(20% - 1em);
+}
+
 .subtitle {
     font-weight: bold;
 }
 
 .description {
-    font-style: italic;
-    margin: 10px 10px;
+    padding: 5px 0px;
+    font-size: 0.75em;
+    
 }
 
 .underline {
     width: 100%;
-    border-bottom: 2px solid rgba(25, 61, 86, 0.5);
-    padding: 0px;
+    padding: 0px 10px;
+    padding-top: 5px;
+    background-color: rgba(239, 239, 239, 0.85);
+    font-family: custom-light;
+}
+
+.content {
+    background-color: rgba(239, 239, 239, 0.75);
     margin: 0px;
+    padding: 0px 10px;
+    font-family: custom-thin;
+}
+
+.contact-info {
+    padding-bottom: 10px;
+    font-size: 0.9em;
+    color: rgba(25, 61, 86, 0.65);
 }
 
 .hashtags {
     font-size: 0.75em;
-    color: rgba(25, 61, 86, 0.25);
+    color: rgba(25, 61, 86, 0.35);
     margin-left: 10px;
+}
+
+.nav-text {
+    padding-bottom: 5px;
 }
 
 @media screen and (max-width: 800px) {
@@ -240,26 +318,9 @@ textarea[class='inputText'] {
         padding-left: 5px;
     }
     
-    .pitch{
-        padding: 15px 0px;
-        border-radius: 0px;
-    }
-
-    .underline {
-        padding: 0px 10px;
-    }
-
-    .subtitle {
-        padding: 0px 0px;
-        padding-left: 10px;
-    }
     
     .no-move {
         padding-left: 0px;
-    }
-    
-    .contact-info {
-        margin: 10px;
     }
 
     .hashtags {
@@ -269,10 +330,6 @@ textarea[class='inputText'] {
     
     .button {
         margin-right: 10px;
-    }
-    
-    .corner-button {
-        
     }
     
     #lastcheck {
@@ -306,7 +363,7 @@ textarea[class='inputText'] {
     width: 0%;
     height: 3px;
     top: 0;
-    background-color: rgba(25, 61, 86, 1);
+    background-color: rgba(239, 239, 239, 1);
     
     -webkit-transition: width 0.5s, background-color 0.5s;
     -ms-transition: width 0.5s, background-color 0.5s;
@@ -344,8 +401,8 @@ textarea[class='inputText'] {
 
 .notification {
     position: fixed;
-    background-color: rgba(25, 61, 86, 1);
-    color: #efefef;
+    background-color: rgba(239, 239, 239, 1);
+    color: rgba(25, 61, 86, 1);
     font-size: 20px;
     font-family: custom;
     width: 100%;
@@ -361,13 +418,13 @@ textarea[class='inputText'] {
 }
 
 .line {
-    width: 15%;
+    width: 5%;
     margin: 0.25em auto;
     margin-top: -1em;
     padding: 0px;
-    background-color: rgba(25, 61, 86, 0.5);
+    background-color: rgba(239, 239, 239, 0.5);
     border: none;
-    height: 2px;
+    height: 1px;
 }
 
 .disclaimer {
