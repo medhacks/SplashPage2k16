@@ -35,6 +35,9 @@ body, html {
 h1 {
     color: rgba(239, 239, 239, 1);
     font-family: custom;
+    font-size: 2.75em;
+    padding: 0px;
+    margin: 20px;
 }
 
 h3 {
@@ -90,7 +93,7 @@ h3 {
 textarea[class='inputText'] {
     height: 5em;
     resize: none;
-    width: 100%;
+    width: calc(100% - 1.25em);
 }
 
 .short {
@@ -219,6 +222,11 @@ textarea[class='inputText'] {
     border-radius: 10px;
     margin: 10px;
     color: rgba(25, 61, 86, 1);
+    
+    -webkit-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    transition: all 0.25s;
 }
 
 .exit {
@@ -255,6 +263,7 @@ textarea[class='inputText'] {
 
 .nav {
     top: calc(20% - 1em);
+    margin-right: 6px;
 }
 
 .subtitle {
@@ -264,7 +273,6 @@ textarea[class='inputText'] {
 .description {
     padding: 5px 0px;
     font-size: 0.75em;
-    
 }
 
 .underline {
@@ -300,19 +308,18 @@ textarea[class='inputText'] {
 
 @media screen and (max-width: 800px) {
     .short{
-        width: 92.5%;
+        width: calc(100% - 1.25em);
         margin: 0px;
         padding-left: 5px;
     }
 
     .inputText {
-        width: 92.5%;
+        width: calc(100% - 1.25em);
         margin: 0px;
         padding-left: 5px;
     }
 
     textarea[class='inputText'] {
-        width: 94%;
         padding-left: 5px;
     }
     
@@ -326,18 +333,19 @@ textarea[class='inputText'] {
         margin: 0px;
     }
     
-    .button {
-        margin-right: 10px;
+    .check {
+        margin: 5px 10px;
     }
-    
-    #lastcheck {
-        margin-bottom: 20px;
+        
+    .corner-button {
+        margin-top: -10px;
+        right: 10px;
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 650px) {
     h1 {
-        padding-top: 1.5em;
+        padding-top: 30px;
     }
 }
 
@@ -416,9 +424,9 @@ textarea[class='inputText'] {
 }
 
 .line {
-    width: 5%;
+    width: 15%;
     margin: 0.25em auto;
-    margin-top: -1em;
+    margin-top: -1.25em;
     padding: 0px;
     background-color: rgba(239, 239, 239, 0.5);
     border: none;
@@ -426,7 +434,7 @@ textarea[class='inputText'] {
 }
 
 .disclaimer {
-    color: rgba(25, 61, 86, 0.5);
+    color: rgba(239, 239, 239, 0.5);
     font-family: custom;
     margin-top: 0.5em;
     margin-bottom: 1em;

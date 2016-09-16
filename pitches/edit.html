@@ -31,7 +31,7 @@
             <div class="pitch pitch-nav">
                 <div class='subtitle underline nav-text'>All Pitches</div>
                 <div class='exit nav official-exit' onclick='deleteAll()'></div>
-                <div class='approve nav' onclick='approveAll()'></div>
+                <div class='approve nav' onclick='approveAll()' style="margin-right: 2px"></div>
             </div>
             <div class="loading invisible">
                 <div class="bubble"></div>
@@ -371,7 +371,7 @@
             function notify(message, error) {
                 $(".notification").css("top", "0px");
                 if (error) {
-                    $(".notification").css("background-color", "red");
+                    $(".notification").css("background-color", "#B22222");
                     $(".notification").css("color", "#efefef");
                     $(".notification").text("[ERROR] " + message);
                 } else {
