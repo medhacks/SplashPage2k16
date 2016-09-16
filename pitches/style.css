@@ -229,8 +229,33 @@ textarea[class='inputText'] {
     transition: all 0.25s;
 }
 
-#approved {
-    margin-top: 100px;
+.pitch-nav {
+    position: relative;
+    font-family: custom-thin;
+    font-size: 1.25em;
+    text-align: left;
+    padding: 0px;
+    line-height: 1.25em;
+    overflow: hidden;
+    position: relative;
+    
+    border-radius: 10px;
+    margin: 10px;
+    color: rgba(25, 61, 86, 1);
+    
+    -webkit-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    transition: all 0.25s;
+    
+    -webkit-user-select: none;  
+    -moz-user-select: none;   
+    -ms-user-select: none;    
+    user-select: none; 
+}
+
+#approved, .new-title {
+    margin-top: 40px;
 }
 
 .exit {
@@ -240,13 +265,29 @@ textarea[class='inputText'] {
     width: 1em;
     height: 1em;
     margin: 0em 1em;
-    margin-right: 0.5em;
+    margin-right: 0em;
     padding: 1em 1em;
-    background: url(../assets/img/x.png) no-repeat;
+    background: url(../assets/img/x_blue.png) no-repeat;
     background-size: 50% 50%;
     background-position: center;
     cursor: pointer; 
     cursor: hand;
+}
+
+.exit-index {
+    top: calc(50% - 0.95em);
+}
+
+.arrow {
+    background: url(../assets/img/arrow_blue.png) no-repeat;
+    background-size: 50% 50%;
+    background-position: center;
+}
+
+.up-arrow {
+    -ms-transform: rotate(180deg); 
+    -webkit-transform: rotate(180deg); 
+    transform: rotate(180deg);
 }
 
 .approve {
@@ -258,16 +299,39 @@ textarea[class='inputText'] {
     margin: 0em 1em;
     margin-right: 0.5em;
     padding: 1em 1em;
-    background: url(../assets/img/checkmark.png) no-repeat;
+    background: url(../assets/img/checkmark_blue.png) no-repeat;
     background-size: 50% 50%;
     background-position: center;
     cursor: pointer; 
     cursor: hand;
 }
 
+.fav {
+    background: url(../assets/img/star_outline.png) no-repeat;
+    background-size: 50% 50%;
+    background-position: center;
+    margin-right: 0em;
+    
+    -webkit-user-select: none;  
+    -moz-user-select: none;   
+    -ms-user-select: none;    
+    user-select: none; 
+}
+
+.fav-full {
+    background: url(../assets/img/star.png) no-repeat;
+    background-size: 50% 50%;
+    background-position: center;
+}
+
 .nav {
     top: calc(20% - 1em);
     margin-right: 6px;
+}
+
+.arrow-close {
+    margin-right: 0px;
+    right: 0px;
 }
 
 .subtitle {
@@ -276,6 +340,7 @@ textarea[class='inputText'] {
 
 .description {
     padding: 5px 0px;
+    padding-right: 40px;
     font-size: 0.75em;
 }
 
@@ -308,6 +373,13 @@ textarea[class='inputText'] {
 
 .nav-text {
     padding-bottom: 5px;
+    cursor: pointer; 
+    cursor: hand;
+    background-color: rgba(239, 239, 239, 1);
+    -webkit-user-select: none;  
+    -moz-user-select: none;   
+    -ms-user-select: none;    
+    user-select: none; 
 }
 
 @media screen and (max-width: 800px) {
@@ -344,6 +416,18 @@ textarea[class='inputText'] {
     .corner-button {
         margin-top: -10px;
         right: 10px;
+    }
+    
+    .fav {
+        top: -5px;
+    }
+    
+    .exit-index {
+        top: -4px;
+    }
+    
+    .description {
+        padding-right: 5px;
     }
 }
 

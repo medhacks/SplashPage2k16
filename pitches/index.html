@@ -18,6 +18,14 @@
             <div class="check" href="#" data-clicked="1">#globalhealth</div>
             <div class="check" href="#" data-clicked="1">#publichealth</div>
             <div class="check" href="#" data-clicked="1" id="lastcheck">#devices</div>
+            <div class="pitch-nav invisible" id="favorites">
+                <div class='subtitle underline nav-text'>Favorites</div>
+                <div class='exit nav arrow arrow-close up-arrow'></div>
+            </div>
+            <div class="pitch-nav" id="new">
+                <div class='subtitle underline nav-text new-text'>All Pitches</div>
+                <div class='exit nav arrow arrow-close up-arrow'></div>
+            </div>
             <div class="loading">
                 <div class="bubble"></div>
                 <div class="bubble"></div>
@@ -36,17 +44,6 @@
             var counter = 0;
             var stop = false;
             var first = false;
-            
-            function allternate() {
-                $(".pitch-alternate").each(function() {
-                    var index = $(".pitch-alternate").index($(this));
-                    if (index % 2 == 0) {
-                        $(this).css("background-color", "rgba(25, 61, 86, 0.15)");
-                    } else {
-                        $(this).css("background-color", "rgba(25, 61, 86, 0)");                        
-                    }
-                });
-            }
             
             function randomize() {
                 for (var i = $(".pitch").length - 1; i > 0; i--) {
@@ -96,6 +93,18 @@
                 }
             });
             
+            $("#new").click(function() {
+                if ($(".pitch").hasClass("invisible")) {
+                    $(".pitch").removeClass("invisible");
+                    $(this).children(".exit").addClass("up-arrow");
+                } else {
+                    $(".pitch").addClass("invisible");
+                    $(".favorite-pitch").removeClass("invisible");
+                    $(this).removeClass("invisible");
+                    $(this).children(".exit").removeClass("up-arrow");
+                }
+            });
+            
             query();
             
             function query() {
@@ -107,7 +116,9 @@
                         var newPitches = 0;
                         var IDs = [];
                         $(".pitch").each(function(){ 
-                            IDs.push(this.id); 
+                            if (!$(this).hasClass("pitch-nav")) {
+                                IDs.push(this.id); 
+                            }
                         });
                         
                         for (var i = 0; i < results.length; i++) {
@@ -130,9 +141,9 @@
 
                                 newItem = "<div class='pitch pitch-alternate' id=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
                                 newItem += "<div class='content'><div class='description'>" + object.get('description') + "</div>";
-                                newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div></div>";
+                                newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div><div class='exit fav' onclick='favoritePitch(this)'></div></div>";
 
-                                $(".container").append(newItem);
+                                $("#new").after(newItem);
                             } else {
                                 var index = IDs.indexOf(object.id);
                                 if (index > -1) {
@@ -165,7 +176,33 @@
                 });
             }
             
-            function refresh () {
+            function favoritePitch(elem) {
+                if ($(elem).hasClass("fav-full")) {
+                    $(elem).removeClass("fav-full");
+                    var parent = $(elem).parent().parent();
+                    $(parent).removeClass("favorite-pitch");
+                    $(parent).detach();
+                    $("#new").after($(parent));
+                    
+                    if ($(".favorite-pitch").length == 0) {
+                        $("#favorites").addClass("invisible");
+                        $(".new-text").text("All Pitches");
+                        $("#new").removeClass("new-title");
+                    }
+                } else {
+                    $(elem).addClass("fav-full");
+                    var parent = $(elem).parent().parent();
+                    $(parent).addClass("favorite-pitch");
+                    $(parent).detach();
+                    $("#new").before($(parent));
+                    
+                    $("#favorites").removeClass("invisible");
+                    $("#new").addClass("new-title");
+                    $(".new-text").text("Other Pitches");
+                }
+            }
+            
+            function refresh() {
                 var pitchQuery = new Parse.Query(Pitch);
                 query();
             }

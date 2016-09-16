@@ -12,8 +12,6 @@
                 <button class="button corner-button" type="submit">View Pitches</button>
             </form>
             <hr class='line' noshade/>
-            <button class="invisible switch-button btn-left active-switch" type="submit">Unapproved</button>
-            <button class="invisible switch-button btn-right" type="submit">All</button></br>
             <div class="logins">
                 <h3>Log in to edit pitches</h3>
                 <input class="inputText short middle" type="text" id="user" placeholder="Username"><br>
@@ -36,6 +34,7 @@
         
             <div class="pitch pitch-nav official invisible" id="approved">
                 <div class='subtitle underline nav-text'>Approved Pitches</div>
+                <div class='exit nav arrow'></div>
             </div>
             <div class="loading invisible">
                 <div class="bubble"></div>
@@ -104,16 +103,14 @@
                 }
             });
             
-            $(".switch-button").click(function() {
-                $(".switch-button").removeClass("active-switch");             
-                $(this).addClass("active-switch");
-                var index = $(".switch-button").index($(this));
-                if (index == 0) {
-                    $(".official").addClass("invisible");
-                    $(".official").removeClass("pitch-alternate");
+            $("#approved").click(function() {
+                if ($(".official").hasClass("invisible")) {
+                    $(".official").removeClass("invisible");
+                    $(this).children(".exit").addClass("up-arrow");
                 } else {
-                    $(".official").removeClass("invisible");                    
-                    $(".official").addClass("pitch-alternate");
+                    $(".official").addClass("invisible");
+                    $(this).removeClass("invisible");
+                    $(this).children(".exit").removeClass("up-arrow");
                 }
             });
             
@@ -142,9 +139,7 @@
                     Parse.User.logIn(user, pass, {
                         success: function(user) {
                             $(".invisible").each(function() {
-                                if ($(this).attr("id") != "approved") {
-                                    $(this).removeClass("invisible");
-                                }
+                                $(this).removeClass("invisible");
                             });     
                             $(".logins").remove();
                             $(".button").eq(1).text("Approve All");
@@ -160,13 +155,11 @@
                 }
             }
 
-            /**query();
+            query();
             $(".logins").remove();
             $(".invisible").each(function() {
-                if ($(this).attr("id") != "approved") {
-                    $(this).removeClass("invisible");
-                }
-            }); **/
+                $(this).removeClass("invisible");
+            });
             function query() {
                 pitchQuery.find({
                     success: function(results) {
@@ -192,7 +185,7 @@
                                     }
                                 }
 
-                                newItem = "<div class='pitch pitch-alternate' id=" + object.id + " data-obj=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
+                                newItem = "<div class='pitch pitch-alternate unofficial' id=" + object.id + " data-obj=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
                                 newItem += "<div class='content'><div class='description' style='padding-right: 60px'>" + object.get('description') + "</div>";
                                 newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='approve' onclick='approvePitch(this)'></div><div class='exit' onclick='deletePitch(this, true, false)'></div></div></div>";
 
@@ -270,8 +263,8 @@
             }
             
             function approvePitch(elem) {
-                var id = $(elem).parent().parent().data("obj");
-                var parent = $(elem).parent().parent();
+                var id = $(elem).parent().parent().parent().data("obj");
+                var parent = $(elem).parent().parent().parent();
                 
                 $(parent).children(".contact-info").children(".approve").css("visibility", "hidden");
                 $(parent).children(".contact-info").children(".exit").css("visibility", "hidden");
@@ -279,6 +272,7 @@
                 var finalPitch = Parse.Object.extend("Pitch");
                 
                 var pitchQuery = new Parse.Query(Pitch);
+                console.log(id);
                 pitchQuery.get(id, {
                     success: function(object) {
                         var title = object.get("title");
@@ -310,6 +304,7 @@
                                 notify("Could not create new instance of object", true);
                                 $(parent).children(".contact-info").children(".approve").css("visibility", "visible");
                                 $(parent).children(".contact-info").children(".exit").css("visibility", "visible");
+                                console.log(error);
                             }
                         });
                     },
@@ -332,8 +327,8 @@
             }
             
             function deletePitch(elem, prompt, official) {
-                var id = $(elem).parent().parent().data("obj");
-                var parent = $(elem).parent().parent();
+                var id = $(elem).parent().parent().parent().data("obj");
+                var parent = $(elem).parent().parent().parent();
                 
                 $(parent).children(".contact-info").children(".approve").css("visibility", "hidden");
                 $(parent).children(".contact-info").children(".exit").css("visibility", "hidden");
