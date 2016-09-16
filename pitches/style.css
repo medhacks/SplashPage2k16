@@ -276,7 +276,6 @@ textarea[class='inputText'] {
 }
 
 .underline {
-    width: 100%;
     padding: 0px 10px;
     padding-top: 5px;
     background-color: rgba(239, 239, 239, 0.85);
@@ -336,7 +335,7 @@ textarea[class='inputText'] {
     .check {
         margin: 5px 10px;
     }
-        
+            
     .corner-button {
         margin-top: -10px;
         right: 10px;
