@@ -34,7 +34,7 @@
         
             <div class="pitch pitch-nav official invisible" id="approved">
                 <div class='subtitle underline nav-text'>Approved Pitches</div>
-                <div class='exit nav arrow'></div>
+                <div class='exit nav arrow not-exit'></div>
             </div>
             <div class="loading invisible">
                 <div class="bubble"></div>
@@ -322,7 +322,7 @@
             function deleteAll() {
                 var count = 0;
                 $(".exit").each(function() {
-                    if (!$(this).hasClass("official-exit")) {
+                    if (!$(this).hasClass("official-exit") && !$(this).hasClass("not-exit")) {
                         deletePitch(this, false, false);
                         count++;
                     }
