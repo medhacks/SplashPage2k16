@@ -449,6 +449,10 @@ textarea[class='inputText'] {
         bottom: 0.5em;
         right: 0.5em;
     }
+    
+    .underline {
+        padding-right: 50px;
+    }
 }
 
 @media screen and (max-width: 675px) {
