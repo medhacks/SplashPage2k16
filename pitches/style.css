@@ -119,7 +119,7 @@ textarea[class='inputText'] {
     text-decoration: none;
     cursor: pointer; 
     cursor: hand;
-
+    
     -webkit-user-select: none;  
     -moz-user-select: none;   
     -ms-user-select: none;    
@@ -222,7 +222,7 @@ textarea[class='inputText'] {
     border-radius: 10px;
     margin: 10px;
     color: rgba(25, 61, 86, 1);
-    
+        
     -webkit-transition: opacity 0.25s;
     -ms-transition: opacity 0.25s;
     -moz-transition: opacity 0.25s;
@@ -242,7 +242,7 @@ textarea[class='inputText'] {
     border-radius: 10px;
     margin: 10px;
     color: rgba(25, 61, 86, 1);
-    
+        
     -webkit-transition: all 0.25s;
     -ms-transition: all 0.25s;
     -moz-transition: all 0.25s;
@@ -388,6 +388,14 @@ textarea[class='inputText'] {
     user-select: none; 
 }
 
+.timestamp {
+    position: relative;
+    display: inline-block;
+    float: right;
+    color: rgba(25, 61, 86, 0.5);
+    font-size: 0.75em;
+}
+
 @media screen and (max-width: 800px) {
     .short{
         width: calc(100% - 1.25em);
@@ -434,6 +442,20 @@ textarea[class='inputText'] {
     
     .description {
         padding-right: 5px;
+    }
+    
+    .timestamp {
+        position: absolute;
+        bottom: 0.5em;
+        right: 0.5em;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .hashtag-container {
+        width: 400px;
+        position: relative;
+        left: calc(50% - 200px);
     }
 }
 
