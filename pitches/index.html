@@ -93,13 +93,23 @@
                 }
             });
             
-            $("#new").click(function() {
-                if ($(".pitch").hasClass("invisible")) {
-                    $(".pitch").removeClass("invisible");
+            $("#favorites").click(function() {
+                if ($(".favorite-pitch").hasClass("invisible")) {
+                    $(".favorite-pitch").removeClass("invisible");
                     $(this).children(".exit").addClass("up-arrow");
                 } else {
-                    $(".pitch").addClass("invisible");
-                    $(".favorite-pitch").removeClass("invisible");
+                    $(".favorite-pitch").addClass("invisible");
+                    $(this).removeClass("invisible");
+                    $(this).children(".exit").removeClass("up-arrow");
+                }
+            });
+            
+            $("#new").click(function() {
+                if ($(".regular-pitch").hasClass("invisible")) {
+                    $(".regular-pitch").removeClass("invisible");
+                    $(this).children(".exit").addClass("up-arrow");
+                } else {
+                    $(".regular-pitch").addClass("invisible");
                     $(this).removeClass("invisible");
                     $(this).children(".exit").removeClass("up-arrow");
                 }
@@ -139,11 +149,12 @@
                                     }
                                 }
 
-                                newItem = "<div class='pitch pitch-alternate' id=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
+                                newItem = "<div class='pitch regular-pitch' id=" + object.id + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span></div>";
                                 newItem += "<div class='content'><div class='description'>" + object.get('description') + "</div>";
                                 newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div><div class='exit fav' onclick='favoritePitch(this)'></div></div>";
 
                                 $("#new").after(newItem);
+                                $(".new-text").text("Available Pitches (" + $(".regular-pitch").length + ")");
                             } else {
                                 var index = IDs.indexOf(object.id);
                                 if (index > -1) {
@@ -181,24 +192,28 @@
                     $(elem).removeClass("fav-full");
                     var parent = $(elem).parent().parent();
                     $(parent).removeClass("favorite-pitch");
+                    $(parent).addClass("regular-pitch");
                     $(parent).detach();
                     $("#new").after($(parent));
+                    $(".nav-text").text("Favorite Pitches (" + $(".favorite-pitch").length + ")");
+                    $(".new-text").text("Available Pitches (" + $(".regular-pitch").length + ")");
                     
                     if ($(".favorite-pitch").length == 0) {
                         $("#favorites").addClass("invisible");
-                        $(".new-text").text("All Pitches");
                         $("#new").removeClass("new-title");
                     }
                 } else {
                     $(elem).addClass("fav-full");
                     var parent = $(elem).parent().parent();
                     $(parent).addClass("favorite-pitch");
+                    $(parent).removeClass("regular-pitch");
                     $(parent).detach();
                     $("#new").before($(parent));
                     
                     $("#favorites").removeClass("invisible");
                     $("#new").addClass("new-title");
-                    $(".new-text").text("Other Pitches");
+                    $(".nav-text").text("Favorite Pitches (" + $(".favorite-pitch").length + ")");
+                    $(".new-text").text("Available Pitches (" + $(".regular-pitch").length + ")");
                 }
             }
             

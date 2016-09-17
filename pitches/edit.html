@@ -27,7 +27,7 @@
             <div class="check invisible" href="#" data-clicked="0">#publichealth</div>
             <div class="check invisible" href="#" data-clicked="0" id="lastcheck">#devices</div>
             <div class="pitch pitch-nav" id="unapproved">
-                <div class='subtitle underline nav-text invisible'>Unapproved Pitches</div>
+                <div class='subtitle underline nav-text invisible'>Unapproved Pitches (0)</div>
                 <div class='exit nav official-exit' onclick='deleteAll()'></div>
                 <div class='approve nav' onclick='approveAll()' style="margin-right: 2px"></div>
             </div>
@@ -122,7 +122,7 @@
                     $(".nav-text").eq(0).text("Delete All Unapproved");    
                 }
             }, function() {
-                $(".nav-text").eq(0).text("Unapproved Pitches");                    
+                $(".nav-text").eq(0).text("Unapproved Pitches (" + $(".unofficial").length + ")");                    
             });
             
             $("#login").click(function() {
@@ -190,6 +190,7 @@
                                 newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='approve' onclick='approvePitch(this)'></div><div class='exit' onclick='deletePitch(this, true, false)'></div></div></div>";
 
                                 $("#unapproved").after(newItem);
+                                $(".nav-text").eq(0).text("Unapproved Pitches (" + $(".unofficial").length + ")");                    
                             }
                         }
 
@@ -236,6 +237,7 @@
                                 newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br><div class='exit official-exit' onclick='deletePitch(this, true, true)'></div></div></div>";
 
                                 $(".container").append(newItem);
+                                $(".nav-text").eq(1).text("Approved Pitches (" + ($(".official").length - 1) + ")");                    
                             }
                         }
 
@@ -382,6 +384,10 @@
                     $(".notification").css("color", "rgba(25, 61, 86, 1)");
                     $(".notification").text(message);
                 }
+                
+                $(".nav-text").eq(0).text("Unapproved Pitches (" + $(".unofficial").length + ")");                    
+                $(".nav-text").eq(1).text("Approved Pitches (" + ($(".official").length - 1) + ")");                    
+                
                 setTimeout(function() {
                     var height = parseInt($(".notification").outerHeight());
                     $(".notification").css("top", -1 * height);

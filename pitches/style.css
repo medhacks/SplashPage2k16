@@ -223,10 +223,10 @@ textarea[class='inputText'] {
     margin: 10px;
     color: rgba(25, 61, 86, 1);
     
-    -webkit-transition: all 0.25s;
-    -ms-transition: all 0.25s;
-    -moz-transition: all 0.25s;
-    transition: all 0.25s;
+    -webkit-transition: opacity 0.25s;
+    -ms-transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    transition: opacity 0.25s;
 }
 
 .pitch-nav {
@@ -297,13 +297,29 @@ textarea[class='inputText'] {
     width: 1em;
     height: 1em;
     margin: 0em 1em;
-    margin-right: 0.5em;
+    margin-right: 0em;
     padding: 1em 1em;
     background: url(../assets/img/checkmark_blue.png) no-repeat;
     background-size: 50% 50%;
     background-position: center;
     cursor: pointer; 
     cursor: hand;
+}
+
+.nav {
+    top: calc(20% - 1em);
+    right: -3px;
+    
+    background-size: 45% 45%;
+    background-position: center;
+}
+
+.nav.approve {
+    right: 1.5em;
+}
+
+.arrow-close {
+    right: -0.5px;
 }
 
 .fav {
@@ -322,16 +338,6 @@ textarea[class='inputText'] {
     background: url(../assets/img/star.png) no-repeat;
     background-size: 50% 50%;
     background-position: center;
-}
-
-.nav {
-    top: calc(20% - 1em);
-    margin-right: 6px;
-}
-
-.arrow-close {
-    margin-right: 0px;
-    right: 0px;
 }
 
 .subtitle {
@@ -446,6 +452,7 @@ textarea[class='inputText'] {
     height: 0px;
     margin: 0px;
     padding: 0px;
+    opacity: 0;
 }
 
 .progress {
