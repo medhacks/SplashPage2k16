@@ -115,11 +115,13 @@
             });
             
             $(".nav").hover(function() {
-                var index = $(".nav").index($(this));
-                if (index == 1) {
-                    $(".nav-text").eq(0).text("Approve All Unapproved");    
-                } else {
-                    $(".nav-text").eq(0).text("Delete All Unapproved");    
+                if (!$(this).hasClass("arrow")) {
+                    var index = $(".nav").index($(this));
+                    if (index == 1) {
+                        $(".nav-text").eq(0).text("Approve All Unapproved");    
+                    } else {
+                        $(".nav-text").eq(0).text("Delete All Unapproved");    
+                    }
                 }
             }, function() {
                 $(".nav-text").eq(0).text("Unapproved Pitches (" + $(".unofficial").length + ")");                    
@@ -155,11 +157,11 @@
                 }
             }
 
-            query();
+            /**query();
             $(".logins").remove();
             $(".invisible").each(function() {
                 $(this).removeClass("invisible");
-            });
+            });**/
             function query() {
                 pitchQuery.find({
                     success: function(results) {
