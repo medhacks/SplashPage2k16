@@ -133,7 +133,6 @@
                             }
                         });
 
-                        var current = new Date().getTime() / 1000;
                         for (var i = 0; i < results.length; i++) {
                             var object = results[i];
                             if (!$("#" + object.id).length) {
@@ -145,22 +144,15 @@
                                 var phone = object.get('phone');
                                 var newPhone = phone.substring(0, 3) + "-" + phone.substring(3, 6) + "-" + phone.substring(6, phone.length);
                                 var createdAt = object.createdAt / 1000;
-                                var diff = Math.round((current - createdAt)/3600);
-                                
-                                var timestring = diff + 'h';
-                                if (diff < 1) {        
-                                    diff = Math.round((current - createdAt)/60);
-                                    timestring = diff + 'm';
-                                }
-                                
+
                                 for (var j = 0; j < checks.length; j++) {
                                     if(checks[j] == 1) {
                                         hashtags += $(".check").eq(j).text() + " ";
                                         count++;
                                     }
                                 }
-
-                                newItem = "<div class='pitch regular-pitch' id=" + object.id + " data-time=" + createdAt + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span><div class='timestamp'>" + timestring + "</div></div>";
+                                
+                                newItem = "<div class='pitch regular-pitch' id=" + object.id + " data-time=" + createdAt + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span><div class='timestamp'>" + getPitchTime(createdAt) + "</div></div>";
                                 newItem += "<div class='content'><div class='description'>" + object.get('description') + "</div>";
                                 newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div><div class='exit fav' onclick='favoritePitch(this)'></div></div>";
                                 
@@ -231,21 +223,30 @@
             function refresh() {
                 var pitchQuery = new Parse.Query(Pitch);
 
-                var current = new Date().getTime() / 1000;
                 $(".pitch").each(function() {
                     var created = $(this).data("time");
                     
-                    var diff = Math.round((current - created)/3600);
-                                
-                    var timestring = diff + 'h';
+                    $(this).children().eq(0).children().eq(1).text(getPitchTime(created));
+                });
+                query();
+            }
+            
+            function getPitchTime(created) {
+                var current = new Date().getTime() / 1000;
+                    
+                var diff = Math.round((current - created)/86400);
+
+                var timestring = diff + 'd';
+                if (diff < 2) {        
+                    diff = Math.round((current - created)/3600);
+                    timestring = diff + 'h';
                     if (diff < 1) {        
                         diff = Math.round((current - created)/60);
                         timestring = diff + 'm';
                     }
-                    
-                    $(this).children().eq(0).children().eq(1).text(timestring);
-                });
-                query();
+                }
+                
+                return timestring;
             }
             
             setTimeout(loading, 250);

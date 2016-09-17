@@ -451,13 +451,22 @@ textarea[class='inputText'] {
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 675px) {
     .hashtag-container {
         width: 400px;
         position: relative;
         left: calc(50% - 200px);
     }
 }
+
+@media screen and (max-width: 400px) {
+    .hashtag-container {
+        width: 100%;
+        position: relative;
+        left: 0px;
+    }
+}
+
 
 @media screen and (max-width: 650px) {
     h1 {
