@@ -7,11 +7,15 @@
     <body>
         <div class="notification">Fake message</div>
         <div class="container">
-            <h1>View Pitches</h1>
+            <h1 class='index-h1'>View Pitches</h1>
+            <input class="inputText short-center invisible" type="text" id="new-title" placeholder="View Pitches" maxlength="20"><br>
+            <button class="corner-button save-button"></button>
+            <button class="corner-button load-button"></button>
             <form action="add.html">
-                <button class="add-button" type="submit"></button>
+                <button class="corner-button add-button" type="submit"></button>
             </form>
             <hr class='line' noshade/>
+            <h3>Save your favorites</h3>
             <div class="hashtag-container">
                 <div class="check" href="#" data-clicked="1">#medtech</div>
                 <div class="check" href="#" data-clicked="1">#hardware</div>
@@ -46,6 +50,9 @@
             var counter = 0;
             var stop = false;
             var first = false;
+            var timer;
+            var currentUser = null;
+            var load_list = false;
             
             function randomize() {
                 for (var i = $(".pitch").length - 1; i > 0; i--) {
@@ -117,6 +124,143 @@
                 }
             });
             
+            $(".save-button").click(function() {
+                saving(false);
+            });
+            
+            $(".load-button").click(function() {
+                saving(true);
+            });
+            
+            $(document).keypress(function(e) {
+                if(e.which == 13) {
+                    saveTitle();
+                }
+            });
+            
+            function saving(loading) {
+                $(".save-button").addClass("save-check");
+                $(".save-button").off("click");
+                $("h3").text("Save your favorites list");
+                $(".save-button").click(function() {
+                    saveTitle();
+                });
+                $("h1").addClass("kinda-invisible");
+                $("#new-title").removeClass("invisible");
+                $("#new-title").focus();
+                $("#new-title").attr("placeholder", $("h1").text());
+                if ($("h1").text().localeCompare("View Pitches") != 0) {
+                    $("#new-title").val($("h1").text().substring(0, $("h1").text().length - 7));
+                } 
+                $("hr").addClass("underline-title");
+                $("h3").css("opacity", 1);
+                $(".load-button").css("opacity", 0);            
+                if (loading) {
+                    $("h3").text("Load favorites list");
+                    load_list = true;
+                }
+            }
+            
+            function backToNormal() {
+                $("h1").removeClass("kinda-invisible");
+                $("#new-title").addClass("invisible");
+                $("#new-title").val("");
+                $("hr").removeClass("underline-title");
+                $(".save-button").removeClass("save-check");
+                $(".load-button").css("opacity", 1);            
+                $("h3").css("opacity", 0);
+                $(".save-button").off("click");
+                $(".save-button").click(function() {
+                    saving();
+                });
+                load_list = false;
+            }
+            
+            function saveTitle() {
+                if ($(".save-button").hasClass("save-check") && !load_list) {
+                    notify("Saving...", false);
+
+                    var favids = [];
+                    
+                    $(".favorite-pitch").each(function() {
+                        favids.push($(this).attr("id")); 
+                    });
+                    
+                    var user = new Parse.User();
+                    user.set("username", $("#new-title").val());
+                    user.set("password", "password");
+                    user.set("favorite", favids);
+                    
+                    if (currentUser && currentUser.get("username").localeCompare($("#new-title").val()) == 0) {
+                        currentUser.set("favorite", favids);
+                        console.log('lol');
+                        if (favids.length > 0) {
+                            var user = Parse.User.logIn(currentUser.get("username"), "password", {
+                                success: function(user) {
+                                    currentUser.save(null, {
+                                        success: function(user) {
+                                            notify("Updated favorites list.", false); 
+                                            backToNormal();
+                                        }
+                                    });
+                                }
+                            });
+                        } else {
+                            notify("Cannot save an empty list.", true)
+                            backToNormal();
+                        }
+                    } else {
+                        user.signUp(null, {
+                            success: function(new_user) {
+                                notify("Favorites list saved successfully.", false);
+                                $("h1").text($("#new-title").val() + "'s List");
+                                backToNormal();
+                                currentUser = user;
+                            },
+                            error: function(user, error) {
+                                if (error.code == 202) {
+                                    notify("List name is already taken.", true);                                
+                                } else if (error.code == -1) {
+                                    notify("List name cannot be empty.", true);                                
+                                } else {
+                                    notify("Favorites list could not be saved.", true);
+                                }
+                                console.log("Error: " + error.code + " " + error.message);
+                                backToNormal();
+                            }
+                        });
+                    }
+                } else if (load_list) {
+                    var userQuery = new Parse.Query(Parse.User);
+                    userQuery.equalTo("username", $("#new-title").val());
+                    
+                    userQuery.find({
+                        success: function(users) {
+                            if (users.length == 0) {
+                                notify("No lists found with that name.", true);
+                                backToNormal();
+                            } else {
+                                var favs = users[0].get("favorite");
+                                if (favs) {
+                                    $(".favorite-pitch").each(function() {
+                                        favoritePitch($(this).eq(0).children().eq(1).children().eq(2), false);
+                                    });
+                                    for (var i = 0; i < favs.length; i++) {
+                                        favoritePitch($("#" + favs[i]).eq(0).children().eq(1).children().eq(2), true);
+                                    }
+                                    notify("Favorites list loaded successfully.", false);
+                                    $("h1").text($("#new-title").val() + "'s List");
+                                    currentUser = users[0];
+                                } else {
+                                    notify("Favorites list was empty.", true);
+                                }
+                                backToNormal();
+                            }
+                        }
+                    });
+                }
+            };
+            
             query();
             
             function query() {
@@ -154,7 +298,7 @@
                                 
                                 newItem = "<div class='pitch regular-pitch' id=" + object.id + " data-time=" + createdAt + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span><div class='timestamp'>" + getPitchTime(createdAt) + "</div></div>";
                                 newItem += "<div class='content'><div class='description'>" + object.get('description') + "</div>";
-                                newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div><div class='exit fav' onclick='favoritePitch(this)'></div></div>";
+                                newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div><div class='exit fav' onclick='favoritePitch(this, false)'></div></div>";
                                 
                                 $("#new").after(newItem);
                                 $(".new-text").text("Available Pitches (" + $(".regular-pitch").length + ")");
@@ -190,16 +334,39 @@
                 });
             }
             
-            function favoritePitch(elem) {
-                if ($(elem).hasClass("fav-full")) {
+            function updateFavorites() {
+                var favids = [];
+
+                if (!loading) {
+                    $(".favorite-pitch").each(function() {
+                        favids.push($(this).attr("id")); 
+                    });
+
+                    currentUser.set("favorite", favids);
+
+                    currentUser.save(null, {
+                        success: function(user) {
+
+                        },
+                        error: function(user, error) {
+                            console.log("Error: " + error.code + " " + error.message);
+                        }
+                    });
+                }
+                
+                $(".nav-text").text("Favorite Pitches (" + $(".favorite-pitch").length + ")");
+                $(".new-text").text("Available Pitches (" + $(".regular-pitch").length + ")");
+            }
+            
+            function favoritePitch(elem, justFav) {
+                if ($(elem).hasClass("fav-full") && !justFav) {
                     $(elem).removeClass("fav-full");
                     var parent = $(elem).parent().parent();
                     $(parent).removeClass("favorite-pitch");
                     $(parent).addClass("regular-pitch");
                     $(parent).detach();
                     $("#new").after($(parent));
-                    $(".nav-text").text("Favorite Pitches (" + $(".favorite-pitch").length + ")");
-                    $(".new-text").text("Available Pitches (" + $(".regular-pitch").length + ")");
+                    updateFavorites();
                     
                     if ($(".favorite-pitch").length == 0) {
                         $("#favorites").addClass("invisible");
@@ -212,11 +379,10 @@
                     $(parent).removeClass("regular-pitch");
                     $(parent).detach();
                     $("#new").before($(parent));
+                    updateFavorites();
                     
                     $("#favorites").removeClass("invisible");
                     $("#new").addClass("new-title");
-                    $(".nav-text").text("Favorite Pitches (" + $(".favorite-pitch").length + ")");
-                    $(".new-text").text("Available Pitches (" + $(".regular-pitch").length + ")");
                 }
             }
             
@@ -284,11 +450,12 @@
                     $(".notification").css("color", "rgba(25, 61, 86, 1)");
                     $(".notification").text(message);
                 }
-                setTimeout(function() {
+                clearTimeout(timer);
+                timer = setTimeout(function() {
                     var height = parseInt($(".notification").outerHeight());
                     $(".notification").css("top", -1 * height);
                 }, 2000);
-             }
+            }
             
             function getRandom(min, max) {
                 return Math.random() * (max - min) + min;

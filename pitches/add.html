@@ -11,19 +11,21 @@
             <h1>Create a Pitch</h1>
             <hr class='line' noshade/>
             <form action="index.html">
-                <button class="button corner-button" type="submit">View Pitches</button>
+                <button class="corner-button view-button" type="submit"></button>
             </form>
             <input class="inputText" type="text" id="title" placeholder="Title"><br>
             <textarea class="inputText" rows="10" cols="50" placeholder="Description"></textarea><br></br>
             <input class="inputText short" type="text" id="name" placeholder="Your Name"><br>
             <input class="inputText short" type="text" id="email" placeholder="Email"><br>
             <input class="inputText short" type="text" id="phone" placeholder="Phone Number"><br></br>
-            <div class="check" href="#" data-clicked="0">#medtech</div>
-            <div class="check" href="#" data-clicked="0">#hardware</div>
-            <div class="check" href="#" data-clicked="0">#software</div>
-            <div class="check" href="#" data-clicked="0">#globalhealth</div>
-            <div class="check" href="#" data-clicked="0">#publichealth</div>
-            <div class="check" href="#" data-clicked="0">#devices</div></br>
+            <div class="hashtag-container">
+                <div class="check" href="#" data-clicked="0">#medtech</div>
+                <div class="check" href="#" data-clicked="0">#hardware</div>
+                <div class="check" href="#" data-clicked="0">#software</div>
+                <div class="check" href="#" data-clicked="0">#globalhealth</div>
+                <div class="check" href="#" data-clicked="0">#publichealth</div>
+                <div class="check" href="#" data-clicked="0">#devices</div></br>
+            </div>
             <div class="error"></div>
             <button class="button" type="button">Submit</button>
             <div class="disclaimer">Your pitch will be reviewed by a committee before posted to the Medhacks website. Any pitch that does not comply to our code of conduct will be removed from our servers.</div>
@@ -168,7 +170,8 @@
                     $(".notification").css("color", "rgba(25, 61, 86, 1)");
                     $(".notification").text(message);
                 }
-                setTimeout(function() {
+                clearTimeout(timer);
+                timer = setTimeout(function() {
                     var height = parseInt($(".notification").outerHeight());
                     $(".notification").css("top", -1 * height);
                 }, 2000);

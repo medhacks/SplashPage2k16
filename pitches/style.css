@@ -40,9 +40,22 @@ h1 {
     margin: 20px;
 }
 
+.index-h1 {
+    margin-bottom: 4px;
+}
+
 h3 {
-    color: rgba(239, 239, 239, 1);
-    font-family: custom;
+    font-family: custom-thin;
+    margin: 0px;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+    color: rgba(239, 239, 239, 0.5);
+    opacity: 1;
+    
+    -webkit-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .inputText {
@@ -98,6 +111,24 @@ textarea[class='inputText'] {
 
 .short {
     width: calc(50% - 1em);
+}
+
+.short-center {
+    font-size: 2.85em;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0px;
+    border: none;
+    
+    -webkit-transition: none;
+    -ms-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
+
+.short-center:active, .short-center:focus {
+    border: none;
 }
 
 .middle {
@@ -202,20 +233,75 @@ textarea[class='inputText'] {
     right: 10px;
 }
 
-.add-button {
+.corner-button {
     position: absolute;
-    top: 0px;
+    top: 2.5px;
     margin: 0px;
     right: 10px;
     
-    background: url(../assets/img/plus_white.png) no-repeat;
-    background-size: 100% 100%;
-    background-position: right;
     width: 4em;
     height: 4em;
     border: none;
+    border-radius: 10px;
     cursor: pointer; 
     cursor: hand;
+    
+    -webkit-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    transition: all 0.25s;
+}
+
+.add-button {
+    background: url(../assets/img/plus_white.png) no-repeat;
+    background-size: 75% 75%;
+    background-position: center;
+}
+
+.add-button:hover {
+    background: url(../assets/img/plus_blue.png) no-repeat;
+    background-size: 75% 75%;
+    background-position: center;
+    background-color: #efefef;
+}
+
+.view-button {
+    background: url(../assets/img/hamburger_blue.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-color: #efefef;
+}
+
+.save-button {
+    left: 10px;
+    background: url(../assets/img/save_temp.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.save-check {
+    left: 10px;
+    background: url(../assets/img/checkmark_white.png) no-repeat;
+    background-size: 75% 75%;
+    background-position: center;
+}
+
+.save-check:hover {
+    background: url(../assets/img/checkmark_blue.png) no-repeat;
+    background-size: 75% 75%;
+    background-position: center;
+    background-color: #efefef;
+}
+
+.load-button {
+    left: calc(30px + 4em);
+    background: url(../assets/img/save_temp.png) no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    
+    -ms-transform: rotate(180deg); 
+    -webkit-transform: rotate(180deg); 
+    transform: rotate(180deg);
 }
 
 .error {
@@ -412,6 +498,26 @@ textarea[class='inputText'] {
     font-size: 0.75em;
 }
 
+
+.line {
+    width: 15%;
+    margin: 0.25em auto;
+    margin-top: -1.25em;
+    padding: 0px;
+    background-color: rgba(239, 239, 239, 0.5);
+    border: none;
+    height: 1px;
+    
+    -webkit-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.underline-title {
+    width: 50%;
+}
+
 @media screen and (max-width: 800px) {
     .short{
         width: calc(100% - 1.25em);
@@ -425,6 +531,11 @@ textarea[class='inputText'] {
         padding-left: 5px;
     }
 
+    .short-center {
+        margin: auto;
+        padding-left: 0px;
+    }
+    
     textarea[class='inputText'] {
         padding-left: 5px;
     }
@@ -441,11 +552,6 @@ textarea[class='inputText'] {
     
     .check {
         margin: 5px 10px;
-    }
-            
-    .corner-button {
-        margin-top: -10px;
-        right: 10px;
     }
     
     .fav {
@@ -477,6 +583,14 @@ textarea[class='inputText'] {
         position: relative;
         left: calc(50% - 200px);
     }
+    
+    h1 {
+        padding-top: 1.0em;
+    }
+    
+    .underline-title, .short-center {
+        width: calc(100% - 20px);
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -488,6 +602,11 @@ textarea[class='inputText'] {
     
     h1 {
         font-size: 2.25em;  
+        padding-top: 1.5em;
+    }
+    
+    .short-center {
+        font-size: 2.25em; 
     }
 }
 
@@ -501,6 +620,12 @@ textarea[class='inputText'] {
     margin: 0px;
     padding: 0px;
     opacity: 0;
+}
+
+.kinda-invisible {
+    height: 0px;  
+    margin-bottom: 0px;
+    overflow: hidden;
 }
 
 .progress {
@@ -562,19 +687,25 @@ textarea[class='inputText'] {
     transition: all 0.25s;
 }
 
-.line {
-    width: 15%;
-    margin: 0.25em auto;
-    margin-top: -1.25em;
-    padding: 0px;
-    background-color: rgba(239, 239, 239, 0.5);
-    border: none;
-    height: 1px;
-}
-
 .disclaimer {
     color: rgba(239, 239, 239, 0.5);
     font-family: custom;
     margin-top: 0.5em;
     margin-bottom: 1em;
+}
+
+::-webkit-input-placeholder {
+   color: rgb(239, 239, 239, 1);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: rgb(239, 239, 239, 1);  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgb(239, 239, 239, 1);  
+}
+
+:-ms-input-placeholder {  
+   color: rgb(239, 239, 239, 1);  
 }

@@ -9,7 +9,7 @@
         <div class="container">
             <h1>Edit Pitches</h1>
             <form action="index.html">
-                <button class="button corner-button" type="submit">View Pitches</button>
+                <button class="corner-button view-button" type="submit"></button>
             </form>
             <hr class='line' noshade/>
             <div class="logins">
@@ -20,12 +20,14 @@
                 <button class="button" type="button" id="login" style="display: block;">Log in</button>
             </div>
             
-            <div class="check invisible" href="#" data-clicked="0">#medtech</div>
-            <div class="check invisible" href="#" data-clicked="0">#hardware</div>
-            <div class="check invisible" href="#" data-clicked="0">#software</div>
-            <div class="check invisible" href="#" data-clicked="0">#globalhealth</div>
-            <div class="check invisible" href="#" data-clicked="0">#publichealth</div>
-            <div class="check invisible" href="#" data-clicked="0" id="lastcheck">#devices</div>
+            <div class="hashtag-container">
+                <div class="check invisible" href="#" data-clicked="0">#medtech</div>
+                <div class="check invisible" href="#" data-clicked="0">#hardware</div>
+                <div class="check invisible" href="#" data-clicked="0">#software</div>
+                <div class="check invisible" href="#" data-clicked="0">#globalhealth</div>
+                <div class="check invisible" href="#" data-clicked="0">#publichealth</div>
+                <div class="check invisible" href="#" data-clicked="0" id="lastcheck">#devices</div>
+            </div>
             <div class="pitch pitch-nav" id="unapproved">
                 <div class='subtitle underline nav-text invisible'>Unapproved Pitches (0)</div>
                 <div class='exit nav official-exit' onclick='deleteAll()'></div>
@@ -55,6 +57,7 @@
             var prevTime;
             var counter = 0;
             var logging = false;
+            var timer;
             
             $("#approved").addClass("invisible");
             
@@ -390,7 +393,8 @@
                 $(".nav-text").eq(0).text("Unapproved Pitches (" + $(".unofficial").length + ")");                    
                 $(".nav-text").eq(1).text("Approved Pitches (" + ($(".official").length - 1) + ")");                    
                 
-                setTimeout(function() {
+                clearTimeout(timer);
+                timer = setTimeout(function() {
                     var height = parseInt($(".notification").outerHeight());
                     $(".notification").css("top", -1 * height);
                 }, 2000);
