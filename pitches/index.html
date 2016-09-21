@@ -497,6 +497,13 @@
                 } else if (window_width < window_height * 1.75) {
                     $(".background").removeClass("background-width");
                 }
+                
+                if (header_height > 0.4 * window_height) {
+                    $("body").css("overflow", "scroll");
+                    $(".everything").css("height", "100%");
+                } else {
+                    $("body").css("overflow", "hidden");
+                }
             }
         </script>
     </body>
