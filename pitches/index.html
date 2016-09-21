@@ -5,37 +5,42 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+        <div class="background"></div>
         <div class="notification">Fake message</div>
         <div class="container">
-            <h1 class='index-h1'>View Pitches</h1>
-            <input class="inputText short-center invisible" type="text" id="new-title" placeholder="View Pitches" maxlength="20"><br>
-            <button class="corner-button save-button"></button>
-            <button class="corner-button load-button"></button>
-            <form action="add.html">
-                <button class="corner-button add-button" type="submit"></button>
-            </form>
-            <hr class='line' noshade/>
-            <h3>Save your favorites</h3>
-            <div class="hashtag-container">
-                <div class="check" href="#" data-clicked="1">#medtech</div>
-                <div class="check" href="#" data-clicked="1">#hardware</div>
-                <div class="check" href="#" data-clicked="1">#software</div>
-                <div class="check" href="#" data-clicked="1">#globalhealth</div>
-                <div class="check" href="#" data-clicked="1">#publichealth</div>
-                <div class="check" href="#" data-clicked="1" id="lastcheck">#devices</div>
+            <div class='fixed-header'>
+                <h1 class='index-h1'>View Pitches</h1>
+                <input class="inputText short-center invisible" type="text" id="new-title" placeholder="View Pitches" maxlength="20"><br>
+                <button class="corner-button save-button"></button>
+                <button class="corner-button load-button"></button>
+                <form action="add.html">
+                    <button class="corner-button add-button" type="submit"></button>
+                </form>
+                <hr class='line' noshade/>
+                <h3 style="opacity: 0">Save your favorites</h3>
+                <div class="hashtag-container">
+                    <div class="check" href="#" data-clicked="1">#medtech</div>
+                    <div class="check" href="#" data-clicked="1">#hardware</div>
+                    <div class="check" href="#" data-clicked="1">#software</div>
+                    <div class="check" href="#" data-clicked="1">#globalhealth</div>
+                    <div class="check" href="#" data-clicked="1">#publichealth</div>
+                    <div class="check" href="#" data-clicked="1" id="lastcheck">#devices</div>
+                </div>
             </div>
-            <div class="pitch-nav invisible" id="favorites">
-                <div class='subtitle underline nav-text'>Favorites</div>
-                <div class='exit nav arrow arrow-close up-arrow'></div>
-            </div>
-            <div class="pitch-nav" id="new">
-                <div class='subtitle underline nav-text new-text'>All Pitches</div>
-                <div class='exit nav arrow arrow-close up-arrow'></div>
-            </div>
-            <div class="loading">
-                <div class="bubble"></div>
-                <div class="bubble"></div>
-                <div class="bubble"></div>
+            <div class="everything">
+                <div class="pitch-nav invisible" id="favorites">
+                    <div class='subtitle underline nav-text'>Favorites</div>
+                    <div class='exit nav arrow arrow-close up-arrow'></div>
+                </div>
+                <div class="pitch-nav" id="new">
+                    <div class='subtitle underline nav-text new-text'>All Pitches</div>
+                    <div class='exit nav arrow arrow-close up-arrow'></div>
+                </div>
+                <div class="loading">
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                    <div class="bubble"></div>
+                </div>
             </div>
         </div>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -100,6 +105,8 @@
                         }
                     });
                 }
+                
+                updateFavorites();
             });
             
             $("#favorites").click(function() {
@@ -142,9 +149,7 @@
                 $(".save-button").addClass("save-check");
                 $(".save-button").off("click");
                 $("h3").text("Save your favorites list");
-                $(".save-button").click(function() {
-                    saveTitle();
-                });
+                
                 $("h1").addClass("kinda-invisible");
                 $("#new-title").removeClass("invisible");
                 $("#new-title").focus();
@@ -154,7 +159,15 @@
                 } 
                 $("hr").addClass("underline-title");
                 $("h3").css("opacity", 1);
-                $(".load-button").css("opacity", 0);            
+                $(".load-button").addClass("load-exit"); 
+                $(".load-button").off("click");
+                $(".load-button").click(function() {
+                    backToNormal();
+                });
+                $(".save-button").off("click");
+                $(".save-button").click(function() {
+                    saveTitle();
+                });
                 if (loading) {
                     $("h3").text("Load favorites list");
                     load_list = true;
@@ -167,14 +180,20 @@
                 $("#new-title").val("");
                 $("hr").removeClass("underline-title");
                 $(".save-button").removeClass("save-check");
-                $(".load-button").css("opacity", 1);            
+                $(".load-button").removeClass("load-exit");            
                 $("h3").css("opacity", 0);
                 $(".save-button").off("click");
                 $(".save-button").click(function() {
                     saving();
                 });
+                $(".load-button").off("click");
+                $(".load-button").click(function() {
+                    saving(true);
+                });
                 load_list = false;
             }
+            
+            
             
             function saveTitle() {
                 if ($(".save-button").hasClass("save-check") && !load_list) {
@@ -354,8 +373,8 @@
                     });
                 }
                 
-                $(".nav-text").text("Favorite Pitches (" + $(".favorite-pitch").length + ")");
-                $(".new-text").text("Available Pitches (" + $(".regular-pitch").length + ")");
+                $(".nav-text").text("Favorite Pitches (" + $(".favorite-pitch").not(".hidden").length + ")");
+                $(".new-text").text("Available Pitches (" + $(".regular-pitch").not(".hidden").length + ")");
             }
             
             function favoritePitch(elem, justFav) {
@@ -459,6 +478,25 @@
             
             function getRandom(min, max) {
                 return Math.random() * (max - min) + min;
+            }
+            
+            $(window).resize(function() {
+                resize();
+            });
+            
+            resize();
+            function resize() {
+                var header_height = parseInt($(".fixed-header").outerHeight());
+                var window_height = parseInt($(window).outerHeight());
+                var window_width = parseInt($(window).outerWidth());
+                
+                $(".everything").css('height', (window_height - header_height - 10) + "px");
+                
+                if (window_width > window_height * 1.75) {
+                    $(".background").addClass("background-width");
+                } else if (window_width < window_height * 1.75) {
+                    $(".background").removeClass("background-width");
+                }
             }
         </script>
     </body>

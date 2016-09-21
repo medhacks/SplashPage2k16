@@ -14,12 +14,28 @@
 }
 
 
-body, html {
+body {
     margin: 0px;
     padding: 0px;
     background-color: #efefef;
     background-color: rgba(25, 61, 86, 1);
+    overflow: hidden;
+}
 
+.background {
+    position: fixed;
+    width: 100%;
+    height: calc(100% + 5px);
+    top: -5px;
+    background: url(../assets/img/webbg_responsive.jpg) no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+}
+
+.background-width {
+    background: url(../assets/img/webbg_responsive.jpg) no-repeat;
+    background-size: 100% auto;
+    background-position: center; 
 }
 
 .container {
@@ -30,6 +46,14 @@ body, html {
 
     text-align: center;
     position: relative;
+}
+
+.fixed-header {
+    margin-bottom: 10px;
+}
+
+.everything {
+    overflow: scroll;
 }
 
 h1 {
@@ -45,11 +69,11 @@ h1 {
 }
 
 h3 {
-    font-family: custom-thin;
+    font-family: custom-light;
     margin: 0px;
     margin-bottom: 5px;
     font-size: 0.95em;
-    color: rgba(239, 239, 239, 0.5);
+    color: rgba(239, 239, 239, 0.75);
     opacity: 1;
     
     -webkit-transition: all 0.5s;
@@ -266,24 +290,38 @@ textarea[class='inputText'] {
 }
 
 .view-button {
+    background: url(../assets/img/hamburger_white.png) no-repeat;
+    background-size: 90% 90%;
+    background-position: center;
+}
+
+.view-button:hover {
     background: url(../assets/img/hamburger_blue.png) no-repeat;
-    background-size: 100% 100%;
+    background-size: 90% 90%;
     background-position: center;
     background-color: #efefef;
 }
 
 .save-button {
     left: 10px;
-    background: url(../assets/img/save_temp.png) no-repeat;
-    background-size: 100% 100%;
+    background: url(../assets/img/save_icon_white.png) no-repeat;
+    background-size: 75% 75%;
     background-position: center;
+}
+
+.save-button:hover {
+    left: 10px;
+    background: url(../assets/img/save_icon_blue.png) no-repeat;
+    background-size: 75% 75%;
+    background-position: center;
+    background-color: #efefef;  
 }
 
 .save-check {
     left: 10px;
     background: url(../assets/img/checkmark_white.png) no-repeat;
     background-size: 75% 75%;
-    background-position: center;
+    background-position: center;  
 }
 
 .save-check:hover {
@@ -294,14 +332,31 @@ textarea[class='inputText'] {
 }
 
 .load-button {
-    left: calc(30px + 4em);
-    background: url(../assets/img/save_temp.png) no-repeat;
-    background-size: 100% 100%;
+    left: calc(20px + 4em);
+    background: url(../assets/img/load_icon_white.png) no-repeat;
+    background-size: 75% 75%;
     background-position: center;
-    
-    -ms-transform: rotate(180deg); 
-    -webkit-transform: rotate(180deg); 
-    transform: rotate(180deg);
+}
+
+.load-button:hover {
+    left: calc(20px + 4em);
+    background: url(../assets/img/load_icon_blue.png) no-repeat;
+    background-size: 75% 75%;
+    background-position: center;
+    background-color: #efefef;
+}
+
+.load-exit {
+    background: url(../assets/img/x_white.png) no-repeat;
+    background-size: 75% 75%;
+    background-position: center;
+}
+
+.load-exit:hover {
+    background: url(../assets/img/x_blue.png) no-repeat;
+    background-size: 75% 75%;
+    background-position: center;
+    background-color: #efefef;
 }
 
 .error {
@@ -455,12 +510,12 @@ textarea[class='inputText'] {
 .underline {
     padding: 0px 10px;
     padding-top: 5px;
-    background-color: rgba(239, 239, 239, 0.85);
+    background-color: rgba(239, 239, 239, 0.90);
     font-family: custom-light;
 }
 
 .content {
-    background-color: rgba(239, 239, 239, 0.75);
+    background-color: rgba(239, 239, 239, 0.80);
     margin: 0px;
     padding: 0px 10px;
     font-family: custom-light;

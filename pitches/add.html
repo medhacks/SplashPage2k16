@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>        
+        <div class="background"></div>
         <div class='progress'></div>
         <div class="notification">Fake message</div>
         <div class="container">
@@ -176,6 +177,22 @@
                     $(".notification").css("top", -1 * height);
                 }, 2000);
              }
+            
+            $(window).resize(function() {
+                resize();
+            });
+            
+            resize();
+            function resize() {
+                var window_height = parseInt($(window).outerHeight());
+                var window_width = parseInt($(window).outerWidth());
+                
+                if (window_width > window_height * 1.75) {
+                    $(".background").addClass("background-width");
+                } else if (window_width < window_height * 1.75) {
+                    $(".background").removeClass("background-width");
+                }
+            }
         </script>
     </body>
 </html>

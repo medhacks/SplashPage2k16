@@ -4,36 +4,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body>
+    <body style="overflow: scroll;">
+        <div class="background"></div>
         <div class="notification">Fake message</div>
         <div class="container">
-            <h1>Edit Pitches</h1>
-            <form action="index.html">
-                <button class="corner-button view-button" type="submit"></button>
-            </form>
-            <hr class='line' noshade/>
-            <div class="logins">
-                <h3>Log in to edit pitches</h3>
-                <input class="inputText short middle" type="text" id="user" placeholder="Username"><br>
-                <input class="inputText short middle" type="password" id="pass" placeholder="Password"><br>
-                <div class="error" style="font-size: 16px"></div>
-                <button class="button" type="button" id="login" style="display: block;">Log in</button>
-            </div>
-            
-            <div class="hashtag-container">
-                <div class="check invisible" href="#" data-clicked="0">#medtech</div>
-                <div class="check invisible" href="#" data-clicked="0">#hardware</div>
-                <div class="check invisible" href="#" data-clicked="0">#software</div>
-                <div class="check invisible" href="#" data-clicked="0">#globalhealth</div>
-                <div class="check invisible" href="#" data-clicked="0">#publichealth</div>
-                <div class="check invisible" href="#" data-clicked="0" id="lastcheck">#devices</div>
+            <div class='fixed-header'>
+                <h1>Edit Pitches</h1>
+                <form action="index.html">
+                    <button class="corner-button view-button" type="submit"></button>
+                </form>
+                <hr class='line' noshade/>
+                <div class="logins">
+                    <h3>Log in to edit pitches</h3>
+                    <input class="inputText short middle" type="text" id="user" placeholder="Username"><br>
+                    <input class="inputText short middle" type="password" id="pass" placeholder="Password"><br>
+                    <div class="error" style="font-size: 16px"></div>
+                    <button class="button" type="button" id="login" style="display: block;">Log in</button>
+                </div>
+
+                <div class="hashtag-container">
+                    <div class="check invisible" href="#" data-clicked="0">#medtech</div>
+                    <div class="check invisible" href="#" data-clicked="0">#hardware</div>
+                    <div class="check invisible" href="#" data-clicked="0">#software</div>
+                    <div class="check invisible" href="#" data-clicked="0">#globalhealth</div>
+                    <div class="check invisible" href="#" data-clicked="0">#publichealth</div>
+                    <div class="check invisible" href="#" data-clicked="0" id="lastcheck">#devices</div>
+                </div>
             </div>
             <div class="pitch pitch-nav" id="unapproved">
                 <div class='subtitle underline nav-text invisible'>Unapproved Pitches (0)</div>
                 <div class='exit nav official-exit' onclick='deleteAll()'></div>
                 <div class='approve nav' onclick='approveAll()' style="margin-right: 2px"></div>
             </div>
-        
+
             <div class="pitch pitch-nav official invisible" id="approved">
                 <div class='subtitle underline nav-text'>Approved Pitches</div>
                 <div class='exit nav arrow not-exit'></div>
@@ -427,6 +430,25 @@
                     login();
                 }
             });
+            
+            $(window).resize(function() {
+                resize();
+            });
+            
+            resize();
+            function resize() {
+                var header_height = parseInt($(".fixed-header").outerHeight());
+                var window_height = parseInt($(window).outerHeight());
+                var window_width = parseInt($(window).outerWidth());
+                
+                $(".everything").css('height', (window_height - header_height - 10) + "px");
+                
+                if (window_width > window_height * 1.75) {
+                    $(".background").addClass("background-width");
+                } else if (window_width < window_height * 1.75) {
+                    $(".background").removeClass("background-width");
+                }
+            }
         </script>
     </body>
 </html>

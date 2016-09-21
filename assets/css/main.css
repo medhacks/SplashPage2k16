@@ -935,3 +935,10 @@ h3 {
     width: 49%; 
     /*border-right: 1px #193d56 solid;*/
 }
+
+.corner-time {
+    position: absolute;
+    font-size: 1.25em;
+    top: 1.5em;
+    right: 1.5em;
+}
