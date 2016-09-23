@@ -992,3 +992,10 @@ h3 {
 #schedule {
     padding-top: 0px;
 }
+
+.announcement-container {
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    width: 35%;
+}
