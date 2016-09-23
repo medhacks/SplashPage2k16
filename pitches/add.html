@@ -20,12 +20,12 @@
             <input class="inputText short" type="text" id="email" placeholder="Email"><br>
             <input class="inputText short" type="text" id="phone" placeholder="Phone Number"><br></br>
             <div class="hashtag-container">
-                <div class="check" href="#" data-clicked="0">#medtech</div>
-                <div class="check" href="#" data-clicked="0">#hardware</div>
-                <div class="check" href="#" data-clicked="0">#software</div>
-                <div class="check" href="#" data-clicked="0">#globalhealth</div>
-                <div class="check" href="#" data-clicked="0">#publichealth</div>
-                <div class="check" href="#" data-clicked="0">#devices</div></br>
+                <div class="check check-inactive" href="#" data-clicked="0">#medtech</div>
+                <div class="check check-inactive" href="#" data-clicked="0">#hardware</div>
+                <div class="check check-inactive" href="#" data-clicked="0">#software</div>
+                <div class="check check-inactive" href="#" data-clicked="0">#globalhealth</div>
+                <div class="check check-inactive" href="#" data-clicked="0">#publichealth</div>
+                <div class="check check-inactive" href="#" data-clicked="0">#devices</div></br>
             </div>
             <div class="error"></div>
             <button class="button" type="button">Submit</button>
@@ -44,12 +44,12 @@
             var saving = false;
             
             $(".check").each(function() {
-                $(this).css("background-color", "rgba(239, 239, 239, 0.5)");
-            })
+                //$(this).css("background-color", "rgba(239, 239, 239, 0.5)");
+            });
             
             $(".check").click(function() {
                 if ($(this).data("clicked") == 0) {
-                    $(this).css("background-color", "rgba(239, 239, 239, 1)");
+                    $(this).removeClass("check-inactive");
                     $(this).data("clicked", 1);
                     checks++;
                     if (alldone[5] == 0) {
@@ -58,7 +58,7 @@
                         $(".progress").css("width", prog + "%"); 
                     }
                 } else  {
-                    $(this).css("background-color", "rgba(239, 239, 239, 0.5)");
+                    $(this).addClass("check-inactive");
                     $(this).data("clicked", 0);
                     checks--;
                     if (checks == 0) {

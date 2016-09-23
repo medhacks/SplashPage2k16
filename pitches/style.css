@@ -72,7 +72,7 @@ h3 {
     font-family: custom-light;
     margin: 0px;
     margin-bottom: 5px;
-    font-size: 0.95em;
+    font-size: 1.25em;
     color: rgba(239, 239, 239, 0.75);
     opacity: 1;
     
@@ -186,6 +186,10 @@ textarea[class='inputText'] {
     transition: all 0.25s;
 }
 
+.check-inactive {
+    background-color: rgba(239, 239, 239, 0.25);
+}
+
 .button {
     position: relative;
     border: 1px solid rgba(239, 239, 239, 1);
@@ -282,7 +286,7 @@ textarea[class='inputText'] {
     background-position: center;
 }
 
-.add-button:hover {
+.add-button-hover {
     background: url(../assets/img/plus_blue.png) no-repeat;
     background-size: 75% 75%;
     background-position: center;
@@ -295,7 +299,7 @@ textarea[class='inputText'] {
     background-position: center;
 }
 
-.view-button:hover {
+.view-button-hover {
     background: url(../assets/img/hamburger_blue.png) no-repeat;
     background-size: 90% 90%;
     background-position: center;
@@ -309,7 +313,7 @@ textarea[class='inputText'] {
     background-position: center;
 }
 
-.save-button:hover {
+.save-button-hover {
     left: 10px;
     background: url(../assets/img/save_icon_blue.png) no-repeat;
     background-size: 75% 75%;
@@ -324,7 +328,7 @@ textarea[class='inputText'] {
     background-position: center;  
 }
 
-.save-check:hover {
+.save-check-hover {
     background: url(../assets/img/checkmark_blue.png) no-repeat;
     background-size: 75% 75%;
     background-position: center;
@@ -338,7 +342,7 @@ textarea[class='inputText'] {
     background-position: center;
 }
 
-.load-button:hover {
+.load-button-hover {
     left: calc(20px + 4em);
     background: url(../assets/img/load_icon_blue.png) no-repeat;
     background-size: 75% 75%;
@@ -352,7 +356,7 @@ textarea[class='inputText'] {
     background-position: center;
 }
 
-.load-exit:hover {
+.load-exit-hover {
     background: url(../assets/img/x_blue.png) no-repeat;
     background-size: 75% 75%;
     background-position: center;
@@ -409,6 +413,11 @@ textarea[class='inputText'] {
     -moz-user-select: none;   
     -ms-user-select: none;    
     user-select: none; 
+}
+
+.fake-pitch {
+    width: 100%;
+    height: 150px;
 }
 
 #approved, .new-title {
@@ -686,7 +695,7 @@ textarea[class='inputText'] {
 .progress {
     position: fixed;
     width: 0%;
-    height: 5px;
+    height: 3px;
     top: 0;
     background-color: rgba(239, 239, 239, 1);
     
@@ -699,7 +708,7 @@ textarea[class='inputText'] {
 .loading {
     position: relative;
     display: table;
-    margin: 20% auto;
+    margin: 0% auto;
 }
 
 .space {

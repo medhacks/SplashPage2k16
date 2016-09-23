@@ -17,7 +17,7 @@
                     <button class="corner-button add-button" type="submit"></button>
                 </form>
                 <hr class='line' noshade/>
-                <h3 style="opacity: 0">Save your favorites</h3>
+                <h3 class='subtext' style="opacity: 0">Save your favorites</h3>
                 <div class="hashtag-container">
                     <div class="check" href="#" data-clicked="1">#medtech</div>
                     <div class="check" href="#" data-clicked="1">#hardware</div>
@@ -36,6 +36,7 @@
                     <div class='subtitle underline nav-text new-text'>All Pitches</div>
                     <div class='exit nav arrow arrow-close up-arrow'></div>
                 </div>
+                <div class="fake-pitch"></div>
                 <div class="loading">
                     <div class="bubble"></div>
                     <div class="bubble"></div>
@@ -317,7 +318,7 @@
                                 
                                 newItem = "<div class='pitch regular-pitch' id=" + object.id + " data-time=" + createdAt + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span><div class='timestamp'>" + getPitchTime(createdAt) + "</div></div>";
                                 newItem += "<div class='content'><div class='description'>" + object.get('description') + "</div>";
-                                newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div><div class='exit fav' onclick='favoritePitch(this, false)'></div></div>";
+                                newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div><div class='exit fav' onclick='favoritePitch(this, false)' onmouseover='favoriteIn()' onmouseout='favoriteOut()'></div></div>";
                                 
                                 $("#new").after(newItem);
                                 $(".new-text").text("Available Pitches (" + $(".regular-pitch").length + ")");
@@ -484,13 +485,15 @@
                 resize();
             });
             
-            resize();
+            setTimeout(function() {
+                resize();
+            }, 100);
             function resize() {
                 var header_height = parseInt($(".fixed-header").outerHeight());
                 var window_height = parseInt($(window).outerHeight());
                 var window_width = parseInt($(window).outerWidth());
                 
-                $(".everything").css('height', (window_height - header_height - 10) + "px");
+                $(".everything").css('height', (window_height - header_height + 50) + "px");
                 
                 if (window_width > window_height * 1.75) {
                     $(".background").addClass("background-width");
@@ -503,14 +506,79 @@
                     $(".everything").css("height", "100%");
                 } else {
                     $("body").css("overflow", "hidden");
+                    $(window).scrollTop(0);
                 }
             }
 
-            $(".pitch").mouseenter(
-                function() {
-                    console.log('lol');
+            
+            $(".save-button").hover(function() {
+                if (!$(".save-button").hasClass("save-check")) {
+                    $("h3").text("Save your favorites list"); 
+                    $("h3").css("opacity", 1); 
+                    if (!isMobile()) {
+                        $(this).addClass("save-button-hover");
+                    }
+                } else {
+                    if (!isMobile()) {
+                        $(this).addClass("save-check-hover");
+                    }
                 }
-            );
+            }, function() {
+                $("h3").css("opacity", 0); 
+                $(this).removeClass("save-button-hover");
+                $(this).removeClass("save-check-hover");
+            });
+            
+            $(".load-button").hover(function() {
+                if (!$(".load-button").hasClass("load-exit")) {
+                    $("h3").text("Load favorites list"); 
+                    $("h3").css("opacity", 1); 
+                    if (!isMobile()) {
+                        $(this).addClass("load-button-hover");
+                    }
+                } else {
+                    if (!isMobile()) {
+                        $(this).addClass("load-exit-hover");
+                    }
+                }
+            }, function() {
+                $("h3").css("opacity", 0)
+                $(this).removeClass("load-button-hover");
+                $(this).removeClass("load-exit-hover");
+            });
+            
+            $(".check").hover(function() {
+                $("h3").text("Filter pitches by hashtag"); 
+                $("h3").css("opacity", 1); 
+            }, function() {
+                $("h3").css("opacity", 0); 
+            });
+            
+            $(".add-button").hover(function() {
+                $("h3").text("Add a pitch"); 
+                $("h3").css("opacity", 1); 
+                if (!isMobile()) {
+                    $(this).addClass("add-button-hover");
+                }
+            }, function() {
+                $("h3").css("opacity", 0); 
+                $(this).removeClass("add-button-hover");
+            });
+            
+            function favoriteIn() {
+                if (!$(".fav").hasClass("fav-full")) {
+                    $("h3").text("Favorite this pitch"); 
+                    $("h3").css("opacity", 1); 
+                }
+            }
+            
+            function favoriteOut() {
+                $("h3").css("opacity", 0); 
+            }
+            
+            function isMobile() {
+                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
         </script>
     </body>
 </html>
