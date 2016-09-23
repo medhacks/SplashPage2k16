@@ -513,12 +513,12 @@ textarea[class='inputText'] {
 .underline {
     padding: 0px 10px;
     padding-top: 5px;
-    background-color: rgba(239, 239, 239, 0.90);
+    background-color: rgba(239, 239, 239, 0.95);
     font-family: custom-light;
 }
 
 .content {
-    background-color: rgba(239, 239, 239, 0.80);
+    background-color: rgba(239, 239, 239, 0.90);
     margin: 0px;
     padding: 0px 10px;
     font-family: custom-light;
@@ -528,7 +528,7 @@ textarea[class='inputText'] {
     padding-bottom: 10px;
     font-size: 0.9em;
     color: rgba(25, 61, 86, 0.65);
-    font-family: custom-thin;
+    font-family: custom-light;
 }
 
 .hashtags {
