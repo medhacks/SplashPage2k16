@@ -241,11 +241,20 @@ hr.small {
 
 @media all and (max-width: 800px) {
     .third {
+        font-size: 2em;
+        margin: auto 3.90%;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .third {
         width: 50%;
         padding-bottom: 50%;
         margin: 20px 25%;
+        font-size: 2em;
     }
 }
+
 
 .third-a {
     color: white;
