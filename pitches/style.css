@@ -46,6 +46,7 @@ body {
 
     text-align: center;
     position: relative;
+    overflow: scroll;
 }
 
 .fixed-header {
@@ -187,7 +188,7 @@ textarea[class='inputText'] {
 }
 
 .check-inactive {
-    background-color: rgba(239, 239, 239, 0.25);
+    background-color: rgba(239, 239, 239, 0.5);
 }
 
 .button {
@@ -256,14 +257,7 @@ textarea[class='inputText'] {
 
 .corner-button {
     position: absolute;
-    top: 0px;
-    margin: 0px;
-    right: 10px;
-}
-
-.corner-button {
-    position: absolute;
-    top: 2.5px;
+    top: 25px;
     margin: 0px;
     right: 10px;
     
