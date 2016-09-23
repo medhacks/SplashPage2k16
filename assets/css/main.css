@@ -224,6 +224,44 @@ hr.small {
     margin: 0px 12.5%;
 }
 
+.third {
+    position: relative;
+    width: 25%;
+    height: 0;
+    padding-bottom: 25%;
+    background-color:  rgba(25, 61, 86, 1);
+    border-radius: 100%;
+    margin: auto 4.00%;
+    position: relative;
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    display: inline-block;
+}
+
+@media all and (max-width: 800px) {
+    .third {
+        width: 50%;
+        padding-bottom: 50%;
+        margin: 20px 25%;
+    }
+}
+
+.third-a {
+    color: white;
+}
+
+.third-a:hover {
+    color: white;
+}
+
+.third-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0px auto;
+    margin-top: 60px;
+}
+
 @media all and (max-width: 1050px) {
     .header-navbar-logo {
         background: url(/assets/img/logo_light_smaller.png) no-repeat;
@@ -722,13 +760,6 @@ hr.small {
     overflow: hidden;
 }
 
-
-.schedule {
-    background-color: #193d56;
-    color: #fff;
-    padding-bottom: 128px;
-}
-
 .faq:after {
     clear: both;
     content: '';
@@ -941,4 +972,14 @@ h3 {
     font-size: 1.25em;
     top: 1.5em;
     right: 1.5em;
+}
+
+.schedule {
+    background-color: #193d56;
+    color: #fff;
+    padding-bottom: 128px;
+}
+
+#schedule {
+    padding-top: 0px;
 }

@@ -17,8 +17,8 @@
         <h1 class="header-navbar-logo">Information</h1>
         <div class="header-navbar-hamburger"></div>
         <ul class="header-navbar-items">
-            <li class="header-navbar-item"><a href="#links" class="header-navbar-link">Links</a></li>
             <li class="header-navbar-item"><a href="#announcements" class="header-navbar-link">Announcements</a></li>
+            <li class="header-navbar-item"><a href="#links" class="header-navbar-link">Links</a></li>
             <li class="header-navbar-item"><a href="#schedule" class="header-navbar-link">Schedule</a></li>
             <li class="header-navbar-item"><a href="index.html" class="header-navbar-link">Back</a></li>
         </ul>
@@ -57,10 +57,32 @@
         <div class="faq-column">
             
         </div>
-    </div>        
+    </div> 
         
-    <div id="schedule" class="about" style="padding-top: 39px;">
+    <div id="links" class="about" style="padding-top: 5px;">
         <hr class="small" style="border-top: 1px solid #193d56;margin-top: -40px;margin-bottom: 0px;max-width: 90%;">
+        <h2>Links</h2>
+        <div class="third-container">
+            <div class="third">
+                <a class="third-a" href="http://mentor.medhacks.org"> 
+                    Mentor
+                </a> 
+            </div>
+            <div class="third">
+                <a class="third-a" href="http://pitch.medhacks.org">
+                    Pitch
+                </a>
+            </div>
+            <div class="third" style="background-color: gray">
+                <a class="third-a">
+                    Devpost
+                </a>
+            </div>
+        </div>
+    </div> 
+        
+    <div id="schedule" class="about" style="padding-top: 50px;">
+        <hr class="small" style="border-top: 1px solid #193d56;margin-bottom: 0px;max-width: 90%;">
         <h2>Schedule</h2>
         <div class="container">
             <div class="row" style='text-align: center'>
@@ -189,10 +211,12 @@
         
         $('#subtitle').hide();
         $('#youtuberon').hide();
-
+        
         resizeSchedule();
 
-        query();    
+        setTimeout(function() {
+            query(); 
+        }, 500);
         function query() {
             announementsQuery.ascending("createdAt");
             announementsQuery.find({
@@ -327,8 +351,16 @@
             } else {
                 $('#mlh-trust-badge').css("width", logoWidth * 0.29);
             }
+            
+            $(".third").each(function() {
+                $(this).css("line-height", $(this).css("height"));
+            });
         });
 
+        $(".third").each(function() {
+            $(this).css("line-height", $(this).css("height"));
+        });
+        
         $(window).scroll(function() {
             if($(document).scrollTop() < ($(document).height() - $(window).height())/2) {
                 $('#title').show();

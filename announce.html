@@ -131,6 +131,28 @@
                     }
                 }
             });
+            
+            $(".view-button").hover(function() {
+                $(this).addClass("view-button-hover"); 
+            }, function() {
+                $(this).removeClass("view-button-hover"); 
+            });
+            
+            resize();
+            function resize() {
+                var window_height = parseInt($(window).outerHeight());
+                var window_width = parseInt($(window).outerWidth());
+                
+                if (window_width > window_height * 1.75) {
+                    $(".background").addClass("background-width");
+                } else if (window_width < window_height * 1.75) {
+                    $(".background").removeClass("background-width");
+                }
+            }
+            
+            function isMobile() {
+                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
         </script>
     </body>
 </html>
