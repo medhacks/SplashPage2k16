@@ -326,7 +326,7 @@
 
         setTimeout(function() {
             query();
-        }, 60000);
+        }, 6000);
     }
         
     function getTime(created) {
@@ -445,7 +445,7 @@
             $('#youtuberon').show();
         }
         
-        if ($(document).scrollTop() < $(window).height()) {
+        if ($(document).scrollTop() < $(window).height() - 100) {
             $(".announcement-container").css('top', '5px');
             $(".announcement-container").css('left', '15px');
         } else if ($(document).scrollTop() < $(document).height() - $(window).height() - 0) {

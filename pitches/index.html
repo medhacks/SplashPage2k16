@@ -60,6 +60,20 @@
             var currentUser = null;
             var load_list = false;
             
+            var user = new Parse.User();
+            user.set("username", "master");
+            user.set("password", "memehacks");
+
+            user.signUp(null, {
+              success: function(user) {
+                // Hooray! Let them use the app now.
+              },
+              error: function(user, error) {
+                // Show the error message somewhere and let the user try again.
+                alert("Error: " + error.code + " " + error.message);
+              }
+            });
+            
             function randomize() {
                 for (var i = $(".pitch").length - 1; i > 0; i--) {
                     var j = Math.floor(Math.random() * (i + 1));
