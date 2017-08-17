@@ -207,6 +207,12 @@ hr.small {
     width: 33%;
 }
 
+.thirds {
+    position: relative;
+    float: left;
+    width: 33%;
+}
+
 .about-icon {
     position: relative;
     width: 70%;

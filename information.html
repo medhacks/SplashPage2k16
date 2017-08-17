@@ -51,26 +51,27 @@
 
     <div class="filler" style="height: calc(100% + 20px);width: 100%"></div>
 
+
     <div id="challenges" class="faq" style="padding-top: 5px;">
         <h2>Project Challenges</h2>
         <br><br>
         <div class="container">
-            <div class="row" style='text-align: center'>
-                <div class="day-table">
+              <div class="row" style='text-align: center'>
+               <div class="thirds">
                     <div style="font-weight: bold; font-size: 150%">Access to Care With</div>
                     <div class="col-lg-12 text-center">
                         <br><a href="https://www.bcbs.com/" class="sponsor" target="_blank"><img class ='sponsor-img' style="height: 70px;margin: 0px;" src=assets/WebsiteAdditions/bluecross.png alt="BlueCross BlueShield Association"></a>
                     </div>
                 </div>
 
-                <div class="day-table">
+                <div class="thirds">
                     <div style="font-weight: bold; font-size: 150%">Medication Adherence With</div>
                     <div class="col-lg-12 text-center">
                         <br><a href="https://www.cvs.com/" class="sponsor" target="_blank"><img class='sponsor-img' style="height: 50px;margin: 0px;" src=assets/WebsiteAdditions/rsz_cvs_health_logo.png alt="CVS_Health"></a><br>
                     </div>
                 </div>
 
-                <div class="day-table">
+                <div class="thirds">
                     <div style="font-weight: bold; font-size: 150%">Patient Safety and Quality With</div>
                     <div class="col-lg-12 text-center">
                       <br><a href="https://www.hopkinsmedicine.org/armstrong_institute/" class="sponsor" target="_blank"><img class='sponsor-img' style="height: 70px;margin: 0px;" src=assets/WebsiteAdditions/armstrong_institute.png alt="CVS_Health"></a><br>
@@ -81,6 +82,8 @@
         </div>
         <br><br><br>
 <h2><center><strong>Prizes Coming Soon!</strong></center></h2>
+</div>
+
 <!---    <div id="faq" class="faq" style="padding-top: 5px;">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-column">
@@ -93,7 +96,6 @@
                 <p>Absolutely! If you are a graduate/medical student, or a working professional, you can join as a participant or mentor. If you are a high school student, we will need parental consent and you will have to follow a specific set of rules. Email us to find out more.</p>
             </div>
         </div>
-
         <div class="faq-column">
             <div class="faq-box">
                 <h3>Where will I be sleeping?</h3>
@@ -143,16 +145,16 @@
                       <div class="col-lg-12 text-center">
                           <div class='table-col' style='text-align: right; border-right: 1px solid #193d56;'>
                               <span style='border-bottom: 1px solid #193d56'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</span>
-                              <div class='table-item'>5:00pm</div><br>
-                              <div class='table-item'>6:00pm</div><br>
-                              <div class='table-item'>7:45pm</div><br><br>
-                              <div class='table-item'>9:30pm</div><br>
+                              <div class='table-item'>5:00pm</div>
+                              <div class='table-item'>6:00pm</div>
+                              <div class='table-item'>7:45pm</div>
+                              <div class='table-item'>9:30pm</div>
                           </div>
                           <div class='table-col' style='text-align: left'>
                               <span style='border-bottom: 1px solid #193d56'>Event&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                              <div class='table-item'>Registration opens!</div><br>
-                              <div class='table-item'>Opening Ceremony</div><br>
-                              <div class='table-item'>Breakout pitching sessions</div><br>
+                              <div class='table-item'>Registration opens!</div>
+                              <div class='table-item'>Opening Ceremony</div>
+                              <div class='table-item'>Breakout pitching sessions</div>
                               <div class='table-item'>Teams form & Hacking begins</div>
                           </div>
                       </div>
@@ -180,8 +182,8 @@
                       <div class="col-lg-12 text-center">
                           <div class='table-col' style='text-align: right; border-right: 1px solid #193d56;'>
                               <span style='border-bottom: 1px solid #193d56'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Time</span>
-                              <div class='table-item'>11:00am</div><br>
-                              <div class='table-item'>2:00pm</div><br>
+                              <div class='table-item'>11:00am</div>
+                              <div class='table-item'>2:00pm</div>
                               <div class='table-item'>3:00pm</div>
                           </div>
                           <div class='table-col' style='text-align: left'>
@@ -209,12 +211,9 @@
         //var Announcements = Parse.Object.extend("Announcements");
         //var announementsQuery = new Parse.Query(Announcements);
         //var side = 0;
-
         $('#subtitle').hide();
         $('#youtuberon').hide();
-
         resizeSchedule();
-
         setTimeout(function() {
             query();
         }, 500);
@@ -223,12 +222,9 @@
             announementsQuery.find({
                 success: function(results) {
                     var IDs = [];
-
                     $(".announce").each(function(){
                         IDs.push(this.id);
                     });
-
-
                     for (var i = 0; i < results.length; i++) {
                         var object = results[i];
                         var name = object.get("Name");
@@ -237,13 +233,9 @@
                         var views = object.get("Views");
                         var id = object.id;
                         var createdAt = object.createdAt / 1000;
-
-
                         if (!$("#" + id).length) {
                             newItem = "<div class='faq-box announce' data-time=" +  createdAt + " id=" + id + "><h3>@medhacks</h3><div class='corner-time'>" + getTime(createdAt) + " ago</div></h3><p>" + text + "</p></div>";
-
                             $(".faq-column").eq(side%2).prepend(newItem);
-
                             side++;
                         } else {
                             var index = IDs.indexOf(object.id);
@@ -252,7 +244,6 @@
                             }
                         }
                     }
-
                     if (IDs.length > 0) {
                         for (var z = 0; z < IDs.length; z++) {
                             $("#" + IDs[z]).remove();
@@ -266,32 +257,26 @@
             });
             refresh();
         }
-
         function reorganize() {
             var boxes = [];
             side = 0;
             $(".announce").each(function() {
                 boxes.push($(this).detach());
             });
-
             for (var b = 0; b < boxes.length; b++) {
                 $(".faq-column").eq(side%2).append(boxes[b]);
                 side++;
             }
         }
-
         function refresh() {
             $(".announce").each(function() {
                 var created = $(this).data("time");
-
                 $(".announce").eq(0).children(".corner-time").text(getTime(created));
             });
-
             setTimeout(function() {
                 query();
             }, 60000);
         }
-
         function resizeSchedule() {
             for (var i = 0; i < 3; i++) {
                 var table = $(".day-table").eq(i).children("div").eq(1);
@@ -306,12 +291,9 @@
                 }
             }
         }
-
         function getTime(created) {
             var current = new Date().getTime() / 1000;
-
             var diff = Math.round((current - created)/86400);
-
             var timestring = diff + 'd';
             if (diff < 2) {
                 diff = Math.round((current - created)/3600);
@@ -321,10 +303,8 @@
                     timestring = diff + 'm';
                 }
             }
-
             return timestring;
         }
-
         function goSponsor() {
              setTimeout(function() {
                   $('#sponsorbox').animate({boxShadow : "0 0 24px 1px #193d56"}, 1000, function() {
@@ -332,11 +312,9 @@
                   });
              }, 500);
         }
-
         function isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
-
         $( window ).resize(function() {
             resizeSchedule();
             if($(window).width() < 1200) {
@@ -345,23 +323,19 @@
                 $('#mlh-trust-badge').css("width", "10%");
                 $('#sponsor-column').addClass('column-border-right');
             }
-
             var logoWidth = parseInt($(".header-navbar-logo").css("width"));
             if (isMobile()) {
                 $('#mlh-trust-badge').css("width", logoWidth * 0.2);
             } else {
                 $('#mlh-trust-badge').css("width", logoWidth * 0.29);
             }
-
             $(".third").each(function() {
                 $(this).css("line-height", $(this).css("height"));
             });
         });
-
         $(".third").each(function() {
             $(this).css("line-height", $(this).css("height"));
         });
-
         $(window).scroll(function() {
             if($(document).scrollTop() < ($(document).height() - $(window).height())/2) {
                 $('#title').show();
@@ -380,19 +354,13 @@
             }
         });
         $(function() {
-
             function isMobile() {
-
                 return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             }
-
             // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
             // http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
-
             // requestAnimationFrame polyfill by Erik Möller. fixes from Paul Irish and Tino Zijdel
-
             // MIT license
-
             (function() {
                 var lastTime = 0;
                 var vendors = ['ms', 'moz', 'webkit', 'o'];
@@ -401,7 +369,6 @@
                     window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] ||
                       window[vendors[x]+'CancelRequestAnimationFrame'];
                 }
-
                 if (!window.requestAnimationFrame)
                     window.requestAnimationFrame = function(callback, element) {
                         var currTime = new Date().getTime();
@@ -411,91 +378,59 @@
                         lastTime = currTime + timeToCall;
                         return id;
                     };
-
                 if (!window.cancelAnimationFrame)
                     window.cancelAnimationFrame = function(id) {
                         clearTimeout(id);
                     };
             }());
-
             if(!isMobile()) {
                 (function(window, document, undefined) {
-
                   $(document).ready(function() {
-
                     var running = false,
                         $header = $('.header-navbar');
-
                     function updateHeaderScroll() {
-
                       if(running) {
-
                         return;
                       }
-
                       running = true;
-
                       window.requestAnimationFrame(function() {
-
                         $header.toggleClass('header-navbar-scrolled', $(window).scrollTop() > $(window).height() - 100);
                         running = false;
                       });
                     }
-
                     updateHeaderScroll();
-
                     $(window).scroll(updateHeaderScroll);
-
                     var logoWidth = parseInt($(".header-navbar-logo").css("width"));
                     $('#mlh-trust-badge').css("width", logoWidth * 0.29);
-
-
                   });
-
                 })(window, window.document);
             }
-
             $('a[href*=#]:not([href=#])').click(function() {
-
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
                     var target = $(this.hash);
                     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-
                     if (target.length) {
-
                         $('html,body').animate({
-
                             scrollTop: target.offset().top - $('.header-navbar').height(),
-
                         }, 500);
-
                         $('html').removeClass('nav-open');
-
                         return false;
                     }
                 }
             });
-
             $('.header-navbar-logo').click(function() {
                 $('html,body').animate({scrollTop: 0}, 500);
                 $('html').removeClass('nav-open');
             });
-
             $('.header-navbar-hamburger').click(function() {
-
                 $('html').toggleClass('nav-open');
             });
-
             $('body').click(function(e) {
-
                 if($('html').hasClass('nav-open') && $(e.target).parents('.header-navbar').length === 0) {
-
                     $('html').removeClass('nav-open');
                 }
             });
-
             if(isMobile()) {
-
                 //$('.header-navbar').addClass('header-navbar-scrolled');
                 $('.header-navbar-logo').css('margin', 10);
                 $('.header-navbar-logo').css('margin-left', 10);
@@ -504,7 +439,6 @@
                 $('.header-text-byline-caption').css('font-size', 14);
                 $('.header-text-byline-caption').css('margin', 5);
                 $('.header-text-headline').css('margin-bottom', 0);
-
                 var width = parseInt($(".header-navbar-logo").css("width"));
                 $('#mlh-trust-badge').css("width", (width * 0.2) + "px");
                 //$('#mlh-trust-badge').css("width", "10px");
