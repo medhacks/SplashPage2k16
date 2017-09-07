@@ -3,8 +3,9 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" href="assets/crosslogo.ico">
     </head>
-    <body>        
+    <body>
         <div class="background"></div>
         <div class='progress'></div>
         <div class="notification">Fake message</div>
@@ -40,11 +41,11 @@
             var checks = 0;
             var saving = false;
             var timer;
-            
+
             $(".check").each(function() {
                 //$(this).css("background-color", "rgba(239, 239, 239, 0.5)");
             });
-            
+
             $(".check").click(function() {
                 if ($(this).data("clicked") == 0) {
                     $(this).removeClass("check-inactive");
@@ -53,7 +54,7 @@
                     if (alldone[5] == 0) {
                         alldone[5] = 1;
                         prog += 20;
-                        $(".progress").css("width", prog + "%"); 
+                        $(".progress").css("width", prog + "%");
                     }
                 } else  {
                     $(this).addClass("check-inactive");
@@ -62,36 +63,36 @@
                     if (checks == 0) {
                         alldone[5] = 0;
                         prog -= 20;
-                        $(".progress").css("width", prog + "%");               
+                        $(".progress").css("width", prog + "%");
                     }
                 }
             });
-            
+
             $(".inputText").keyup(function() {
                 var index = $(".inputText").index(this);
-                
+
                 if (alldone[index] == 0 && $(this).val().length > 0) {
                     if ((index == 3 && alldone[4] == 0) || (index == 4 && alldone[3] == 0) || (index < 3 || index > 4)) {
                         prog += 20;
-                        $(".progress").css("width", prog + "%"); 
-                    } 
+                        $(".progress").css("width", prog + "%");
+                    }
                     if (index != 1) {
                         $(this).addClass("inputTextGood");
                     } else {
-                        $(this).addClass("inputTextGoodLarge");                        
+                        $(this).addClass("inputTextGoodLarge");
                     }
                     alldone[index] = 1;
                 } else if (alldone[index] == 1 && $(this).val().length == 0) {
                     if ((index == 3 && alldone[4] == 0) || (index == 4 && alldone[3] == 0) || (index < 3 || index > 4)) {
                         prog -= 20;
-                        $(".progress").css("width", prog + "%"); 
-                    } 
+                        $(".progress").css("width", prog + "%");
+                    }
                     $(this).removeClass("inputTextGood");
                     $(this).removeClass("inputTextGoodLarge");
                     alldone[index] = 0;
                 }
             });
-            
+
             $(".button").click(function() {
                 if (!saving) {
                     saving = true;
@@ -101,10 +102,10 @@
                     var email = $("#email").val();
                     var phone = $("#phone").val().replace(/\D/g, '');
                     var checks = [];
-                    var oneCheck = false;    
+                    var oneCheck = false;
 
                     $(".check").each(function(index) {
-                        checks.push($(".check").eq(index).data("clicked")); 
+                        checks.push($(".check").eq(index).data("clicked"));
                         if ($(".check").eq(index).data("clicked") == 1) {
                             oneCheck = true;
                         }
@@ -130,7 +131,7 @@
                     } else if (!oneCheck) {
                         notify("Please select at least one category.", true);
                         saving = false;
-                        return;                    
+                        return;
                     }
 
                     var savedPitch = new Pitch();
@@ -142,7 +143,7 @@
                     savedPitch.set("checks", checks);
                     $(".button").eq(1).text("Saving...");
 
-                    savedPitch.save(null, {  
+                    savedPitch.save(null, {
                         success: function(savedPitch) {
                             console.log('New object created with objectId: ' + savedPitch.id);
                             $(".button").eq(1).text("Saved. Redirecting...");
@@ -157,7 +158,7 @@
                     });
                 }
             });
-            
+
             function notify(message, error) {
                 $(".notification").css("top", "0px");
                 if (error) {
@@ -175,33 +176,32 @@
                     $(".notification").css("top", -1 * height);
                 }, 2000);
              }
-            
+
             $(window).resize(function() {
                 resize();
             });
-            
+
             $(".view-button").hover(function() {
-                $(this).addClass("view-button-hover"); 
+                $(this).addClass("view-button-hover");
             }, function() {
-                $(this).removeClass("view-button-hover"); 
+                $(this).removeClass("view-button-hover");
             });
-            
+
             resize();
             function resize() {
                 var window_height = parseInt($(window).outerHeight());
                 var window_width = parseInt($(window).outerWidth());
-                
+
                 if (window_width > window_height * 1.75) {
                     $(".background").addClass("background-width");
                 } else if (window_width < window_height * 1.75) {
                     $(".background").removeClass("background-width");
                 }
             }
-            
+
             function isMobile() {
                 return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             }
         </script>
     </body>
 </html>
-
