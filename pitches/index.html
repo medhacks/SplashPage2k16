@@ -3,6 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="shortcut icon" href="assets\medhacks_cross.png">
     </head>
     <body>
         <div class="background"></div>
@@ -56,7 +57,7 @@
             var timer;
             var currentUser = null;
             var load_list = false;
-            
+
             $(".check").click(function() {
                 var index = $(".check").index(this);
                 if ($(this).data("clicked") == 0) {
@@ -95,10 +96,10 @@
                         }
                     });
                 }
-                
+
                 updateFavorites();
             });
-            
+
             $("#favorites").click(function() {
                 if ($(".favorite-pitch").hasClass("invisible")) {
                     $(".favorite-pitch").removeClass("invisible");
@@ -109,7 +110,7 @@
                     $(this).children(".exit").removeClass("up-arrow");
                 }
             });
-            
+
             $("#new").click(function() {
                 if ($(".regular-pitch").hasClass("invisible")) {
                     $(".regular-pitch").removeClass("invisible");
@@ -120,36 +121,36 @@
                     $(this).children(".exit").removeClass("up-arrow");
                 }
             });
-            
+
             $(".save-button").click(function() {
                 saving(false);
             });
-            
+
             $(".load-button").click(function() {
                 saving(true);
             });
-            
+
             $(document).keypress(function(e) {
                 if(e.which == 13) {
                     saveTitle();
                 }
             });
-            
+
             function saving(loading) {
                 $(".save-button").addClass("save-check");
                 $(".save-button").off("click");
                 $("h3").text("Save your favorites list");
-                
+
                 $("h1").addClass("kinda-invisible");
                 $("#new-title").removeClass("invisible");
                 $("#new-title").focus();
                 $("#new-title").attr("placeholder", $("h1").text());
                 if ($("h1").text().localeCompare("View Pitches") != 0) {
                     $("#new-title").val($("h1").text().substring(0, $("h1").text().length - 7));
-                } 
+                }
                 $("hr").addClass("underline-title");
                 $("h3").css("opacity", 1);
-                $(".load-button").addClass("load-exit"); 
+                $(".load-button").addClass("load-exit");
                 $(".load-button").off("click");
                 $(".load-button").click(function() {
                     backToNormal();
@@ -163,14 +164,14 @@
                     load_list = true;
                 }
             }
-            
+
             function backToNormal() {
                 $("h1").removeClass("kinda-invisible");
                 $("#new-title").addClass("invisible");
                 $("#new-title").val("");
                 $("hr").removeClass("underline-title");
                 $(".save-button").removeClass("save-check");
-                $(".load-button").removeClass("load-exit");            
+                $(".load-button").removeClass("load-exit");
                 $("h3").css("opacity", 0);
                 $(".save-button").off("click");
                 $(".save-button").click(function() {
@@ -182,24 +183,24 @@
                 });
                 load_list = false;
             }
-            
-            
-            
+
+
+
             function saveTitle() {
                 if ($(".save-button").hasClass("save-check") && !load_list) {
                     notify("Saving...", false);
 
                     var favids = [];
-                    
+
                     $(".favorite-pitch").each(function() {
-                        favids.push($(this).attr("id")); 
+                        favids.push($(this).attr("id"));
                     });
-                    
+
                     var user = new Parse.User();
                     user.set("username", $("#new-title").val());
                     user.set("password", "password");
                     user.set("favorite", favids);
-                    
+
                     if (currentUser && currentUser.get("username").localeCompare($("#new-title").val()) == 0) {
                         currentUser.set("favorite", favids);
                         console.log('lol');
@@ -208,7 +209,7 @@
                                 success: function(user) {
                                     currentUser.save(null, {
                                         success: function(user) {
-                                            notify("Updated favorites list.", false); 
+                                            notify("Updated favorites list.", false);
                                             backToNormal();
                                         }
                                     });
@@ -228,9 +229,9 @@
                             },
                             error: function(user, error) {
                                 if (error.code == 202) {
-                                    notify("List name is already taken.", true);                                
+                                    notify("List name is already taken.", true);
                                 } else if (error.code == -1) {
-                                    notify("List name cannot be empty.", true);                                
+                                    notify("List name cannot be empty.", true);
                                 } else {
                                     notify("Favorites list could not be saved.", true);
                                 }
@@ -242,7 +243,7 @@
                 } else if (load_list) {
                     var userQuery = new Parse.Query(Parse.User);
                     userQuery.equalTo("username", $("#new-title").val());
-                    
+
                     userQuery.find({
                         success: function(users) {
                             if (users.length == 0) {
@@ -269,9 +270,9 @@
                     });
                 }
             };
-            
+
             query();
-            
+
             function query() {
                 pitchQuery.find({
                     success: function(results) {
@@ -280,9 +281,9 @@
                         stop = true;
                         var newPitches = 0;
                         var IDs = [];
-                        $(".pitch").each(function(){ 
+                        $(".pitch").each(function(){
                             if (!$(this).hasClass("pitch-nav")) {
-                                IDs.push(this.id); 
+                                IDs.push(this.id);
                             }
                         });
 
@@ -304,11 +305,11 @@
                                         count++;
                                     }
                                 }
-                                
+
                                 newItem = "<div class='pitch regular-pitch' id=" + object.id + " data-time=" + createdAt + " data-score=" + count + " data-checked=" + object.get("checks") + "><div class='subtitle underline'>" + object.get('title') + "<span class='hashtags'>" + hashtags + "</span><div class='timestamp'>" + getPitchTime(createdAt) + "</div></div>";
                                 newItem += "<div class='content'><div class='description'>" + object.get('description') + "</div>";
                                 newItem += "<div class='contact-info'><span class='subtitle no-move'>" + object.get('name') + "</span> <a href='mailto:" + object.get('email') + "'>" + object.get('email') + "</a> / " + newPhone + "</br></div><div class='exit fav' onclick='favoritePitch(this, false)' onmouseover='favoriteIn()' onmouseout='favoriteOut()'></div></div>";
-                                
+
                                 $("#new").after(newItem);
                                 $(".new-text").text("Available Pitches (" + $(".regular-pitch").length + ")");
                             } else {
@@ -318,36 +319,36 @@
                                 }
                             }
                         }
-                        
+
                         if (IDs.length > 0) {
                             notify("Removed " + IDs.length + " pitch(es).", false);
                             for (var z = 0; z < IDs.length; z++) {
                                 $("#" + IDs[z]).remove();
                             }
                         }
-                        
+
                         if (!first) {
                             first = true;
                             refresh();
                         } else {
                             setTimeout(refresh, 5000);
                             if (newPitches > 0) {
-                                notify("Pulled " + newPitches + " new pitch(es).", false);                                
+                                notify("Pulled " + newPitches + " new pitch(es).", false);
                             }
-                        }                        
+                        }
                     },
                     error: function(error) {
                         console.log("Error: " + error.code + " " + error.message);
                     }
                 });
             }
-            
+
             function updateFavorites() {
                 var favids = [];
 
                 if (!loading) {
                     $(".favorite-pitch").each(function() {
-                        favids.push($(this).attr("id")); 
+                        favids.push($(this).attr("id"));
                     });
 
                     currentUser.set("favorite", favids);
@@ -361,11 +362,11 @@
                         }
                     });
                 }
-                
+
                 $(".nav-text").text("Favorite Pitches (" + $(".favorite-pitch").not(".hidden").length + ")");
                 $(".new-text").text("Available Pitches (" + $(".regular-pitch").not(".hidden").length + ")");
             }
-            
+
             function favoritePitch(elem, justFav) {
                 if ($(elem).hasClass("fav-full") && !justFav) {
                     $(elem).removeClass("fav-full");
@@ -375,7 +376,7 @@
                     $(parent).detach();
                     $("#new").after($(parent));
                     updateFavorites();
-                    
+
                     if ($(".favorite-pitch").length == 0) {
                         $("#favorites").addClass("invisible");
                         $("#new").removeClass("new-title");
@@ -388,41 +389,41 @@
                     $(parent).detach();
                     $("#new").before($(parent));
                     updateFavorites();
-                    
+
                     $("#favorites").removeClass("invisible");
                     $("#new").addClass("new-title");
                 }
             }
-            
+
             function refresh() {
                 var pitchQuery = new Parse.Query(Pitch);
 
                 $(".pitch").each(function() {
                     var created = $(this).data("time");
-                    
+
                     $(this).children().eq(0).children().eq(1).text(getPitchTime(created));
                 });
                 query();
             }
-            
+
             function getPitchTime(created) {
                 var current = new Date().getTime() / 1000;
-                    
+
                 var diff = Math.round((current - created)/86400);
 
                 var timestring = diff + 'd';
-                if (diff < 2) {        
+                if (diff < 2) {
                     diff = Math.round((current - created)/3600);
                     timestring = diff + 'h';
-                    if (diff < 1) {        
+                    if (diff < 1) {
                         diff = Math.round((current - created)/60);
                         timestring = diff + 'm';
                     }
                 }
-                
+
                 return timestring;
             }
-            
+
             setTimeout(loading, 250);
             function loading() {
                 if (counter == 0) {
@@ -437,7 +438,7 @@
                     $(".bubble").eq(2).css("opacity", "1");
                 }  else if (counter == 5) {
                     $(".bubble").eq(2).css("opacity", "0.25");
-                } 
+                }
                 counter++;
                 if (counter > 5) {
                     counter = 0;
@@ -446,7 +447,7 @@
                     setTimeout(loading, 250);
                 }
             }
-            
+
             function notify(message, error) {
                 $(".notification").css("top", "0px");
                 if (error) {
@@ -464,15 +465,15 @@
                     $(".notification").css("top", -1 * height);
                 }, 2000);
             }
-            
+
             function getRandom(min, max) {
                 return Math.random() * (max - min) + min;
             }
-            
+
             $(window).resize(function() {
                 resize();
             });
-            
+
             setTimeout(function() {
                 resize();
             }, 100);
@@ -480,15 +481,15 @@
                 var header_height = parseInt($(".fixed-header").outerHeight());
                 var window_height = parseInt($(window).outerHeight());
                 var window_width = parseInt($(window).outerWidth());
-                
+
                 $(".everything").css('height', (window_height - header_height + 50) + "px");
-                
+
                 if (window_width > window_height * 1.75) {
                     $(".background").addClass("background-width");
                 } else if (window_width < window_height * 1.75) {
                     $(".background").removeClass("background-width");
                 }
-                
+
                 if (header_height > 0.4 * window_height) {
                     $("body").css("overflow", "scroll");
                     $(".everything").css("height", "100%");
@@ -498,11 +499,11 @@
                 }
             }
 
-            
+
             $(".save-button").hover(function() {
                 if (!$(".save-button").hasClass("save-check")) {
-                    $("h3").text("Save your favorites list"); 
-                    $("h3").css("opacity", 1); 
+                    $("h3").text("Save your favorites list");
+                    $("h3").css("opacity", 1);
                     if (!isMobile()) {
                         $(this).addClass("save-button-hover");
                     }
@@ -512,15 +513,15 @@
                     }
                 }
             }, function() {
-                $("h3").css("opacity", 0); 
+                $("h3").css("opacity", 0);
                 $(this).removeClass("save-button-hover");
                 $(this).removeClass("save-check-hover");
             });
-            
+
             $(".load-button").hover(function() {
                 if (!$(".load-button").hasClass("load-exit")) {
-                    $("h3").text("Load favorites list"); 
-                    $("h3").css("opacity", 1); 
+                    $("h3").text("Load favorites list");
+                    $("h3").css("opacity", 1);
                     if (!isMobile()) {
                         $(this).addClass("load-button-hover");
                     }
@@ -534,40 +535,39 @@
                 $(this).removeClass("load-button-hover");
                 $(this).removeClass("load-exit-hover");
             });
-            
+
             $(".check").hover(function() {
-                $("h3").text("Filter pitches by hashtag"); 
-                $("h3").css("opacity", 1); 
+                $("h3").text("Filter pitches by hashtag");
+                $("h3").css("opacity", 1);
             }, function() {
-                $("h3").css("opacity", 0); 
+                $("h3").css("opacity", 0);
             });
-            
+
             $(".add-button").hover(function() {
-                $("h3").text("Add a pitch"); 
-                $("h3").css("opacity", 1); 
+                $("h3").text("Add a pitch");
+                $("h3").css("opacity", 1);
                 if (!isMobile()) {
                     $(this).addClass("add-button-hover");
                 }
             }, function() {
-                $("h3").css("opacity", 0); 
+                $("h3").css("opacity", 0);
                 $(this).removeClass("add-button-hover");
             });
-            
+
             function favoriteIn() {
                 if (!$(".fav").hasClass("fav-full")) {
-                    $("h3").text("Favorite this pitch"); 
-                    $("h3").css("opacity", 1); 
+                    $("h3").text("Favorite this pitch");
+                    $("h3").css("opacity", 1);
                 }
             }
-            
+
             function favoriteOut() {
-                $("h3").css("opacity", 0); 
+                $("h3").css("opacity", 0);
             }
-            
+
             function isMobile() {
                 return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             }
         </script>
     </body>
 </html>
-
