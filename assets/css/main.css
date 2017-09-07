@@ -224,12 +224,23 @@ hr.small {
     float: left;
     width: 50%;
 }
+.speakers-box {
+    position: relative;
+    float: left;
+    width: 40%;
+}
+.middle {
+  position: relative;
+  float: left;
+  width: 10%;
+}
+
 #container5 {
 	clear:left;
 	float:left;
 	width:100%;
 	overflow:hidden;
-	
+
 }
 #container4 {
 	clear:left;
@@ -237,7 +248,7 @@ hr.small {
 	width:100%;
 	position:relative;
 	right:20%;
-	
+
 }
 #container3 {
 	clear:left;
@@ -245,7 +256,7 @@ hr.small {
 	width:100%;
 	position:relative;
 	right:20%;
-	
+
 }
 #container2 {
 	clear:left;
@@ -253,14 +264,14 @@ hr.small {
 	width:100%;
 	position:relative;
 	right:20%;
-	
+
 }
 #container1 {
 	float:left;
 	width:100%;
 	position:relative;
 	right:20%;
-	
+
 }
 #col1 {
 	float:left;
