@@ -698,6 +698,10 @@ hr.small {
     transform: scale(.925);
     transition: .2s background-color ease-out, .2s color ease-out, .2s transform ease-out;
 }
+.header-button-actions {
+    margin-top: 24px;
+    text-align: center;
+}
 .header-button-action {
     border: 3px solid #fff;
     color: #193d56;
@@ -723,7 +727,7 @@ hr.small {
     transform: scale(.975);
 }
 
-.header-text-action:last-of-type {
+.header-button-action:last-of-type {
     margin-right: 0;
 }
 
@@ -770,6 +774,16 @@ hr.small {
     .header-text-action:last-of-type {
         margin-bottom: 0;
     }
+    .header-button-action,
+    .header-button-action:last-of-type {
+        display: block;
+        margin: 0 auto 20px;
+        width: 80%;
+    }
+    .header-button-action:last-of-type {
+        margin-bottom: 0;
+    }
+
     .header-text-headline {
         font-size: 30px;
         line-height: 40px;
