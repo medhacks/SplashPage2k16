@@ -690,18 +690,7 @@ hr.small {
 .header-text-action {
     border: 3px solid #fff;
     color: #fff;
-    display: inline-block;
-    font-size: 20px;
-    line-height: 24px;
-    margin-right: 18px;
-    padding: 14px 30px;
-    transform: scale(.925);
-    transition: .2s background-color ease-out, .2s color ease-out, .2s transform ease-out;
-}
-.header-button-action {
-    border: 3px solid #fff;
-    color: #193d56;
-    display: inline-block;
+    display: inline-block; 
     font-size: 20px;
     line-height: 24px;
     margin-right: 18px;
@@ -710,22 +699,6 @@ hr.small {
     transition: .2s background-color ease-out, .2s color ease-out, .2s transform ease-out;
 }
 
-.header-button-action:hover,
-.header-button-action:active,
-.header-button-action:focus {
-    background-color: #fff;
-    color: #193e53;
-    text-decoration: none;
-    transform: scale(1);
-}
-
-.header-button-action:active {
-    transform: scale(.975);
-}
-
-.header-text-action:last-of-type {
-    margin-right: 0;
-}
 
 .header-text-action:hover,
 .header-text-action:active,
@@ -743,6 +716,7 @@ hr.small {
 .header-text-action:last-of-type {
     margin-right: 0;
 }
+
 
 @media screen and (max-width: 500px) {
     .header-text-headline {
@@ -975,7 +949,35 @@ hr.small {
     padding-top: 0px;
     margin-top: 5px;
 }
+.faq-text-action {
+    border: 3px solid #fff;
+    color: #193e53;
+    display: inline-block; 
+    font-size: 20px;
+    line-height: 24px;
+    margin-right: 18px;
+    padding: 14px 30px;
+    transform: scale(.925);
+    transition: .2s background-color ease-out, .2s color ease-out, .2s transform ease-out;
+}
+ 
 
+.faq-text-action:hover,
+.faq-text-action:active,
+.faq-text-action:focus {
+    background-color: #fff;
+    color: #193e53;
+    text-decoration: none;
+    transform: scale(1);
+}
+
+.faq-text-action:active {
+    transform: scale(.975);
+}
+
+.faq-text-action:last-of-type {
+    margin-right: 0;
+}
 
 #schedule {
     font-size: 16px;
