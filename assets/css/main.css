@@ -960,7 +960,7 @@ hr.small {
     transform: scale(.925);
     transition: .2s background-color ease-out, .2s color ease-out, .2s transform ease-out;
 }
-
+ 
 
 .faq-text-action:hover,
 .faq-text-action:active,
