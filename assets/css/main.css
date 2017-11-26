@@ -718,42 +718,6 @@ hr.small {
 }
 
 
-
-.text-actions {
-    margin-top: 24px;
-    text-align: center;
-}
-
-.text-action {
-    border: 3px solid #fff;
-    color: #193d56;
-    display: inline-block; 
-    font-size: 20px;
-    line-height: 24px;
-    margin-right: 18px;
-    padding: 14px 30px;
-    transform: scale(.925);
-    transition: .2s background-color ease-out, .2s color ease-out, .2s transform ease-out;
-}
-
-
-.text-action:hover,
-.text-action:active,
-.text-action:focus {
-    background-color: #fff;
-    color: #193e53;
-    text-decoration: none;
-    transform: scale(1);
-}
-
-.text-action:active {
-    transform: scale(.975);
-}
-
-.text-action:last-of-type {
-    margin-right: 0;
-}
-
 @media screen and (max-width: 500px) {
     .header-text-headline {
         font-size: 44px;
@@ -995,7 +959,35 @@ hr.small {
     padding-top: 0px;
     margin-top: 5px;
 }
+.faq-text-action {
+    border: 3px solid #fff;
+    color: #fff;
+    display: inline-block; 
+    font-size: 20px;
+    line-height: 24px;
+    margin-right: 18px;
+    padding: 14px 30px;
+    transform: scale(.925);
+    transition: .2s background-color ease-out, .2s color ease-out, .2s transform ease-out;
+}
 
+
+.faq-text-action:hover,
+.faq-text-action:active,
+.faq-text-action:focus {
+    background-color: #fff;
+    color: #193e53;
+    text-decoration: none;
+    transform: scale(1);
+}
+
+.faq-text-action:active {
+    transform: scale(.975);
+}
+
+.faq-text-action:last-of-type {
+    margin-right: 0;
+}
 
 #schedule {
     font-size: 16px;
