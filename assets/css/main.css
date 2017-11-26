@@ -689,7 +689,7 @@ hr.small {
 
 .header-text-action {
     border: 3px solid #fff;
-    color: #BD1616;
+    color: #fff;
     display: inline-block; 
     font-size: 20px;
     line-height: 24px;
@@ -951,7 +951,7 @@ hr.small {
 }
 .faq-text-action {
     border: 3px solid #fff;
-    color: #fff;
+    color: #193e53;
     display: inline-block; 
     font-size: 20px;
     line-height: 24px;
