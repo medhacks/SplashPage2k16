@@ -1,5 +1,22 @@
 $background-color: #cff1ff;
+$highlight-color: #e2d8d6;
+$small-text-color: #335a81;
+$large-text-color: #042449;
 
 html {
     background: $background-color;
+}
+
+.jumbotron {
+    background-color: $highlight-color;
+    color: $large-text-color;
+}
+
+.navbar {
+    background: none;
+    .nav-item {
+        a {
+            color: $small-text-color;
+        }
+    }
 }

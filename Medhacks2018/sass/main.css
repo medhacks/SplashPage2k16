@@ -1,4 +1,13 @@
 html {
   background: #cff1ff; }
 
+.jumbotron {
+  background-color: #e2d8d6;
+  color: #042449; }
+
+.navbar {
+  background: none; }
+  .navbar .nav-item a {
+    color: #335a81; }
+
 /*# sourceMappingURL=main.css.map */

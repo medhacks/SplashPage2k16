@@ -11,8 +11,44 @@
     </head>
 
     <body>
+
+        <!-- NavBar -->
+        <nav class="navbar navbar-expand-lg navbar-inverse">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto navbar-right">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#info">Info</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#challenges">Challenges</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#sponsors">Sponsors</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sample Drop
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <!-- Header -->
-        <div class="jumbotron jumbotron-fluid">
+        <div id="header" class="jumbotron jumbotron-fluid">
             <div class="container ">
                 <!-- placeholder until we get image from graphics -->
                 <h1 class="display-4 text-center">
@@ -22,16 +58,16 @@
         </div>
 
         <!-- Basic Info and what they need to know -->
-        <div>
+        <div id="basicInfo">
 
         </div>
 
         <!-- describe challenges -->
-        <div>
+        <div id="challenges">
         </div>
 
         <!-- sponsors -->
-        <div>
+        <div id="sponsors">
         </div>
 
         <!-- if you want to put in any JQuery, put it between here and -->
