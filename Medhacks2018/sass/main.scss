@@ -2,6 +2,7 @@ $background-color: #cff1ff;
 $highlight-color: #e2d8d6;
 $small-text-color: #335a81;
 $large-text-color: #042449;
+$pop-color: #BF4D42;
 
 html {
     background: $background-color;
@@ -12,11 +13,27 @@ html {
     color: $large-text-color;
 }
 
-.navbar {
-    background: none;
+.navbar, .navbar-default {
+    background-color: $background-color;
+
     .nav-item {
         a {
             color: $small-text-color;
+            font-size: 1.5rem;
+            &:hover, &:focus {
+                background-color: #FFFFFF;
+            }
         }
+        cursor: pointer;
+    }
+
+    .navbar-toggler-icon {
+        background-color: $highlight-color;
+        border-radius: 0.2rem;
+        border: 1px solid $pop-color;
+        color: $pop-color;
+    }
+    .navbar-brand {
+        color: $pop-color;
     }
 }

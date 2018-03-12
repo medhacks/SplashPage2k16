@@ -5,9 +5,21 @@ html {
   background-color: #e2d8d6;
   color: #042449; }
 
-.navbar {
-  background: none; }
-  .navbar .nav-item a {
-    color: #335a81; }
+.navbar, .navbar-default {
+  background-color: #cff1ff; }
+  .navbar .nav-item, .navbar-default .nav-item {
+    cursor: pointer; }
+    .navbar .nav-item a, .navbar-default .nav-item a {
+      color: #335a81;
+      font-size: 1.5rem; }
+      .navbar .nav-item a:hover, .navbar .nav-item a:focus, .navbar-default .nav-item a:hover, .navbar-default .nav-item a:focus {
+        background-color: #FFFFFF; }
+  .navbar .navbar-toggler-icon, .navbar-default .navbar-toggler-icon {
+    background-color: #e2d8d6;
+    border-radius: 0.2rem;
+    border: 1px solid #BF4D42;
+    color: #BF4D42; }
+  .navbar .navbar-brand, .navbar-default .navbar-brand {
+    color: #BF4D42; }
 
 /*# sourceMappingURL=main.css.map */
