@@ -21,7 +21,7 @@ function resizeSchedule() {
 }
 
 /**function closeFAQs() {
-    $(".faq-box").each(function() {
+    $(".faq-holder-box").each(function() {
         var height = parseInt($(this).children("h3").outerHeight(true));
         $(this).css("height", height + 30);
     });
@@ -31,7 +31,7 @@ function resizeSchedule() {
     }, 500);
 }
 
-$(".faq-box").click(function() {
+$(".faq-holder-box").click(function() {
     var height1 = parseInt($(this).children("h3").outerHeight(true));
     var height2 = 0;
     $(this).children("p").each(function() {
@@ -41,11 +41,19 @@ $(".faq-box").click(function() {
     $(".sponsor-section").css("opacity", 0);
 });**/
 
-$(".faq-box").hover(function() {
-
-}, function () {
-    //closeFAQs();
+$(".faq-question").click(function() {
+    if ($(this).parent().hasClass('open')) {
+        $(this).closest('.faq-holder').find('.faq-answer-container').animate({height: '0'}, 300);
+        $(this).closest('.faq-holder').removeClass('open');
+        $(this).closest('.faq-holder').animate({height: '7rem'}, 300);
+    } else {
+        var newHeight = $(this).closest('.faq-holder').find('.answer-box').height() +'px';
+        $(this).closest('.faq-holder').find('.faq-answer-container').animate({'height':newHeight},300);
+        $(this).closest('.faq-holder').css('height', 'auto');
+        $(this).closest('.faq-holder').addClass('open');
+    }
 });
+
 
 $(function() {
 
@@ -57,14 +65,14 @@ $(function() {
         }
     });
 
-}); 
+});
 
 function goSponsor() {
      setTimeout(function() {
           $('#sponsorbox').animate({boxShadow : "0 0 24px 1px #193d56"}, 1000, function() {
                $('#sponsorbox').animate({boxShadow : "0 0 6px 1px rgba(0, 0, 0, 0.05)"}, 1000);
           });
-     }, 500); 
+     }, 500);
 }
 
 function isMobile() {
@@ -101,7 +109,7 @@ $(window).scroll(function() {
         $('#location').hide();
         $('#location-sub').hide();
         $('#sponsors').hide();
-        $('#subtitle').show();            
+        $('#subtitle').show();
         $('#youtuberon').show();
     }
 });
@@ -172,7 +180,7 @@ $(function() {
 
             updateHeaderScroll();
 
-            $(window).scroll(updateHeaderScroll); 
+            $(window).scroll(updateHeaderScroll);
 
             var logoWidth = parseInt($(".header-navbar-logo").css("width"));
             $('#mlh-trust-badge').css("width", logoWidth * 0.29);
@@ -225,13 +233,13 @@ $(function() {
     if(isMobile()) {
 
         //$('.header-navbar').addClass('header-navbar-scrolled');
-        $('.header-navbar-logo').css('margin', 10);                                           
-        $('.header-navbar-logo').css('margin-left', 10);                                                                                                
-        $('.header-navbar-hamburger').css('margin', 10);  
-        $('.header-navbar').css('height', 70);                                                                                              
-        $('.header-text-byline-caption').css('font-size', 14); 
-        $('.header-text-byline-caption').css('margin', 5); 
-        $('.header-text-headline').css('margin-bottom', 0); 
+        $('.header-navbar-logo').css('margin', 10);
+        $('.header-navbar-logo').css('margin-left', 10);
+        $('.header-navbar-hamburger').css('margin', 10);
+        $('.header-navbar').css('height', 70);
+        $('.header-text-byline-caption').css('font-size', 14);
+        $('.header-text-byline-caption').css('margin', 5);
+        $('.header-text-headline').css('margin-bottom', 0);
 
         var width = parseInt($(".header-navbar-logo").css("width"));
         $('#mlh-trust-badge').css("width", (width * 0.2) + "px");
