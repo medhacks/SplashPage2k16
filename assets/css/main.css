@@ -717,6 +717,21 @@ hr.small {
     margin-right: 0;
 }
 
+@media screen and (min-width: 500px) {
+    .trademark {
+        position: absolute;
+        bottom: 5px;
+        left: 220px;
+        color: gray
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .trademark {
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 500px) {
     .header-text-headline {

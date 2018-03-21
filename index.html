@@ -52,6 +52,10 @@
           <p style="color: gray">Copyright &copy; MedHacks 2017</p>
         </div>
 
+        <div class="trademark" >
+          <p>MedHacks is a registered trademark</p>
+        </div>
+
         <div style="position: absolute; bottom: 15px; right: 20px;">
           <a id="twicon" href="http://twitter.com/MedHacks" target="_blank" class="fa fa-twitter" style="font-size: 30px;"></a>
           <a id="fbicon" href="http://facebook.com/MedHacks" target="_blank" class="fa fa-facebook" style="font-size: 30px;"></a>
@@ -707,7 +711,7 @@
 
                     $header.toggleClass('header-navbar-scrolled', $(window).scrollTop() > $(window).height() - 100 && $(window).scrollTop() < $(document).height() - $(window).height());
                     if (isMobile()) {
-                    $headerlogo.toggleClass('header-navbar-logo-gone', $(window).scrollTop() < $(window).height() - 100);
+                        $headerlogo.toggleClass('header-navbar-logo-gone', $(window).scrollTop() < $(window).height() - 100);
                     } else {
                         $headerlogo.toggleClass('header-navbar-logo-gone', $(window).scrollTop() > $(window).height() - 100 || $(window).scrollTop() < $(document).height() - $(window).height());
                     }
