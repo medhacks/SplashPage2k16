@@ -503,6 +503,11 @@ hr.small {
     }
 }
 
+#sponsorBrochure {
+    background-color: #ffffff;
+    color: #193e53;
+}
+
 .header-grad,
 .header-pcb,
 .header-bg,
