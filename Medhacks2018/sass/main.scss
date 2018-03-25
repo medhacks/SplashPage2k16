@@ -6,11 +6,19 @@ $pop-color: #BF4D42;
 
 html {
     background: $background-color;
+    margin:0;
+    padding:0;
 }
 
 .jumbotron {
-    background-color: $highlight-color;
+    background-color: $background-color;
     color: $large-text-color;
+    font-size: 30rem;
+    margin-bottom: 0;
+}
+
+#header {
+    background-color: $background-color;
 }
 
 .navbar, .navbar-default {
@@ -20,10 +28,35 @@ html {
         a {
             color: $small-text-color;
             font-size: 1.5rem;
+            box-shadow: 0px 0.5rem;
             &:hover, &:focus {
-                background-color: #FFFFFF;
+                background-color: $small-text-color;
+                color: #FFFF;
+                box-shadow: 0px 0.5rem $small-text-color;
+                &:after {
+                    transform: scaleY(1);
+                }
             }
+            transition: color .1s ease-out;
+            z-index: 1;
+            &:after {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform: scaleY(0);
+                transform-origin: bottom center;
+                background: red;
+                z-index: -1;
+                transition: transform 0.3s;
+            }
+
         }
+        display: block;
+        padding: 0 .5rem;
+
+        position: relative;
         cursor: pointer;
     }
 
@@ -36,4 +69,17 @@ html {
     .navbar-brand {
         color: $pop-color;
     }
+}
+
+#basicInfo {
+    h2 {
+        color: $large-text-color;
+    }
+    p {
+        width: 60%;
+        margin: 0% 21%;
+        padding-top: 1rem;
+        color: $small-text-color;
+    }
+    background-color: $background-color;
 }
