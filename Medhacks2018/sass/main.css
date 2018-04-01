@@ -114,12 +114,9 @@ html {
     padding-top: 1rem;
     color: #335a81; }
 
-#marginFormat {
-  background-color: #cff1ff; }
-  #logistics p {
-    width: 60%;
-    margin: 0% 21%;
-    padding-top: 1rem;
-    color: #ffffff; }
+.marginFormat {
+  background-color: #cff1ff;}
+  .marginFormat h3 {
+    color: #cff1ff;}
 
 /*# sourceMappingURL=main.css.map */
