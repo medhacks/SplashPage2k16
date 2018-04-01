@@ -91,3 +91,29 @@ html {
     }
     background-color: $background-color;
 }
+
+#challenges {
+  h3 {
+      color: $large-text-color;
+  }
+  p {
+      width: 60%;
+      margin: 0% 21%;
+      padding-top: 1rem;
+      color: $small-text-color;
+  }
+  background-color: $background-color;
+}
+
+#logistics {
+  h3 {
+      color: $large-text-color;
+  }
+  p {
+      width: 60%;
+      margin: 0% 21%;
+      padding-top: 1rem;
+      color: $small-text-color;
+  }
+  background-color: $background-color;  
+}
