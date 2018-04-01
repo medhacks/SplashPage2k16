@@ -101,6 +101,9 @@ html {
     #basicInfo #infoContainer p {
       position: relative;
       padding-top: 1rem;
+      top: 7rem;
+      left: 10rem;
+      width: 80%;
       color: #ffff;
       font-family: "Open Sans", sans-serif;
       font-size: 1.5rem;
