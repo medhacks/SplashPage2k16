@@ -57,6 +57,10 @@ html {
     color: #BF4D42; }
   .navbar .navbar-brand, .navbar-default .navbar-brand {
     color: #BF4D42; }
+  .navbar #navbar-logo, .navbar-default #navbar-logo {
+    background-image: url("../assets/logo_dark_smaller.png");
+    width: 3rem;
+    height: 3rem; }
 
 #basicInfo {
   background-color: #cff1ff; }
