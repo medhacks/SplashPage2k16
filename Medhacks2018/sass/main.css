@@ -118,6 +118,8 @@ html {
 
 #logistics {
   background-color: #efefef; }
+  #logistics h2 {
+    font-size: 4rem; }
   #logistics h3 {
     color: #042449; }
   #logistics p {
@@ -130,5 +132,26 @@ html {
   background-color: #efefef;
   height: 200px;
   width: 100%; }
+
+#schedule {
+  font-size: 16px;
+  line-height: 24px; }
+  #schedule .day-table {
+    position: relative;
+    float: left;
+    width: 33%; }
+  #schedule .table-col {
+    position: relative;
+    width: calc(50%);
+    float: left;
+    padding: 10px;
+    padding-top: 0px;
+    margin-top: 5px; }
+
+.about {
+  background-color: #efefef;
+  padding: 30px 0;
+  padding-top: 5px;
+  position: relative; }
 
 /*# sourceMappingURL=main.css.map */
