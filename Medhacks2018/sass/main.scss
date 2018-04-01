@@ -119,11 +119,18 @@ html {
         color: $large-text-color;
     }
     p {
-        width: 60%;
-        margin: 0% 21%;
+        width: 75%;
+        margin: 0% 0%;
+        position: relative;
+        left: 12%;
         padding-top: 1rem;
         color: $small-text-color;
+        background-color: $highlight-color;
         font-family: $font-fam;
+        font-size: 1.5rem;
+        line-height: 3rem;
+        @extend %center;
+        border-radius: 3rem;
     }
     background-color: $background-color;
 }

@@ -1,4 +1,4 @@
-#header .applyButton {
+#header .applyButton, #basicInfo p {
   text-align: center;
   vertical-align: middle; }
 
@@ -93,11 +93,17 @@ html {
   #basicInfo h2 {
     color: #042449; }
   #basicInfo p {
-    width: 60%;
-    margin: 0% 21%;
+    width: 75%;
+    margin: 0% 0%;
+    position: relative;
+    left: 12%;
     padding-top: 1rem;
     color: #335a81;
-    font-family: "Open Sans", sans-serif; }
+    background-color: #e2d8d6;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    border-radius: 3rem; }
 
 #challenges {
   background-color: #cff1ff; }
