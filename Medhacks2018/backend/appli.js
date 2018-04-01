@@ -1,22 +1,3 @@
-//var formData = JSON.stringify($("#myForm").serializeArray());
-/*$('#myForm').on('Submit',function () {
-    $.ajax({
-        url: 'submit.php',
-        cache: false,
-        type: 'POST',
-        data : $('#formID').serialize(),
-        success: function(json) {
-            alert('all done');
-        }
-    });
-    alert("HI");
-});
-*/
-
-
-
-
-
 var form = document.getElementById("myForm");
 form.addEventListener("submit", handleFormSubmit);
 
