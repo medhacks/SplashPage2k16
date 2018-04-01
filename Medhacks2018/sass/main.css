@@ -17,8 +17,12 @@ html {
   -o-background-size: contain;
   background-size: contain;
   background-repeat: no-repeat;
-  height: 90rem;
+  height: 65rem;
   width: 100%; }
+  #header .applyButton {
+    position: relative;
+    left: 43%;
+    top: 40rem; }
 
 .navbar, .navbar-default {
   background-color: #FFFF; }
@@ -57,6 +61,12 @@ html {
     color: #BF4D42; }
   .navbar .navbar-brand, .navbar-default .navbar-brand {
     color: #BF4D42; }
+  .navbar #navbar-logo, .navbar-default #navbar-logo {
+    background-image: url("../assets/logo_dark.png");
+    width: 15rem;
+    height: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat; }
 
 #basicInfo {
   background-color: #cff1ff; }
