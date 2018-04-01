@@ -3,6 +3,7 @@ $highlight-color: #e2d8d6;
 $small-text-color: #335a81;
 $large-text-color: #042449;
 $pop-color: #BF4D42;
+$spacing-color: #ffffff;
 
 html {
     background: $background-color;
@@ -137,7 +138,7 @@ html {
       width: 60%;
       margin: 0% 21%;
       padding-top: 1rem;
-      color: $small-text-color;
+      color: $spacing-color;
   }
   background-color: $background-color;
 }
