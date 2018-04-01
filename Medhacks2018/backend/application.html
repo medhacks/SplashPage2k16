@@ -21,11 +21,20 @@
         <input type="email" name="email">
         <br>
         Phone Number:
-        <input type="tel" name="phone">
+        <input type="tel" name="telphone" placeholder="888 888 8888" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12"  title="Ten digits code" required/>
         <br>
-        Address:
-        <input type="text" name="address" maxlength="50">
-        <br>
+        Address Line 1:
+        <input type="text" name="address1" maxlength="50"><br>
+        Address Line 2:
+        <input type="text" name="address2" maxlength="50"><br>
+        City:
+        <input type="text" name="City" maxlength="50"><br>
+        State/Province/Region:
+        <input type="text" name="state" maxlength="50"><br>
+        ZIP/Postal Code:
+        <input type="text" name="zipcode" maxlength="50"><br>
+        Country:
+        <input type="text" name="country" maxlength="50"><br>
         Gender:<br>
         <input type="radio" name="gender" value="male" checked> Male<br>
         <input type="radio" name="gender" value="female">
