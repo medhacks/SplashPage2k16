@@ -1,7 +1,12 @@
+#header .applyButton {
+  text-align: center;
+  vertical-align: middle; }
+
 html {
   background: #cff1ff;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 1vmax; }
 
 .jumbotron {
   background-color: #cff1ff;
@@ -22,7 +27,18 @@ html {
   #header .applyButton {
     position: relative;
     left: 43%;
-    top: 40rem; }
+    top: 40rem;
+    width: 15rem;
+    padding: 0.5rem;
+    background-color: #cff1ff;
+    border-radius: 5%;
+    transform: scale(0.85);
+    transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
+    #header .applyButton:hover {
+      transform: scale(1);
+      background-color: #BF4D42;
+      color: #FFFF;
+      cursor: pointer; }
 
 .navbar, .navbar-default {
   background-color: #FFFF; }
