@@ -1,5 +1,3 @@
-@import "helpers/placeholders.scss";
-
 $background-color: #cff1ff;
 $highlight-color: #e2d8d6;
 $small-text-color: #335a81;
@@ -10,8 +8,6 @@ html {
     background: $background-color;
     margin:0;
     padding:0;
-    font-size: 1vmax;
-
 }
 
 .jumbotron {
@@ -36,19 +32,6 @@ html {
         position: relative;
         left: 43%;
         top: 40rem;
-        width: 15rem;
-        padding: 0.5rem;
-        background-color: $background-color;
-        @extend %center;
-        border-radius: 5%;
-        transform: scale(0.85);
-        transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
-        &:hover {
-            transform: scale(1);
-            background-color: $pop-color;
-            color: #FFFF;
-            cursor: pointer;
-        }
     }
 }
 
@@ -140,6 +123,16 @@ html {
   h3 {
       color: $large-text-color;
   }
+  p {
+      width: 60%;
+      margin: 0% 21%;
+      padding-top: 1rem;
+      color: $small-text-color;
+  }
+  background-color: $background-color;
+}
+
+#marginFormat {
   p {
       width: 60%;
       margin: 0% 21%;
