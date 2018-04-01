@@ -6,7 +6,8 @@ html {
   background: #cff1ff;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  font-size: 1vmax; }
 
 .jumbotron {
   background-color: #cff1ff;
@@ -27,7 +28,7 @@ html {
   #header .applyButton {
     position: relative;
     left: 40%;
-    top: 30rem;
+    top: 40rem;
     padding: 0.5rem;
     background-color: #cff1ff;
     width: 15rem;
@@ -41,6 +42,7 @@ html {
       cursor: pointer; }
 
 .navbar, .navbar-default {
+  z-index: 3;
   background-color: #FFFF;
   width: 100%;
   position: fixed; }
