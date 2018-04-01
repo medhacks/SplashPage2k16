@@ -10,10 +10,18 @@ html {
   margin-bottom: 0; }
 
 #header {
-  background-color: #cff1ff; }
+  background-color: #cff1ff;
+  background-image: url("../assets/headerImage.png");
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100rem;
+  width: 100%; }
 
 .navbar, .navbar-default {
-  background-color: #cff1ff; }
+  background-color: #FFFF; }
   .navbar .nav-item, .navbar-default .nav-item {
     display: block;
     padding: 0 .5rem;

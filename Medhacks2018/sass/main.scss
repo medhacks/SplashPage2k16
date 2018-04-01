@@ -19,10 +19,18 @@ html {
 
 #header {
     background-color: $background-color;
+    background-image: url("../assets/headerImage.png");
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100rem;
+    width: 100%;
 }
 
 .navbar, .navbar-default {
-    background-color: $background-color;
+    background-color: #FFFF;
 
     .nav-item {
         a {
