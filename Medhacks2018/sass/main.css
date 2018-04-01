@@ -1,22 +1,22 @@
-#header .applyButton, #basicInfo p {
+#header .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer {
   text-align: center;
   vertical-align: middle; }
 
 html {
-  background: #cff1ff;
+  background: #efefef;
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
   font-size: 1vmax; }
 
 .jumbotron {
-  background-color: #cff1ff;
+  background-color: #efefef;
   color: #042449;
   font-size: 30rem;
   margin-bottom: 0; }
 
 #header {
-  background-color: #cff1ff;
+  background-color: #efefef;
   background-image: url("../assets/headerImage.png");
   -webkit-background-size: contain;
   -moz-background-size: contain;
@@ -30,7 +30,7 @@ html {
     left: 40%;
     top: 40rem;
     padding: 0.5rem;
-    background-color: #cff1ff;
+    background-color: #efefef;
     width: 15rem;
     border-radius: 5%;
     transform: scale(0.85);
@@ -89,24 +89,25 @@ html {
     background-repeat: no-repeat; }
 
 #basicInfo {
-  background-color: #cff1ff; }
+  background-color: #efefef; }
   #basicInfo h2 {
     color: #042449; }
-  #basicInfo p {
-    width: 75%;
+  #basicInfo #infoContainer {
+    width: 100%;
+    height: 30rem;
     margin: 0% 0%;
-    position: relative;
-    left: 12%;
-    padding-top: 1rem;
-    color: #335a81;
-    background-color: #e2d8d6;
-    font-family: "Open Sans", sans-serif;
-    font-size: 1.5rem;
-    line-height: 3rem;
-    border-radius: 3rem; }
+    background-color: #335a81;
+    position: relative; }
+    #basicInfo #infoContainer p {
+      position: relative;
+      padding-top: 1rem;
+      color: #ffff;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.5rem;
+      line-height: 3rem; }
 
 #challenges {
-  background-color: #cff1ff; }
+  background-color: #efefef; }
   #challenges h3 {
     color: #042449; }
   #challenges p {
@@ -116,7 +117,7 @@ html {
     color: #335a81; }
 
 #logistics {
-  background-color: #cff1ff; }
+  background-color: #efefef; }
   #logistics h3 {
     color: #042449; }
   #logistics p {
@@ -126,7 +127,7 @@ html {
     color: #335a81; }
 
 .marginFormat {
-  background-color: #cff1ff;
+  background-color: #efefef;
   height: 200px;
   width: 100%; }
 
