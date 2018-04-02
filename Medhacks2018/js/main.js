@@ -24,4 +24,17 @@ $(document).ready(() => {
         $curwindow.fadeToggle('fast');
     });
 
+    $(".faq-question").click(function() {
+        if ($(this).parent().hasClass('open')) {
+            $(this).closest('.faq-holder').find('.faq-answer-container').animate({height: '0'}, 300);
+            $(this).closest('.faq-holder').removeClass('open');
+            $(this).closest('.faq-holder').animate({height: '7rem'}, 300);
+        } else {
+            var newHeight = $(this).closest('.faq-holder').find('.answer-box').height() +'px';
+            $(this).closest('.faq-holder').find('.faq-answer-container').animate({'height':newHeight},300);
+            $(this).closest('.faq-holder').css('height', 'auto');
+            $(this).closest('.faq-holder').addClass('open');
+        }
+    });
+
 });
