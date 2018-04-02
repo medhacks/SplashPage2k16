@@ -112,7 +112,9 @@ html {
 #challenges {
   background-color: #efefef; }
   #challenges h2 {
-    color: #042449; }
+    color: #042449;
+    padding-bottom: 4rem;
+    font-size: 3rem; }
   #challenges p {
     width: 60%;
     margin: 0% 21%;
