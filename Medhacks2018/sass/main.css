@@ -1,4 +1,4 @@
-#header .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer {
+#header .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #logistics .scheduleContainer, #logistics .scheduleContainer ul li {
   text-align: center;
   vertical-align: middle; }
 
@@ -130,6 +130,17 @@ html {
     margin: 0% 21%;
     padding-top: 1rem;
     color: #335a81; }
+  #logistics .scheduleContainer {
+    width: 85%;
+    position: relative;
+    left: 8%; }
+    #logistics .scheduleContainer ul li {
+      padding: 1rem;
+      border: 1px solid black;
+      border-collapse: collapse; }
+      #logistics .scheduleContainer ul li a {
+        text-decoration: none;
+        color: black; }
 
 .marginFormat {
   background-color: #efefef;
