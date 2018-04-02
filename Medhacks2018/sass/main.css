@@ -1,4 +1,4 @@
-#header .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #logistics .scheduleContainer, #logistics .scheduleContainer ul li {
+#header .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #logistics .scheduleContainer, #logistics .scheduleContainer ul li {
   text-align: center;
   vertical-align: middle; }
 
@@ -111,13 +111,46 @@ html {
 
 #challenges {
   background-color: #efefef; }
-  #challenges h3 {
+  #challenges h2 {
     color: #042449; }
   #challenges p {
     width: 60%;
     margin: 0% 21%;
     padding-top: 1rem;
     color: #335a81; }
+  #challenges .track-container {
+    float: none;
+    margin-left: 10%;
+    display: grid;
+    width: 80%;
+    height: 50%;
+    grid-template-areas: "track1 track2 track3";
+    -webkit-grid-column-gap: 3rem;
+    -moz-grid-column-gap: 3rem;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 5%;
+    background-color: #efefef; }
+    #challenges .track-container .track {
+      border: 3px solid #335a81;
+      border-radius: 3rem;
+      padding: 3rem; }
+      #challenges .track-container .track img {
+        width: 10rem;
+        height: 10rem; }
+      #challenges .track-container .track #track1 {
+        grid-area: track1; }
+      #challenges .track-container .track #track2 {
+        grid-area: track2; }
+      #challenges .track-container .track #track3 {
+        grid-area: track3; }
+      #challenges .track-container .track:hover {
+        border-color: #BF4D42;
+        cursor: pointer; }
 
 #logistics {
   background-color: #efefef; }
