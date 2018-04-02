@@ -133,34 +133,39 @@ html {
   #logistics .scheduleContainer {
     width: 85%;
     position: relative;
-    left: 8%; }
+    left: 20%;
+    font-size: 2rem; }
+    #logistics .scheduleContainer ul .active {
+      background-color: #BF4D42;
+      color: #FFFF;
+      padding: 0.43rem 1.1rem; }
     #logistics .scheduleContainer ul li {
-      padding: 1rem;
+      padding: 0rem;
       border: 1px solid black;
       border-collapse: collapse; }
       #logistics .scheduleContainer ul li a {
+        padding: 1rem;
         text-decoration: none;
         color: black; }
+    #logistics .scheduleContainer table {
+      margin-top: 2%;
+      margin-bottom: 10%;
+      background-color: #f8f9fa;
+      width: 72%;
+      position: relative;
+      left: 1%;
+      table-layout: fixed; }
+      #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.5rem;
+        font-style: normal;
+        color: #335a81;
+        border: 3px solid black; }
 
 .marginFormat {
   background-color: #efefef;
   height: 200px;
   width: 100%; }
-
-#schedule {
-  font-size: 16px;
-  line-height: 24px; }
-  #schedule .day-table {
-    position: relative;
-    float: left;
-    width: 33%; }
-  #schedule .table-col {
-    position: relative;
-    width: calc(50%);
-    float: left;
-    padding: 10px;
-    padding-top: 0px;
-    margin-top: 5px; }
 
 .about {
   background-color: #efefef;

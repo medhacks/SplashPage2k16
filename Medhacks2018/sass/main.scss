@@ -175,15 +175,44 @@ html {
         width: 85%;
         @extend %center;
         position: relative;
-        left: 8%;
-        ul li {
-            padding: 1rem;
-            @extend %center;
-            border: 1px solid black;
-            border-collapse: collapse;
-            a {
-                text-decoration: none;
-                color: black;
+        left: 20%;
+        font-size: 2rem;
+
+        ul {
+
+            .active {
+                background-color: $pop-color;
+                color: #FFFF;
+                padding: 0.43rem 1.1rem;
+            }
+            li {
+                padding: 0rem;
+                @extend %center;
+                border: 1px solid black;
+                border-collapse: collapse;
+                a {
+                    padding: 1rem;
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+
+        }
+
+        table {
+            margin-top: 2%;
+            margin-bottom: 10%;
+            background-color: #f8f9fa;
+            width: 72%;
+            position: relative;
+            left: 1%;
+            table-layout: fixed;
+            th, tr {
+                font-family: $font-fam;
+                font-size: 1.5rem;
+                font-style: normal;
+                color: $small-text-color;
+                border: 3px solid black;
             }
         }
 
@@ -196,24 +225,6 @@ html {
     width:100%;
 }
 
-#schedule {
-    font-size: 16px;
-    line-height: 24px;
-
-    .day-table {
-        position: relative;
-        float: left;
-        width: 33%;
-    }
-    .table-col {
-        position: relative;
-        width: calc(50%);
-        float: left;
-        padding: 10px;
-        padding-top: 0px;
-        margin-top: 5px;
-    }
-}
 .about {
     background-color: #efefef;
     padding: 30px 0;
