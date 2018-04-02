@@ -277,9 +277,8 @@ html {
             margin-top: 2%;
             margin-bottom: 10%;
             background-color: #f8f9fa;
-            width: 72%;
+            width: 100%;
             position: relative;
-            left: 15%;
             table-layout: fixed;
             th, tr {
                 font-family: $font-fam;
@@ -309,14 +308,13 @@ html {
         font-size: 2rem;
 
         ul {
-
             .active {
                 background-color: $pop-color;
                 color: #FFFF;
                 padding: 0.43rem 1.1rem;
             }
             li {
-                padding: 0rem;
+                padding: 0rem 0rem;
                 @extend %center;
                 border: 1px solid black;
                 border-collapse: collapse;

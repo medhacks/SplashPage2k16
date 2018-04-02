@@ -216,9 +216,8 @@ html {
       margin-top: 2%;
       margin-bottom: 10%;
       background-color: #f8f9fa;
-      width: 72%;
+      width: 100%;
       position: relative;
-      left: 15%;
       table-layout: fixed; }
       #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
         font-family: "Open Sans", sans-serif;
@@ -242,7 +241,7 @@ html {
     color: #FFFF;
     padding: 0.43rem 1.1rem; }
   #faq .faq-container ul li {
-    padding: 0rem;
+    padding: 0rem 0rem;
     border: 1px solid black;
     border-collapse: collapse; }
     #faq .faq-container ul li a {
