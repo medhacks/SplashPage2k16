@@ -122,16 +122,15 @@ html {
 #logistics {
   background-color: #efefef; }
   #logistics h2 {
-    font-size: 4rem; }
-  #logistics h3 {
-    color: #042449; }
+    font-size: 4rem;
+    padding-bottom: 1.5rem; }
   #logistics p {
     width: 60%;
     margin: 0% 21%;
     padding-top: 1rem;
     color: #335a81; }
   #logistics .scheduleContainer {
-    width: 85%;
+    width: 63%;
     position: relative;
     left: 20%;
     font-size: 2rem; }
@@ -153,7 +152,7 @@ html {
       background-color: #f8f9fa;
       width: 72%;
       position: relative;
-      left: 1%;
+      left: 15%;
       table-layout: fixed; }
       #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
         font-family: "Open Sans", sans-serif;
