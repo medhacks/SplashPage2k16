@@ -1,4 +1,4 @@
-#header .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #logistics .scheduleContainer, #logistics .scheduleContainer ul li {
+#header .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li {
   text-align: center;
   vertical-align: middle; }
 
@@ -151,6 +151,37 @@ html {
       #challenges .track-container .track:hover {
         border-color: #BF4D42;
         cursor: pointer; }
+  #challenges .black-overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black background with opacity */
+    z-index: 3;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */ }
+  #challenges .track-info {
+    z-index: 4;
+    background-color: #ffff;
+    width: 30%;
+    display: none;
+    position: fixed;
+    width: 40%;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    top: 30%;
+    left: 30%;
+    border-radius: 3rem; }
 
 #logistics {
   background-color: #efefef; }
