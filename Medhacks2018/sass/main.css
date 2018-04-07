@@ -200,6 +200,9 @@ html {
     position: relative;
     left: 20%;
     font-size: 2rem; }
+    @media screen and (max-width: 500px) {
+      #logistics .scheduleContainer ul {
+        list-style-type: circle; } }
     #logistics .scheduleContainer ul .active {
       background-color: #BF4D42;
       color: #FFFF;
@@ -232,20 +235,19 @@ html {
   width: 100%; }
 
 #faq .faq-container {
-  width: 63%;
+  width: 100%;
   position: relative;
   left: 20%;
   font-size: 2rem; }
   #faq .faq-container ul .active {
     background-color: #BF4D42;
     color: #FFFF;
-    padding: 0.43rem 1.1rem; }
+    padding: 0.43rem 5.5rem; }
   #faq .faq-container ul li {
-    padding: 0rem 0rem;
     border: 1px solid black;
     border-collapse: collapse; }
     #faq .faq-container ul li a {
-      padding: 1rem;
+      padding: 0rem 5.5rem;
       text-decoration: none;
       color: black; }
   #faq .faq-container .faq-holder {
@@ -254,7 +256,7 @@ html {
     box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
     margin: 16px 0;
     padding: 10px;
-    width: 100%;
+    width: 80%;
     overflow: hidden;
     height: 7rem; }
     #faq .faq-container .faq-holder .faq-question {
