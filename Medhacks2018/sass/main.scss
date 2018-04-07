@@ -253,7 +253,9 @@ html {
         font-size: 2rem;
 
         ul {
-
+            @media screen and (max-width: 500px) {
+              list-style-type: circle;
+            }
             .active {
                 background-color: $pop-color;
                 color: #FFFF;
