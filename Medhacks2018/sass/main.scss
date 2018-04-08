@@ -59,7 +59,7 @@ html {
     position: relative;
     right: 8rem;
     position: fixed;
-    top: 3.5rem;
+    top: 1.5rem;
     ul a {
         border: 3px solid $small-text-color;
         border-radius: 50%;
@@ -106,7 +106,7 @@ html {
     background-color: #FFFF;
     width: 100%;
     position: fixed;
-    height: 8rem;
+    height: 6rem;
     .nav-item {
         a {
             color: $small-text-color;
@@ -154,7 +154,7 @@ html {
     }
 
     #navbar-logo {
-        background-image: url("../assets/logo_dark.png");
+        background-image: url("../assets/medhacks-without-cross.png");
         width: 20rem;
         height: 4rem;
         background-size: contain;
@@ -389,13 +389,14 @@ html {
 
 #faq {
     .faq-container {
-        width: 100%;
+        width: 60%;
 
         position: relative;
         left: 20%;
         font-size: 2rem;
 
         ul {
+            border: none;
             .active {
                 background-color: $pop-color;
                 color: #FFFF;
@@ -421,7 +422,7 @@ html {
             box-shadow: 0 0 6px 1px rgba(0, 0, 0, .05);
             margin: 16px 0;
             padding: 10px;
-            width: 57%;
+            width: 95%;
             overflow: hidden;
             height: 7rem;
             .faq-question {
