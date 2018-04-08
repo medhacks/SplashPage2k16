@@ -234,24 +234,22 @@ html {
     left: 20%;
     font-size: 2rem; }
     @media screen and (max-width: 1080px) {
+      #logistics .scheduleContainer ul .nav-dropdown:hover > a {
+        color: #FFFF;
+        background-color: #BF4D42;
+        padding: 0rem;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid black;
+        border-collapse: collapse; }
+      #logistics .scheduleContainer ul a {
+        padding: 1rem;
+        text-decoration: none;
+        color: black; }
       #logistics .scheduleContainer ul .active {
         background-color: #BF4D42;
         color: #FFFF;
-        padding: 0.43rem 1.1rem; }
-      #logistics .scheduleContainer ul li {
-        list-style-type: none; }
-        #logistics .scheduleContainer ul li.nav-dropdown:hover > a {
-          background-color: #BF4D42;
-          padding: 0rem;
-          text-align: center;
-          vertical-align: middle;
-          border: 1px solid black;
-          border-collapse: collapse;
-          color: #FFFF; }
-        #logistics .scheduleContainer ul li a {
-          padding: 1rem;
-          text-decoration: none;
-          color: black; } }
+        padding: 0.43rem 1.1rem; } }
     @media screen and (min-width: 1080px) {
       #logistics .scheduleContainer ul .active {
         background-color: #BF4D42;
