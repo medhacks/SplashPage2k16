@@ -7,6 +7,22 @@ var counter = 1;
 $(document).ready(() => {
     let $curwindow;
 
+    $('#homeBubble').on('click', () => {
+        $('#header').goTo();
+    });
+    $('#faqBubble').on('click', () => {
+        $('#faq').goTo();
+    });
+    $('#tracksBubble').on('click', () => {
+        $('#challenges').goTo();
+    });
+    $('#logisticsBubble').on('click', () => {
+        $('#logistics').goTo();
+    });
+    $('#aboutBubble').on('click', () => {
+        $('#basicInfo').goTo();
+    });
+
     $('#track1').on('click', () => {
         $('.black-overlay').fadeToggle('fast');
         $('#track1-info').fadeToggle('medium');
@@ -96,3 +112,15 @@ $(document).scroll(function() {
         }
     }
 });
+
+
+(function($) {
+    $.fn.goTo = function() {
+        var placeToGo;
+        placeToGo = $(this).offset().top - 150;
+        $('html, body').animate({
+            scrollTop: placeToGo + 'px'
+        });
+        return this;
+    }
+})(jQuery);

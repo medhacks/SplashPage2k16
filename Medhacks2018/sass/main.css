@@ -47,6 +47,9 @@ html {
   right: 8rem;
   position: fixed;
   top: 1.5rem; }
+  @media screen and (max-width: 800px) {
+    #slider-container {
+      display: none; } }
   #slider-container ul a {
     border: 3px solid #335a81;
     border-radius: 50%;
@@ -80,6 +83,9 @@ html {
     position: absolute;
     top: 0.5rem;
     left: 41rem; }
+    @media screen and (max-width: 1000px) {
+      #slider-container ul #moose-mark {
+        left: 43rem; } }
 
 .navbar, .navbar-default {
   z-index: 3;
