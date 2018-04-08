@@ -1,6 +1,8 @@
 let heights = [];
+let sections = [];
 heights.push($('#slider-container').height());
 var maxWidth = 52.5;
+
 $(document).ready(() => {
     let $curwindow;
 
@@ -41,18 +43,41 @@ $(document).ready(() => {
     });
 
     $(".section-container").each(function() {
-        heights.push($(this).position(this).top - 500 + heights[0]);
+        heights.push($(this).position(this).top + heights[0]);
+        sections.push($(this));
     });
+    console.log(heights);
+    sections.push($("#tracksBubble"));
+    sections.push($("#logisticsBubble"));
+    sections.push($("#faqBubble"));
 });
 
 
 $(document).scroll(function() {
     let scrollPosition = $(window).scrollTop();
-    newWidth = (maxWidth * scrollPosition) / $(document).height();
-    console.log(newWidth);
-    console.log(maxWidth);
-    console.log(scrollPosition);
-    console.log($(document).height());
+    newWidth = (maxWidth * scrollPosition) / ($(document).height() - $(window).height());
     var withProp = newWidth.toString() +"rem";
     $("#moose-mark").css('width', withProp);
+    // console.log(scrollPosition);
+    for (var i = 0; i < heights.length; i++) {
+        // console.log(heights[i]);
+        console.log(scrollPosition + " : " + heights[i]);
+        if (scrollPosition > heights[i]) {
+            if (i == 1) {
+                $("#tracksBubble").addClass("filled");
+                $("#logisticsBubble").removeClass("filled");
+                $("#faqBubble").removeClass("filled");
+            } else if (i == 2) {
+                $("#tracksBubble").addClass("filled");
+                $("#logisticsBubble").addClass("filled");
+                $("#faqBubble").removeClass("filled");
+            } else if (i == 3) {
+                $("#tracksBubble").addClass("filled");
+                $("#logisticsBubble").addClass("filled");
+                $("#faqBubble").addClass("filled");
+            }
+        } else {
+            continue;
+        }
+    }
 });
