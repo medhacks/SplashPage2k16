@@ -54,11 +54,31 @@ html {
     }
 }
 
+#slider-container {
+    width: 100%;
+    ul a {
+        border: 3px solid $small-text-color;
+        border-radius: 50%;
+        margin: 10%;
+        width: 3rem;
+        height: 3rem;
+        .bubble {
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+            float: left;
+            text-align: center;
+            position: relative;
+        }
+    }
+}
+
 .navbar, .navbar-default {
     z-index: 3;
     background-color: #FFFF;
     width: 100%;
     position: fixed;
+    height: 8rem;
     .nav-item {
         a {
             color: $small-text-color;
