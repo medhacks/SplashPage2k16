@@ -284,7 +284,7 @@ html {
         border: 1px solid black;
         border-collapse: collapse; }
         #logistics .scheduleContainer ul li a {
-          padding: 1rem;
+          padding: 5rem 1rem;
           text-decoration: none;
           color: black; } }
     #logistics .scheduleContainer table {
