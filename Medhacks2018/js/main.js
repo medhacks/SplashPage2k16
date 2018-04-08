@@ -1,6 +1,6 @@
 let heights = [];
-heights[0].push($($('.section-title')[0]).offset().top - $('#slider-wrapper').height());
-
+heights.push($('#slider-container').height());
+var maxWidth = 52.5;
 $(document).ready(() => {
     let $curwindow;
 
@@ -40,13 +40,19 @@ $(document).ready(() => {
         }
     });
 
-    $(".section-container").each(function {
+    $(".section-container").each(function() {
         heights.push($(this).position(this).top - 500 + heights[0]);
     });
 });
 
 
 $(document).scroll(function() {
-    let scrollPosition = $(window).scrollTop;
-
+    let scrollPosition = $(window).scrollTop();
+    newWidth = (maxWidth * scrollPosition) / $(document).height();
+    console.log(newWidth);
+    console.log(maxWidth);
+    console.log(scrollPosition);
+    console.log($(document).height());
+    var withProp = newWidth.toString() +"rem";
+    $("#moose-mark").css('width', withProp);
 });
