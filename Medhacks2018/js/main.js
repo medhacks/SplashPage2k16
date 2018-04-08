@@ -3,6 +3,7 @@ let sections = [];
 heights.push($('#slider-container').height());
 var maxWidth = 35.4;
 var counter = 1;
+let hamCount = 0;
 
 $(document).ready(() => {
     let $curwindow;
@@ -20,6 +21,22 @@ $(document).ready(() => {
         $('#logistics').goTo();
     });
     $('#aboutBubble').on('click', () => {
+        $('#basicInfo').goTo();
+    });
+
+    $('#home-small-button').on('click', () => {
+        $('#header').goTo();
+    });
+    $('#faq-small-button').on('click', () => {
+        $('#faq').goTo();
+    });
+    $('#tracks-small-button').on('click', () => {
+        $('#challenges').goTo();
+    });
+    $('#logistics-small-button').on('click', () => {
+        $('#logistics').goTo();
+    });
+    $('#about-small-button').on('click', () => {
         $('#basicInfo').goTo();
     });
 
@@ -47,7 +64,16 @@ $(document).ready(() => {
     });
 
     $('#ham-container').on('click', () => {
-        $('#ham-container').toggleClass('change')
+        $('#ham-container').toggleClass('change');
+        $('#side-info').slideToggle();
+
+        // if (hamCount == 0) {
+        //     $("#ham-container").detach().appendTo("#side-info");
+        //     hamCount = 1;
+        // } else {
+        //     $("#ham-container").detach().appendTo("#navbar");
+        //     hamCount = 0;
+        // }
     })
 
     $(".faq-question").click(function() {

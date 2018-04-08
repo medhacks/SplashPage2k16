@@ -15,6 +15,28 @@ html {
   font-size: 30rem;
   margin-bottom: 0; }
 
+#side-info {
+  display: none;
+  background-color: #042449;
+  color: white;
+  position: fixed;
+  z-index: 3;
+  height: 100rem;
+  left: 60%;
+  top: 0%;
+  width: 100rem;
+  opacity: 0.85; }
+  #side-info ul li {
+    position: relative;
+    top: 10%;
+    font-size: 4rem;
+    list-style-type: none;
+    padding: 1rem 5rem;
+    margin: 0;
+    cursor: pointer; }
+  #side-info .apply {
+    color: #BF4D42; }
+
 #header {
   background-color: #efefef;
   background-image: url("../assets/headerImage.png");
@@ -42,7 +64,7 @@ html {
       cursor: pointer; }
 
 #ham-container {
-  position: relative;
+  z-index: 5;
   right: 5rem;
   display: inline-block;
   cursor: pointer; }
@@ -55,23 +77,18 @@ html {
     background-color: #333;
     margin: 6px 0;
     transition: 0.4s; }
-  #ham-container .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px); }
-  #ham-container .change .bar2 {
-    opacity: 0; }
-  #ham-container .change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px); }
 
 .change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px); }
+  transform: rotate(-45deg) translate(-9px, 6px);
+  z-index: 4;
+  background-color: white !important; }
 .change .bar2 {
   opacity: 0; }
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px); }
+  transform: rotate(45deg) translate(-8px, -8px);
+  background-color: white !important; }
 
 #slider-container {
   width: 100%;
