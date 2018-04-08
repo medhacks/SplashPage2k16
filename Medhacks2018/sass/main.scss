@@ -57,13 +57,13 @@ html {
 #slider-container {
     width: 100%;
     position: relative;
-    right: 8rem;
+    right: 3rem;
     position: fixed;
-    top: 3.5rem;
+    top: 3rem;
     ul a {
         border: 3px solid $small-text-color;
         border-radius: 50%;
-        margin-left: 7rem;
+        margin: 8%;
         width: 3rem;
         height: 0.35rem;
         padding: 0.15rem .8rem;
@@ -76,15 +76,6 @@ html {
             text-align: center;
             position: relative;
         }
-        div {
-            display: inline-block;
-            position: relative;
-            left: 33.5rem;
-            color: $small-text-color;
-            text-decoration: none;
-            font-size: 1.5rem;
-            bottom: 1rem;
-        }
 
     }
     ul .filled {
@@ -93,11 +84,11 @@ html {
     ul #moose-mark {
         border: 3px solid $small-text-color;
         z-index: 4;
-        width: 0;
+        width: 3rem;
         display: inline;
         position: absolute;
         top: 0.5rem;
-        left: 41rem;
+        left: 36rem;
     }
 }
 
@@ -155,27 +146,10 @@ html {
 
     #navbar-logo {
         background-image: url("../assets/logo_dark.png");
-        width: 20rem;
-        height: 4rem;
+        width: 15rem;
+        height: 3rem;
         background-size: contain;
         background-repeat: no-repeat;
-    }
-    .applyButton {
-        margin-right: 2rem;
-        padding: 0.5rem;
-        color: #FFFF;
-        background-color: $pop-color;
-        width: 15rem;
-        @extend %center;
-        border-radius: 0.5rem;
-        transform: scale(0.85);
-        transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
-        &:hover {
-            transform: scale(1);
-            background-color: $background-color;
-            color: black;
-            cursor: pointer;
-        }
     }
 }
 
@@ -283,15 +257,15 @@ html {
   .track-info {
       z-index: 4;
       background-color: #ffff;
-      width: 70%;
-      height: 70%;
+      width: 30%;
       @extend %center;
       display: none;
       position: fixed;
+      width: 40%;
       box-sizing: border-box;
       background-color: #FFFFFF;
-      top: 15%;
-      left: 15%;
+      top: 30%;
+      left: 30%;
       border-radius: 3rem;
   }
 }
@@ -318,28 +292,63 @@ html {
         font-size: 2rem;
 
         ul {
-            @media screen and (max-width: 1080px) {
-              .nav-dropdown:hover > a {
-                  color: #FFFF;
+            /*media screen and (max-width: 1080px) {
+                .active {
                   background-color: $pop-color;
-                  padding: 0rem;
-                  text-align: center;
-                  vertical-align: middle;
-                  border: 1px solid black;
-                  border-collapse: collapse;
-              }
-              a {
-                  padding: 1rem;
-                  text-decoration: none;
-                  color: black;
+                  color: #FFFF;
+                  padding: 0.43rem 1.1rem;
+                }
+                li {
+                    float: left;
+                    position: relative;
+                    a {
+                      padding: 0.43rem 1.1rem;
+                      text-decoration: none;
+                      color: black;
+                      text-align: center;
+                      vertical-align: middle;
+
+                    }
+                }
+              li {
+                list-style-type: none;
+                a {
+                    .nav-dropdown {
+                      color: "red($color);";
+                      background-color: $pop-color;
+                    }
+                    padding: 0.43rem 1.1rem;
+                    text-decoration: none;
+                    color: black;
+                    text-align: center;
+                    vertical-align: middle;
+                }
               }
               .active {
                   background-color: $pop-color;
                   color: #FFFF;
                   padding: 0.43rem 1.1rem;
               }
-            }
-            @media screen and (min-width: 1080px) {
+            }*/
+              @media screen (and max-width: 1080px) {
+                .active {
+                  background-color: $pop-color;
+                  color: #FFFF;
+                  padding: 0.43rem 1.1rem;
+                }
+                li {
+                  padding: 0rem;
+                  text-align: center;
+                  vertical-align: middle;
+                  border: 1px solid $pop-color;
+                  border-collapse: collapse;
+                  a {
+                      padding: 1rem;
+                      text-decoration: none;
+                      color: black;
+                  }
+                }
+              }
               .active {
                   background-color: $pop-color;
                   color: #FFFF;
@@ -349,7 +358,7 @@ html {
                   padding: 0rem;
                   text-align: center;
                   vertical-align: middle;
-                  border: 1px solid black;
+                  border: 1px solid $pop-color;
                   border-collapse: collapse;
                   a {
                       padding: 1rem;
@@ -357,7 +366,6 @@ html {
                       color: black;
                   }
               }
-            }
 
         }
 
