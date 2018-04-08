@@ -42,20 +42,36 @@ html {
       cursor: pointer; }
 
 #slider-container {
-  width: 100%; }
+  width: 100%;
+  position: relative;
+  right: 3rem;
+  position: fixed;
+  top: 3rem; }
   #slider-container ul a {
     border: 3px solid #335a81;
     border-radius: 50%;
-    margin: 10%;
+    margin: 8%;
     width: 3rem;
-    height: 3rem; }
+    height: 0.35rem;
+    padding: 0.15rem .8rem; }
     #slider-container ul a .bubble {
       display: inline-block;
       width: 3rem;
       height: 3rem;
+      padding: 3rem;
       float: left;
       text-align: center;
       position: relative; }
+  #slider-container ul .filled {
+    background-color: #335a81; }
+  #slider-container ul #moose-mark {
+    border: 3px solid #335a81;
+    z-index: 4;
+    width: 3rem;
+    display: inline;
+    position: absolute;
+    top: 0.5rem;
+    left: 36rem; }
 
 .navbar, .navbar-default {
   z-index: 3;

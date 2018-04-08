@@ -38,3 +38,7 @@ $(document).ready(() => {
     });
 
 });
+
+$(document).scroll(function() {
+
+});

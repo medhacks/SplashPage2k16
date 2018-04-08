@@ -56,20 +56,39 @@ html {
 
 #slider-container {
     width: 100%;
+    position: relative;
+    right: 3rem;
+    position: fixed;
+    top: 3rem;
     ul a {
         border: 3px solid $small-text-color;
         border-radius: 50%;
-        margin: 10%;
+        margin: 8%;
         width: 3rem;
-        height: 3rem;
+        height: 0.35rem;
+        padding: 0.15rem .8rem;
         .bubble {
             display: inline-block;
             width: 3rem;
             height: 3rem;
+            padding: 3rem;
             float: left;
             text-align: center;
             position: relative;
         }
+
+    }
+    ul .filled {
+        background-color: $small-text-color;
+    }
+    ul #moose-mark {
+        border: 3px solid $small-text-color;
+        z-index: 4;
+        width: 3rem;
+        display: inline;
+        position: absolute;
+        top: 0.5rem;
+        left: 36rem;
     }
 }
 
