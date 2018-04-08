@@ -257,15 +257,15 @@ html {
   .track-info {
       z-index: 4;
       background-color: #ffff;
-      width: 30%;
+      width: 70%;
+      height: 70%;
       @extend %center;
       display: none;
       position: fixed;
-      width: 40%;
       box-sizing: border-box;
       background-color: #FFFFFF;
-      top: 30%;
-      left: 30%;
+      top: 15%;
+      left: 15%;
       border-radius: 3rem;
   }
 }
