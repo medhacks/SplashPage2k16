@@ -1,55 +1,333 @@
-/*
-Sass::SyntaxError: You may not @extend an outer selector from within @media.
-You may only @extend selectors within the same directive.
-From "@extend %center" on line 327 of main.scss.
+#header .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #faq .faq-container ul li {
+  text-align: center;
+  vertical-align: middle; }
 
+html {
+  background: #efefef;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1vmax; }
 
-Backtrace:
-helpers/placeholders.scss:1
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/simple_sequence.rb:331:in `check_directives_match!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/simple_sequence.rb:197:in `block (2 levels) in do_extend'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/simple_sequence.rb:197:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/simple_sequence.rb:197:in `block in do_extend'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/simple_sequence.rb:188:in `map!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/simple_sequence.rb:188:in `do_extend'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/sequence.rb:116:in `block in do_extend'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/sequence.rb:114:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/sequence.rb:114:in `do_extend'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/comma_sequence.rb:73:in `block in do_extend'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/comma_sequence.rb:72:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/selector/comma_sequence.rb:72:in `do_extend'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/extend.rb:44:in `visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/extend.rb:28:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/extend.rb:37:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/base.rb:38:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/extend.rb:28:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/visitors/extend.rb:15:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:39:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Sass::SyntaxError: You may not @extend an outer selector from within @media.\A You may only @extend selectors within the same directive.\A From \"@extend %center\" on line 327 of main.scss.\A "; }
+.jumbotron {
+  background-color: #efefef;
+  color: #042449;
+  font-size: 30rem;
+  margin-bottom: 0; }
+
+#header {
+  background-color: #efefef;
+  background-image: url("../assets/headerImage.png");
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 65rem;
+  width: 100%; }
+  #header .applyButton {
+    position: relative;
+    left: 40%;
+    top: 40rem;
+    padding: 0.5rem;
+    background-color: #efefef;
+    width: 15rem;
+    border-radius: 5%;
+    transform: scale(0.85);
+    transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
+    #header .applyButton:hover {
+      transform: scale(1);
+      background-color: #BF4D42;
+      color: #FFFF;
+      cursor: pointer; }
+
+#slider-container {
+  width: 100%;
+  position: relative;
+  right: 3rem;
+  position: fixed;
+  top: 3rem; }
+  #slider-container ul a {
+    border: 3px solid #335a81;
+    border-radius: 50%;
+    margin: 8%;
+    width: 3rem;
+    height: 0.35rem;
+    padding: 0.15rem .8rem; }
+    #slider-container ul a .bubble {
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      padding: 3rem;
+      float: left;
+      text-align: center;
+      position: relative; }
+  #slider-container ul .filled {
+    background-color: #335a81; }
+  #slider-container ul #moose-mark {
+    border: 3px solid #335a81;
+    z-index: 4;
+    width: 3rem;
+    display: inline;
+    position: absolute;
+    top: 0.5rem;
+    left: 36rem; }
+
+.navbar, .navbar-default {
+  z-index: 3;
+  background-color: #FFFF;
+  width: 100%;
+  position: fixed;
+  height: 8rem; }
+  .navbar .nav-item, .navbar-default .nav-item {
+    display: block;
+    padding: 0 .5rem;
+    position: relative;
+    cursor: pointer; }
+    .navbar .nav-item a, .navbar-default .nav-item a {
+      color: #335a81;
+      font-size: 1.5rem;
+      box-shadow: 0px 0.5rem;
+      transition: color .1s ease-out;
+      z-index: 1; }
+      .navbar .nav-item a:hover, .navbar .nav-item a:focus, .navbar-default .nav-item a:hover, .navbar-default .nav-item a:focus {
+        background-color: #335a81;
+        color: #FFFF;
+        box-shadow: 0px 0.5rem #335a81; }
+        .navbar .nav-item a:hover:after, .navbar .nav-item a:focus:after, .navbar-default .nav-item a:hover:after, .navbar-default .nav-item a:focus:after {
+          transform: scaleY(1); }
+      .navbar .nav-item a:after, .navbar-default .nav-item a:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scaleY(0);
+        transform-origin: bottom center;
+        background: red;
+        z-index: -1;
+        transition: transform 0.3s; }
+  .navbar .navbar-toggler-icon, .navbar-default .navbar-toggler-icon {
+    background-color: #e2d8d6;
+    border-radius: 0.2rem;
+    border: 1px solid #BF4D42;
+    color: #BF4D42; }
+  .navbar .navbar-brand, .navbar-default .navbar-brand {
+    color: #BF4D42; }
+  .navbar #navbar-logo, .navbar-default #navbar-logo {
+    background-image: url("../assets/logo_dark.png");
+    width: 15rem;
+    height: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat; }
+
+#basicInfo {
+  background-color: #efefef; }
+  #basicInfo h2 {
+    color: #042449; }
+  #basicInfo #infoContainer {
+    width: 100%;
+    height: 30rem;
+    margin: 0% 0%;
+    background-color: #335a81;
+    position: relative; }
+    #basicInfo #infoContainer p {
+      position: relative;
+      padding-top: 1rem;
+      top: 7rem;
+      left: 10rem;
+      width: 80%;
+      color: #ffff;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.5rem;
+      line-height: 3rem; }
+
+#challenges {
+  background-color: #efefef; }
+  #challenges h2 {
+    color: #042449;
+    padding-bottom: 4rem;
+    font-size: 3rem; }
+  #challenges p {
+    width: 60%;
+    margin: 0% 21%;
+    padding-top: 1rem;
+    color: #335a81; }
+  #challenges .track-container {
+    float: none;
+    margin-left: 10%;
+    display: grid;
+    width: 80%;
+    height: 50%;
+    grid-template-areas: "track1 track2 track3";
+    -webkit-grid-column-gap: 3rem;
+    -moz-grid-column-gap: 3rem;
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 5%;
+    background-color: #efefef; }
+    #challenges .track-container .track {
+      border: 3px solid #335a81;
+      border-radius: 3rem;
+      padding: 3rem; }
+      #challenges .track-container .track img {
+        width: 10rem;
+        height: 10rem; }
+      #challenges .track-container .track #track1 {
+        grid-area: track1; }
+      #challenges .track-container .track #track2 {
+        grid-area: track2; }
+      #challenges .track-container .track #track3 {
+        grid-area: track3; }
+      #challenges .track-container .track:hover {
+        border-color: #BF4D42;
+        cursor: pointer; }
+  #challenges .black-overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black background with opacity */
+    z-index: 3;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */ }
+  #challenges .track-info {
+    z-index: 4;
+    background-color: #ffff;
+    width: 30%;
+    display: none;
+    position: fixed;
+    width: 40%;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    top: 30%;
+    left: 30%;
+    border-radius: 3rem; }
+
+#logistics {
+  background-color: #efefef; }
+  #logistics h2 {
+    font-size: 4rem;
+    padding-bottom: 1.5rem; }
+  #logistics p {
+    width: 60%;
+    margin: 0% 21%;
+    padding-top: 1rem;
+    color: #335a81; }
+  #logistics .scheduleContainer {
+    width: 63%;
+    position: relative;
+    left: 20%;
+    font-size: 2rem; }
+    @media screen and (max-width: 1080px) {
+      #logistics .scheduleContainer ul .active {
+        background-color: #BF4D42;
+        color: #FFFF;
+        padding: 0.43rem 1.1rem; }
+      #logistics .scheduleContainer ul li {
+        list-style-type: none; }
+        #logistics .scheduleContainer ul li.nav-dropdown:hover > a {
+          background-color: #BF4D42;
+          padding: 0rem;
+          text-align: center;
+          vertical-align: middle;
+          border: 1px solid black;
+          border-collapse: collapse;
+          color: #FFFF; }
+        #logistics .scheduleContainer ul li a {
+          padding: 1rem;
+          text-decoration: none;
+          color: black; } }
+    @media screen and (min-width: 1080px) {
+      #logistics .scheduleContainer ul .active {
+        background-color: #BF4D42;
+        color: #FFFF;
+        padding: 0.43rem 1.1rem; }
+      #logistics .scheduleContainer ul li {
+        padding: 0rem;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid black;
+        border-collapse: collapse; }
+        #logistics .scheduleContainer ul li a {
+          padding: 1rem;
+          text-decoration: none;
+          color: black; } }
+    #logistics .scheduleContainer table {
+      margin-top: 2%;
+      margin-bottom: 10%;
+      background-color: #f8f9fa;
+      width: 100%;
+      position: relative;
+      table-layout: fixed; }
+      #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.5rem;
+        font-style: normal;
+        color: #335a81;
+        border: 3px solid black; }
+
+.marginFormat {
+  background-color: #efefef;
+  height: 200px;
+  width: 100%; }
+
+#faq .faq-container {
+  width: 100%;
+  position: relative;
+  left: 20%;
+  font-size: 2rem; }
+  #faq .faq-container ul .active {
+    background-color: #BF4D42;
+    color: #FFFF;
+    padding: 0.43rem 5.5rem; }
+  #faq .faq-container ul li {
+    border: 1px solid black;
+    border-collapse: collapse; }
+    #faq .faq-container ul li a {
+      padding: 0rem 5.5rem;
+      text-decoration: none;
+      color: black;
+      font-size: 2.5rem; }
+  #faq .faq-container .faq-holder {
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
+    margin: 16px 0;
+    padding: 10px;
+    width: 57%;
+    overflow: hidden;
+    height: 7rem; }
+    #faq .faq-container .faq-holder .faq-question {
+      margin: 0px;
+      padding: 0px 0px 10px 0px;
+      display: inline-block;
+      cursor: pointer;
+      font-weight: bold;
+      color: #193d56;
+      margin: 0 0 16px; }
+    #faq .faq-container .faq-holder .faq-answer-container {
+      height: 0px;
+      overflow: hidden;
+      padding: 0px;
+      margin: 0;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 4px 0;
+      text-align: left; }
+
+/*# sourceMappingURL=main.css.map */
