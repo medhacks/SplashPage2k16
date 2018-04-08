@@ -63,7 +63,7 @@ html {
     ul a {
         border: 3px solid $small-text-color;
         border-radius: 50%;
-        margin: 8%;
+        margin-left: 7rem;
         width: 3rem;
         height: 0.35rem;
         padding: 0.15rem .8rem;
@@ -84,11 +84,11 @@ html {
     ul #moose-mark {
         border: 3px solid $small-text-color;
         z-index: 4;
-        width: 0rem;
+        width: 0;
         display: inline;
         position: absolute;
         top: 0.5rem;
-        left: 36rem;
+        left: 41rem;
     }
 }
 
@@ -146,8 +146,8 @@ html {
 
     #navbar-logo {
         background-image: url("../assets/logo_dark.png");
-        width: 15rem;
-        height: 3rem;
+        width: 20rem;
+        height: 4rem;
         background-size: contain;
         background-repeat: no-repeat;
     }

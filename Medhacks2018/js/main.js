@@ -1,7 +1,8 @@
 let heights = [];
 let sections = [];
 heights.push($('#slider-container').height());
-var maxWidth = 52.5;
+var maxWidth = 35.4;
+var counter = 1;
 
 $(document).ready(() => {
     let $curwindow;
@@ -43,7 +44,9 @@ $(document).ready(() => {
     });
 
     $(".section-container").each(function() {
+
         heights.push($(this).position(this).top + heights[0]);
+        counter++;
         sections.push($(this));
     });
     console.log(heights);
@@ -59,25 +62,37 @@ $(document).scroll(function() {
     var withProp = newWidth.toString() +"rem";
     $("#moose-mark").css('width', withProp);
     // console.log(scrollPosition);
+    $("#aboutBubble").removeClass("filled");
+    $("#tracksBubble").removeClass("filled");
+    $("#logisticsBubble").removeClass("filled");
+    $("#faqBubble").removeClass("filled");
     for (var i = 0; i < heights.length; i++) {
         // console.log(heights[i]);
-        console.log(scrollPosition + " : " + heights[i]);
-        if (scrollPosition > heights[i]) {
+        // console.log(scrollPosition + " : " + heights[i]);
+
+        if (scrollPosition - 380 > heights[i]) {
             if (i == 1) {
+                $("#aboutBubble").addClass("filled");
+                $("#tracksBubble").removeClass("filled");
+                $("#logisticsBubble").removeClass("filled");
+                $("#faqBubble").removeClass("filled");
+            }
+            else if (i == 2) {
+                $("#aboutBubble").addClass("filled");
                 $("#tracksBubble").addClass("filled");
                 $("#logisticsBubble").removeClass("filled");
                 $("#faqBubble").removeClass("filled");
-            } else if (i == 2) {
+            } else if (i == 3) {
+                $("#aboutBubble").addClass("filled");
                 $("#tracksBubble").addClass("filled");
                 $("#logisticsBubble").addClass("filled");
                 $("#faqBubble").removeClass("filled");
-            } else if (i == 3) {
+            } else if (i == 4) {
+                $("#aboutBubble").addClass("filled");
                 $("#tracksBubble").addClass("filled");
                 $("#logisticsBubble").addClass("filled");
                 $("#faqBubble").addClass("filled");
             }
-        } else {
-            continue;
         }
     }
 });
