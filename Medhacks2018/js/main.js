@@ -46,6 +46,10 @@ $(document).ready(() => {
         $curwindow.fadeToggle('fast');
     });
 
+    $('#ham-container').on('click', () => {
+        $('#ham-container').toggleClass('change')
+    })
+
     $(".faq-question").click(function() {
         if ($(this).parent().hasClass('open')) {
             $(this).closest('.faq-holder').find('.faq-answer-container').animate({height: '0'}, 300);
