@@ -26,18 +26,28 @@ $(document).ready(() => {
 
     $('#home-small-button').on('click', () => {
         $('#header').goTo();
+        $('#side-info').slideToggle();
+        $('#ham-container').toggleClass('change');
     });
     $('#faq-small-button').on('click', () => {
         $('#faq').goTo();
+        $('#side-info').slideToggle();
+        $('#ham-container').toggleClass('change');
     });
     $('#tracks-small-button').on('click', () => {
         $('#challenges').goTo();
+        $('#side-info').slideToggle();
+        $('#ham-container').toggleClass('change');
     });
     $('#logistics-small-button').on('click', () => {
         $('#logistics').goTo();
+        $('#ham-container').toggleClass('change');
+        $('#side-info').slideToggle();
     });
     $('#about-small-button').on('click', () => {
         $('#basicInfo').goTo();
+        $('#side-info').slideToggle();
+        $('#ham-container').toggleClass('change');
     });
 
     $('#track1').on('click', () => {
