@@ -303,7 +303,8 @@ html {
                   &.nav-dropdown:hover > a {
                     background-color: $pop-color;
                     padding: 0rem;
-                    @extend %center;
+                    text-align: center;
+                    vertical-align: middle;
                     border: 1px solid black;
                     border-collapse: collapse;
                     color: #FFFF;
