@@ -1,4 +1,4 @@
-#header .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #faq .faq-container ul li {
+#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #faq .faq-container ul li {
   text-align: center;
   vertical-align: middle; }
 
@@ -44,9 +44,9 @@ html {
 #slider-container {
   width: 100%;
   position: relative;
-  right: 3rem;
+  right: 8rem;
   position: fixed;
-  top: 3rem; }
+  top: 3.5rem; }
   #slider-container ul a {
     border: 3px solid #335a81;
     border-radius: 50%;
@@ -62,6 +62,14 @@ html {
       float: left;
       text-align: center;
       position: relative; }
+    #slider-container ul a div {
+      display: inline-block;
+      position: relative;
+      left: 33.5rem;
+      color: #335a81;
+      text-decoration: none;
+      font-size: 1.5rem;
+      bottom: 1rem; }
   #slider-container ul .filled {
     background-color: #335a81; }
   #slider-container ul #moose-mark {
@@ -120,6 +128,20 @@ html {
     height: 4rem;
     background-size: contain;
     background-repeat: no-repeat; }
+  .navbar .applyButton, .navbar-default .applyButton {
+    margin-right: 2rem;
+    padding: 0.5rem;
+    color: #FFFF;
+    background-color: #BF4D42;
+    width: 15rem;
+    border-radius: 0.5rem;
+    transform: scale(0.85);
+    transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
+    .navbar .applyButton:hover, .navbar-default .applyButton:hover {
+      transform: scale(1);
+      background-color: #efefef;
+      color: black;
+      cursor: pointer; }
 
 #basicInfo {
   background-color: #efefef; }

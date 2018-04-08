@@ -57,9 +57,9 @@ html {
 #slider-container {
     width: 100%;
     position: relative;
-    right: 3rem;
+    right: 8rem;
     position: fixed;
-    top: 3rem;
+    top: 3.5rem;
     ul a {
         border: 3px solid $small-text-color;
         border-radius: 50%;
@@ -75,6 +75,15 @@ html {
             float: left;
             text-align: center;
             position: relative;
+        }
+        div {
+            display: inline-block;
+            position: relative;
+            left: 33.5rem;
+            color: $small-text-color;
+            text-decoration: none;
+            font-size: 1.5rem;
+            bottom: 1rem;
         }
 
     }
@@ -150,6 +159,23 @@ html {
         height: 4rem;
         background-size: contain;
         background-repeat: no-repeat;
+    }
+    .applyButton {
+        margin-right: 2rem;
+        padding: 0.5rem;
+        color: #FFFF;
+        background-color: $pop-color;
+        width: 15rem;
+        @extend %center;
+        border-radius: 0.5rem;
+        transform: scale(0.85);
+        transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
+        &:hover {
+            transform: scale(1);
+            background-color: $background-color;
+            color: black;
+            cursor: pointer;
+        }
     }
 }
 
