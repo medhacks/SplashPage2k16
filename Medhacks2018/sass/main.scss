@@ -35,6 +35,9 @@ html {
     width: 100rem;
     opacity: 0.85;
     padding: 0;
+    ul {
+        padding: 0;
+    }
     ul li {
         position: relative;
         top: 10%;
@@ -89,6 +92,7 @@ html {
         display: none;
     }
     z-index: 5;
+    position: relative;
     right: 5rem;
     display: inline-block;
     cursor: pointer;
