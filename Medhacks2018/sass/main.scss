@@ -258,6 +258,22 @@ html {
     }
 }
 
+.header-text-actions {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.header-text-action {
+    border: 3px solid #fff;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 24px;
+    margin-right: 18px;
+    padding: 14px 30px;
+    transform: scale(.925);
+    transition: .2s background-color ease-out, .2s color ease-out, .2s transform ease-out;
+}
+
 #basicInfo {
     h2 {
         color: $large-text-color;
