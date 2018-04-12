@@ -139,13 +139,17 @@
             </h2>
 
           <div class ="scheduleContainer">
-              <ul class="nav nav-tabs">
-                  <li ><a data-toggle="tab" class="active" href="#friday">Friday September 7</a></li>
+              <nav class="navbar navbar-expand-lg">
+                  <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#datetabs"
+                    aria-controls = "datetabs" aria-expanded = "false" aria-label = "Toggle navigation">
+                  <!--<li ><a data-toggle="tab" class="active" href="#friday">Friday September 7</a></li>
                   <li><a data-toggle="tab" href="#saturday">Saturday September 8</a></li>
-                  <li><a data-toggle="tab" href="#sunday">Sunday September 9</a></li>
-              </ul>
+                  <li><a data-toggle="tab" href="#sunday">Sunday September 9</a></li>-->
+                      <span class = "navbar-toggler-icon"></span>
+                  </button>
+              </nav>
 
-              <div class="tab-content">
+              <div class="tab-content" id = "datetabs">
                   <div id="friday" class="tab-pane  active">
                       <table>
                           <col width="10rem"/>
