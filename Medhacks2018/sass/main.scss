@@ -130,17 +130,13 @@ html {
     }
     width: 100%;
     position: relative;
-    right: 3rem;
+    right: 8rem;
     position: fixed;
-<<<<<<< HEAD
-    top: 3rem;
-=======
     top: 1.5rem;
->>>>>>> b36ed175ed31521cbb63b3b5e409c4a4ab0f1ca5
     ul a {
         border: 3px solid $small-text-color;
         border-radius: 50%;
-        margin: 8%;
+        margin-left: 7rem;
         width: 3rem;
         height: 0.35rem;
         padding: 0.15rem .8rem;
@@ -153,6 +149,15 @@ html {
             text-align: center;
             position: relative;
         }
+        div {
+            display: inline-block;
+            position: relative;
+            left: 33.5rem;
+            color: $small-text-color;
+            text-decoration: none;
+            font-size: 1.5rem;
+            bottom: 1rem;
+        }
 
     }
     ul .filled {
@@ -164,11 +169,11 @@ html {
         }
         border: 3px solid $small-text-color;
         z-index: 4;
-        width: 3rem;
+        width: 0;
         display: inline;
         position: absolute;
         top: 0.5rem;
-        left: 36rem;
+        left: 41rem;
     }
 }
 
@@ -225,14 +230,6 @@ html {
     }
 
     #navbar-logo {
-<<<<<<< HEAD
-        background-image: url("../assets/logo_dark.png");
-        width: 15rem;
-        height: 3rem;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-=======
         background-image: url("../assets/medhacks-without-cross.png");
         width: 20rem;
         height: 4rem;
@@ -259,7 +256,22 @@ html {
             cursor: pointer;
         }
     }
->>>>>>> b36ed175ed31521cbb63b3b5e409c4a4ab0f1ca5
+}
+
+.header-text-actions {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.header-text-action {
+    border: 3px solid #fff;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 24px;
+    margin-right: 18px;
+    padding: 14px 30px;
+    transform: scale(.925);
+    transition: .2s background-color ease-out, .2s color ease-out, .2s transform ease-out;
 }
 
 #basicInfo {
@@ -366,15 +378,15 @@ html {
   .track-info {
       z-index: 4;
       background-color: #ffff;
-      width: 30%;
+      width: 70%;
+      height: 70%;
       @extend %center;
       display: none;
       position: fixed;
-      width: 40%;
       box-sizing: border-box;
       background-color: #FFFFFF;
-      top: 30%;
-      left: 30%;
+      top: 15%;
+      left: 15%;
       border-radius: 3rem;
   }
 }
@@ -401,87 +413,46 @@ html {
         font-size: 2rem;
 
         ul {
-            /*media screen and (max-width: 1080px) {
-                .active {
-                  background-color: $pop-color;
+            @media screen and (max-width: 1080px) {
+              .nav-dropdown:hover > a {
                   color: #FFFF;
-                  padding: 0.43rem 1.1rem;
-                }
-                li {
-                    float: left;
-                    position: relative;
-                    a {
-                      padding: 0.43rem 1.1rem;
-                      text-decoration: none;
-                      color: black;
-                      text-align: center;
-                      vertical-align: middle;
-
-                    }
-                }
-              li {
-                list-style-type: none;
-                a {
-                    .nav-dropdown {
-                      color: "red($color);";
-                      background-color: $pop-color;
-                    }
-                    padding: 0.43rem 1.1rem;
-                    text-decoration: none;
-                    color: black;
-                    text-align: center;
-                    vertical-align: middle;
-                }
+                  background-color: $pop-color;
+                  padding: 0rem;
+                  text-align: center;
+                  vertical-align: middle;
+                  border: 1px solid black;
+                  border-collapse: collapse;
+              }
+              a {
+                  padding: 1rem;
+                  text-decoration: none;
+                  color: black;
               }
               .active {
                   background-color: $pop-color;
                   color: #FFFF;
                   padding: 0.43rem 1.1rem;
               }
-            }*/
-              @media screen (and max-width: 1080px) {
-                .active {
+            }
+            @media screen and (min-width: 1080px) {
+              .active {
                   background-color: $pop-color;
                   color: #FFFF;
-                  padding: 0.21rem 0.55rem;
-                }
-                li {
+                  padding: 0.43rem 1.1rem;
+              }
+              li {
                   padding: 0rem;
                   text-align: center;
                   vertical-align: middle;
-                  border: 1px solid $pop-color;
+                  border: 1px solid black;
                   border-collapse: collapse;
                   a {
-<<<<<<< HEAD
-                      padding: 0.5rem;
-=======
                       padding: 5rem 1rem;
->>>>>>> b36ed175ed31521cbb63b3b5e409c4a4ab0f1ca5
                       text-decoration: none;
                       color: black;
                   }
-                }
               }
-              @media screen (and min-width: 1080px) {
-                .active {
-                    background-color: black;
-                    color: #FFFF;
-                    padding: 0.43rem 1.1rem;
-                }
-                li {
-                    padding: 0rem;
-                    text-align: center;
-                    vertical-align: middle;
-                    border: 1px solid black;
-                    border-collapse: collapse;
-                    a {
-                        padding: 1rem;
-                        text-decoration: none;
-                        color: black;
-                    }
-                }
-              }
-
+            }
 
         }
 
