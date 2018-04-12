@@ -23,6 +23,39 @@ html {
     margin-bottom: 0;
 }
 
+#side-info {
+    display: none;
+    background-color: $large-text-color;
+    color: white;
+    position: fixed;
+    z-index: 3;
+    height: 300rem;
+    left: 30%;
+    top: 0%;
+    width: 100rem;
+    opacity: 0.85;
+    padding: 0;
+    ul {
+        padding: 0;
+    }
+    ul li {
+        position: relative;
+        top: 10%;
+        font-size: 4rem;
+        list-style-type: none;
+        padding: 1rem 5rem;
+        margin: 0;
+        cursor: pointer;
+        &:hover {
+            background-color: #fff;
+            color: $small-text-color;
+        }
+    }
+    .apply {
+        color: $pop-color;
+    }
+}
+
 #header {
     background-color: $background-color;
     background-image: url("../assets/headerImage.png");
@@ -54,12 +87,56 @@ html {
     }
 }
 
+#ham-container {
+    @media screen and (min-width: 800px) {
+        display: none;
+    }
+    z-index: 5;
+    position: relative;
+    right: 5rem;
+    display: inline-block;
+    cursor: pointer;
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+}
+
+.change {
+
+    .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+        z-index: 4;
+        background-color: white!important;
+    }
+
+    .bar2 {opacity: 0;}
+
+    .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+        background-color: white!important;
+    }
+}
+
 #slider-container {
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
     width: 100%;
     position: relative;
     right: 3rem;
     position: fixed;
+<<<<<<< HEAD
     top: 3rem;
+=======
+    top: 1.5rem;
+>>>>>>> b36ed175ed31521cbb63b3b5e409c4a4ab0f1ca5
     ul a {
         border: 3px solid $small-text-color;
         border-radius: 50%;
@@ -82,6 +159,9 @@ html {
         background-color: $small-text-color;
     }
     ul #moose-mark {
+        @media screen and (max-width: 1000px) {
+            left: 43rem;
+        }
         border: 3px solid $small-text-color;
         z-index: 4;
         width: 3rem;
@@ -97,7 +177,7 @@ html {
     background-color: #FFFF;
     width: 100%;
     position: fixed;
-    height: 8rem;
+    height: 6rem;
     .nav-item {
         a {
             color: $small-text-color;
@@ -145,12 +225,41 @@ html {
     }
 
     #navbar-logo {
+<<<<<<< HEAD
         background-image: url("../assets/logo_dark.png");
         width: 15rem;
         height: 3rem;
         background-size: contain;
         background-repeat: no-repeat;
     }
+=======
+        background-image: url("../assets/medhacks-without-cross.png");
+        width: 20rem;
+        height: 4rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .applyButton {
+        @media screen and (max-width: 800px){
+            display: none;
+        }
+        margin-right: 2rem;
+        padding: 0.5rem;
+        color: #FFFF;
+        background-color: $pop-color;
+        width: 15rem;
+        @extend %center;
+        border-radius: 0.5rem;
+        transform: scale(0.85);
+        transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
+        &:hover {
+            transform: scale(1);
+            background-color: $background-color;
+            color: black;
+            cursor: pointer;
+        }
+    }
+>>>>>>> b36ed175ed31521cbb63b3b5e409c4a4ab0f1ca5
 }
 
 #basicInfo {
@@ -334,7 +443,7 @@ html {
                 .active {
                   background-color: $pop-color;
                   color: #FFFF;
-                  padding: 0.43rem 1.1rem;
+                  padding: 0.21rem 0.55rem;
                 }
                 li {
                   padding: 0rem;
@@ -343,29 +452,36 @@ html {
                   border: 1px solid $pop-color;
                   border-collapse: collapse;
                   a {
-                      padding: 1rem;
+<<<<<<< HEAD
+                      padding: 0.5rem;
+=======
+                      padding: 5rem 1rem;
+>>>>>>> b36ed175ed31521cbb63b3b5e409c4a4ab0f1ca5
                       text-decoration: none;
                       color: black;
                   }
                 }
               }
-              .active {
-                  background-color: $pop-color;
-                  color: #FFFF;
-                  padding: 0.43rem 1.1rem;
+              @media screen (and min-width: 1080px) {
+                .active {
+                    background-color: black;
+                    color: #FFFF;
+                    padding: 0.43rem 1.1rem;
+                }
+                li {
+                    padding: 0rem;
+                    text-align: center;
+                    vertical-align: middle;
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                    a {
+                        padding: 1rem;
+                        text-decoration: none;
+                        color: black;
+                    }
+                }
               }
-              li {
-                  padding: 0rem;
-                  text-align: center;
-                  vertical-align: middle;
-                  border: 1px solid $pop-color;
-                  border-collapse: collapse;
-                  a {
-                      padding: 1rem;
-                      text-decoration: none;
-                      color: black;
-                  }
-              }
+
 
         }
 
@@ -397,13 +513,14 @@ html {
 
 #faq {
     .faq-container {
-        width: 100%;
+        width: 60%;
 
         position: relative;
         left: 20%;
         font-size: 2rem;
 
         ul {
+            border: none;
             .active {
                 background-color: $pop-color;
                 color: #FFFF;
@@ -429,7 +546,7 @@ html {
             box-shadow: 0 0 6px 1px rgba(0, 0, 0, .05);
             margin: 16px 0;
             padding: 10px;
-            width: 57%;
+            width: 95%;
             overflow: hidden;
             height: 7rem;
             .faq-question {

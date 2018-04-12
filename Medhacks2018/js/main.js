@@ -3,9 +3,52 @@ let sections = [];
 heights.push($('#slider-container').height());
 var maxWidth = 35.4;
 var counter = 1;
+let hamCount = 0;
 
 $(document).ready(() => {
     let $curwindow;
+
+    $('#homeBubble').on('click', () => {
+        $('#header').goTo();
+    });
+    $('#faqBubble').on('click', () => {
+        $('#faq').goTo();
+    });
+    $('#tracksBubble').on('click', () => {
+        $('#challenges').goTo();
+    });
+    $('#logisticsBubble').on('click', () => {
+        $('#logistics').goTo();
+    });
+    $('#aboutBubble').on('click', () => {
+        $('#basicInfo').goTo();
+    });
+
+    $('#home-small-button').on('click', () => {
+        $('#header').goTo();
+        $('#side-info').slideToggle();
+        $('#ham-container').toggleClass('change');
+    });
+    $('#faq-small-button').on('click', () => {
+        $('#faq').goTo();
+        $('#side-info').slideToggle();
+        $('#ham-container').toggleClass('change');
+    });
+    $('#tracks-small-button').on('click', () => {
+        $('#challenges').goTo();
+        $('#side-info').slideToggle();
+        $('#ham-container').toggleClass('change');
+    });
+    $('#logistics-small-button').on('click', () => {
+        $('#logistics').goTo();
+        $('#ham-container').toggleClass('change');
+        $('#side-info').slideToggle();
+    });
+    $('#about-small-button').on('click', () => {
+        $('#basicInfo').goTo();
+        $('#side-info').slideToggle();
+        $('#ham-container').toggleClass('change');
+    });
 
     $('#track1').on('click', () => {
         $('.black-overlay').fadeToggle('fast');
@@ -29,6 +72,19 @@ $(document).ready(() => {
         $('.black-overlay').fadeToggle('fast');
         $curwindow.fadeToggle('fast');
     });
+
+    $('#ham-container').on('click', () => {
+        $('#ham-container').toggleClass('change');
+        $('#side-info').slideToggle();
+
+        // if (hamCount == 0) {
+        //     $("#ham-container").detach().appendTo("#side-info");
+        //     hamCount = 1;
+        // } else {
+        //     $("#ham-container").detach().appendTo("#navbar");
+        //     hamCount = 0;
+        // }
+    })
 
     $(".faq-question").click(function() {
         if ($(this).parent().hasClass('open')) {
@@ -96,3 +152,15 @@ $(document).scroll(function() {
         }
     }
 });
+
+
+(function($) {
+    $.fn.goTo = function() {
+        var placeToGo;
+        placeToGo = $(this).offset().top - 150;
+        $('html, body').animate({
+            scrollTop: placeToGo + 'px'
+        });
+        return this;
+    }
+})(jQuery);
