@@ -392,6 +392,9 @@ html {
 }
 
 #logistics {
+  @media screen and (max-width: 800px) {
+      display: none;
+  }
     h2 {
         font-size: 4rem;
         padding-bottom: 1.5rem;
@@ -413,7 +416,7 @@ html {
         font-size: 2rem;
 
         ul {
-            @media screen and (max-width: 1080px) {
+            @media screen and (max-width: 1081px) {
               .nav-dropdown:hover > a {
                   color: #FFFF;
                   background-color: $pop-color;
