@@ -392,9 +392,7 @@ html {
 }
 
 #logistics {
-  @media screen and (max-width: 800px) {
-      display: none;
-  }
+
     h2 {
         font-size: 4rem;
         padding-bottom: 1.5rem;
@@ -415,49 +413,83 @@ html {
         left: 20%;
         font-size: 2rem;
 
-        ul {
-            @media screen and (max-width: 1081px) {
-              .nav-dropdown:hover > a {
-                  color: #FFFF;
-                  background-color: $pop-color;
-                  padding: 0rem;
-                  text-align: center;
-                  vertical-align: middle;
-                  border: 1px solid black;
-                  border-collapse: collapse;
-              }
+        @media screen and (max-width: 1080px) {
+          .nav-nav-tabs {
+              display:none;
+          }
+          .dropdown {
+            display: inline-block;
+          }
+          .dropdown-content {
+            display:none;
+          }
+          .dropdown:hover .dropdown-content {
+            display: block;
+          }
+          .nav-dropdown:hover > a {
+              color: #FFFF;
+              background-color: $pop-color;
+              padding: 0rem;
+              text-align: center;
+              vertical-align: middle;
+              border: 1px solid black;
+              border-collapse: collapse;
+          }
+          /*
+          a {
+              padding: 1rem;
+              text-decoration: none;
+              color: black;
+          }*/
+          .active {
+              background-color: $pop-color;
+              color: #FFFF;
+              padding: 0.43rem 1.1rem;
+          }
+          li {
+              list-style-type: none;
+              padding: 0rem;
+              text-align: center;
+              vertical-align: middle;
+              border: 1px solid black;
+              border-collapse: collapse;
               a {
-                  padding: 1rem;
+                  padding: 5rem 1rem;
                   text-decoration: none;
                   color: black;
               }
-              .active {
-                  background-color: $pop-color;
-                  color: #FFFF;
-                  padding: 0.43rem 1.1rem;
-              }
-            }
-            @media screen and (min-width: 1080px) {
-              .active {
-                  background-color: $pop-color;
-                  color: #FFFF;
-                  padding: 0.43rem 1.1rem;
-              }
-              li {
-                  padding: 0rem;
-                  text-align: center;
-                  vertical-align: middle;
-                  border: 1px solid black;
-                  border-collapse: collapse;
-                  a {
-                      padding: 5rem 1rem;
-                      text-decoration: none;
-                      color: black;
-                  }
-              }
-            }
-
+          }
         }
+        @media screen and (min-width: 1080px) {
+          .dropdown-content {
+            display:none;
+          }
+          .dropdown {
+            display: none;
+          }
+          .nav-nav-tabs {
+            display:inline;
+          }
+          .active {
+              background-color: $pop-color;
+              color: #FFFF;
+              padding: 0.43rem 1.1rem;
+          }
+          li {
+              list-style-type: none;
+              padding: 0rem;
+              text-align: center;
+              vertical-align: middle;
+              border: 1px solid black;
+              border-collapse: collapse;
+              a {
+                  padding: 5rem 1rem;
+                  text-decoration: none;
+                  color: black;
+              }
+          }
+        }
+
 
         table {
             margin-top: 2%;
