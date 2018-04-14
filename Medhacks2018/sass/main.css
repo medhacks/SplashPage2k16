@@ -349,7 +349,8 @@ html {
         #logistics .scheduleContainer .nav-nav-tabs {
           display: none; }
         #logistics .scheduleContainer .dropdown {
-          display: block; }
+          display: block;
+          padding-bottom: 1rem; }
         #logistics .scheduleContainer .dropdown-content {
           display: none; }
         #logistics .scheduleContainer .dropdown:hover .dropdown-content {
