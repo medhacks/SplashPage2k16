@@ -427,21 +427,6 @@ html {
           .dropdown:hover .dropdown-content {
             display: block;
           }
-          /*
-          .nav-dropdown:hover > a {
-              color: #FFFF;
-              background-color: $pop-color;
-              padding: 0rem;
-              text-align: center;
-              vertical-align: middle;
-              border: 1px solid black;
-              border-collapse: collapse;
-          }*/
-          a {
-              padding: 1rem;
-              text-decoration: none;
-              color: black;
-          }
           .active {
               background-color: $pop-color;
               color: #FFFF;
