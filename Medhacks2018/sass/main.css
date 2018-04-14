@@ -349,7 +349,7 @@ html {
         #logistics .scheduleContainer .nav-nav-tabs {
           display: none; }
         #logistics .scheduleContainer .dropdown {
-          display: inline; }
+          display: block; }
         #logistics .scheduleContainer .dropdown-content {
           display: none; }
         #logistics .scheduleContainer .dropdown:hover .dropdown-content {
@@ -436,12 +436,12 @@ html {
   #faq .faq-container .faq-holder {
     background-color: #c6c9ce;
     border-radius: 2px;
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
     margin: 16px 0;
     padding: 10px;
     width: 95%;
     overflow: hidden;
-    height: 7rem;}
+    height: 7rem; }
     #faq .faq-container .faq-holder .faq-question {
       margin: 0px;
       padding: 0px 0px 10px 0px;
@@ -452,7 +452,6 @@ html {
       margin: 0 0 16px; }
     #faq .faq-container .faq-holder .faq-answer-container {
       height: 0px;
-      overflow: hidden;
       padding: 0px;
       margin: 0;
       font-size: 16px;
