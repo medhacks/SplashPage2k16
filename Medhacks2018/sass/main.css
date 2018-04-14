@@ -434,14 +434,14 @@ html {
         color: black;
         font-size: 2.5rem; }
   #faq .faq-container .faq-holder {
-    background-color: #f9f9f9;
-    border-radius: 3px;
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
+    background-color: #c6c9ce;
+    border-radius: 2px;
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, .05);
     margin: 16px 0;
     padding: 10px;
     width: 95%;
     overflow: hidden;
-    height: 7rem; }
+    height: 7rem;}
     #faq .faq-container .faq-holder .faq-question {
       margin: 0px;
       padding: 0px 0px 10px 0px;
