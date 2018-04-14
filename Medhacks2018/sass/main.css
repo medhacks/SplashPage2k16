@@ -349,11 +349,11 @@ html {
         #logistics .scheduleContainer .nav-nav-tabs {
           display: none; }
         #logistics .scheduleContainer .dropdown {
-          display: inline-block; }
+          display: inline; }
         #logistics .scheduleContainer .dropdown-content {
           display: none; }
         #logistics .scheduleContainer .dropdown:hover .dropdown-content {
-          display: block; }
+          display: inline-block; }
         #logistics .scheduleContainer a {
           padding: 1rem;
           text-decoration: none;
