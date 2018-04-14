@@ -335,44 +335,41 @@ html {
     left: 20%;
     font-size: 2rem; }
     @media screen and (max-width: 1080px) {
-      #logistics .scheduleContainer {
-        /*
-        a {
-            padding: 1rem;
-            text-decoration: none;
-            color: black;
-        }*/ }
-        #logistics .scheduleContainer .nav-nav-tabs {
-          display: none; }
-        #logistics .scheduleContainer .dropdown {
-          display: inline-block; }
-        #logistics .scheduleContainer .dropdown-content {
-          display: none; }
-        #logistics .scheduleContainer .dropdown:hover .dropdown-content {
-          display: block; }
-        #logistics .scheduleContainer .nav-dropdown:hover > a {
-          color: #FFFF;
-          background-color: #BF4D42;
-          padding: 0rem;
-          text-align: center;
-          vertical-align: middle;
-          border: 1px solid black;
-          border-collapse: collapse; }
-        #logistics .scheduleContainer .active {
-          background-color: #BF4D42;
-          color: #FFFF;
-          padding: 0.43rem 1.1rem; }
-        #logistics .scheduleContainer li {
-          list-style-type: none;
-          padding: 0rem;
-          text-align: center;
-          vertical-align: middle;
-          border: 1px solid black;
-          border-collapse: collapse; }
-          #logistics .scheduleContainer li a {
-            padding: 5rem 1rem;
-            text-decoration: none;
-            color: black; } }
+      #logistics .scheduleContainer .nav-nav-tabs {
+        display: none; }
+      #logistics .scheduleContainer .dropdown {
+        display: inline-block; }
+      #logistics .scheduleContainer .dropdown-content {
+        display: none; }
+      #logistics .scheduleContainer .dropdown:hover .dropdown-content {
+        display: block; }
+      #logistics .scheduleContainer .nav-dropdown:hover > a {
+        color: #FFFF;
+        background-color: #BF4D42;
+        padding: 0rem;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid black;
+        border-collapse: collapse; }
+      #logistics .scheduleContainer a {
+        padding: 1rem;
+        text-decoration: none;
+        color: black; }
+      #logistics .scheduleContainer .active {
+        background-color: #BF4D42;
+        color: #FFFF;
+        padding: 0.43rem 1.1rem; }
+      #logistics .scheduleContainer li {
+        list-style-type: none;
+        padding: 0rem;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid black;
+        border-collapse: collapse; }
+        #logistics .scheduleContainer li a {
+          padding: 5rem 1rem;
+          text-decoration: none;
+          color: black; } }
     @media screen and (min-width: 1080px) {
       #logistics .scheduleContainer .dropdown-content {
         display: none; }
