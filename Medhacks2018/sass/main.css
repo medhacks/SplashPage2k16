@@ -330,49 +330,46 @@ html {
     padding-top: 1rem;
     color: #335a81; }
   #logistics .scheduleContainer {
-    width: 60%;
+    width: 63%;
     position: relative;
     left: 20%;
     font-size: 2rem; }
     @media screen and (max-width: 1080px) {
-      #logistics .scheduleContainer {
-        /*
-        .nav-dropdown:hover > a {
-            color: #FFFF;
-            background-color: $pop-color;
-            padding: 0rem;
-            text-align: center;
-            vertical-align: middle;
-            border: 1px solid black;
-            border-collapse: collapse;
-        }*/ }
-        #logistics .scheduleContainer .nav-nav-tabs {
-          display: none; }
-        #logistics .scheduleContainer .dropdown {
-          display: block; }
-        #logistics .scheduleContainer .dropdown-content {
-          display: none; }
-        #logistics .scheduleContainer .dropdown:hover .dropdown-content {
-          display: block; }
-        #logistics .scheduleContainer a {
-          padding: 1rem;
+      #logistics .scheduleContainer .nav-nav-tabs {
+        display: none; }
+      #logistics .scheduleContainer .dropdown {
+        display: inline-block; }
+      #logistics .scheduleContainer .dropdown-content {
+        display: none; }
+      #logistics .scheduleContainer .dropdown:hover .dropdown-content {
+        display: block; }
+      #logistics .scheduleContainer .nav-dropdown:hover > a {
+        color: #FFFF;
+        background-color: #BF4D42;
+        padding: 0rem;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid black;
+        border-collapse: collapse; }
+      #logistics .scheduleContainer a {
+        padding: 1rem;
+        text-decoration: none;
+        color: black; }
+      #logistics .scheduleContainer .active {
+        background-color: #BF4D42;
+        color: #FFFF;
+        padding: 0.43rem 1.1rem; }
+      #logistics .scheduleContainer li {
+        list-style-type: none;
+        padding: 0rem;
+        text-align: center;
+        vertical-align: middle;
+        border: 1px solid black;
+        border-collapse: collapse; }
+        #logistics .scheduleContainer li a {
+          padding: 5rem 1rem;
           text-decoration: none;
-          color: black; }
-        #logistics .scheduleContainer .active {
-          background-color: #BF4D42;
-          color: #FFFF;
-          padding: 0.43rem 1.1rem; }
-        #logistics .scheduleContainer li {
-          list-style-type: none;
-          padding: 0rem;
-          text-align: center;
-          vertical-align: middle;
-          border: 0px solid black;
-          border-collapse: collapse; }
-          #logistics .scheduleContainer li a {
-            padding: 5rem 1rem;
-            text-decoration: none;
-            color: black; } }
+          color: black; } }
     @media screen and (min-width: 1080px) {
       #logistics .scheduleContainer .dropdown-content {
         display: none; }
@@ -389,7 +386,7 @@ html {
         padding: 0rem;
         text-align: center;
         vertical-align: middle;
-        border: 0px solid black;
+        border: 1px solid black;
         border-collapse: collapse; }
         #logistics .scheduleContainer li a {
           padding: 5rem 1rem;
@@ -416,10 +413,9 @@ html {
 
 #faq .faq-container {
   width: 60%;
-  background-color: #c6c9ce;
   position: relative;
   left: 20%;
-  font-size: 2rem; }
+  font-size: 1rem; }
   #faq .faq-container ul {
     border: none; }
     #faq .faq-container ul .active {
@@ -436,11 +432,11 @@ html {
         font-size: 2.5rem; }
   #faq .faq-container .faq-holder {
     background-color: #c6c9ce;
-    border-radius: 2px;
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
-    margin: 16px 0;
+    border-radius: 0.5px;
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, .05);
+    margin: 2px 0;
     padding: 10px;
-    width: 95%; }
+    width: 95%;}
     #faq .faq-container .faq-holder .faq-question {
       margin: 0px;
       padding: 0px 0px 10px 0px;
@@ -453,10 +449,10 @@ html {
       height: 0px;
       padding: 0px;
       margin: 0;
-      font-size: 16px;
+      font-size: 12px;
       line-height: 24px;
       background-color: #c6c9ce;
-      margin: 4px 0;
+      margin: 2px 0;
       text-align: left; }
 
 /*# sourceMappingURL=main.css.map */
