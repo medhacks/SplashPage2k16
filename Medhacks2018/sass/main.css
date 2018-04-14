@@ -353,7 +353,7 @@ html {
         #logistics .scheduleContainer .dropdown-content {
           display: none; }
         #logistics .scheduleContainer .dropdown:hover .dropdown-content {
-          display: inline-block; }
+          display: inline; }
         #logistics .scheduleContainer a {
           padding: 1rem;
           text-decoration: none;
