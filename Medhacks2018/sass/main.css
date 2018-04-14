@@ -1,461 +1,70 @@
-#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #faq .faq-container ul li {
-  text-align: center;
-  vertical-align: middle; }
+/*
+Error: Invalid CSS after "...         margin": expected ";", was ": 4px 0;"
+        on line 574 of main.scss
 
-html {
-  background: #efefef;
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1vmax; }
+569:                 padding: 0px;
+570:                 margin: 0;
+571:                 font-size: 16px;
+572:                 line-height: 24px;
+573:                 background-color: #c6c9ce
+574:                 margin: 4px 0;
+575:                 text-align: left;
+576:             }
+577:         }
+578:     }
+579: }
 
-.jumbotron {
-  background-color: #efefef;
-  color: #042449;
-  font-size: 30rem;
-  margin-bottom: 0; }
-
-#side-info {
-  display: none;
-  background-color: #042449;
-  color: white;
-  position: fixed;
-  z-index: 3;
-  height: 300rem;
-  left: 30%;
-  top: 0%;
-  width: 100rem;
-  opacity: 0.85;
-  padding: 0; }
-  #side-info ul {
-    padding: 0; }
-  #side-info ul li {
-    position: relative;
-    top: 10%;
-    font-size: 4rem;
-    list-style-type: none;
-    padding: 1rem 5rem;
-    margin: 0;
-    cursor: pointer; }
-    #side-info ul li:hover {
-      background-color: #fff;
-      color: #335a81; }
-  #side-info .apply {
-    color: #BF4D42; }
-
-#header {
-  background-color: #efefef;
-  background-image: url("../assets/headerImage.png");
-  -webkit-background-size: contain;
-  -moz-background-size: contain;
-  -o-background-size: contain;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 65rem;
-  width: 100%; }
-  #header .applyButton {
-    position: relative;
-    left: 40%;
-    top: 40rem;
-    padding: 0.5rem;
-    background-color: #efefef;
-    width: 15rem;
-    border-radius: 5%;
-    transform: scale(0.85);
-    transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
-    #header .applyButton:hover {
-      transform: scale(1);
-      background-color: #BF4D42;
-      color: #FFFF;
-      cursor: pointer; }
-
-#ham-container {
-  z-index: 5;
-  position: relative;
-  right: 5rem;
-  display: inline-block;
-  cursor: pointer; }
-  @media screen and (min-width: 800px) {
-    #ham-container {
-      display: none; } }
-  #ham-container .bar1, #ham-container .bar2, #ham-container .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s; }
-
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-  z-index: 4;
-  background-color: white !important; }
-.change .bar2 {
-  opacity: 0; }
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
-  background-color: white !important; }
-
-#slider-container {
-  width: 100%;
-  position: relative;
-  right: 8rem;
-  position: fixed;
-  top: 1.5rem; }
-  @media screen and (max-width: 800px) {
-    #slider-container {
-      display: none; } }
-  #slider-container ul a {
-    border: 3px solid #335a81;
-    border-radius: 50%;
-    margin-left: 7rem;
-    width: 3rem;
-    height: 0.35rem;
-    padding: 0.15rem .8rem; }
-    #slider-container ul a .bubble {
-      display: inline-block;
-      width: 3rem;
-      height: 3rem;
-      padding: 3rem;
-      float: left;
-      text-align: center;
-      position: relative; }
-    #slider-container ul a div {
-      display: inline-block;
-      position: relative;
-      left: 33.5rem;
-      color: #335a81;
-      text-decoration: none;
-      font-size: 1.5rem;
-      bottom: 1rem; }
-  #slider-container ul .filled {
-    background-color: #335a81; }
-  #slider-container ul #moose-mark {
-    border: 3px solid #335a81;
-    z-index: 4;
-    width: 0;
-    display: inline;
-    position: absolute;
-    top: 0.5rem;
-    left: 41rem; }
-    @media screen and (max-width: 1000px) {
-      #slider-container ul #moose-mark {
-        left: 43rem; } }
-
-.navbar, .navbar-default {
-  z-index: 3;
-  background-color: #FFFF;
-  width: 100%;
-  position: fixed;
-  height: 6rem; }
-  .navbar .nav-item, .navbar-default .nav-item {
-    display: block;
-    padding: 0 .5rem;
-    position: relative;
-    cursor: pointer; }
-    .navbar .nav-item a, .navbar-default .nav-item a {
-      color: #335a81;
-      font-size: 1.5rem;
-      box-shadow: 0px 0.5rem;
-      transition: color .1s ease-out;
-      z-index: 1; }
-      .navbar .nav-item a:hover, .navbar .nav-item a:focus, .navbar-default .nav-item a:hover, .navbar-default .nav-item a:focus {
-        background-color: #335a81;
-        color: #FFFF;
-        box-shadow: 0px 0.5rem #335a81; }
-        .navbar .nav-item a:hover:after, .navbar .nav-item a:focus:after, .navbar-default .nav-item a:hover:after, .navbar-default .nav-item a:focus:after {
-          transform: scaleY(1); }
-      .navbar .nav-item a:after, .navbar-default .nav-item a:after {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: scaleY(0);
-        transform-origin: bottom center;
-        background: red;
-        z-index: -1;
-        transition: transform 0.3s; }
-  .navbar .navbar-toggler-icon, .navbar-default .navbar-toggler-icon {
-    background-color: #e2d8d6;
-    border-radius: 0.2rem;
-    border: 1px solid #BF4D42;
-    color: #BF4D42; }
-  .navbar .navbar-brand, .navbar-default .navbar-brand {
-    color: #BF4D42; }
-  .navbar #navbar-logo, .navbar-default #navbar-logo {
-    background-image: url("../assets/medhacks-without-cross.png");
-    width: 20rem;
-    height: 4rem;
-    background-size: contain;
-    background-repeat: no-repeat; }
-  .navbar .applyButton, .navbar-default .applyButton {
-    margin-right: 2rem;
-    padding: 0.5rem;
-    color: #FFFF;
-    background-color: #BF4D42;
-    width: 15rem;
-    border-radius: 0.5rem;
-    transform: scale(0.85);
-    transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
-    @media screen and (max-width: 800px) {
-      .navbar .applyButton, .navbar-default .applyButton {
-        display: none; } }
-    .navbar .applyButton:hover, .navbar-default .applyButton:hover {
-      transform: scale(1);
-      background-color: #efefef;
-      color: black;
-      cursor: pointer; }
-
-.header-text-actions {
-  margin-top: 24px;
-  text-align: center; }
-
-.header-text-action {
-  border: 3px solid #fff;
-  display: inline-block;
-  font-size: 20px;
-  line-height: 24px;
-  margin-right: 18px;
-  padding: 14px 30px;
-  transform: scale(0.925);
-  transition: .2s background-color ease-out, .2s color ease-out, .2s transform ease-out; }
-
-#basicInfo {
-  background-color: #efefef; }
-  #basicInfo h2 {
-    color: #042449; }
-  #basicInfo #infoContainer {
-    width: 100%;
-    height: 30rem;
-    margin: 0% 0%;
-    background-color: #335a81;
-    position: relative; }
-    #basicInfo #infoContainer p {
-      position: relative;
-      padding-top: 1rem;
-      top: 7rem;
-      left: 10rem;
-      width: 80%;
-      color: #ffff;
-      font-family: "Open Sans", sans-serif;
-      font-size: 1.5rem;
-      line-height: 3rem; }
-
-#challenges {
-  background-color: #efefef; }
-  #challenges h2 {
-    color: #042449;
-    padding-bottom: 4rem;
-    font-size: 3rem; }
-  #challenges p {
-    width: 60%;
-    margin: 0% 21%;
-    padding-top: 1rem;
-    color: #335a81; }
-  #challenges .track-container {
-    float: none;
-    margin-left: 10%;
-    display: grid;
-    width: 80%;
-    height: 50%;
-    grid-template-areas: "track1 track2 track3";
-    -webkit-grid-column-gap: 3rem;
-    -moz-grid-column-gap: 3rem;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    justify-items: center;
-    padding-bottom: 5%;
-    background-color: #efefef; }
-    #challenges .track-container .track {
-      border: 3px solid #335a81;
-      border-radius: 3rem;
-      padding: 3rem; }
-      #challenges .track-container .track img {
-        width: 10rem;
-        height: 10rem; }
-      #challenges .track-container .track #track1 {
-        grid-area: track1; }
-      #challenges .track-container .track #track2 {
-        grid-area: track2; }
-      #challenges .track-container .track #track3 {
-        grid-area: track3; }
-      #challenges .track-container .track:hover {
-        border-color: #BF4D42;
-        cursor: pointer; }
-  #challenges .black-overlay {
-    position: fixed;
-    /* Sit on top of the page content */
-    display: none;
-    /* Hidden by default */
-    width: 100%;
-    /* Full width (cover the whole page) */
-    height: 100%;
-    /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Black background with opacity */
-    z-index: 3;
-    /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer;
-    /* Add a pointer on hover */ }
-  #challenges .track-info {
-    z-index: 4;
-    background-color: #ffff;
-    width: 70%;
-    height: 70%;
-    display: none;
-    position: fixed;
-    box-sizing: border-box;
-    background-color: #FFFFFF;
-    top: 15%;
-    left: 15%;
-    border-radius: 3rem; }
-
-#logistics {
-  background-color: #efefef; }
-  #logistics h2 {
-    font-size: 4rem;
-    padding-bottom: 1.5rem; }
-  #logistics p {
-    width: 60%;
-    margin: 0% 21%;
-    padding-top: 1rem;
-    color: #335a81; }
-  #logistics .scheduleContainer {
-    width: 63%;
-    position: relative;
-    left: 20%;
-    font-size: 2rem; }
-    @media screen and (max-width: 1080px) {
-      #logistics .scheduleContainer .nav-nav-tabs {
-        display: none; }
-      #logistics .scheduleContainer .dropdown {
-        display: inline-block; }
-      #logistics .scheduleContainer .dropdown-content {
-        display: none; }
-      #logistics .scheduleContainer .dropdown:hover .dropdown-content {
-        display: block; }
-      #logistics .scheduleContainer .nav-dropdown:hover > a {
-        color: #FFFF;
-        background-color: #BF4D42;
-        padding: 0rem;
-        text-align: center;
-        vertical-align: middle;
-        border: 1px solid black;
-        border-collapse: collapse; }
-      #logistics .scheduleContainer a {
-        padding: 1rem;
-        text-decoration: none;
-        color: black; }
-      #logistics .scheduleContainer .active {
-        background-color: #BF4D42;
-        color: #FFFF;
-        padding: 0.43rem 1.1rem; }
-      #logistics .scheduleContainer li {
-        list-style-type: none;
-        padding: 0rem;
-        text-align: center;
-        vertical-align: middle;
-        border: 1px solid black;
-        border-collapse: collapse; }
-        #logistics .scheduleContainer li a {
-          padding: 5rem 1rem;
-          text-decoration: none;
-          color: black; } }
-    @media screen and (min-width: 1080px) {
-      #logistics .scheduleContainer .dropdown-content {
-        display: none; }
-      #logistics .scheduleContainer .dropdown {
-        display: none; }
-      #logistics .scheduleContainer .nav-nav-tabs {
-        display: inline; }
-      #logistics .scheduleContainer .active {
-        background-color: #BF4D42;
-        color: #FFFF;
-        padding: 0.43rem 1.1rem; }
-      #logistics .scheduleContainer li {
-        list-style-type: none;
-        padding: 0rem;
-        text-align: center;
-        vertical-align: middle;
-        border: 1px solid black;
-        border-collapse: collapse; }
-        #logistics .scheduleContainer li a {
-          padding: 5rem 1rem;
-          text-decoration: none;
-          color: black; } }
-    #logistics .scheduleContainer table {
-      margin-top: 10%;
-      margin-bottom: 10%;
-      background-color: #f8f9fa;
-      width: 100%;
-      position: relative;
-      table-layout: fixed; }
-      #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
-        font-family: "Open Sans", sans-serif;
-        font-size: 1.5rem;
-        font-style: normal;
-        color: #335a81;
-        border: 3px solid black; }
-
-.marginFormat {
-  background-color: #efefef;
-  height: 200px;
-  width: 100%; }
-
-#faq .faq-container {
-  width: 60%;
-  position: relative;
-  left: 20%;
-  font-size: 2rem; }
-  #faq .faq-container ul {
-    border: none; }
-    #faq .faq-container ul .active {
-      background-color: #BF4D42;
-      color: #FFFF;
-      padding: 0.43rem 5.5rem; }
-    #faq .faq-container ul li {
-      border: 1px solid black;
-      border-collapse: collapse; }
-      #faq .faq-container ul li a {
-        padding: 0rem 5.5rem;
-        text-decoration: none;
-        color: black;
-        font-size: 2.5rem; }
-  #faq .faq-container .faq-holder {
-    background-color: #f9f9f9;
-    border-radius: 3px;
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
-    margin: 16px 0;
-    padding: 10px;
-    width: 95%;
-    overflow: hidden;
-    height: 7rem; }
-    #faq .faq-container .faq-holder .faq-question {
-      margin: 0px;
-      padding: 0px 0px 10px 0px;
-      display: inline-block;
-      cursor: pointer;
-      font-weight: bold;
-      color: #193d56;
-      margin: 0 0 16px; }
-    #faq .faq-container .faq-holder .faq-answer-container {
-      height: 0px;
-      overflow: hidden;
-      padding: 0px;
-      margin: 0;
-      font-size: 16px;
-      line-height: 24px;
-      background-color: #c6c9ce;
-      margin: 4px 0;
-      text-align: left; }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+main.scss:574
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1278:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1208:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1203:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:804:in `block in try_declaration'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1254:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1254:in `rethrow'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:809:in `try_declaration'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:732:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:697:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:689:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:678:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:697:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:689:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:678:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:697:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:689:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:678:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:697:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:686:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:678:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:670:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:696:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:689:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:41:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/engine.rb:414:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `call'
+/Library/Ruby/Gems/2.0.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...         margin\": expected \";\", was \": 4px 0;\"\A         on line 574 of main.scss\A \A 569:                 padding: 0px;\A 570:                 margin: 0;\A 571:                 font-size: 16px;\A 572:                 line-height: 24px;\A 573:                 background-color: #c6c9ce\A 574:                 margin: 4px 0;\A 575:                 text-align: left;\A 576:             }\A 577:         }\A 578:     }\A 579: }"; }
