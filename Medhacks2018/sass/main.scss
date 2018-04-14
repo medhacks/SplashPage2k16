@@ -520,7 +520,7 @@ html {
 #faq {
     .faq-container {
         width: 60%;
-
+        background-color: #c6c9ce;
         position: relative;
         left: 20%;
         font-size: 2rem;
@@ -553,8 +553,6 @@ html {
             margin: 16px 0;
             padding: 10px;
             width: 95%;
-            overflow: hidden;
-            height: 7rem;
             .faq-question {
                 margin: 0px;
                 padding: 0px 0px 10px 0px;
@@ -566,7 +564,6 @@ html {
             }
             .faq-answer-container {
                 height: 0px;
-
                 padding: 0px;
                 margin: 0;
                 font-size: 16px;
