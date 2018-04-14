@@ -335,7 +335,6 @@ html {
     left: 20%;
     font-size: 2rem; }
     @media screen and (max-width: 1080px) {
-<<<<<<< HEAD
       #logistics .scheduleContainer .nav-nav-tabs {
         display: none; }
       #logistics .scheduleContainer .dropdown {
@@ -369,29 +368,6 @@ html {
         border-collapse: collapse; }
         #logistics .scheduleContainer li a {
           padding: 5rem 1rem;
-=======
-      #logistics .scheduleContainer {
-        /*
-        .nav-dropdown:hover > a {
-            color: #FFFF;
-            background-color: $pop-color;
-            padding: 0rem;
-            text-align: center;
-            vertical-align: middle;
-            border: 1px solid black;
-            border-collapse: collapse;
-        }*/ }
-        #logistics .scheduleContainer .nav-nav-tabs {
-          display: none; }
-        #logistics .scheduleContainer .dropdown {
-          display: block; }
-        #logistics .scheduleContainer .dropdown-content {
-          display: none; }
-        #logistics .scheduleContainer .dropdown:hover .dropdown-content {
-          display: inline; }
-        #logistics .scheduleContainer a {
-          padding: 1rem;
->>>>>>> c2a07a602bcbd34292a805cc364a121143fe33f7
           text-decoration: none;
           color: black; } }
     @media screen and (min-width: 1080px) {
@@ -456,21 +432,11 @@ html {
         font-size: 2.5rem; }
   #faq .faq-container .faq-holder {
     background-color: #c6c9ce;
-<<<<<<< HEAD
     border-radius: 3px;
     box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
     margin: 16px 0;
     padding: 10px;
     width: 95%;}
-=======
-    border-radius: 2px;
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
-    margin: 16px 0;
-    padding: 10px;
-    width: 95%;
-    overflow: hidden;
-    height: 7rem; }
->>>>>>> c2a07a602bcbd34292a805cc364a121143fe33f7
     #faq .faq-container .faq-holder .faq-question {
       margin: 0px;
       padding: 0px 0px 10px 0px;
@@ -481,6 +447,7 @@ html {
       margin: 0 0 16px; }
     #faq .faq-container .faq-holder .faq-answer-container {
       height: 0px;
+      overflow: hidden;
       padding: 0px;
       margin: 0;
       font-size: 16px;

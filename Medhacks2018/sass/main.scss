@@ -418,13 +418,13 @@ html {
               display:none;
           }
           .dropdown {
-            display: block;
+            display: inline-block;
           }
           .dropdown-content {
             display:none;
           }
           .dropdown:hover .dropdown-content {
-            display: inline;
+            display: block;
           }
           /*
           .nav-dropdown:hover > a {
