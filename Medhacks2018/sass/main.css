@@ -415,7 +415,7 @@ html {
   width: 60%;
   position: relative;
   left: 20%;
-  font-size: 2rem; }
+  font-size: 1rem; }
   #faq .faq-container ul {
     border: none; }
     #faq .faq-container ul .active {
@@ -432,9 +432,9 @@ html {
         font-size: 2.5rem; }
   #faq .faq-container .faq-holder {
     background-color: #c6c9ce;
-    border-radius: 3px;
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
-    margin: 16px 0;
+    border-radius: 0.5px;
+    box-shadow: 0 0 6px 1px rgba(0, 0, 0, .05);
+    margin: 2px 0;
     padding: 10px;
     width: 95%;}
     #faq .faq-container .faq-holder .faq-question {
@@ -447,13 +447,12 @@ html {
       margin: 0 0 16px; }
     #faq .faq-container .faq-holder .faq-answer-container {
       height: 0px;
-      overflow: hidden;
       padding: 0px;
       margin: 0;
-      font-size: 16px;
+      font-size: 12px;
       line-height: 24px;
       background-color: #c6c9ce;
-      margin: 4px 0;
+      margin: 2px 0;
       text-align: left; }
 
 /*# sourceMappingURL=main.css.map */
