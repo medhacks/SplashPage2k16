@@ -85,7 +85,17 @@ $(document).ready(() => {
         //     hamCount = 0;
         // }
     })
-
+//sonny starts coding
+    $("dropdown").hover(function() {
+        if ($("#friday").on('click', () => {
+            $('#friday').goTo();
+        } else if (($("#saturday").on('click', () => {
+            $('#saturday').goTo();
+        } else {
+            $('#sunday').goTo();
+        }
+    }
+//sonny stops coding
     $(".faq-question").click(function() {
         if ($(this).parent().hasClass('open')) {
             $(this).closest('.faq-holder').find('.faq-answer-container').animate({height: '0'}, 300);
