@@ -434,11 +434,11 @@ html {
     @media screen and (min-width: 1080px) {
       #logistics .scheduleContainerDropdown {
         display: none; } }
-    #logistics .scheduleContainerDropdown .dropdown-content {
+    #logistics .scheduleContainerDropdown .dropdown-tabs {
       display: none; }
-    #logistics .scheduleContainerDropdown .dropdown:hover .dropdown-content {
+    #logistics .scheduleContainerDropdown .dropdown:hover .dropdown-tabs {
       display: block;
-      width: 93%; }
+      width: 92%; }
     #logistics .scheduleContainerDropdown .active {
       background-color: #BF4D42;
       color: #FFFF;
