@@ -78,35 +78,6 @@ $(document).ready(() => {
         $('#side-info').slideToggle();
     });
 
-    $('#friday-drop').on('click', () => {
-        $('#cur-dropdown').text("Friday September 7");
-        $('#friday-drop').addClass('active');
-        $('#saturday-drop').removeClass('active');
-        $('#sunday-drop').removeClass('active');
-        $('#friday2').addClass('active');
-        $('#saturday2').removeClass('active');
-        $('#sunday2').removeClass('active');
-    });
-
-    $('#saturday-drop').on('click', () => {
-        $('#cur-dropdown').text("Saturday September 8");
-        $('#friday-drop').removeClass('active');
-        $('#saturday-drop').addClass('active');
-        $('#sunday-drop').removeClass('active');
-        $('#friday2').removeClass('active');
-        $('#saturday2').addClass('active');
-        $('#sunday2').removeClass('active');
-    });
-
-    $('#sunday-drop').on('click', () => {
-        $('#cur-dropdown').text("Sunday September 9");
-        $('#friday-drop').removeClass('active');
-        $('#saturday-drop').removeClass('active');
-        $('#sunday-drop').addClass('active');
-        $('#friday2').removeClass('active');
-        $('#saturday2').removeClass('active');
-        $('#sunday2').addClass('active');
-    });
 //sonny starts coding
     /*$("dropdown").hover(function() {
         if ($("#friday").on('click', () => {
@@ -161,7 +132,19 @@ $('#schedule-select').change(function () {
 
 $(document).scroll(function() {
     let scrollPosition = $(window).scrollTop();
-    newWidth = (maxWidth * scrollPosition) / ($(document).height() - $(window).height());
+    if (scrollPosition > heights[4]) {
+        scrollPosition = 0.75 + scrollPosition / ( 5 * $(document).height());
+    } else if (scrollPosition > heights[3]) {
+        console.log(2);
+        scrollPosition = 0.5 + scrollPosition / (5 * $(document).height());
+    } else if (scrollPosition > heights[2]) {
+        console.log(3);
+        scrollPosition = 0.25 + scrollPosition / (5 * $(document).height());
+    } else {
+        console.log(4);
+        scrollPosition = scrollPosition / ($(document).height());
+    }
+    newWidth = (maxWidth * scrollPosition);
     var withProp = newWidth.toString() +"rem";
     $("#moose-mark").css('width', withProp);
     // console.log(scrollPosition);
