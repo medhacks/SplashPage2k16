@@ -10,19 +10,38 @@ $(document).ready(() => {
 
     $('#homeBubble').on('click', () => {
         $('#header').goTo();
+        $("#aboutBubble").removeClass("filled");
+        $("#tracksBubble").removeClass("filled");
+        $("#logisticsBubble").removeClass("filled");
+        $("#faqBubble").removeClass("filled");
     });
     $('#faqBubble').on('click', () => {
         $('#faq').goTo();
-
+        $("#aboutBubble").addClass("filled");
+        $("#tracksBubble").addClass("filled");
+        $("#logisticsBubble").addClass("filled");
+        $("#faqBubble").addClass("filled");
     });
     $('#tracksBubble').on('click', () => {
         $('#challenges').goTo();
+        $("#aboutBubble").addClass("filled");
+        $("#tracksBubble").addClass("filled");
+        $("#logisticsBubble").removeClass("filled");
+        $("#faqBubble").removeClass("filled");
     });
     $('#logisticsBubble').on('click', () => {
         $('#logistics').goTo();
+        $("#aboutBubble").addClass("filled");
+        $("#tracksBubble").addClass("filled");
+        $("#logisticsBubble").addClass("filled");
+        $("#faqBubble").removeClass("filled");
     });
     $('#aboutBubble').on('click', () => {
         $('#basicInfo').goTo();
+        $("#aboutBubble").addClass("filled");
+        $("#tracksBubble").removeClass("filled");
+        $("#logisticsBubble").removeClass("filled");
+        $("#faqBubble").removeClass("filled");
     });
 
     $('#home-small-button').on('click', () => {
@@ -163,7 +182,7 @@ $(document).scroll(function() {
     $("#tracksBubble").removeClass("filled");
     $("#logisticsBubble").removeClass("filled");
     $("#faqBubble").removeClass("filled");
-    if (percentage > .9) {
+    if (percentage > .85) {
         if (section == 1) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").removeClass("filled");
@@ -214,7 +233,7 @@ $(document).scroll(function() {
 (function($) {
     $.fn.goTo = function() {
         var placeToGo;
-        placeToGo = $(this).offset().top - 150;
+        placeToGo = $(this).offset().top - 75;
         $('html, body').animate({
             scrollTop: placeToGo + 'px'
         });
