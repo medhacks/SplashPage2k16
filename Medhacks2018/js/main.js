@@ -104,7 +104,7 @@ $(document).ready(() => {
 
     $(".section-container").each(function() {
 
-        heights.push($(this).position(this).top + heights[0]);
+        heights.push($(this).position(this).top - heights[0]);
         counter++;
         sections.push($(this));
     });
@@ -132,17 +132,27 @@ $('#schedule-select').change(function () {
 
 $(document).scroll(function() {
     let scrollPosition = $(window).scrollTop();
-    if (scrollPosition > heights[4]) {
-        scrollPosition = 0.75 + scrollPosition / ( 5 * $(document).height());
-    } else if (scrollPosition > heights[3]) {
-        console.log(2);
-        scrollPosition = 0.5 + scrollPosition / (5 * $(document).height());
-    } else if (scrollPosition > heights[2]) {
-        console.log(3);
-        scrollPosition = 0.25 + scrollPosition / (5 * $(document).height());
+    let percentage = 0;
+    let section = 1;
+    if (scrollPosition >= heights[4]) {
+        percentage = (scrollPosition - heights[4]) / (heights[5] - heights[4]);
+        scrollPosition = 0.75 + percentage / (4);
+        section = 4;
+    } else if (scrollPosition >= heights[3]) {
+        percentage = (scrollPosition - heights[3]) / (heights[4] - heights[3]);
+        scrollPosition = 0.5 + percentage / (4);
+        section = 3
+    } else if (scrollPosition >= heights[2]) {
+        percentage = (scrollPosition - heights[2]) / (heights[3] - heights[2]);
+        // percentage = percentage + .5;
+        scrollPosition = 0.25 + percentage / 4 ;
+        section = 2;
     } else {
-        console.log(4);
+        section = 1;
         scrollPosition = scrollPosition / ($(document).height());
+    }
+    if (scrollPosition > 1) {
+        scrollPosition = 1;
     }
     newWidth = (maxWidth * scrollPosition);
     var withProp = newWidth.toString() +"rem";
@@ -152,33 +162,49 @@ $(document).scroll(function() {
     $("#tracksBubble").removeClass("filled");
     $("#logisticsBubble").removeClass("filled");
     $("#faqBubble").removeClass("filled");
-    for (var i = 0; i < heights.length; i++) {
-        // console.log(heights[i]);
-        // console.log(scrollPosition + " : " + heights[i]);
-
-        if (scrollPosition - 380 > heights[i]) {
-            if (i == 1) {
-                $("#aboutBubble").addClass("filled");
-                $("#tracksBubble").removeClass("filled");
-                $("#logisticsBubble").removeClass("filled");
-                $("#faqBubble").removeClass("filled");
-            }
-            else if (i == 2) {
-                $("#aboutBubble").addClass("filled");
-                $("#tracksBubble").addClass("filled");
-                $("#logisticsBubble").removeClass("filled");
-                $("#faqBubble").removeClass("filled");
-            } else if (i == 3) {
-                $("#aboutBubble").addClass("filled");
-                $("#tracksBubble").addClass("filled");
-                $("#logisticsBubble").addClass("filled");
-                $("#faqBubble").removeClass("filled");
-            } else if (i == 4) {
-                $("#aboutBubble").addClass("filled");
-                $("#tracksBubble").addClass("filled");
-                $("#logisticsBubble").addClass("filled");
-                $("#faqBubble").addClass("filled");
-            }
+    if (percentage > .95) {
+        if (section == 1) {
+            $("#aboutBubble").addClass("filled");
+            $("#tracksBubble").removeClass("filled");
+            $("#logisticsBubble").removeClass("filled");
+            $("#faqBubble").removeClass("filled");
+        } else if (section == 2) {
+            $("#aboutBubble").addClass("filled");
+            $("#tracksBubble").addClass("filled");
+            $("#logisticsBubble").removeClass("filled");
+            $("#faqBubble").removeClass("filled");
+        } else if (section == 3) {
+            $("#aboutBubble").addClass("filled");
+            $("#tracksBubble").addClass("filled");
+            $("#logisticsBubble").addClass("filled");
+            $("#faqBubble").removeClass("filled");
+        } else if (section == 4) {
+            $("#aboutBubble").addClass("filled");
+            $("#tracksBubble").addClass("filled");
+            $("#logisticsBubble").addClass("filled");
+            $("#faqBubble").addClass("filled");
+        }
+    } else {
+        if (section == 1) {
+            $("#aboutBubble").removeClass("filled");
+            $("#tracksBubble").removeClass("filled");
+            $("#logisticsBubble").removeClass("filled");
+            $("#faqBubble").removeClass("filled");
+        } else if (section == 2) {
+            $("#aboutBubble").addClass("filled");
+            $("#tracksBubble").removeClass("filled");
+            $("#logisticsBubble").removeClass("filled");
+            $("#faqBubble").removeClass("filled");
+        } else if (section == 3) {
+            $("#aboutBubble").addClass("filled");
+            $("#tracksBubble").addClass("filled");
+            $("#logisticsBubble").removeClass("filled");
+            $("#faqBubble").removeClass("filled");
+        } else if (section == 4) {
+            $("#aboutBubble").addClass("filled");
+            $("#tracksBubble").addClass("filled");
+            $("#logisticsBubble").addClass("filled");
+            $("#faqBubble").removeClass("filled");
         }
     }
 });
