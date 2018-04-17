@@ -333,7 +333,7 @@ html {
     width: 60%;
     position: relative;
     left: 20%;
-    font-size: 1.8rem;
+    font-size: 1.89rem;
     /*
             @media screen and (max-width: 1080px) {
               .nav-nav-tabs {
@@ -398,7 +398,7 @@ html {
               }
             }
     */ }
-    @media screen and (max-width: 1080px) {
+    @media screen and (max-width: 1101px) {
       #logistics .scheduleContainer {
         display: none; } }
     #logistics .scheduleContainer ul .active {
@@ -431,7 +431,7 @@ html {
     position: relative;
     left: 20%;
     font-size: 2rem; }
-    @media screen and (min-width: 1080px) {
+    @media screen and (min-width: 1102px) {
       #logistics .scheduleContainerDropdown {
         display: none; } }
     #logistics .scheduleContainerDropdown .dropdown-tabs {

@@ -407,14 +407,14 @@ html {
     background-color: $background-color;
 
     .scheduleContainer {
-      @media screen and (max-width: 1080px) {
+      @media screen and (max-width: 1101px) {
         display:none;
       }
         width: 60%;
         @extend %center;
         position: relative;
         left: 20%;
-        font-size: 1.8rem;
+        font-size: 1.89rem;
 /*
         @media screen and (max-width: 1080px) {
           .nav-nav-tabs {
@@ -518,7 +518,7 @@ html {
     }
 
     .scheduleContainerDropdown {
-      @media screen and (min-width: 1080px) {
+      @media screen and (min-width: 1102px) {
         display: none;
       }
       width: 60%;
