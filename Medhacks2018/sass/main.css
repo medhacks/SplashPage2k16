@@ -434,9 +434,9 @@ html {
     @media screen and (min-width: 1102px) {
       #logistics .scheduleContainerDropdown {
         display: none; } }
-    #logistics .scheduleContainerDropdown .dropdown-tabs {
+    #logistics .scheduleContainerDropdown .dropdown-content {
       display: none; }
-    #logistics .scheduleContainerDropdown .dropdown:hover .dropdown-tabs {
+    #logistics .scheduleContainerDropdown .dropdown:hover .dropdown-content {
       display: block;
       width: 92%; }
     #logistics .scheduleContainerDropdown .active {

@@ -527,11 +527,11 @@ html {
       left: 20%;
       font-size: 2rem;
 
-      .dropdown-tabs {
-        display:none;
+      .dropdown-content {
+         display:none;
       }
 
-      .dropdown:hover .dropdown-tabs {
+      .dropdown:hover .dropdown-content {
         display: block;
         width: 92%;
       }
