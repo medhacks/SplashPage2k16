@@ -388,12 +388,13 @@
 <!-- this is the new one with dropdown -->
       <div class="scheduleContainerDropdown">
         <div class = "dropdown">
-          <span>DATES</span>
-          <ul class="dropdown-content">
-            <li><a data-toggle="tab" class="active" href="#friday2" id="friday-drop">Friday September 7</a></li>
-            <li><a data-toggle="tab" href="#saturday2" id="saturday-drop">Saturday September 8</a></li>
-            <li><a data-toggle="tab" href="#sunday2" id="sunday-drop">Sunday September 9</a></li>
-          </ul>
+            <div class="select-container">
+                  <select class="dropdown-content" id="schedule-select">
+                    <option><a value="fri" id="friday-drop">Friday September 7</a></option>
+                    <option><a value="sat" id="saturday-drop">Saturday September 8</a></option>
+                    <option><a value="sun" id="sunday-drop">Sunday September 9</a></option>
+                 </select>
+             </div>
         <!--<div class="dropdown">
           <span>Dates</span>
           <ul class="dropdown-content">

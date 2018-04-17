@@ -1,4 +1,4 @@
-#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #logistics .scheduleContainerDropdown li, #faq .faq-container ul li {
+#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq .faq-container ul li {
   text-align: center;
   vertical-align: middle; }
 
@@ -330,28 +330,32 @@ html {
     padding-top: 1rem;
     color: #335a81; }
   #logistics .scheduleContainer {
-    width: 61%;
+    width: 60.5%;
     position: relative;
     left: 20%;
-    font-size: 1.89rem; }
-    @media screen and (max-width: 1101px) {
+    font-size: 1.89rem;
+    background-color: #dbdbdb;
+    padding-bottom: 0.1rem; }
+    @media screen and (max-width: 1200px) {
       #logistics .scheduleContainer {
         display: none; } }
-    #logistics .scheduleContainer ul .active {
-      background-color: #BF4D42;
-      color: #FFFF;
-      padding: 0.43rem 1.1rem; }
-    #logistics .scheduleContainer ul li {
-      padding: 0rem;
-      border: 1px solid black;
-      border-collapse: collapse; }
-      #logistics .scheduleContainer ul li a {
-        padding: 1rem;
-        text-decoration: none;
-        color: black; }
+    #logistics .scheduleContainer ul {
+      background-color: #ffff; }
+      #logistics .scheduleContainer ul .active {
+        background-color: #BF4D42;
+        color: #FFFF;
+        padding: 0.43rem 1.1rem; }
+      #logistics .scheduleContainer ul li {
+        padding: 0rem;
+        border: 1px solid black;
+        border-collapse: collapse; }
+        #logistics .scheduleContainer ul li a {
+          padding: 1rem;
+          text-decoration: none;
+          color: black; }
     #logistics .scheduleContainer table {
       margin-top: 5%;
-      margin-bottom: 10%;
+      margin-bottom: 4%;
       background-color: #f8f9fa;
       width: 94%;
       position: relative;
@@ -368,32 +372,22 @@ html {
     position: relative;
     left: 20%;
     font-size: 2rem; }
-    @media screen and (min-width: 1102px) {
+    @media screen and (min-width: 1200px) {
       #logistics .scheduleContainerDropdown {
         display: none; } }
     #logistics .scheduleContainerDropdown .dropdown-content {
-      display: none; }
-    #logistics .scheduleContainerDropdown .dropdown:hover .dropdown-content {
-      display: block;
-      width: 92%; }
-    #logistics .scheduleContainerDropdown .active {
-      background-color: #BF4D42;
-      color: #FFFF;
-      padding: 0.43rem 0.5rem; }
-    #logistics .scheduleContainerDropdown li {
-      list-style-type: none;
-      padding: 0rem; }
-      #logistics .scheduleContainerDropdown li a {
-        padding: 1rem;
-        text-decoration: none;
-        color: black; }
-    #logistics .scheduleContainerDropdown table {
-      margin-top: 10%;
-      margin-bottom: 10%;
-      background-color: #f8f9fa;
-      width: 100%;
       position: relative;
-      table-layout: fixed; }
+      padding-bottom: 0; }
+    #logistics .scheduleContainerDropdown .dropdown .select-container {
+      right: 25%; }
+    #logistics .scheduleContainerDropdown table {
+      margin-top: 5%;
+      margin-bottom: 0%;
+      background-color: #f8f9fa;
+      width: 94%;
+      position: relative;
+      table-layout: fixed;
+      left: 3%; }
       #logistics .scheduleContainerDropdown table th, #logistics .scheduleContainerDropdown table tr {
         font-family: "Open Sans", sans-serif;
         font-size: 1.5rem;
@@ -427,7 +421,7 @@ html {
         color: black;
         font-size: 2.5rem; }
   #faq .faq-container .faq-holder {
-    background-color: #c6c9ce;
+    background-color: #dbdbdb;
     border-radius: 0.5px;
     box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
     margin: 2px 0;
@@ -447,7 +441,6 @@ html {
       margin: 0;
       font-size: 12px;
       line-height: 24px;
-      background-color: #c6c9ce;
       margin: 2px 0;
       text-align: left; }
 
@@ -503,5 +496,37 @@ html {
   100% {
     transform: scale(0.75);
     opacity: .85; } }
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: .5em;
+  background: #efefef;
+  border: none;
+  border-radius: 3px;
+  padding: 1em 2em 1em 1em;
+  font-size: 1em; }
+
+.select-container {
+  position: relative;
+  display: inline; }
+
+.select-container:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  pointer-events: none; }
+
+.select-container:after {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: .3em;
+  right: .75em;
+  border-top: 8px solid black;
+  opacity: 0.5; }
+
+select::-ms-expand {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

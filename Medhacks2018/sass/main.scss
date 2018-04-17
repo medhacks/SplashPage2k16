@@ -6,6 +6,8 @@ $small-text-color: #335a81;
 $large-text-color: #042449;
 $pop-color: #BF4D42;
 
+$menu-background-color: #dbdbdb;
+
 $font-fam: 'Open Sans', sans-serif;
 
 html {
@@ -407,16 +409,19 @@ html {
     background-color: $background-color;
 
     .scheduleContainer {
-      @media screen and (max-width: 1101px) {
+      @media screen and (max-width: 1200px) {
         display:none;
       }
-        width: 61%;
+        width: 60.5%;
         @extend %center;
         position: relative;
         left: 20%;
         font-size: 1.89rem;
+        background-color:$menu-background-color;
+        padding-bottom: 0.1rem;
 
       ul {
+        background-color: #ffff;
         .active {
             background-color: $pop-color;
             color: #FFFF;
@@ -438,7 +443,7 @@ html {
 
         table {
             margin-top: 5%;
-            margin-bottom: 10%;
+            margin-bottom: 4%;
             background-color: #f8f9fa;
             width: 94%;
             position: relative;
@@ -456,7 +461,7 @@ html {
     }
 
     .scheduleContainerDropdown {
-      @media screen and (min-width: 1102px) {
+      @media screen and (min-width: 1200px) {
         display: none;
       }
       width: 60%;
@@ -466,40 +471,47 @@ html {
       font-size: 2rem;
 
       .dropdown-content {
-         display:none;
+         position: relative;
+         padding-bottom: 0;
+      }
+      .dropdown .select-container {
+          right: 25%;
       }
 
-      .dropdown:hover .dropdown-content {
-        display: block;
-        width: 92%;
-      }
-
-        .active {
-            background-color: $pop-color;
-            color: #FFFF;
-            padding: 0.43rem 0.5rem;
-        }
-        li {
-            list-style-type: none;
-            padding: 0rem;
-            @extend %center;
-            //border: 1px solid black;
-            //border-collapse: collapse;
-            a {
-                padding: 1rem;
-                text-decoration: none;
-                color: black;
-            }
-        }
+      // .dropdown:hover .dropdown-content {
+      //   display: block;
+      //   width: 92%;
+      //   position: relative;
+      //   right: 45%;
+      // }
+      //
+      //   .active {
+      //       background-color: $pop-color;
+      //       color: #FFFF;
+      //       padding: 0.43rem 0.5rem;
+      //   }
+      //   li {
+      //       list-style-type: none;
+      //       padding: 0rem;
+      //       @extend %center;
+      //       //border: 1px solid black;
+      //       //border-collapse: collapse;
+      //       a {
+      //           padding: 1rem;
+      //           text-decoration: none;
+      //           color: black;
+      //       }
+      //   }
 
 
         table {
-            margin-top: 10%;
-            margin-bottom: 10%;
+            margin-top: 5%;
+            margin-bottom: 0%;
             background-color: #f8f9fa;
-            width: 100%;
+            width: 94%;
             position: relative;
             table-layout: fixed;
+            left: 3%;
             th, tr {
                 font-family: $font-fam;
                 font-size: 1.5rem;
@@ -550,7 +562,7 @@ html {
         }
 
         .faq-holder {
-            background-color: #c6c9ce;
+            background-color: $menu-background-color;
             border-radius: 0.5px;
             box-shadow: 0 0 6px 1px rgba(0, 0, 0, .05);
             margin: 2px 0;
@@ -571,7 +583,6 @@ html {
                 margin: 0;
                 font-size: 12px;
                 line-height: 24px;
-                background-color: #c6c9ce;
                 margin: 2px 0;
                 text-align: left;
             }
@@ -652,4 +663,29 @@ html {
         transform: scale(.75);
         opacity: .85;
     }
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: .5em;
+    background: #efefef;
+    border: none;
+    border-radius: 3px;
+    padding: 1em 2em 1em 1em;
+    font-size: 1em;
+}
+.select-container {position:relative; display: inline;}
+.select-container:after {content:""; width:0; height:0; position:absolute; pointer-events: none;}
+.select-container:after {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: .3em;
+    right: .75em;
+    border-top: 8px solid black;
+    opacity: 0.5;
+}
+select::-ms-expand {
+    display: none;
 }

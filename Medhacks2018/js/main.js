@@ -79,6 +79,7 @@ $(document).ready(() => {
     });
 
     $('#friday-drop').on('click', () => {
+        $('#cur-dropdown').text("Friday September 7");
         $('#friday-drop').addClass('active');
         $('#saturday-drop').removeClass('active');
         $('#sunday-drop').removeClass('active');
@@ -88,6 +89,7 @@ $(document).ready(() => {
     });
 
     $('#saturday-drop').on('click', () => {
+        $('#cur-dropdown').text("Saturday September 8");
         $('#friday-drop').removeClass('active');
         $('#saturday-drop').addClass('active');
         $('#sunday-drop').removeClass('active');
@@ -97,6 +99,7 @@ $(document).ready(() => {
     });
 
     $('#sunday-drop').on('click', () => {
+        $('#cur-dropdown').text("Sunday September 9");
         $('#friday-drop').removeClass('active');
         $('#saturday-drop').removeClass('active');
         $('#sunday-drop').addClass('active');
@@ -140,6 +143,21 @@ $(document).ready(() => {
     sections.push($("#faqBubble"));
 });
 
+$('#schedule-select').change(function () {
+    if ($(this).val() == "Friday September 7") {
+        $('#friday2').addClass('active');
+        $('#saturday2').removeClass('active');
+        $('#sunday2').removeClass('active');
+    } else if ($(this).val() == "Saturday September 8") {
+        $('#friday2').removeClass('active');
+        $('#saturday2').addClass('active');
+        $('#sunday2').removeClass('active');
+    } else {
+        $('#friday2').removeClass('active');
+        $('#saturday2').removeClass('active');
+        $('#sunday2').addClass('active');
+    }
+});
 
 $(document).scroll(function() {
     let scrollPosition = $(window).scrollTop();
