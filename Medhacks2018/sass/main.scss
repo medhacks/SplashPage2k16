@@ -72,7 +72,7 @@ html {
     .applyButton {
         position: relative;
         left: 40%;
-        top: 40rem;
+        top: 35rem;
         padding: 0.5rem;
         background-color: $background-color;
         width: 15rem;
@@ -412,22 +412,23 @@ html {
       @media screen and (max-width: 1200px) {
         display:none;
       }
-        width: 60.5%;
+        width: 59.8%;
         @extend %center;
         position: relative;
         left: 20%;
         font-size: 1.89rem;
-        background-color:$menu-background-color;
+        //background-color:$menu-background-color;
         padding-bottom: 0.1rem;
 
       ul {
-        background-color: #ffff;
+
         .active {
             background-color: $pop-color;
             color: #FFFF;
             padding: 0.43rem 1.1rem;
         }
         li {
+            background-color: #ffff;
             padding: 0rem;
             @extend %center;
             border: 1px solid black;
@@ -455,6 +456,14 @@ html {
                 font-style: normal;
                 color: $small-text-color;
                 border: 3px solid black;
+            }
+
+            tr:first-child {
+                background-color: $large-text-color;
+                th {
+                    color: #fff;
+                }
+
             }
         }
 
@@ -562,29 +571,31 @@ html {
         }
 
         .faq-holder {
-            background-color: $menu-background-color;
-            border-radius: 0.5px;
-            box-shadow: 0 0 6px 1px rgba(0, 0, 0, .05);
-            margin: 2px 0;
-            padding: 10px;
-            width: 95%;
-            .faq-question {
-                margin: 0px;
-                padding: 0px 0px 10px 0px;
-                display: inline-block;
-                cursor: pointer;
-                font-weight: bold;
+            background-color: #fff;
+            width: 95.5%;
+            h3 {
                 color: #193d56;
                 margin: 0 0 16px;
-            }
-            .faq-answer-container {
-                height: 0px;
-                padding: 0px;
-                margin: 0;
-                font-size: 12px;
-                line-height: 24px;
-                margin: 2px 0;
                 text-align: left;
+                padding-top: 20px;
+                padding-left: 10px;
+            }
+
+            h3:after {
+                background-color: #D0D0D0;
+                content: '';
+                display: block;
+                height: 1px;
+                margin-top: 8px;
+                width: 100%;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 24px;
+                margin: 4px 0;
+                width: 100%;
+                padding: 10px;
             }
         }
     }

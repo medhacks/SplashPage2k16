@@ -56,7 +56,7 @@ html {
   #header .applyButton {
     position: relative;
     left: 40%;
-    top: 40rem;
+    top: 35rem;
     padding: 0.5rem;
     background-color: #efefef;
     width: 15rem;
@@ -330,29 +330,27 @@ html {
     padding-top: 1rem;
     color: #335a81; }
   #logistics .scheduleContainer {
-    width: 60.5%;
+    width: 59.8%;
     position: relative;
     left: 20%;
     font-size: 1.89rem;
-    background-color: #dbdbdb;
     padding-bottom: 0.1rem; }
     @media screen and (max-width: 1200px) {
       #logistics .scheduleContainer {
         display: none; } }
-    #logistics .scheduleContainer ul {
-      background-color: #ffff; }
-      #logistics .scheduleContainer ul .active {
-        background-color: #BF4D42;
-        color: #FFFF;
-        padding: 0.43rem 1.1rem; }
-      #logistics .scheduleContainer ul li {
-        padding: 0rem;
-        border: 1px solid black;
-        border-collapse: collapse; }
-        #logistics .scheduleContainer ul li a {
-          padding: 1rem;
-          text-decoration: none;
-          color: black; }
+    #logistics .scheduleContainer ul .active {
+      background-color: #BF4D42;
+      color: #FFFF;
+      padding: 0.43rem 1.1rem; }
+    #logistics .scheduleContainer ul li {
+      background-color: #ffff;
+      padding: 0rem;
+      border: 1px solid black;
+      border-collapse: collapse; }
+      #logistics .scheduleContainer ul li a {
+        padding: 1rem;
+        text-decoration: none;
+        color: black; }
     #logistics .scheduleContainer table {
       margin-top: 5%;
       margin-bottom: 4%;
@@ -367,6 +365,10 @@ html {
         font-style: normal;
         color: #335a81;
         border: 3px solid black; }
+      #logistics .scheduleContainer table tr:first-child {
+        background-color: #042449; }
+        #logistics .scheduleContainer table tr:first-child th {
+          color: #fff; }
   #logistics .scheduleContainerDropdown {
     width: 60%;
     position: relative;
@@ -421,28 +423,27 @@ html {
         color: black;
         font-size: 2.5rem; }
   #faq .faq-container .faq-holder {
-    background-color: #dbdbdb;
-    border-radius: 0.5px;
-    box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.05);
-    margin: 2px 0;
-    padding: 10px;
-    width: 95%; }
-    #faq .faq-container .faq-holder .faq-question {
-      margin: 0px;
-      padding: 0px 0px 10px 0px;
-      display: inline-block;
-      cursor: pointer;
-      font-weight: bold;
+    background-color: #fff;
+    width: 95.5%; }
+    #faq .faq-container .faq-holder h3 {
       color: #193d56;
-      margin: 0 0 16px; }
-    #faq .faq-container .faq-holder .faq-answer-container {
-      height: 0px;
-      padding: 0px;
-      margin: 0;
-      font-size: 12px;
+      margin: 0 0 16px;
+      text-align: left;
+      padding-top: 20px;
+      padding-left: 10px; }
+    #faq .faq-container .faq-holder h3:after {
+      background-color: #D0D0D0;
+      content: '';
+      display: block;
+      height: 1px;
+      margin-top: 8px;
+      width: 100%; }
+    #faq .faq-container .faq-holder p {
+      font-size: 16px;
       line-height: 24px;
-      margin: 2px 0;
-      text-align: left; }
+      margin: 4px 0;
+      width: 100%;
+      padding: 10px; }
 
 @media screen and (min-width: 800px) {
   .beating-heart {
