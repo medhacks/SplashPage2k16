@@ -412,7 +412,7 @@ html {
         position: relative;
         left: 20%;
         font-size: 2rem;
-
+/*
         @media screen and (max-width: 1080px) {
           .nav-nav-tabs {
               display:none;
@@ -475,7 +475,26 @@ html {
               }
           }
         }
+*/
+      ul {
+        .active {
+            background-color: $pop-color;
+            color: #FFFF;
+            padding: 0.43rem 1.1rem;
+        }
+        li {
+            padding: 0rem;
+            @extend %center;
+            border: 1px solid black;
+            border-collapse: collapse;
+            a {
+                padding: 1rem;
+                text-decoration: none;
+                color: black;
+            }
+        }
 
+      }
 
         table {
             margin-top: 10%;

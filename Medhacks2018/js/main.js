@@ -86,7 +86,7 @@ $(document).ready(() => {
         // }
     })
 //sonny starts coding
-    $("dropdown").hover(function() {
+    /*$("dropdown").hover(function() {
         if ($("#friday").on('click', () => {
             $('#friday').goTo();
         } else if (($("#saturday").on('click', () => {
@@ -94,7 +94,7 @@ $(document).ready(() => {
         } else {
             $('#sunday').goTo();
         }
-    }
+    }*/
 //sonny stops coding
     $(".faq-question").click(function() {
         if ($(this).parent().hasClass('open')) {

@@ -1,4 +1,4 @@
-#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #faq .faq-container ul li {
+#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #faq .faq-container ul li {
   text-align: center;
   vertical-align: middle; }
 
@@ -333,54 +333,83 @@ html {
     width: 60%;
     position: relative;
     left: 20%;
-    font-size: 2rem; }
-    @media screen and (max-width: 1080px) {
-      #logistics .scheduleContainer .nav-nav-tabs {
-        display: none; }
-      #logistics .scheduleContainer .dropdown {
-        display: inline-block;
-        padding-bottom: 0.6rem; }
-      #logistics .scheduleContainer .dropdown-content {
-        display: none; }
-      #logistics .scheduleContainer .dropdown:hover .dropdown-content {
-        display: block; }
-      #logistics .scheduleContainer .active {
-        background-color: #BF4D42;
-        color: #FFFF;
-        padding: 0.43rem 1.1rem; }
-      #logistics .scheduleContainer li {
-        list-style-type: none;
-        padding: 0rem;
-        text-align: center;
-        vertical-align: middle;
-        border: 0px solid black;
-        border-collapse: collapse; }
-        #logistics .scheduleContainer li a {
-          padding: 5rem 1rem;
-          text-decoration: none;
-          color: black; } }
-    @media screen and (min-width: 1080px) {
-      #logistics .scheduleContainer .dropdown-content {
-        display: none; }
-      #logistics .scheduleContainer .dropdown {
-        display: none; }
-      #logistics .scheduleContainer .nav-nav-tabs {
-        display: inline; }
-      #logistics .scheduleContainer .active {
-        background-color: #BF4D42;
-        color: #FFFF;
-        padding: 0.43rem 1.1rem; }
-      #logistics .scheduleContainer li {
-        list-style-type: none;
-        padding: 0rem;
-        text-align: center;
-        vertical-align: middle;
-        border: 0px solid black;
-        border-collapse: collapse; }
-        #logistics .scheduleContainer li a {
-          padding: 5rem 1rem;
-          text-decoration: none;
-          color: black; } }
+    font-size: 2rem;
+    /*
+            @media screen and (max-width: 1080px) {
+              .nav-nav-tabs {
+                  display:none;
+              }
+              .dropdown {
+                display: inline-block;
+                padding-bottom: 0.6rem;
+              }
+              .dropdown-content {
+                display:none;
+              }
+              .dropdown:hover .dropdown-content {
+                display: block;
+              }
+              .active {
+                  background-color: $pop-color;
+                  color: #FFFF;
+                  padding: 0.43rem 1.1rem;
+              }
+              li {
+                  list-style-type: none;
+                  padding: 0rem;
+                  text-align: center;
+                  vertical-align: middle;
+                  border: 0px solid black;
+                  border-collapse: collapse;
+                  a {
+                      padding: 5rem 1rem;
+                      text-decoration: none;
+                      color: black;
+                  }
+              }
+            }
+            @media screen and (min-width: 1080px) {
+              .dropdown-content {
+                display:none;
+              }
+              .dropdown {
+                display: none;
+              }
+              .nav-nav-tabs {
+                display:inline;
+              }
+              .active {
+                  background-color: $pop-color;
+                  color: #FFFF;
+                  padding: 0.43rem 1.1rem;
+              }
+              li {
+                  list-style-type: none;
+                  padding: 0rem;
+                  text-align: center;
+                  vertical-align: middle;
+                  border: 0px solid black;
+                  border-collapse: collapse;
+                  a {
+                      padding: 5rem 1rem;
+                      text-decoration: none;
+                      color: black;
+                  }
+              }
+            }
+    */ }
+    #logistics .scheduleContainer ul .active {
+      background-color: #BF4D42;
+      color: #FFFF;
+      padding: 0.43rem 1.1rem; }
+    #logistics .scheduleContainer ul li {
+      padding: 0rem;
+      border: 1px solid black;
+      border-collapse: collapse; }
+      #logistics .scheduleContainer ul li a {
+        padding: 1rem;
+        text-decoration: none;
+        color: black; }
     #logistics .scheduleContainer table {
       margin-top: 10%;
       margin-bottom: 10%;
