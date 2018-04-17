@@ -45,7 +45,7 @@ html {
 
 #header {
   background-color: #efefef;
-  background-image: url("../assets/MH background + text.png");
+  background-image: url("../assets/header_with_frostbitten.png");
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
@@ -63,7 +63,7 @@ html {
       font-size: 1.5rem;
       color: #BF4D42;
       position: relative;
-      bottom: 30rem;
+      bottom: 20rem;
       left: 37rem;
       width: 40rem; } }
   @media screen and (max-width: 500px) {
@@ -76,12 +76,12 @@ html {
       font-size: 1rem;
       color: #BF4D42;
       position: relative;
-      bottom: 34rem;
+      bottom: 28rem;
       left: 17rem;
       width: 40rem; } }
   #header .applyButton {
     position: relative;
-    left: 40%;
+    left: 44%;
     top: 35rem;
     padding: 0.5rem;
     background-color: #efefef;

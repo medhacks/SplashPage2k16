@@ -60,7 +60,7 @@ html {
 
 #header {
     background-color: $background-color;
-    background-image: url("../assets/MH background + text.png");
+    background-image: url("../assets/header_with_frostbitten.png");
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -81,7 +81,7 @@ html {
             font-size: 1.5rem;
             color: $pop-color;
             position: relative;
-            bottom: 30rem;
+            bottom: 20rem;
             left: 37rem;
             width: 40rem;
         }
@@ -98,7 +98,7 @@ html {
             font-size: 1rem;
             color: $pop-color;
             position: relative;
-            bottom: 34rem;
+            bottom: 28rem;
             left: 17rem;
             width: 40rem;
         }
@@ -108,7 +108,7 @@ html {
 
     .applyButton {
         position: relative;
-        left: 40%;
+        left: 44%;
         top: 35rem;
         padding: 0.5rem;
         background-color: $background-color;
