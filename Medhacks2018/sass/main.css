@@ -447,11 +447,11 @@ html {
 @media screen and (min-width: 800px) {
   .beating-heart {
     position: relative;
-    top: -20rem;
-    left: -10rem;
+    top: 13rem;
+    left: 75rem;
     -webkit-animation: heart-beat 1s infinite;
     animation: heart-beat 1s infinite;
-    width: 20rem; } }
+    width: 15rem; } }
 @media screen and (max-width: 800px) {
   .beating-heart {
     display: none; } }
