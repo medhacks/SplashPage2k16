@@ -13,6 +13,7 @@ $(document).ready(() => {
     });
     $('#faqBubble').on('click', () => {
         $('#faq').goTo();
+
     });
     $('#tracksBubble').on('click', () => {
         $('#challenges').goTo();
@@ -162,7 +163,7 @@ $(document).scroll(function() {
     $("#tracksBubble").removeClass("filled");
     $("#logisticsBubble").removeClass("filled");
     $("#faqBubble").removeClass("filled");
-    if (percentage > .95) {
+    if (percentage > .9) {
         if (section == 1) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").removeClass("filled");
