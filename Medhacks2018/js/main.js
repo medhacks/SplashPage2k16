@@ -124,7 +124,7 @@ $(document).ready(() => {
 
     $(".section-container").each(function() {
 
-        heights.push($(this).position(this).top - heights[0]);
+        heights.push($(this).position(this).top - heights[0] - 75);
         counter++;
         sections.push($(this));
     });
@@ -233,7 +233,7 @@ $(document).scroll(function() {
 (function($) {
     $.fn.goTo = function() {
         var placeToGo;
-        placeToGo = $(this).offset().top - 75;
+        placeToGo = $(this).offset().top - 150;
         $('html, body').animate({
             scrollTop: placeToGo + 'px'
         });
