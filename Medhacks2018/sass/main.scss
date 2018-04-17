@@ -644,8 +644,8 @@ html {
         position: relative;
         top: 13rem;
         left: 75rem;
-        -webkit-animation: heart-beat 1s infinite;
-        animation: heart-beat 1s infinite;
+        -webkit-animation: heart-beat 1.5s infinite;
+        animation: heart-beat 1.5s infinite;
         width: 15rem;
     }
     @media screen and (max-width: 800px) {
