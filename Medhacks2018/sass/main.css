@@ -330,74 +330,10 @@ html {
     padding-top: 1rem;
     color: #335a81; }
   #logistics .scheduleContainer {
-    width: 60%;
+    width: 61%;
     position: relative;
     left: 20%;
-    font-size: 1.89rem;
-    /*
-            @media screen and (max-width: 1080px) {
-              .nav-nav-tabs {
-                  display:none;
-              }
-              .dropdown {
-                display: inline-block;
-                padding-bottom: 0.6rem;
-              }
-              .dropdown-content {
-                display:none;
-              }
-              .dropdown:hover .dropdown-content {
-                display: block;
-              }
-              .active {
-                  background-color: $pop-color;
-                  color: #FFFF;
-                  padding: 0.43rem 1.1rem;
-              }
-              li {
-                  list-style-type: none;
-                  padding: 0rem;
-                  text-align: center;
-                  vertical-align: middle;
-                  border: 0px solid black;
-                  border-collapse: collapse;
-                  a {
-                      padding: 5rem 1rem;
-                      text-decoration: none;
-                      color: black;
-                  }
-              }
-            }
-            @media screen and (min-width: 1080px) {
-              .dropdown-content {
-                display:none;
-              }
-              .dropdown {
-                display: none;
-              }
-              .nav-nav-tabs {
-                display:inline;
-              }
-              .active {
-                  background-color: $pop-color;
-                  color: #FFFF;
-                  padding: 0.43rem 1.1rem;
-              }
-              li {
-                  list-style-type: none;
-                  padding: 0rem;
-                  text-align: center;
-                  vertical-align: middle;
-                  border: 0px solid black;
-                  border-collapse: collapse;
-                  a {
-                      padding: 5rem 1rem;
-                      text-decoration: none;
-                      color: black;
-                  }
-              }
-            }
-    */ }
+    font-size: 1.89rem; }
     @media screen and (max-width: 1101px) {
       #logistics .scheduleContainer {
         display: none; } }
@@ -414,12 +350,13 @@ html {
         text-decoration: none;
         color: black; }
     #logistics .scheduleContainer table {
-      margin-top: 10%;
+      margin-top: 5%;
       margin-bottom: 10%;
       background-color: #f8f9fa;
-      width: 100%;
+      width: 94%;
       position: relative;
-      table-layout: fixed; }
+      table-layout: fixed;
+      left: 3%; }
       #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
         font-family: "Open Sans", sans-serif;
         font-size: 1.5rem;

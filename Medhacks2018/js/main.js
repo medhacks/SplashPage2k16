@@ -76,15 +76,34 @@ $(document).ready(() => {
     $('#ham-container').on('click', () => {
         $('#ham-container').toggleClass('change');
         $('#side-info').slideToggle();
+    });
 
-        // if (hamCount == 0) {
-        //     $("#ham-container").detach().appendTo("#side-info");
-        //     hamCount = 1;
-        // } else {
-        //     $("#ham-container").detach().appendTo("#navbar");
-        //     hamCount = 0;
-        // }
-    })
+    $('#friday-drop').on('click', () => {
+        $('#friday-drop').addClass('active');
+        $('#saturday-drop').removeClass('active');
+        $('#sunday-drop').removeClass('active');
+        $('#friday2').addClass('active');
+        $('#saturday2').removeClass('active');
+        $('#sunday2').removeClass('active');
+    });
+
+    $('#saturday-drop').on('click', () => {
+        $('#friday-drop').removeClass('active');
+        $('#saturday-drop').addClass('active');
+        $('#sunday-drop').removeClass('active');
+        $('#friday2').removeClass('active');
+        $('#saturday2').addClass('active');
+        $('#sunday2').removeClass('active');
+    });
+
+    $('#sunday-drop').on('click', () => {
+        $('#friday-drop').removeClass('active');
+        $('#saturday-drop').removeClass('active');
+        $('#sunday-drop').addClass('active');
+        $('#friday2').removeClass('active');
+        $('#saturday2').removeClass('active');
+        $('#sunday2').addClass('active');
+    });
 //sonny starts coding
     /*$("dropdown").hover(function() {
         if ($("#friday").on('click', () => {
