@@ -1,4 +1,4 @@
-#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #faq .faq-container ul li {
+#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #logistics .scheduleContainerDropdown li, #faq .faq-container ul li {
   text-align: center;
   vertical-align: middle; }
 
@@ -333,7 +333,7 @@ html {
     width: 60%;
     position: relative;
     left: 20%;
-    font-size: 2rem;
+    font-size: 1.8rem;
     /*
             @media screen and (max-width: 1080px) {
               .nav-nav-tabs {
@@ -398,6 +398,9 @@ html {
               }
             }
     */ }
+    @media screen and (max-width: 1080px) {
+      #logistics .scheduleContainer {
+        display: none; } }
     #logistics .scheduleContainer ul .active {
       background-color: #BF4D42;
       color: #FFFF;
@@ -418,6 +421,43 @@ html {
       position: relative;
       table-layout: fixed; }
       #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.5rem;
+        font-style: normal;
+        color: #335a81;
+        border: 3px solid black; }
+  #logistics .scheduleContainerDropdown {
+    width: 60%;
+    position: relative;
+    left: 20%;
+    font-size: 2rem; }
+    @media screen and (min-width: 1080px) {
+      #logistics .scheduleContainerDropdown {
+        display: none; } }
+    #logistics .scheduleContainerDropdown .dropdown-content {
+      display: none; }
+    #logistics .scheduleContainerDropdown .dropdown:hover .dropdown-content {
+      display: block;
+      width: 93%; }
+    #logistics .scheduleContainerDropdown .active {
+      background-color: #BF4D42;
+      color: #FFFF;
+      padding: 0.43rem 0.5rem; }
+    #logistics .scheduleContainerDropdown li {
+      list-style-type: none;
+      padding: 0rem; }
+      #logistics .scheduleContainerDropdown li a {
+        padding: 1rem;
+        text-decoration: none;
+        color: black; }
+    #logistics .scheduleContainerDropdown table {
+      margin-top: 10%;
+      margin-bottom: 10%;
+      background-color: #f8f9fa;
+      width: 100%;
+      position: relative;
+      table-layout: fixed; }
+      #logistics .scheduleContainerDropdown table th, #logistics .scheduleContainerDropdown table tr {
         font-family: "Open Sans", sans-serif;
         font-size: 1.5rem;
         font-style: normal;

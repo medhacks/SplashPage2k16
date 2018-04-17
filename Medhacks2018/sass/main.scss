@@ -407,11 +407,14 @@ html {
     background-color: $background-color;
 
     .scheduleContainer {
+      @media screen and (max-width: 1080px) {
+        display:none;
+      }
         width: 60%;
         @extend %center;
         position: relative;
         left: 20%;
-        font-size: 2rem;
+        font-size: 1.8rem;
 /*
         @media screen and (max-width: 1080px) {
           .nav-nav-tabs {
@@ -513,6 +516,63 @@ html {
         }
 
     }
+
+    .scheduleContainerDropdown {
+      @media screen and (min-width: 1080px) {
+        display: none;
+      }
+      width: 60%;
+      @extend %center;
+      position: relative;
+      left: 20%;
+      font-size: 2rem;
+
+      .dropdown-content {
+        display:none;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+        width: 93%;
+      }
+
+        .active {
+            background-color: $pop-color;
+            color: #FFFF;
+            padding: 0.43rem 0.5rem;
+        }
+        li {
+            list-style-type: none;
+            padding: 0rem;
+            @extend %center;
+            //border: 1px solid black;
+            //border-collapse: collapse;
+            a {
+                padding: 1rem;
+                text-decoration: none;
+                color: black;
+            }
+        }
+
+
+        table {
+            margin-top: 10%;
+            margin-bottom: 10%;
+            background-color: #f8f9fa;
+            width: 100%;
+            position: relative;
+            table-layout: fixed;
+            th, tr {
+                font-family: $font-fam;
+                font-size: 1.5rem;
+                font-style: normal;
+                color: $small-text-color;
+                border: 3px solid black;
+            }
+        }
+
+    }
+
 }
 
 .marginFormat {
