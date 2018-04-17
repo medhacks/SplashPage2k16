@@ -53,17 +53,32 @@ html {
   background-repeat: no-repeat;
   height: 65rem;
   width: 100%; }
-  #header .frosty-title {
-    width: 60rem;
-    position: relative;
-    right: 7rem;
-    bottom: 17rem; }
-  #header .description {
-    font-size: 1.5rem;
-    color: #BF4D42;
-    position: relative;
-    bottom: 30rem;
-    left: 37rem; }
+  @media screen and (min-width: 500px) {
+    #header .frosty-title {
+      width: 60rem;
+      position: relative;
+      right: 7rem;
+      bottom: 17rem; }
+    #header .description {
+      font-size: 1.5rem;
+      color: #BF4D42;
+      position: relative;
+      bottom: 30rem;
+      left: 37rem;
+      width: 40rem; } }
+  @media screen and (max-width: 500px) {
+    #header .frosty-title {
+      width: 30rem;
+      position: relative;
+      right: -12rem;
+      bottom: 20rem; }
+    #header .description {
+      font-size: 1rem;
+      color: #BF4D42;
+      position: relative;
+      bottom: 34rem;
+      left: 17rem;
+      width: 40rem; } }
   #header .applyButton {
     position: relative;
     left: 40%;

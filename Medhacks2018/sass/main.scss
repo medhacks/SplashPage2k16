@@ -69,20 +69,42 @@ html {
     height: 65rem;
     width: 100%;
 
-    .frosty-title {
-        width: 60rem;
-        position: relative;
-        right: 7rem;
-        bottom: 17rem;
+    @media screen and (min-width: 500px) {
+        .frosty-title {
+            width: 60rem;
+            position: relative;
+            right: 7rem;
+            bottom: 17rem;
+        }
+
+        .description {
+            font-size: 1.5rem;
+            color: $pop-color;
+            position: relative;
+            bottom: 30rem;
+            left: 37rem;
+            width: 40rem;
+        }
     }
 
-    .description {
-        font-size: 1.5rem;
-        color: $pop-color;
-        position: relative;
-        bottom: 30rem;
-        left: 37rem;
+    @media screen and (max-width: 500px) {
+        .frosty-title {
+            width: 30rem;
+            position: relative;
+            right: -12rem;
+            bottom: 20rem;
+        }
+        .description {
+            font-size: 1rem;
+            color: $pop-color;
+            position: relative;
+            bottom: 34rem;
+            left: 17rem;
+            width: 40rem;
+        }
     }
+
+
 
     .applyButton {
         position: relative;
