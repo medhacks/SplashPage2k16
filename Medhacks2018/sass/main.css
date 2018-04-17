@@ -185,8 +185,8 @@ html {
   .navbar .navbar-brand, .navbar-default .navbar-brand {
     color: #BF4D42; }
   .navbar #navbar-logo, .navbar-default #navbar-logo {
-    background-image: url("../assets/medhacks-without-cross.png");
-    width: 20rem;
+    background-image: url("../assets/logos/frosty_medhacks_logo.png");
+    width: 25rem;
     height: 4rem;
     background-size: contain;
     background-repeat: no-repeat; }
@@ -513,5 +513,58 @@ html {
       background-color: #c6c9ce;
       margin: 2px 0;
       text-align: left; }
+
+@media screen and (min-width: 800px) {
+  .beating-heart {
+    position: relative;
+    top: -20rem;
+    left: -10rem;
+    -webkit-animation: heart-beat 1s infinite;
+    animation: heart-beat 1s infinite;
+    width: 20rem; } }
+@media screen and (max-width: 800px) {
+  .beating-heart {
+    display: none; } }
+
+@-o-keyframes heart-beat {
+  0% {
+    transform: scale(0.8);
+    opacity: .95; }
+  20% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(0.75);
+    opacity: .85; } }
+@-moz-keyframes heart-beat {
+  0% {
+    transform: scale(0.8);
+    opacity: .95; }
+  20% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(0.75);
+    opacity: .85; } }
+@-webkit-keyframes heart-beat {
+  0% {
+    transform: scale(0.8);
+    opacity: .95; }
+  20% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(0.75);
+    opacity: .85; } }
+@keyframes heart-beat {
+  0% {
+    transform: scale(0.8);
+    opacity: .95; }
+  20% {
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    transform: scale(0.75);
+    opacity: .85; } }
 
 /*# sourceMappingURL=main.css.map */
