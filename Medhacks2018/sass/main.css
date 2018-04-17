@@ -45,7 +45,7 @@ html {
 
 #header {
   background-color: #efefef;
-  background-image: url("../assets/headerImage.png");
+  background-image: url("../assets/website-background.jpg");
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
@@ -53,6 +53,11 @@ html {
   background-repeat: no-repeat;
   height: 65rem;
   width: 100%; }
+  #header .frosty-title {
+    width: 60rem;
+    position: relative;
+    right: 7rem;
+    bottom: 17rem; }
   #header .applyButton {
     position: relative;
     left: 40%;
@@ -185,7 +190,7 @@ html {
   .navbar .navbar-brand, .navbar-default .navbar-brand {
     color: #BF4D42; }
   .navbar #navbar-logo, .navbar-default #navbar-logo {
-    background-image: url("../assets/logos/frosty_medhacks_logo.png");
+    background-image: url("../assets/logos/medhacks-without-cross.png");
     width: 25rem;
     height: 4rem;
     background-size: contain;
