@@ -79,6 +79,13 @@ html {
       bottom: 28rem;
       left: 17rem;
       width: 40rem; } }
+  @media screen and (max-width: 478px) {
+    #header {
+      background-image: url("../assets/mobile.png");
+      height: 115rem; }
+      #header .applyButton {
+        top: 62rem !important;
+        left: 38% !important; } }
   #header .applyButton {
     position: relative;
     left: 44%;
@@ -275,6 +282,11 @@ html {
     color: #042449;
     padding-bottom: 4rem;
     font-size: 3rem; }
+  #challenges img {
+    width: 75%;
+    position: relative;
+    bottom: 15rem;
+    left: 5%; }
   #challenges p {
     width: 60%;
     margin: 0% 21%;

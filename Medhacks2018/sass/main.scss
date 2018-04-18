@@ -104,7 +104,14 @@ html {
         }
     }
 
-
+    @media screen and (max-width: 478px) {
+        background-image: url("../assets/mobile.png");
+        height: 115rem;
+        .applyButton {
+            top: 62rem !important;
+            left: 38% !important;
+        }
+    }
 
     .applyButton {
         position: relative;
@@ -346,6 +353,12 @@ html {
       color: $large-text-color;
       padding-bottom: 4rem;
       font-size: 3rem;
+  }
+  img {
+      width: 75%;
+      position: relative;
+      bottom: 15rem;
+      left: 5%;
   }
   p {
       width: 60%;
