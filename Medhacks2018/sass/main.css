@@ -133,35 +133,51 @@ html {
 #slider-container {
   width: 100%;
   position: relative;
-  right: 8rem;
+  left: 22.5rem;
   position: fixed;
   top: 1.5rem; }
   @media screen and (max-width: 800px) {
     #slider-container {
       display: none; } }
   #slider-container ul a {
-    border: 3px solid #335a81;
-    border-radius: 50%;
+    border: 1px solid #335a81;
+    border-radius: 10px;
     margin-left: 7rem;
-    width: 3rem;
-    height: 0.35rem;
-    padding: 0.15rem .8rem; }
+    padding: 8px;
+    width: 2.5px;
+    height: 2.5px;
+    display: inline-block; }
     #slider-container ul a .bubble {
       display: inline-block;
-      width: 3rem;
-      height: 3rem;
-      padding: 3rem;
+      width: 1rem;
+      height: 1rem;
+      padding: 1rem;
       float: left;
       text-align: center;
-      position: relative; }
+      position: relative;
+      font-size: 1rem; }
+      #slider-container ul a .bubble #homeBubP {
+        position: relative;
+        right: 17.5rem; }
+      #slider-container ul a .bubble #aboutBubP {
+        position: relative;
+        right: 38.5rem; }
+      #slider-container ul a .bubble #tracksBubP {
+        position: relative;
+        right: 41.5rem; }
+      #slider-container ul a .bubble #logBubP {
+        position: relative;
+        right: 45.4rem; }
+      #slider-container ul a .bubble #faqBubP {
+        position: relative;
+        right: 48rem; }
     #slider-container ul a div {
       display: inline-block;
       position: relative;
-      left: 33.5rem;
+      left: 15rem;
       color: #335a81;
       text-decoration: none;
-      font-size: 1.5rem;
-      bottom: 1rem; }
+      top: 0.5rem; }
   #slider-container ul .filled {
     background-color: #335a81; }
   #slider-container ul #moose-mark {
@@ -171,7 +187,7 @@ html {
     display: inline;
     position: absolute;
     top: 0.5rem;
-    left: 41rem; }
+    left: 11rem; }
     @media screen and (max-width: 1000px) {
       #slider-container ul #moose-mark {
         left: 43rem; } }

@@ -1,7 +1,7 @@
 let heights = [];
 let sections = [];
 heights.push($('#slider-container').height());
-var maxWidth = 35.4;
+var maxWidth = 35;
 var counter = 1;
 let hamCount = 0;
 
@@ -170,6 +170,7 @@ $(document).scroll(function() {
     } else {
         section = 1;
         scrollPosition = scrollPosition / ($(document).height());
+        percentage = (scrollPosition - heights[1]) / (heights[2] - heights[1]) + 0.1;
     }
     if (scrollPosition > 1) {
         scrollPosition = 1;
