@@ -395,7 +395,8 @@ html {
     #logistics .scheduleContainer ul .activeLi {
       background-color: #BF4D42;
       color: #FFFF;
-      border: none; }
+      border: none;
+      border: 1px solid black; }
       #logistics .scheduleContainer ul .activeLi a {
         color: #FFF; }
     #logistics .scheduleContainer ul li {
@@ -411,10 +412,10 @@ html {
       margin-top: 5%;
       margin-bottom: 4%;
       background-color: #f8f9fa;
-      width: 94%;
+      width: 80vw;
       position: relative;
       table-layout: fixed;
-      left: 3%; }
+      right: 15%; }
       #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
         font-family: "Open Sans", sans-serif;
         font-size: 1.5rem;

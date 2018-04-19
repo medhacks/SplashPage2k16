@@ -499,6 +499,7 @@ html {
             background-color: $pop-color;
             color: #FFFF;
             border: none;
+            border: 1px solid black;
             a {
                 color: #FFF;
             }
@@ -522,10 +523,10 @@ html {
             margin-top: 5%;
             margin-bottom: 4%;
             background-color: #f8f9fa;
-            width: 94%;
+            width: 80vw;
             position: relative;
             table-layout: fixed;
-            left: 3%;
+            right: 15%;
             th, tr {
                 font-family: $font-fam;
                 font-size: 1.5rem;
