@@ -6,6 +6,8 @@ $small-text-color: #193f55;
 $large-text-color: #042449;
 $pop-color: #BF4D42;
 
+$section-header-size: 3rem;
+
 $menu-background-color: #dbdbdb;
 
 $font-fam: 'Open Sans', sans-serif;
@@ -380,7 +382,7 @@ html {
   h2 {
       color: $large-text-color;
       padding-bottom: 4rem;
-      font-size: 3rem;
+      font-size: $section-header-size;
   }
   img {
       width: 75%;
@@ -474,7 +476,7 @@ html {
 #logistics {
 
     h2 {
-        font-size: 4rem;
+        font-size: $section-header-size;
         padding-bottom: 1.5rem;
     }
     p {
@@ -666,7 +668,7 @@ footer {
 
 #faq {
     h2 {
-        font-size: 4rem;
+        font-size: $section-header-size;
         padding-bottom: 1.5rem;
         width: 100%;
         @extend %center;

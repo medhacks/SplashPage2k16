@@ -381,7 +381,7 @@ html {
 #logistics {
   background-color: #efefef; }
   #logistics h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     padding-bottom: 1.5rem; }
   #logistics p {
     width: 60%;
@@ -520,7 +520,7 @@ footer {
   background-color: #efefef;
   margin-bottom: none; }
   #faq h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     padding-bottom: 1.5rem;
     width: 100%; }
   #faq .faq-container {
