@@ -135,6 +135,7 @@ $(document).ready(() => {
         sections.push($(this));
     });
     console.log(heights);
+    heights[3] = heights[3] - 100;
     sections.push($("#tracksBubble"));
     sections.push($("#logisticsBubble"));
     sections.push($("#faqBubble"));
@@ -176,7 +177,7 @@ $(document).scroll(function() {
     } else {
         section = 1;
         scrollPosition = scrollPosition / ($(document).height());
-        percentage = (scrollPosition - heights[1]) / (heights[2] - heights[1]) + 0.4;
+        percentage = scrollPosition + 0.1;
     }
     if (scrollPosition > 1) {
         scrollPosition = 1;
@@ -189,7 +190,7 @@ $(document).scroll(function() {
     $("#tracksBubble").removeClass("filled");
     $("#logisticsBubble").removeClass("filled");
     $("#faqBubble").removeClass("filled");
-    if (percentage > .85) {
+    if (percentage > .9) {
         if (section == 1) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").removeClass("filled");

@@ -39,7 +39,7 @@ html {
     cursor: pointer; }
     #side-info ul li:hover {
       background-color: #fff;
-      color: #0d1f2d; }
+      color: #193f55; }
   #side-info .apply {
     color: #BF4D42; }
 
@@ -140,7 +140,7 @@ html {
     #slider-container {
       display: none; } }
   #slider-container ul a {
-    border: 2px solid #0d1f2d;
+    border: 2px solid #193f55;
     border-radius: 10px;
     margin-left: 7rem;
     padding: 8px;
@@ -175,13 +175,13 @@ html {
       display: inline-block;
       position: relative;
       left: 15rem;
-      color: #0d1f2d;
+      color: #193f55;
       text-decoration: none;
       top: 0.5rem; }
   #slider-container ul .filled {
-    background-color: #0d1f2d; }
+    background-color: #193f55; }
   #slider-container ul #moose-mark {
-    border: 3px solid #0d1f2d;
+    border: 3px solid #193f55;
     z-index: 4;
     width: 0;
     display: inline;
@@ -204,15 +204,15 @@ html {
     position: relative;
     cursor: pointer; }
     .navbar .nav-item a, .navbar-default .nav-item a {
-      color: #0d1f2d;
+      color: #193f55;
       font-size: 1.5rem;
       box-shadow: 0px 0.5rem;
       transition: color .1s ease-out;
       z-index: 1; }
       .navbar .nav-item a:hover, .navbar .nav-item a:focus, .navbar-default .nav-item a:hover, .navbar-default .nav-item a:focus {
-        background-color: #0d1f2d;
+        background-color: #193f55;
         color: #FFFF;
-        box-shadow: 0px 0.5rem #0d1f2d; }
+        box-shadow: 0px 0.5rem #193f55; }
         .navbar .nav-item a:hover:after, .navbar .nav-item a:focus:after, .navbar-default .nav-item a:hover:after, .navbar-default .nav-item a:focus:after {
           transform: scaleY(1); }
       .navbar .nav-item a:after, .navbar-default .nav-item a:after {
@@ -279,7 +279,7 @@ html {
     width: 100%;
     height: 30rem;
     margin: 0% 0%;
-    background-color: #0d1f2d;
+    background-color: #193f55;
     position: relative; }
     #basicInfo #infoContainer p {
       position: relative;
@@ -307,7 +307,7 @@ html {
     width: 60%;
     margin: 0% 21%;
     padding-top: 1rem;
-    color: #0d1f2d; }
+    color: #193f55; }
   #challenges .track-container {
     float: none;
     margin-left: 10%;
@@ -326,7 +326,7 @@ html {
     padding-bottom: 5%;
     background-color: #efefef; }
     #challenges .track-container .track {
-      border: 3px solid #0d1f2d;
+      border: 3px solid #193f55;
       border-radius: 3rem;
       padding: 3rem; }
       #challenges .track-container .track img {
@@ -382,7 +382,7 @@ html {
     width: 60%;
     margin: 0% 21%;
     padding-top: 1rem;
-    color: #0d1f2d; }
+    color: #193f55; }
   #logistics .scheduleContainer {
     width: 59.8%;
     position: relative;
@@ -392,22 +392,24 @@ html {
     @media screen and (max-width: 1000px) {
       #logistics .scheduleContainer {
         display: none; } }
-    #logistics .scheduleContainer ul .activeLi {
-      background-color: #BF4D42;
-      color: #FFFF;
-      border: none;
-      border: 1px solid black; }
-      #logistics .scheduleContainer ul .activeLi a {
-        color: #FFF; }
-    #logistics .scheduleContainer ul li {
-      background-color: #ffff;
-      padding: 0rem;
-      border: 1px solid black;
-      border-collapse: collapse; }
-      #logistics .scheduleContainer ul li a {
-        padding: 1rem;
-        text-decoration: none;
-        color: black; }
+    #logistics .scheduleContainer ul {
+      border: none; }
+      #logistics .scheduleContainer ul .activeLi {
+        background-color: #BF4D42;
+        color: #FFFF;
+        border: none;
+        border: 1px solid black; }
+        #logistics .scheduleContainer ul .activeLi a {
+          color: #FFF; }
+      #logistics .scheduleContainer ul li {
+        background-color: #ffff;
+        padding: 0rem;
+        border: 1px solid black;
+        border-collapse: collapse; }
+        #logistics .scheduleContainer ul li a {
+          padding: 1rem;
+          text-decoration: none;
+          color: black; }
     #logistics .scheduleContainer table {
       margin-top: 5%;
       margin-bottom: 4%;
@@ -420,7 +422,7 @@ html {
         font-family: "Open Sans", sans-serif;
         font-size: 1.5rem;
         font-style: normal;
-        color: #0d1f2d;
+        color: #193f55;
         border: 3px solid black; }
       #logistics .scheduleContainer table tr:first-child {
         background-color: #042449; }
@@ -451,7 +453,7 @@ html {
         font-family: "Open Sans", sans-serif;
         font-size: 1.5rem;
         font-style: normal;
-        color: #0d1f2d;
+        color: #193f55;
         border: 3px solid black; }
       #logistics .scheduleContainerDropdown table tr:first-child {
         background-color: #042449; }
@@ -464,7 +466,7 @@ html {
   width: 100%; }
 
 footer {
-  background-color: #0d1f2d;
+  background-color: #193f55;
   color: #fff;
   margin-bottom: 0;
   height: 10rem; }

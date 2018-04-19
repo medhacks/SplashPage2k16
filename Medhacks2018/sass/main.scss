@@ -2,7 +2,7 @@
 
 $background-color: #efefef;
 $highlight-color: #e2d8d6;
-$small-text-color: #0d1f2d;
+$small-text-color: #193f55;
 $large-text-color: #042449;
 $pop-color: #BF4D42;
 
@@ -494,7 +494,7 @@ html {
         padding-bottom: 0.1rem;
 
       ul {
-
+          border: none;
         .activeLi {
             background-color: $pop-color;
             color: #FFFF;
