@@ -567,11 +567,9 @@ footer {
     #faq .faq-dropdown .dropdown {
       margin-bottom: 3%; }
   #faq .faq-holder {
-    background-color: #fff;
     width: 80vw;
     position: relative;
     right: 15%;
-    border: 2px solid black;
     border-collapse: collapse; }
     #faq .faq-holder h3 {
       color: #193d56;
