@@ -170,7 +170,7 @@ $(document).scroll(function() {
     } else {
         section = 1;
         scrollPosition = scrollPosition / ($(document).height());
-        percentage = (scrollPosition - heights[1]) / (heights[2] - heights[1]) + 0.15;
+        percentage = (scrollPosition - heights[1]) / (heights[2] - heights[1]) + 0.4;
     }
     if (scrollPosition > 1) {
         scrollPosition = 1;

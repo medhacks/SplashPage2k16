@@ -1,4 +1,4 @@
-#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq .faq-container ul li {
+#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq h2, #faq .faq-container ul li {
   text-align: center;
   vertical-align: middle; }
 
@@ -140,7 +140,7 @@ html {
     #slider-container {
       display: none; } }
   #slider-container ul a {
-    border: 1px solid #335a81;
+    border: 2px solid #335a81;
     border-radius: 10px;
     margin-left: 7rem;
     padding: 8px;
@@ -456,48 +456,62 @@ html {
   height: 200px;
   width: 100%; }
 
-#faq .faq-container {
-  width: 60%;
+footer {
+  background-color: #335a81;
+  color: #fff;
+  margin-bottom: 0;
+  height: 10rem; }
+
+#faq {
   background-color: #efefef;
-  position: relative;
-  left: 20%;
-  font-size: 1rem; }
-  #faq .faq-container ul {
-    border: none; }
-    #faq .faq-container ul .active {
-      background-color: #BF4D42;
-      color: #FFFF;
-      padding: 0.43rem 5.5rem; }
-    #faq .faq-container ul li {
-      border: 1px solid black;
-      border-collapse: collapse; }
-      #faq .faq-container ul li a {
-        padding: 0rem 5.5rem;
-        text-decoration: none;
-        color: black;
-        font-size: 2.5rem; }
-  #faq .faq-container .faq-holder {
-    background-color: #fff;
-    width: 95.5%; }
-    #faq .faq-container .faq-holder h3 {
-      color: #193d56;
-      margin: 0 0 16px;
-      text-align: left;
-      padding-top: 20px;
-      padding-left: 10px; }
-    #faq .faq-container .faq-holder h3:after {
-      background-color: #D0D0D0;
-      content: '';
-      display: block;
-      height: 1px;
-      margin-top: 8px;
-      width: 100%; }
-    #faq .faq-container .faq-holder p {
-      font-size: 16px;
-      line-height: 24px;
-      margin: 4px 0;
-      width: 100%;
-      padding: 10px; }
+  margin-bottom: none; }
+  #faq h2 {
+    font-size: 4rem;
+    padding-bottom: 1.5rem;
+    width: 100%; }
+  #faq .faq-container {
+    width: 60%;
+    background-color: #efefef;
+    position: relative;
+    left: 20%;
+    font-size: 1rem; }
+    #faq .faq-container ul {
+      border: none; }
+      #faq .faq-container ul .active {
+        background-color: #BF4D42;
+        color: #FFFF;
+        padding: 0.43rem 5.5rem; }
+      #faq .faq-container ul li {
+        border: 1px solid black;
+        border-collapse: collapse; }
+        #faq .faq-container ul li a {
+          padding: 0rem 5.5rem;
+          text-decoration: none;
+          color: black;
+          font-size: 2.5rem; }
+    #faq .faq-container .faq-holder {
+      background-color: #fff;
+      width: 95.5%; }
+      #faq .faq-container .faq-holder h3 {
+        color: #193d56;
+        margin: 0 0 16px;
+        text-align: left;
+        padding-top: 20px;
+        padding-left: 10px; }
+      #faq .faq-container .faq-holder h3:after {
+        background-color: #D0D0D0;
+        content: '';
+        display: block;
+        height: 1px;
+        margin-top: 8px;
+        width: 100%; }
+      #faq .faq-container .faq-holder p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 4px 0;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 0; }
 
 @media screen and (min-width: 800px) {
   .beating-heart {

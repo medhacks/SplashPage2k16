@@ -180,7 +180,7 @@ html {
     position: fixed;
     top: 1.5rem;
     ul a {
-        border: 1px solid $small-text-color;
+        border: 2px solid $small-text-color;
         border-radius: 10px;
         margin-left: 7rem;
         padding: 8px;
@@ -613,8 +613,23 @@ html {
     width:100%;
 }
 
+footer {
+    background-color: $small-text-color;
+    color: #fff;
+    margin-bottom: 0;
+    height: 10rem;
+}
+
 
 #faq {
+    h2 {
+        font-size: 4rem;
+        padding-bottom: 1.5rem;
+        width: 100%;
+        @extend %center;
+    }
+    background-color: $background-color;
+    margin-bottom: none;
     .faq-container {
         width: 60%;
         background-color: $background-color;
@@ -669,6 +684,7 @@ html {
                 margin: 4px 0;
                 width: 100%;
                 padding: 10px;
+                margin-bottom: 0;
             }
         }
     }
