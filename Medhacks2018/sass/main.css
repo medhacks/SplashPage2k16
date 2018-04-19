@@ -45,7 +45,7 @@ html {
 
 #header {
   background-color: #efefef;
-  background-image: url("../assets/website-text (3)-01.png");
+  background-image: url("../assets/NEW-website-background-01.jpg");
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
@@ -485,22 +485,25 @@ footer {
     float: left;
     margin: 3% 1%;
     width: 11%;
-    margin-left: 20%; }
+    margin-left: 30%; }
     footer .column2 ul {
       margin-top: 1.5rem;
       padding: 0;
       list-style-type: none;
-      color: #efefef; }
+      color: #efefef;
+      font-size: 0.75rem;
+      padding-left: 1rem; }
   footer .column3 {
     float: left;
     margin: 3% 1%;
     width: 11%;
-    margin-left: 8%; }
+    margin-left: 4%; }
     footer .column3 ul {
       margin-top: 1.5rem;
       padding: 0;
       list-style-type: none;
-      color: #efefef; }
+      color: #efefef;
+      font-size: 0.75rem; }
 
 #faq {
   background-color: #efefef;
