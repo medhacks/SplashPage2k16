@@ -128,6 +128,22 @@ $(document).ready(() => {
         $("#fridayAnc").parent().removeClass('activeLi');
     });
 
+    $("#genAnc").click(function() {
+        $(this).parent().addClass('activeLi');
+        $("#eligAnc").parent().removeClass('activeLi');
+        $("#miscAnc").parent().removeClass('activeLi');
+    });
+    $("#eligAnc").click(function() {
+        $(this).parent().addClass('activeLi');
+        $("#genAnc").parent().removeClass('activeLi');
+        $("#miscAnc").parent().removeClass('activeLi');
+    });
+    $("#miscAnc").click(function() {
+        $(this).parent().addClass('activeLi');
+        $("#eligAnc").parent().removeClass('activeLi');
+        $("#genAnc").parent().removeClass('activeLi');
+    });
+
     $(".section-container").each(function() {
 
         heights.push($(this).position(this).top - heights[0] - 75);

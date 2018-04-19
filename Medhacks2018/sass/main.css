@@ -531,10 +531,10 @@ footer {
     #faq .faq-container ul {
       border: none;
       margin-bottom: 3rem; }
-      #faq .faq-container ul .active {
-        background-color: #BF4D42;
-        color: #FFFF;
-        padding: 0.43rem 5.5rem; }
+      #faq .faq-container ul .activeLi {
+        background-color: #BF4D42; }
+        #faq .faq-container ul .activeLi a {
+          color: #FFFF !important; }
       #faq .faq-container ul li {
         border: 1px solid black;
         border-collapse: collapse; }

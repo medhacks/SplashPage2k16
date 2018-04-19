@@ -708,10 +708,11 @@ footer {
         ul {
             border: none;
             margin-bottom: 3rem;
-            .active {
+            .activeLi {
                 background-color: $pop-color;
-                color: #FFFF;
-                padding: 0.43rem 5.5rem;
+                a {
+                    color: #FFFF !important;
+                }
             }
             li {
                 @extend %center;
