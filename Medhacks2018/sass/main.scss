@@ -629,6 +629,10 @@ footer {
         position: relative;
         left: 8%;
 
+        img {
+            position: relative;
+            right: 1.5vw;
+        }
         p {
             margin-top: 1.5rem;
         }
@@ -645,8 +649,12 @@ footer {
             padding: 0;
             list-style-type: none;
             color: $background-color;
-            font-size: 0.75rem;
-            padding-left: 1rem;
+            font-size: 1rem;
+            padding-left: 0.5rem;
+            a {
+                text-decoration: none;
+                color: $background-color;
+            }
         }
     }
 
@@ -660,7 +668,7 @@ footer {
             padding: 0;
             list-style-type: none;
             color: $background-color;
-            font-size: 0.75rem;
+            font-size: 1rem;
         }
     }
 }

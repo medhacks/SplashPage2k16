@@ -490,6 +490,9 @@ footer {
     margin-top: 02%;
     position: relative;
     left: 8%; }
+    footer .column1 img {
+      position: relative;
+      right: 1.5vw; }
     footer .column1 p {
       margin-top: 1.5rem; }
   footer .column2 {
@@ -502,8 +505,11 @@ footer {
       padding: 0;
       list-style-type: none;
       color: #efefef;
-      font-size: 0.75rem;
-      padding-left: 1rem; }
+      font-size: 1rem;
+      padding-left: 0.5rem; }
+      footer .column2 ul a {
+        text-decoration: none;
+        color: #efefef; }
   footer .column3 {
     float: left;
     margin: 3% 1%;
@@ -514,7 +520,7 @@ footer {
       padding: 0;
       list-style-type: none;
       color: #efefef;
-      font-size: 0.75rem; }
+      font-size: 1rem; }
 
 #faq {
   background-color: #efefef;
