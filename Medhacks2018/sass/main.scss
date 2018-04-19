@@ -2,7 +2,7 @@
 
 $background-color: #efefef;
 $highlight-color: #e2d8d6;
-$small-text-color: #335a81;
+$small-text-color: #0d1f2d;
 $large-text-color: #042449;
 $pop-color: #BF4D42;
 
@@ -604,6 +604,13 @@ html {
                 font-style: normal;
                 color: $small-text-color;
                 border: 3px solid black;
+            }
+            tr:first-child {
+                background-color: $large-text-color;
+                th {
+                    color: #fff;
+                }
+
             }
         }
 
