@@ -398,7 +398,8 @@ html {
       #logistics .scheduleContainer {
         display: none; } }
     #logistics .scheduleContainer ul {
-      border: none; }
+      border: none;
+      width: 80vw; }
       #logistics .scheduleContainer ul .activeLi {
         background-color: #BF4D42;
         color: #FFFF;
@@ -533,19 +534,23 @@ footer {
         display: none; } }
     #faq .faq-container ul {
       border: none;
-      margin-bottom: 3rem; }
+      margin-bottom: 3rem;
+      width: 80vw;
+      position: relative;
+      left: 5%; }
       #faq .faq-container ul .activeLi {
         background-color: #BF4D42; }
         #faq .faq-container ul .activeLi a {
           color: #FFFF !important; }
       #faq .faq-container ul li {
         border: 1px solid black;
-        border-collapse: collapse; }
+        border-collapse: collapse;
+        background-color: #fff; }
         #faq .faq-container ul li a {
           padding: 0rem 5.5rem;
           text-decoration: none;
           color: black;
-          font-size: 2.5rem; }
+          font-size: 1.89rem; }
   #faq .faq-dropdown {
     width: 60%;
     position: relative;
