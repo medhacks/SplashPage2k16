@@ -173,6 +173,22 @@ $('#schedule-select').change(function () {
     }
 });
 
+$('#faq-select').change(function () {
+    if ($(this).val() == "General") {
+        $('#general-tab2').addClass('active');
+        $('#eligibility-tab2').removeClass('active');
+        $('#misc-tab2').removeClass('active');
+    } else if ($(this).val() == "Eligibility") {
+        $('#general-tab2').removeClass('active');
+        $('#eligibility-tab2').addClass('active');
+        $('#misc-tab2').removeClass('active');
+    } else {
+        $('#general-tab2').removeClass('active');
+        $('#eligibility-tab2').removeClass('active');
+        $('#misc-tab2').addClass('active');
+    }
+});
+
 $(document).scroll(function() {
     let scrollPosition = $(window).scrollTop();
     let percentage = 0;

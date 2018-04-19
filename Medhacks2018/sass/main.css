@@ -1,4 +1,4 @@
-#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq h2, #faq .faq-container ul li {
+#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq h2, #faq .faq-container ul li, #faq .faq-dropdown {
   text-align: center;
   vertical-align: middle; }
 
@@ -479,8 +479,8 @@ footer {
   footer .copyright {
     position: relative;
     top: 17.5rem;
-    width: 180rem;
-    right: 82%; }
+    width: 110vw;
+    right: 8%; }
   footer .column1 {
     float: left;
     margin: 0 1%;
@@ -528,6 +528,9 @@ footer {
     position: relative;
     left: 20%;
     font-size: 1rem; }
+    @media screen and (max-width: 1000px) {
+      #faq .faq-container {
+        display: none; } }
     #faq .faq-container ul {
       border: none;
       margin-bottom: 3rem; }
@@ -543,33 +546,48 @@ footer {
           text-decoration: none;
           color: black;
           font-size: 2.5rem; }
-    #faq .faq-container .faq-holder {
-      background-color: #fff;
-      width: 80vw;
+  #faq .faq-dropdown {
+    width: 60%;
+    position: relative;
+    left: 20%;
+    font-size: 2rem; }
+    @media screen and (min-width: 1000px) {
+      #faq .faq-dropdown {
+        display: none; } }
+    #faq .faq-dropdown .dropdown-content {
       position: relative;
-      right: 15%;
-      border: 2px solid black;
-      border-collapse: collapse; }
-      #faq .faq-container .faq-holder h3 {
-        color: #193d56;
-        margin: 0 0 16px;
-        text-align: left;
-        padding-top: 20px;
-        padding-left: 10px; }
-      #faq .faq-container .faq-holder h3:after {
-        background-color: #D0D0D0;
-        content: '';
-        display: block;
-        height: 1px;
-        margin-top: 8px;
-        width: 100%; }
-      #faq .faq-container .faq-holder p {
-        font-size: 16px;
-        line-height: 24px;
-        margin: 4px 0;
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 0; }
+      padding-bottom: 0; }
+    #faq .faq-dropdown .dropdown .select-container {
+      right: 25%; }
+    #faq .faq-dropdown .dropdown {
+      margin-bottom: 3%; }
+  #faq .faq-holder {
+    background-color: #fff;
+    width: 80vw;
+    position: relative;
+    right: 15%;
+    border: 2px solid black;
+    border-collapse: collapse; }
+    #faq .faq-holder h3 {
+      color: #193d56;
+      margin: 0 0 16px;
+      text-align: left;
+      padding-top: 20px;
+      padding-left: 10px; }
+    #faq .faq-holder h3:after {
+      background-color: #D0D0D0;
+      content: '';
+      display: block;
+      height: 1px;
+      margin-top: 8px;
+      width: 100%; }
+    #faq .faq-holder p {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 4px 0;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 0; }
 
 @media screen and (min-width: 800px) {
   .beating-heart {

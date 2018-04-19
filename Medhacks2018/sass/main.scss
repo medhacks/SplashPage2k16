@@ -569,32 +569,6 @@ html {
           right: 25%;
       }
 
-      // .dropdown:hover .dropdown-content {
-      //   display: block;
-      //   width: 92%;
-      //   position: relative;
-      //   right: 45%;
-      // }
-      //
-      //   .active {
-      //       background-color: $pop-color;
-      //       color: #FFFF;
-      //       padding: 0.43rem 0.5rem;
-      //   }
-      //   li {
-      //       list-style-type: none;
-      //       padding: 0rem;
-      //       @extend %center;
-      //       //border: 1px solid black;
-      //       //border-collapse: collapse;
-      //       a {
-      //           padding: 1rem;
-      //           text-decoration: none;
-      //           color: black;
-      //       }
-      //   }
-
-
         table {
             margin-top: 5%;
             margin-bottom: 0%;
@@ -639,8 +613,8 @@ footer {
     .copyright {
         position: relative;
         top: 17.5rem;
-        width: 180rem;
-        right: 82%;
+        width: 110vw;
+        right: 8%;
     }
 
     .column1 {
@@ -699,6 +673,9 @@ footer {
     background-color: $background-color;
     margin-bottom: none;
     .faq-container {
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
         width: 60%;
         background-color: $background-color;
         position: relative;
@@ -727,39 +704,60 @@ footer {
             }
 
         }
+    }
+    .faq-dropdown {
+        @media screen and (min-width: 1000px) {
+          display: none;
+        }
+        width: 60%;
+        @extend %center;
+        position: relative;
+        left: 20%;
+        font-size: 2rem;
 
-        .faq-holder {
-            background-color: #fff;
-            width: 80vw;
-            position: relative;
-            right: 15%;
-            border: 2px solid black;
-            border-collapse: collapse;
-            h3 {
-                color: #193d56;
-                margin: 0 0 16px;
-                text-align: left;
-                padding-top: 20px;
-                padding-left: 10px;
-            }
+        .dropdown-content {
+           position: relative;
+           padding-bottom: 0;
+        }
+        .dropdown .select-container {
+            right: 25%;
+        }
+        .dropdown {
+            margin-bottom: 3%;
+        }
+    }
 
-            h3:after {
-                background-color: #D0D0D0;
-                content: '';
-                display: block;
-                height: 1px;
-                margin-top: 8px;
-                width: 100%;
-            }
+    .faq-holder {
+        background-color: #fff;
+        width: 80vw;
+        position: relative;
+        right: 15%;
+        border: 2px solid black;
+        border-collapse: collapse;
+        h3 {
+            color: #193d56;
+            margin: 0 0 16px;
+            text-align: left;
+            padding-top: 20px;
+            padding-left: 10px;
+        }
 
-            p {
-                font-size: 16px;
-                line-height: 24px;
-                margin: 4px 0;
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 0;
-            }
+        h3:after {
+            background-color: #D0D0D0;
+            content: '';
+            display: block;
+            height: 1px;
+            margin-top: 8px;
+            width: 100%;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 24px;
+            margin: 4px 0;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 0;
         }
     }
 }
