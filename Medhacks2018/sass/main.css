@@ -469,7 +469,12 @@ footer {
   background-color: #193f55;
   color: #fff;
   margin-bottom: 0;
-  height: 10rem; }
+  width: 100%;
+  height: 16rem; }
+  footer .column {
+    float: left;
+    margin: 0 1%;
+    width: 48%; }
 
 #faq {
   background-color: #efefef;
