@@ -650,6 +650,7 @@ footer {
 
         ul {
             border: none;
+            margin-bottom: 3rem;
             .active {
                 background-color: $pop-color;
                 color: #FFFF;
@@ -671,7 +672,11 @@ footer {
 
         .faq-holder {
             background-color: #fff;
-            width: 95.5%;
+            width: 80vw;
+            position: relative;
+            right: 15%;
+            border: 2px solid black;
+            border-collapse: collapse;
             h3 {
                 color: #193d56;
                 margin: 0 0 16px;
