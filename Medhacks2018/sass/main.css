@@ -425,7 +425,7 @@ html {
         color: #193f55;
         border: 3px solid black; }
       #logistics .scheduleContainer table tr:first-child {
-        background-color: #042449; }
+        background-color: #193f55; }
         #logistics .scheduleContainer table tr:first-child th {
           color: #fff; }
   #logistics .scheduleContainerDropdown {
@@ -456,7 +456,7 @@ html {
         color: #193f55;
         border: 3px solid black; }
       #logistics .scheduleContainerDropdown table tr:first-child {
-        background-color: #042449; }
+        background-color: #193f55; }
         #logistics .scheduleContainerDropdown table tr:first-child th {
           color: #fff; }
 

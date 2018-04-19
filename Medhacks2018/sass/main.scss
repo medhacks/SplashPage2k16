@@ -536,7 +536,7 @@ html {
             }
 
             tr:first-child {
-                background-color: $large-text-color;
+                background-color: $small-text-color;
                 th {
                     color: #fff;
                 }
@@ -606,7 +606,7 @@ html {
                 border: 3px solid black;
             }
             tr:first-child {
-                background-color: $large-text-color;
+                background-color: $small-text-color;
                 th {
                     color: #fff;
                 }
