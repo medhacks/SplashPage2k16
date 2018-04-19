@@ -389,13 +389,15 @@ html {
     left: 20%;
     font-size: 1.89rem;
     padding-bottom: 0.1rem; }
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1000px) {
       #logistics .scheduleContainer {
         display: none; } }
-    #logistics .scheduleContainer ul .active {
+    #logistics .scheduleContainer ul .activeLi {
       background-color: #BF4D42;
       color: #FFFF;
-      padding: 0.43rem 1.1rem; }
+      border: none; }
+      #logistics .scheduleContainer ul .activeLi a {
+        color: #FFF; }
     #logistics .scheduleContainer ul li {
       background-color: #ffff;
       padding: 0rem;
@@ -428,7 +430,7 @@ html {
     position: relative;
     left: 20%;
     font-size: 2rem; }
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1000px) {
       #logistics .scheduleContainerDropdown {
         display: none; } }
     #logistics .scheduleContainerDropdown .dropdown-content {

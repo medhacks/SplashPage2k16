@@ -482,7 +482,7 @@ html {
     background-color: $background-color;
 
     .scheduleContainer {
-      @media screen and (max-width: 1200px) {
+      @media screen and (max-width: 1000px) {
         display:none;
       }
         width: 59.8%;
@@ -495,10 +495,13 @@ html {
 
       ul {
 
-        .active {
+        .activeLi {
             background-color: $pop-color;
             color: #FFFF;
-            padding: 0.43rem 1.1rem;
+            border: none;
+            a {
+                color: #FFF;
+            }
         }
         li {
             background-color: #ffff;
@@ -543,7 +546,7 @@ html {
     }
 
     .scheduleContainerDropdown {
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: 1000px) {
         display: none;
       }
       width: 60%;

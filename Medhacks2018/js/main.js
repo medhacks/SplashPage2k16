@@ -98,17 +98,6 @@ $(document).ready(() => {
         $('#side-info').slideToggle();
     });
 
-//sonny starts coding
-    /*$("dropdown").hover(function() {
-        if ($("#friday").on('click', () => {
-            $('#friday').goTo();
-        } else if (($("#saturday").on('click', () => {
-            $('#saturday').goTo();
-        } else {
-            $('#sunday').goTo();
-        }
-    }*/
-//sonny stops coding
     $(".faq-question").click(function() {
         if ($(this).parent().hasClass('open')) {
             $(this).closest('.faq-holder').find('.faq-answer-container').animate({height: '0'}, 300);
@@ -120,6 +109,23 @@ $(document).ready(() => {
             $(this).closest('.faq-holder').css('height', 'auto');
             $(this).closest('.faq-holder').addClass('open');
         }
+    });
+
+    //taking care of schedule switchups
+    $("#fridayAnc").click(function() {
+        $(this).parent().addClass('activeLi');
+        $("#saturdayAnc").parent().removeClass('activeLi');
+        $("#sundayAnc").parent().removeClass('activeLi');
+    });
+    $("#saturdayAnc").click(function() {
+        $(this).parent().addClass('activeLi');
+        $("#fridayAnc").parent().removeClass('activeLi');
+        $("#sundayAnc").parent().removeClass('activeLi');
+    });
+    $("#sundayAnc").click(function() {
+        $(this).parent().addClass('activeLi');
+        $("#saturdayAnc").parent().removeClass('activeLi');
+        $("#fridayAnc").parent().removeClass('activeLi');
     });
 
     $(".section-container").each(function() {
