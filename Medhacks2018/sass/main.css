@@ -155,22 +155,22 @@ html {
       float: left;
       text-align: center;
       position: relative;
-      font-size: 1rem; }
+      font-size: 1.25rem; }
       #slider-container ul a .bubble #homeBubP {
         position: relative;
-        right: 17.5rem; }
+        right: 17.4rem; }
       #slider-container ul a .bubble #aboutBubP {
         position: relative;
-        right: 38.5rem; }
+        right: 38.7rem; }
       #slider-container ul a .bubble #tracksBubP {
         position: relative;
-        right: 41.5rem; }
+        right: 41.7rem; }
       #slider-container ul a .bubble #logBubP {
         position: relative;
-        right: 45.4rem; }
+        right: 45.2rem; }
       #slider-container ul a .bubble #faqBubP {
         position: relative;
-        right: 48rem; }
+        right: 48.2rem; }
     #slider-container ul a div {
       display: inline-block;
       position: relative;
