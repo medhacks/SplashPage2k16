@@ -530,17 +530,21 @@ html {
         table {
             margin-top: 5%;
             margin-bottom: 4%;
-            background-color: #f8f9fa;
+            background-color: $background-color;
             width: 80vw;
             position: relative;
             table-layout: fixed;
             right: 15%;
+            border-style: hidden;
             th, tr {
                 font-family: $font-fam;
                 font-size: 1.5rem;
                 font-style: normal;
                 color: $small-text-color;
-                border: 3px solid black;
+                //border: 3px solid black;
+            }
+            td, th {
+                border: 1px solid black;
             }
 
             tr:first-child {

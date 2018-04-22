@@ -419,17 +419,19 @@ html {
     #logistics .scheduleContainer table {
       margin-top: 5%;
       margin-bottom: 4%;
-      background-color: #f8f9fa;
+      background-color: #efefef;
       width: 80vw;
       position: relative;
       table-layout: fixed;
-      right: 15%; }
+      right: 15%;
+      border-style: hidden; }
       #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
         font-family: "Open Sans", sans-serif;
         font-size: 1.5rem;
         font-style: normal;
-        color: #193f55;
-        border: 3px solid black; }
+        color: #193f55; }
+      #logistics .scheduleContainer table td, #logistics .scheduleContainer table th {
+        border: 1px solid black; }
       #logistics .scheduleContainer table tr:first-child {
         background-color: #193f55; }
         #logistics .scheduleContainer table tr:first-child th {
