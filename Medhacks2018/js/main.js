@@ -192,7 +192,15 @@ $('#faq-select').change(function () {
     }
 });
 
-$(document).scroll(function() {
+$(document).scroll(() => {
+    checkBubbles();
+});
+
+$(window).resize(() => {
+    checkBubbles();
+});
+
+function checkBubbles() {
     let scrollPosition = $(window).scrollTop();
     maxWidth = $("#faqBubble")[0].getBoundingClientRect().right;
     initWidth = $("#homeBubble")[0].getBoundingClientRect().left;
@@ -279,7 +287,8 @@ $(document).scroll(function() {
             $("#faqBubble").removeClass("filled");
         }
     }
-});
+}
+
 
 
 (function($) {

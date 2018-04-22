@@ -136,7 +136,7 @@ html {
   left: 22.5rem;
   position: fixed;
   top: 1.5rem; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1000px) {
     #slider-container {
       display: none; } }
   #slider-container ul a {
