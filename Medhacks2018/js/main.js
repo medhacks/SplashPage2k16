@@ -2,6 +2,9 @@ let heights = [];
 let sections = [];
 heights.push($('#slider-container').height());
 var maxWidth = 35;
+maxWidth = $("#faqBubble")[0].getBoundingClientRect().right;
+initWidth = $("#homeBubble")[0].getBoundingClientRect().left;
+maxWidth = maxWidth - initWidth -20;
 var counter = 1;
 let hamCount = 0;
 
@@ -191,6 +194,9 @@ $('#faq-select').change(function () {
 
 $(document).scroll(function() {
     let scrollPosition = $(window).scrollTop();
+    maxWidth = $("#faqBubble")[0].getBoundingClientRect().right;
+    initWidth = $("#homeBubble")[0].getBoundingClientRect().left;
+    maxWidth = maxWidth - initWidth -20;
     let percentage = 0;
     let section = 1;
     if (scrollPosition >= heights[4]) {
@@ -215,7 +221,7 @@ $(document).scroll(function() {
         scrollPosition = 1;
     }
     newWidth = (maxWidth * scrollPosition);
-    var withProp = newWidth.toString() +"rem";
+    var withProp = newWidth.toString() +"px";
     $("#moose-mark").css('width', withProp);
     // console.log(scrollPosition);
     $("#aboutBubble").removeClass("filled");
