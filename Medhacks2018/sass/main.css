@@ -483,9 +483,9 @@ footer {
   height: 20rem; }
   footer .copyright {
     position: relative;
-    width: 105vw;
-    left: 90%;
-    float: right; }
+    float: right;
+    right: 2%;
+    top: 10%; }
   footer .column1 {
     float: left;
     margin: 0 1%;
