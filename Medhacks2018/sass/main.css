@@ -309,10 +309,12 @@ html {
     bottom: 15rem;
     left: 5%; }
   #challenges p {
-    width: 60%;
-    margin: 0% 21%;
+    width: 80%;
+    margin: 0% 10%;
     padding-top: 1rem;
-    color: #193f55; }
+    color: #193f55;
+    font-size: 1.5rem;
+    text-align: left; }
   #challenges .track-container {
     float: none;
     margin-left: 10%;

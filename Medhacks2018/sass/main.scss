@@ -391,10 +391,12 @@ html {
       left: 5%;
   }
   p {
-      width: 60%;
-      margin: 0% 21%;
+      width: 80%;
+      margin: 0% 10%;
       padding-top: 1rem;
       color: $small-text-color;
+      font-size: 1.5rem;
+      text-align: left;
   }
   background-color: $background-color;
   .track-container {
