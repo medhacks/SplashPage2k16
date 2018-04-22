@@ -190,12 +190,9 @@ html {
     z-index: 4;
     width: 0;
     display: inline;
-    position: absolute;
+    position: fixed;
     top: 0.5rem;
     left: 11rem; }
-    @media screen and (max-width: 1000px) {
-      #slider-container ul #moose-mark {
-        left: 43rem; } }
 
 .navbar, .navbar-default {
   z-index: 3;

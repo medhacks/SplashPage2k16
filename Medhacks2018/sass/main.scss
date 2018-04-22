@@ -240,14 +240,11 @@ html {
         background-color: $small-text-color;
     }
     ul #moose-mark {
-        @media screen and (max-width: 1000px) {
-            left: 43rem;
-        }
         border: 3px solid $small-text-color;
         z-index: 4;
         width: 0;
         display: inline;
-        position: absolute;
+        position: fixed;
         top: 0.5rem;
         left: 11rem;
     }
