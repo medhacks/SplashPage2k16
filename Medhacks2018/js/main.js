@@ -201,6 +201,17 @@ $(window).resize(() => {
 });
 
 function checkBubbles() {
+
+    heights.length = 0;
+    heights.push($('#slider-container').height());
+    $(".section-container").each(function() {
+
+        heights.push($(this).position(this).top - heights[0] - 75);
+        counter++;
+        sections.push($(this));
+    });
+    heights[3] = heights[3] - 100;
+
     let scrollPosition = $(window).scrollTop();
     maxWidth = $("#faqBubble")[0].getBoundingClientRect().right;
     initWidth = $("#homeBubble")[0].getBoundingClientRect().left;

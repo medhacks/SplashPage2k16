@@ -140,7 +140,7 @@ html, body {
   left: 21.5rem;
   position: fixed;
   top: 1.5rem; }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 800px) {
     #slider-container {
       display: none; } }
   #slider-container ul a {
