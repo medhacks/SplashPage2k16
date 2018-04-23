@@ -76,6 +76,10 @@ html, body {
     height: 65rem;
     width: 100%;
 
+    .description {
+        @extend %center;
+    }
+
     @media screen and (min-width: 500px) {
         .frosty-title {
             width: 60rem;
@@ -89,8 +93,8 @@ html, body {
             color: $pop-color;
             position: relative;
             bottom: 20rem;
-            left: 37rem;
-            width: 40rem;
+            width: 50%;
+            left: 25%;
             margin-right: 0;
         }
     }

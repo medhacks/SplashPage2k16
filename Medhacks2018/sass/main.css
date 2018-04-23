@@ -1,4 +1,4 @@
-#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #aboutSection h2, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq h2, #faq .faq-container ul li, #faq .faq-dropdown {
+#header .description, #header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #aboutSection h2, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq h2, #faq .faq-container ul li, #faq .faq-dropdown {
   text-align: center;
   vertical-align: middle; }
 
@@ -67,8 +67,8 @@ html, body {
       color: #BF4D42;
       position: relative;
       bottom: 20rem;
-      left: 37rem;
-      width: 40rem;
+      width: 50%;
+      left: 25%;
       margin-right: 0; } }
   @media screen and (max-width: 500px) {
     #header .frosty-title {
