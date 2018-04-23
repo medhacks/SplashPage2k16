@@ -68,7 +68,8 @@ html, body {
       position: relative;
       bottom: 20rem;
       left: 37rem;
-      width: 40rem; } }
+      width: 40rem;
+      margin-right: 0; } }
   @media screen and (max-width: 500px) {
     #header .frosty-title {
       width: 30rem;
@@ -135,7 +136,7 @@ html, body {
 
 #slider-container {
   position: relative;
-  left: 23.5rem;
+  left: 21.5rem;
   position: fixed;
   top: 1.5rem; }
   @media screen and (max-width: 1000px) {
@@ -244,7 +245,7 @@ html, body {
     background-size: contain;
     background-repeat: no-repeat; }
   .navbar .applyButton, .navbar-default .applyButton {
-    margin-right: 1rem;
+    margin-right: 5.5rem;
     padding: 0.5rem;
     color: #FFFF;
     background-color: #BF4D42;

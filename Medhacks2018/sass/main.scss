@@ -91,6 +91,7 @@ html, body {
             bottom: 20rem;
             left: 37rem;
             width: 40rem;
+            margin-right: 0;
         }
     }
 
@@ -182,7 +183,7 @@ html, body {
         display: none;
     }
     position: relative;
-    left: 23.5rem;
+    left: 21.5rem;
     position: fixed;
     top: 1.5rem;
     ul a {
@@ -317,7 +318,7 @@ html, body {
         @media screen and (max-width: 800px){
             display: none;
         }
-        margin-right: 1rem;
+        margin-right: 5.5rem;
         padding: 0.5rem;
         color: #FFFF;
         background-color: $pop-color;
