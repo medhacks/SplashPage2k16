@@ -189,7 +189,7 @@ function checkBubbles() {
         counter++;
         sections.push($(this));
     });
-    heights[2] = heights[2] - 200;
+    heights[2] = heights[2] - 100;
     heights[3] = heights[3] -100;
     heights[4] = heights[4] -100;
     heights[5] = heights[5] -100;
@@ -219,9 +219,10 @@ function checkBubbles() {
         section = 2;
     } else {
         section = 1;
-        scrollPosition = scrollPosition / ($(document).height() + 100);
-        percentage = scrollPosition;
+        percentage = scrollPosition / (heights[2]);
+        scrollPosition = percentage / 4;
     }
+    console.log(percentage);
     if (scrollPosition > 1) {
         scrollPosition = 1;
     }
