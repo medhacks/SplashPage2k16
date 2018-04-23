@@ -14,14 +14,14 @@ We tasks teams with coming up with technological solutions for pressing health c
 Participants "learn together, design together, eat together, and code together."
 More information can be found at [our website](http://medhacks.org/)
 
-&nbsp;&nbsp;&nbsp;## Overview
-&nbsp;&nbsp;&nbsp;This repository contains documentation for the revamped Medhacks website.
+## Overview
+This repository contains documentation for the revamped Medhacks website.
 
-  ### Server
-  We are working on a [Django framework](https://www.djangoproject.com/).
+#### Server
+We are working on a [Django framework](https://www.djangoproject.com/).
 
-  ### Web Framework
-  We are using [digitalocean](https://www.digitalocean.com/) as our server.
+#### Web Framework
+We are using [digitalocean](https://www.digitalocean.com/) as our server.
 
 ## Connect with Medhacks
 Follow Medhacks on [Facebook](https://www.facebook.com/medhacks/?ref=br_rs/) and [Instagram](https://www.instagram.com/medhacks/).
