@@ -803,9 +803,9 @@ footer {
 
 .beating-heart {
     @media screen and (min-width: 800px) {
-        position: relative;
-        top: 13rem;
-        left: 75rem;
+        position: absolute;
+        top: 40rem;
+        left: 85rem;
         -webkit-animation: heart-beat 1.5s infinite;
         animation: heart-beat 1.5s infinite;
         width: 15rem;
