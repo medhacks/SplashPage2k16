@@ -317,7 +317,8 @@ html, body {
     width: 80%;
     position: relative;
     left: 10%;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    padding-bottom: 5rem; }
 
 #challenges {
   background-color: #efefef; }
