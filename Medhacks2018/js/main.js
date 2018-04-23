@@ -24,7 +24,7 @@ $(document).ready(() => {
         $('#logistics').goTo();
     });
     $('#aboutBubble').on('click', () => {
-        $('#basicInfo').goTo();
+        $('#aboutSection').goTo();
     });
 
     $('#home-small-button').on('click', () => {
@@ -48,7 +48,7 @@ $(document).ready(() => {
         $('#side-info').slideToggle();
     });
     $('#about-small-button').on('click', () => {
-        $('#basicInfo').goTo();
+        $('#aboutSection').goTo();
         $('#side-info').slideToggle();
         $('#ham-container').toggleClass('change');
     });
