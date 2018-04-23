@@ -614,7 +614,8 @@ footer {
       margin: 4px 0;
       width: 100%;
       padding: 10px;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      text-align: left; }
 
 @media screen and (min-width: 800px) {
   .beating-heart {

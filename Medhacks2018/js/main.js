@@ -156,7 +156,7 @@ $('#schedule-select').change(function () {
     }
 });
 
-$('#apply-select').change(function () {
+$('#faq-select').change(function () {
     if ($(this).val() == "General") {
         $('#general-tab2').addClass('active');
         $('#eligibility-tab2').removeClass('active');
