@@ -13,38 +13,18 @@ $(document).ready(() => {
 
     $('#homeBubble').on('click', () => {
         $('#header').goTo();
-        $("#aboutBubble").removeClass("filled");
-        $("#tracksBubble").removeClass("filled");
-        $("#logisticsBubble").removeClass("filled");
-        $("#faqBubble").removeClass("filled");
     });
     $('#faqBubble').on('click', () => {
         $('#faq').goTo();
-        $("#aboutBubble").addClass("filled");
-        $("#tracksBubble").addClass("filled");
-        $("#logisticsBubble").addClass("filled");
-        $("#faqBubble").addClass("filled");
     });
     $('#tracksBubble').on('click', () => {
         $('#challenges').goTo();
-        $("#aboutBubble").addClass("filled");
-        $("#tracksBubble").addClass("filled");
-        $("#logisticsBubble").removeClass("filled");
-        $("#faqBubble").removeClass("filled");
     });
     $('#logisticsBubble').on('click', () => {
         $('#logistics').goTo();
-        $("#aboutBubble").addClass("filled");
-        $("#tracksBubble").addClass("filled");
-        $("#logisticsBubble").addClass("filled");
-        $("#faqBubble").removeClass("filled");
     });
     $('#aboutBubble').on('click', () => {
         $('#basicInfo').goTo();
-        $("#aboutBubble").addClass("filled");
-        $("#tracksBubble").removeClass("filled");
-        $("#logisticsBubble").removeClass("filled");
-        $("#faqBubble").removeClass("filled");
     });
 
     $('#home-small-button').on('click', () => {
@@ -205,12 +185,14 @@ function checkBubbles() {
     heights.length = 0;
     heights.push($('#slider-container').height());
     $(".section-container").each(function() {
-
         heights.push($(this).position(this).top - heights[0] - 75);
         counter++;
         sections.push($(this));
     });
-    heights[3] = heights[3] - 100;
+    heights[2] = heights[2] - 200;
+    heights[3] = heights[3] -100;
+    heights[4] = heights[4] -100;
+    heights[5] = heights[5] -100;
 
     let scrollPosition = $(window).scrollTop();
     maxWidth = $("#faqBubble")[0].getBoundingClientRect().right;
