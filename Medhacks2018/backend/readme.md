@@ -14,8 +14,8 @@ We tasks teams with coming up with technological solutions for pressing health c
 Participants "learn together, design together, eat together, and code together."
 More information can be found at [our website](http://medhacks.org/)
 
-  ## Overview
-  This repository contains documentation for the revamped Medhacks website.
+&nbsp;&nbsp;&nbsp;## Overview
+&nbsp;&nbsp;&nbsp;This repository contains documentation for the revamped Medhacks website.
 
   ### Server
   We are working on a [Django framework](https://www.djangoproject.com/).
