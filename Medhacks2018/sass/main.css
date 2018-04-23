@@ -453,6 +453,8 @@ html, body {
       padding-bottom: 0; }
     #logistics .scheduleContainerDropdown .dropdown .select-container {
       right: 25%; }
+  #logistics .tab-pane {
+    width: 100%; }
   #logistics table {
     margin-top: 5%;
     margin-bottom: 4%;
@@ -464,6 +466,7 @@ html, body {
     border-style: hidden; }
     #logistics table th, #logistics table tr {
       font-size: 24px;
+      word-wrap: break-word;
       font-style: normal;
       font-weight: normal;
       color: #193f55; }
@@ -473,6 +476,8 @@ html, body {
       background-color: #193f55; }
       #logistics table tr:first-child th {
         color: #fff; }
+    #logistics table tr:hover {
+      background-color: #f5f5f5; }
 
 .marginFormat {
   background-color: #efefef;
