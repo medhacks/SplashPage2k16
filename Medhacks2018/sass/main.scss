@@ -129,7 +129,7 @@ html, body {
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        top: 40rem;
+        top: 35rem;
         padding: 0.5rem;
         background-color: $background-color;
         width: 225px;
@@ -589,8 +589,9 @@ html, body {
         border-style: hidden;
         th, tr {
             //font-family: $font-fam;
-            font-size: 16px;
+            font-size: 24px;
             font-style: normal;
+            font-weight: normal;
             color: $small-text-color;
             //border: 3px solid black;
         }

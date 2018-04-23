@@ -94,7 +94,7 @@ html, body {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    top: 40rem;
+    top: 35rem;
     padding: 0.5rem;
     background-color: #efefef;
     width: 225px;
@@ -457,8 +457,9 @@ html, body {
     right: 15%;
     border-style: hidden; }
     #logistics table th, #logistics table tr {
-      font-size: 16px;
+      font-size: 24px;
       font-style: normal;
+      font-weight: normal;
       color: #193f55; }
     #logistics table td, #logistics table th {
       border: 1px solid black; }
