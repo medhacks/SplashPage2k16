@@ -1,4 +1,4 @@
-#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq h2, #faq .faq-container ul li, #faq .faq-dropdown {
+#header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #aboutSection h2, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq h2, #faq .faq-container ul li, #faq .faq-dropdown {
   text-align: center;
   vertical-align: middle; }
 
@@ -292,6 +292,22 @@ html {
       font-family: "Open Sans", sans-serif;
       font-size: 1.5rem;
       line-height: 3rem; }
+
+#aboutSection {
+  background-color: #efefef;
+  margin-bottom: 0;
+  padding-top: 5%; }
+  #aboutSection h2 {
+    color: #042449;
+    padding-bottom: 4rem;
+    font-size: 3rem; }
+  #aboutSection p {
+    color: #193f55;
+    font-size: 1.5rem;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    margin-bottom: 0; }
 
 #challenges {
   background-color: #efefef; }

@@ -374,6 +374,28 @@ html {
 
 }
 
+#aboutSection {
+    background-color: $background-color;
+    margin-bottom: 0;
+    padding-top: 5%;
+    h2 {
+        color: $large-text-color;
+        padding-bottom: 4rem;
+        font-size: $section-header-size;
+        @extend %center;
+    }
+
+    p {
+        color: $small-text-color;
+        font-size: 1.5rem;
+        width: 80%;
+        position:relative;
+        left: 10%;
+        margin-bottom: 0;
+    }
+
+}
+
 #challenges {
   h2 {
       color: $large-text-color;
