@@ -327,12 +327,12 @@ html, body {
     padding-bottom: 4rem;
     font-size: 3rem; }
   #challenges img {
-    width: 75%;
+    width: 40%;
     position: relative;
-    bottom: 15rem;
-    left: 5%; }
+    bottom: 35rem;
+    left: 25%; }
   #challenges p {
-    width: 80%;
+    width: 34%;
     margin: 0% 10%;
     padding-top: 1rem;
     color: #193f55;
