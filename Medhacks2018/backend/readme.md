@@ -5,14 +5,14 @@
  * [Overview](#overview)
   * [Server](#server)
   * [Web Framework](#web-framework)
- * [Connect with Medhacks]
+ * [Connect with Medhacks](#connect_with_medhacks)
  
 ## About Medhacks
 
 Medhacks is a student-led hackathon that debuted at Hopkins in 2013. 
 We tasks teams with coming up with technological solutions for pressing health challenges.
 Participants "learn together, design together, eat together, and code together."
-More information can be found at [our website(http://medhacks.org/)]
+More information can be found at [our website](http://medhacks.org/)
 
 ## Overview
 This repository contains documentation for the revamped Medhacks website.
