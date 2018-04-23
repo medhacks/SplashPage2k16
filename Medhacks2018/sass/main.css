@@ -453,8 +453,6 @@ html, body {
       padding-bottom: 0; }
     #logistics .scheduleContainerDropdown .dropdown .select-container {
       right: 25%; }
-  #logistics .tab-pane {
-    width: 100%; }
   #logistics table {
     margin-top: 5%;
     margin-bottom: 4%;
@@ -474,6 +472,8 @@ html, body {
       border: 1px solid black; }
     #logistics table tr:first-child {
       background-color: #193f55; }
+      #logistics table tr:first-child:hover {
+        background-color: #193f55; }
       #logistics table tr:first-child th {
         color: #fff; }
     #logistics table tr:hover {

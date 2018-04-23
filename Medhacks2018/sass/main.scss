@@ -586,9 +586,6 @@ html, body {
           right: 25%;
       }
     }
-    .tab-pane {
-        width: 100%;
-    }
     table {
         margin-top: 5%;
         margin-bottom: 4%;
@@ -612,6 +609,9 @@ html, body {
         }
 
         tr:first-child {
+            &:hover {
+                background-color: $small-text-color;
+            }
             background-color: $small-text-color;
             th {
                 color: #fff;
