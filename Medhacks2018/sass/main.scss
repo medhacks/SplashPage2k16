@@ -12,11 +12,16 @@ $menu-background-color: #dbdbdb;
 
 $font-fam: 'Open Sans', sans-serif;
 
-html {
+@font-face {
+    font-family: custom;
+    src: url(../assets/Raleway-Light.ttf);
+}
+
+html, body {
     background: $background-color;
     margin:0;
     padding:0;
-    font-family: $font-fam;
+    font-family: custom;
     font-size: 1vmax;
 }
 
@@ -358,7 +363,7 @@ html {
             left: 10rem;
             width: 80%;
             color: #ffff;
-            font-family: $font-fam;
+            //font-family: $font-fam;
             font-size: 1.5rem;
             line-height: 3rem;
             @extend %center;
@@ -557,7 +562,7 @@ html {
             right: 15%;
             border-style: hidden;
             th, tr {
-                font-family: $font-fam;
+                //font-family: $font-fam;
                 font-size: 1.5rem;
                 font-style: normal;
                 color: $small-text-color;
@@ -605,7 +610,7 @@ html {
             table-layout: fixed;
             left: 3%;
             th, tr {
-                font-family: $font-fam;
+            //    font-family: $font-fam;
                 font-size: 1.5rem;
                 font-style: normal;
                 color: $small-text-color;

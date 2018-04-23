@@ -2,11 +2,14 @@
   text-align: center;
   vertical-align: middle; }
 
-html {
+@font-face {
+  font-family: custom;
+  src: url(../assets/Raleway-Light.ttf); }
+html, body {
   background: #efefef;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: custom;
   font-size: 1vmax; }
 
 .jumbotron {
@@ -289,7 +292,6 @@ html {
       left: 10rem;
       width: 80%;
       color: #ffff;
-      font-family: "Open Sans", sans-serif;
       font-size: 1.5rem;
       line-height: 3rem; }
 
@@ -440,7 +442,6 @@ html {
       right: 15%;
       border-style: hidden; }
       #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
-        font-family: "Open Sans", sans-serif;
         font-size: 1.5rem;
         font-style: normal;
         color: #193f55; }
@@ -472,7 +473,6 @@ html {
       table-layout: fixed;
       left: 3%; }
       #logistics .scheduleContainerDropdown table th, #logistics .scheduleContainerDropdown table tr {
-        font-family: "Open Sans", sans-serif;
         font-size: 1.5rem;
         font-style: normal;
         color: #193f55;
