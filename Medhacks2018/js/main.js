@@ -235,7 +235,7 @@ function checkBubbles() {
     $("#tracksBubble").removeClass("filled");
     $("#logisticsBubble").removeClass("filled");
     $("#faqBubble").removeClass("filled");
-    if (percentage > .9) {
+    if (percentage > .95) {
         if (section == 1) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").removeClass("filled");
