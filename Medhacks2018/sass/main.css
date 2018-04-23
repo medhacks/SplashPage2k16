@@ -1,4 +1,4 @@
-#header .description, #header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #aboutSection h2, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq h2, #faq .faq-container ul li, #faq .faq-dropdown {
+#header .description, #header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #aboutSection h2, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #faq h2, #faq .faq-container ul li, #faq .faq-dropdown, #applySection h2 {
   text-align: center;
   vertical-align: middle; }
 
@@ -176,7 +176,7 @@ html, body {
         position: relative;
         right: 45.2rem;
         bottom: 0.5rem; }
-      #slider-container ul a .bubble #faqBubP {
+      #slider-container ul a .bubble #applyBubP {
         position: relative;
         right: 48.2rem;
         bottom: 0.5rem; }
@@ -626,6 +626,28 @@ footer {
 @media screen and (max-width: 800px) {
   .beating-heart {
     display: none; } }
+
+#applySection {
+  background-color: #efefef;
+  margin-bottom: 0; }
+  #applySection h2 {
+    color: #042449;
+    padding-bottom: 4rem;
+    font-size: 3rem; }
+  #applySection h3 {
+    color: #042449;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    font-weight: bold;
+    padding-left: 0;
+    font-size: 2rem; }
+  #applySection p {
+    color: #193f55;
+    font-size: 1.5rem;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    margin-bottom: 0; }
 
 @-o-keyframes heart-beat {
   0% {

@@ -230,7 +230,7 @@ html, body {
                 bottom: 0.5rem;
             }
 
-            #faqBubP {
+            #applyBubP {
                 position: relative;
                 right: 48.2rem;
                 bottom: 0.5rem;
@@ -818,6 +818,36 @@ footer {
     @media screen and (max-width: 800px) {
         display: none;
     }
+}
+
+#applySection {
+    background-color: $background-color;
+    margin-bottom: 0;
+    h2 {
+        color: $large-text-color;
+        padding-bottom: 4rem;
+        font-size: $section-header-size;
+        @extend %center;
+    }
+
+    h3 {
+        color: $large-text-color;
+        margin-left: 10%;
+        margin-bottom: 2%;
+        font-weight: bold;
+        padding-left: 0;
+        font-size: 2rem;
+    }
+
+    p {
+        color: $small-text-color;
+        font-size: 1.5rem;
+        width: 80%;
+        position:relative;
+        left: 10%;
+        margin-bottom: 0;
+    }
+
 }
 
 @-o-keyframes heart-beat {

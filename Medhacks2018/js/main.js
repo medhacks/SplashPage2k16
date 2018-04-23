@@ -2,7 +2,7 @@ let heights = [];
 let sections = [];
 heights.push($('#slider-container').height());
 var maxWidth = 35;
-maxPos = $("#faqBubble")[0].getBoundingClientRect().right;
+maxPos = $("#applyBubble")[0].getBoundingClientRect().right;
 initPos = $("#homeBubble")[0].getBoundingClientRect().left;
 maxWidth = maxPos - initPos - 20;
 var counter = 1;
@@ -14,8 +14,8 @@ $(document).ready(() => {
     $('#homeBubble').on('click', () => {
         $('#header').goTo();
     });
-    $('#faqBubble').on('click', () => {
-        $('#faq').goTo();
+    $('#applyBubble').on('click', () => {
+        $('#applySection').goTo();
     });
     $('#tracksBubble').on('click', () => {
         $('#challenges').goTo();
@@ -32,8 +32,8 @@ $(document).ready(() => {
         $('#side-info').slideToggle();
         $('#ham-container').toggleClass('change');
     });
-    $('#faq-small-button').on('click', () => {
-        $('#faq').goTo();
+    $('#apply-small-button').on('click', () => {
+        $('#applySection').goTo();
         $('#side-info').slideToggle();
         $('#ham-container').toggleClass('change');
     });
@@ -81,16 +81,16 @@ $(document).ready(() => {
         $('#side-info').slideToggle();
     });
 
-    $(".faq-question").click(function() {
+    $(".apply-question").click(function() {
         if ($(this).parent().hasClass('open')) {
-            $(this).closest('.faq-holder').find('.faq-answer-container').animate({height: '0'}, 300);
-            $(this).closest('.faq-holder').removeClass('open');
-            $(this).closest('.faq-holder').animate({height: '7rem'}, 300);
+            $(this).closest('.apply-holder').find('.apply-answer-container').animate({height: '0'}, 300);
+            $(this).closest('.apply-holder').removeClass('open');
+            $(this).closest('.apply-holder').animate({height: '7rem'}, 300);
         } else {
-            var newHeight = $(this).closest('.faq-holder').find('.answer-box').height() +'px';
-            $(this).closest('.faq-holder').find('.faq-answer-container').animate({'height':newHeight},300);
-            $(this).closest('.faq-holder').css('height', 'auto');
-            $(this).closest('.faq-holder').addClass('open');
+            var newHeight = $(this).closest('.apply-holder').find('.answer-box').height() +'px';
+            $(this).closest('.apply-holder').find('.apply-answer-container').animate({'height':newHeight},300);
+            $(this).closest('.apply-holder').css('height', 'auto');
+            $(this).closest('.apply-holder').addClass('open');
         }
     });
 
@@ -137,7 +137,7 @@ $(document).ready(() => {
     heights[3] = heights[3] - 100;
     sections.push($("#tracksBubble"));
     sections.push($("#logisticsBubble"));
-    sections.push($("#faqBubble"));
+    sections.push($("#applyBubble"));
 });
 
 $('#schedule-select').change(function () {
@@ -156,7 +156,7 @@ $('#schedule-select').change(function () {
     }
 });
 
-$('#faq-select').change(function () {
+$('#apply-select').change(function () {
     if ($(this).val() == "General") {
         $('#general-tab2').addClass('active');
         $('#eligibility-tab2').removeClass('active');
@@ -195,7 +195,7 @@ function checkBubbles() {
     heights[5] = heights[5] -100;
 
     let scrollPosition = $(window).scrollTop();
-    maxWidth = $("#faqBubble")[0].getBoundingClientRect().right;
+    maxWidth = $("#applyBubble")[0].getBoundingClientRect().right;
     initWidth = $("#homeBubble")[0].getBoundingClientRect().left;
     initTop = $("#homeBubble")[0].getBoundingClientRect().top;
     initBottom = $("#homeBubble")[0].getBoundingClientRect().bottom;
@@ -219,8 +219,8 @@ function checkBubbles() {
         section = 2;
     } else {
         section = 1;
-        scrollPosition = scrollPosition / ($(document).height());
-        percentage = scrollPosition + 0.1;
+        scrollPosition = scrollPosition / ($(document).height() + 100);
+        percentage = scrollPosition;
     }
     if (scrollPosition > 1) {
         scrollPosition = 1;
@@ -234,50 +234,50 @@ function checkBubbles() {
     $("#aboutBubble").removeClass("filled");
     $("#tracksBubble").removeClass("filled");
     $("#logisticsBubble").removeClass("filled");
-    $("#faqBubble").removeClass("filled");
+    $("#applyBubble").removeClass("filled");
     if (percentage > .95) {
         if (section == 1) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").removeClass("filled");
             $("#logisticsBubble").removeClass("filled");
-            $("#faqBubble").removeClass("filled");
+            $("#applyBubble").removeClass("filled");
         } else if (section == 2) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").addClass("filled");
             $("#logisticsBubble").removeClass("filled");
-            $("#faqBubble").removeClass("filled");
+            $("#applyBubble").removeClass("filled");
         } else if (section == 3) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").addClass("filled");
             $("#logisticsBubble").addClass("filled");
-            $("#faqBubble").removeClass("filled");
+            $("#applyBubble").removeClass("filled");
         } else if (section == 4) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").addClass("filled");
             $("#logisticsBubble").addClass("filled");
-            $("#faqBubble").addClass("filled");
+            $("#applyBubble").addClass("filled");
         }
     } else {
         if (section == 1) {
             $("#aboutBubble").removeClass("filled");
             $("#tracksBubble").removeClass("filled");
             $("#logisticsBubble").removeClass("filled");
-            $("#faqBubble").removeClass("filled");
+            $("#applyBubble").removeClass("filled");
         } else if (section == 2) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").removeClass("filled");
             $("#logisticsBubble").removeClass("filled");
-            $("#faqBubble").removeClass("filled");
+            $("#applyBubble").removeClass("filled");
         } else if (section == 3) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").addClass("filled");
             $("#logisticsBubble").removeClass("filled");
-            $("#faqBubble").removeClass("filled");
+            $("#applyBubble").removeClass("filled");
         } else if (section == 4) {
             $("#aboutBubble").addClass("filled");
             $("#tracksBubble").addClass("filled");
             $("#logisticsBubble").addClass("filled");
-            $("#faqBubble").removeClass("filled");
+            $("#applyBubble").removeClass("filled");
         }
     }
 }
