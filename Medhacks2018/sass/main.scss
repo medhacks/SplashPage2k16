@@ -417,6 +417,8 @@ html, body {
 }
 
 #challenges {
+    display: block;
+    height: 45rem;
   h2 {
       color: $large-text-color;
       padding-bottom: 4rem;
@@ -426,7 +428,10 @@ html, body {
       width: 40%;
       position: relative;
       bottom: 35rem;
-      left: 25%;
+      left: 55%;
+      padding: 0;
+      margin: 0;
+      display: block;
   }
   p {
       width: 34%;
