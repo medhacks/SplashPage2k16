@@ -552,35 +552,6 @@ html, body {
 
       }
 
-        table {
-            margin-top: 5%;
-            margin-bottom: 4%;
-            background-color: $background-color;
-            width: 80vw;
-            position: relative;
-            table-layout: fixed;
-            right: 15%;
-            border-style: hidden;
-            th, tr {
-                //font-family: $font-fam;
-                font-size: 1.5rem;
-                font-style: normal;
-                color: $small-text-color;
-                //border: 3px solid black;
-            }
-            td, th {
-                border: 1px solid black;
-            }
-
-            tr:first-child {
-                background-color: $small-text-color;
-                th {
-                    color: #fff;
-                }
-
-            }
-        }
-
     }
 
     .scheduleContainerDropdown {
@@ -600,33 +571,35 @@ html, body {
       .dropdown .select-container {
           right: 25%;
       }
-
-        table {
-            margin-top: 5%;
-            margin-bottom: 0%;
-            background-color: #f8f9fa;
-            width: 94%;
-            position: relative;
-            table-layout: fixed;
-            left: 3%;
-            th, tr {
-            //    font-family: $font-fam;
-                font-size: 1.5rem;
-                font-style: normal;
-                color: $small-text-color;
-                border: 3px solid black;
-            }
-            tr:first-child {
-                background-color: $small-text-color;
-                th {
-                    color: #fff;
-                }
-
-            }
+    }
+    table {
+        margin-top: 5%;
+        margin-bottom: 4%;
+        background-color: $background-color;
+        width: 80vw;
+        position: relative;
+        table-layout: fixed;
+        right: 15%;
+        border-style: hidden;
+        th, tr {
+            //font-family: $font-fam;
+            font-size: 16px;
+            font-style: normal;
+            color: $small-text-color;
+            //border: 3px solid black;
+        }
+        td, th {
+            border: 1px solid black;
         }
 
-    }
+        tr:first-child {
+            background-color: $small-text-color;
+            th {
+                color: #fff;
+            }
 
+        }
+    }
 }
 
 .marginFormat {

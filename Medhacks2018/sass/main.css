@@ -432,25 +432,6 @@ html, body {
           padding: 1rem;
           text-decoration: none;
           color: black; }
-    #logistics .scheduleContainer table {
-      margin-top: 5%;
-      margin-bottom: 4%;
-      background-color: #efefef;
-      width: 80vw;
-      position: relative;
-      table-layout: fixed;
-      right: 15%;
-      border-style: hidden; }
-      #logistics .scheduleContainer table th, #logistics .scheduleContainer table tr {
-        font-size: 1.5rem;
-        font-style: normal;
-        color: #193f55; }
-      #logistics .scheduleContainer table td, #logistics .scheduleContainer table th {
-        border: 1px solid black; }
-      #logistics .scheduleContainer table tr:first-child {
-        background-color: #193f55; }
-        #logistics .scheduleContainer table tr:first-child th {
-          color: #fff; }
   #logistics .scheduleContainerDropdown {
     width: 60%;
     position: relative;
@@ -464,23 +445,25 @@ html, body {
       padding-bottom: 0; }
     #logistics .scheduleContainerDropdown .dropdown .select-container {
       right: 25%; }
-    #logistics .scheduleContainerDropdown table {
-      margin-top: 5%;
-      margin-bottom: 0%;
-      background-color: #f8f9fa;
-      width: 94%;
-      position: relative;
-      table-layout: fixed;
-      left: 3%; }
-      #logistics .scheduleContainerDropdown table th, #logistics .scheduleContainerDropdown table tr {
-        font-size: 1.5rem;
-        font-style: normal;
-        color: #193f55;
-        border: 3px solid black; }
-      #logistics .scheduleContainerDropdown table tr:first-child {
-        background-color: #193f55; }
-        #logistics .scheduleContainerDropdown table tr:first-child th {
-          color: #fff; }
+  #logistics table {
+    margin-top: 5%;
+    margin-bottom: 4%;
+    background-color: #efefef;
+    width: 80vw;
+    position: relative;
+    table-layout: fixed;
+    right: 15%;
+    border-style: hidden; }
+    #logistics table th, #logistics table tr {
+      font-size: 16px;
+      font-style: normal;
+      color: #193f55; }
+    #logistics table td, #logistics table th {
+      border: 1px solid black; }
+    #logistics table tr:first-child {
+      background-color: #193f55; }
+      #logistics table tr:first-child th {
+        color: #fff; }
 
 .marginFormat {
   background-color: #efefef;
