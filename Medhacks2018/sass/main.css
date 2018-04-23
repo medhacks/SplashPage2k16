@@ -416,7 +416,7 @@ html, body {
         display: none; } }
     #logistics .scheduleContainer ul {
       border: none;
-      width: 80vw; }
+      width: 70vw; }
       #logistics .scheduleContainer ul .activeLi {
         background-color: #BF4D42;
         color: #FFFF;
@@ -542,7 +542,7 @@ footer {
     #faq .faq-container ul {
       border: none;
       margin-bottom: 3rem;
-      width: 80vw;
+      width: 60vw;
       position: relative;
       left: 6%; }
       #faq .faq-container ul .activeLi {
