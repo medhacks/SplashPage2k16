@@ -396,6 +396,15 @@ html, body {
         @extend %center;
     }
 
+    h3 {
+        color: $large-text-color;
+        margin-left: 10%;
+        margin-bottom: 2%;
+        font-weight: bold;
+        padding-left: 0;
+        font-size: 2rem;
+    }
+
     p {
         color: $small-text-color;
         font-size: 1.5rem;

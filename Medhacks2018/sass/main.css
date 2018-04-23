@@ -305,6 +305,13 @@ html, body {
     color: #042449;
     padding-bottom: 4rem;
     font-size: 3rem; }
+  #aboutSection h3 {
+    color: #042449;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    font-weight: bold;
+    padding-left: 0;
+    font-size: 2rem; }
   #aboutSection p {
     color: #193f55;
     font-size: 1.5rem;
