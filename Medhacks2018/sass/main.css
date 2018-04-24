@@ -415,6 +415,9 @@ html, body {
   #logistics h2 {
     font-size: 3rem;
     padding-bottom: 1.5rem; }
+    @media screen and (max-width: 600px) {
+      #logistics h2 {
+        margin-top: 100px; } }
   #logistics p {
     width: 60%;
     margin: 0% 21%;
