@@ -76,7 +76,7 @@ html, body {
     height: 65rem;
     width: 100%;
     z-index: 2;
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 768px) {
         background-image: none;
     }
 
@@ -116,11 +116,21 @@ html, body {
         margin-right: auto;
 
         //general phone
-        @media screen and (width: 768) {
+        @media screen and (max-width: 768px) {
             font-size: 1.5rem;
             color: $pop-color;
             position: relative;
-            top: 90%;
+            top: 85%;
+            z-index: 2;
+            width: 40rem;
+        }
+
+        //Galaxy S8
+        @media screen and (width: 360px) {
+            font-size: 1.5rem;
+            color: $pop-color;
+            position: relative;
+            top: 80%;
             z-index: 2;
             width: 40rem;
         }
@@ -199,7 +209,7 @@ html, body {
     .mobileBG {
         display:none;
 
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 768px) {
             display: block;
             z-index: 1;
             position: absolute;
@@ -228,13 +238,19 @@ html, body {
             cursor: pointer;
         }
 
-        //general iPhone
+        //general Phone
         @media screen and (max-width: 768px) {
             top: 64rem;
             z-index: 2;
             width: 20rem;
         }
 
+        //Galaxy S8
+        @media screen and (width: 360px) and (height: 740px) {
+            top: 56rem;
+            z-index: 2;
+            width: 20rem;
+        }
         //iPhone X
         @media screen and (width: 375px) and (height: 812px) {
             top: 52rem;
