@@ -121,7 +121,6 @@ html, body {
         height: 115rem;
         .applyButton {
             top: 62rem !important;
-            left: 38% !important;
         }
     }
 
@@ -520,7 +519,7 @@ html, body {
 }
 
 #logistics {
-
+    margin-top: 75px;
     h2 {
         font-size: $section-header-size;
         padding-bottom: 1.5rem;
@@ -760,10 +759,9 @@ footer {
         @media screen and (min-width: 1000px) {
           display: none;
         }
-        width: 60%;
         @extend %center;
         position: relative;
-        left: 20%;
+        left: 18%;
         font-size: 2rem;
 
         .dropdown-content {
@@ -775,6 +773,8 @@ footer {
         }
         .dropdown {
             margin-bottom: 3%;
+            position: relative;
+            right: 20%;
         }
     }
 
