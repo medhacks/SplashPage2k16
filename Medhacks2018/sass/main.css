@@ -193,6 +193,7 @@ html, body {
     border: 3px solid #193f55;
     z-index: 4;
     width: 0;
+    visibility: hidden;
     display: inline;
     position: fixed;
     top: 0.5rem;

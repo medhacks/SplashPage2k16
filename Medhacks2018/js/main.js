@@ -181,7 +181,7 @@ $(window).resize(() => {
 });
 
 function checkBubbles() {
-
+    $("#moose-mark").css("visibility", "visible");
     heights.length = 0;
     heights.push($('#slider-container').height());
     $(".section-container").each(function() {
