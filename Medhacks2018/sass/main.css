@@ -55,40 +55,100 @@ html, body {
   background-size: contain;
   background-repeat: no-repeat;
   height: 65rem;
-  width: 100%; }
-  @media screen and (min-width: 500px) {
-    #header .frosty-title {
-      width: 60rem;
-      position: relative;
-      right: 7rem;
-      bottom: 17rem; }
-    #header .description {
-      font-size: 1.5rem;
-      color: #BF4D42;
-      position: relative;
-      top: 25rem;
-      width: 50%;
-      left: 25%;
-      margin-right: 0; } }
+  width: 100%;
+  z-index: 2; }
   @media screen and (max-width: 500px) {
-    #header .frosty-title {
-      width: 30rem;
-      position: relative;
-      right: -12rem;
-      bottom: 20rem; }
-    #header .description {
-      font-size: 1rem;
-      color: #BF4D42;
-      position: relative;
-      bottom: 28rem;
-      left: 17rem;
-      width: 40rem; } }
-  @media screen and (max-width: 478px) {
     #header {
-      background-image: url("../assets/mobile.png");
-      height: 115rem; }
-      #header .applyButton {
-        top: 410px !important; } }
+      background-image: none; } }
+  @media screen and (width: 414px) and (height: 736px) {
+    #header {
+      margin-bottom: 100px; } }
+  @media screen and (width: 375px) and (height: 667px) {
+    #header {
+      margin-bottom: 100px; } }
+  @media screen and (width: 320px) and (height: 568px) {
+    #header {
+      margin-bottom: 0px; } }
+  @media screen and (width: 411px) and (height: 731px) {
+    #header {
+      margin-bottom: 100px; } }
+  @media screen and (width: 360px) and (height: 640px) {
+    #header {
+      margin-bottom: 100px; } }
+  #header .description {
+    font-size: 1.5rem;
+    color: #BF4D42;
+    position: relative;
+    top: 25rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (width: 375px) and (height: 812px) {
+      #header .description {
+        font-size: 1.5rem;
+        color: #BF4D42;
+        position: relative;
+        top: 70%;
+        z-index: 2;
+        width: 40rem; } }
+    @media screen and (width: 414px) and (height: 736px) {
+      #header .description {
+        font-size: 1.5rem;
+        color: #BF4D42;
+        position: relative;
+        top: 90%;
+        z-index: 2;
+        width: 40rem; } }
+    @media screen and (width: 375px) and (height: 667px) {
+      #header .description {
+        font-size: 1.5rem;
+        color: #BF4D42;
+        position: relative;
+        top: 90%;
+        z-index: 2;
+        width: 40rem; } }
+    @media screen and (width: 320px) and (height: 568px) {
+      #header .description {
+        font-size: 1.5rem;
+        color: #BF4D42;
+        position: relative;
+        top: 90%;
+        z-index: 2;
+        width: 40rem; } }
+    @media screen and (width: 411px) and (height: 823px) {
+      #header .description {
+        font-size: 1.5rem;
+        color: #BF4D42;
+        position: relative;
+        top: 80%;
+        z-index: 2;
+        width: 40rem; } }
+    @media screen and (width: 411px) and (height: 731px) {
+      #header .description {
+        font-size: 1.5rem;
+        color: #BF4D42;
+        position: relative;
+        top: 90%;
+        z-index: 2;
+        width: 40rem; } }
+    @media screen and (width: 360px) and (height: 640px) {
+      #header .description {
+        font-size: 1.5rem;
+        color: #BF4D42;
+        position: relative;
+        top: 90%;
+        z-index: 2;
+        width: 40rem; } }
+  #header .mobileBG {
+    display: none; }
+    @media screen and (max-width: 500px) {
+      #header .mobileBG {
+        display: block;
+        z-index: 1;
+        position: absolute;
+        width: 100vw;
+        top: 0;
+        left: 0; } }
   #header .applyButton {
     position: relative;
     margin-left: auto;
@@ -105,6 +165,38 @@ html, body {
       background-color: #BF4D42;
       color: #FFFF;
       cursor: pointer; }
+    @media screen and (width: 375px) and (height: 812px) {
+      #header .applyButton {
+        top: 52rem;
+        z-index: 2; } }
+    @media screen and (width: 414px) and (height: 736px) {
+      #header .applyButton {
+        top: 64rem;
+        z-index: 2; } }
+    @media screen and (width: 375px) and (height: 667px) {
+      #header .applyButton {
+        top: 64rem;
+        z-index: 2; } }
+    @media screen and (width: 320px) and (height: 568px) {
+      #header .applyButton {
+        top: 64rem;
+        z-index: 2;
+        width: 20rem; } }
+    @media screen and (width: 411px) and (height: 823px) {
+      #header .applyButton {
+        top: 58rem;
+        z-index: 2;
+        width: 20rem; } }
+    @media screen and (width: 411px) and (height: 731px) {
+      #header .applyButton {
+        top: 64rem;
+        z-index: 2;
+        width: 20rem; } }
+    @media screen and (width: 360px) and (height: 640px) {
+      #header .applyButton {
+        top: 64rem;
+        z-index: 2;
+        width: 20rem; } }
 
 #ham-container {
   z-index: 5;
@@ -505,7 +597,7 @@ footer {
     position: relative;
     float: right;
     right: 2%;
-    top: 1%;
+    top: 4%;
     margin-bottom: 0; }
     @media screen and (max-width: 600px) {
       footer .copyright {
@@ -542,7 +634,7 @@ footer {
       footer .column2 {
         margin-left: 15%; } }
     footer .column2 ul {
-      margin-top: 3.5rem;
+      margin-top: 1.5rem;
       padding: 0;
       list-style-type: none;
       color: #efefef;
@@ -561,7 +653,7 @@ footer {
       footer .column3 {
         display: none; } }
     footer .column3 ul {
-      margin-top: 3.5rem;
+      margin-top: 1.5rem;
       padding: 0;
       list-style-type: none;
       color: #efefef;
