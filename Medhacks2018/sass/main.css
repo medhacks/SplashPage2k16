@@ -88,7 +88,7 @@ html, body {
       background-image: url("../assets/mobile.png");
       height: 115rem; }
       #header .applyButton {
-        top: 62rem !important; } }
+        top: 410px !important; } }
   #header .applyButton {
     position: relative;
     margin-left: auto;
