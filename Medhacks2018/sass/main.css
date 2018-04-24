@@ -428,7 +428,8 @@ html, body {
     margin-bottom: 2%;
     font-weight: bold;
     padding-left: 0;
-    font-size: 2rem; }
+    font-size: 2rem;
+    margin-top: 5rem; }
   #aboutSection p {
     color: #193f55;
     font-size: 1.5rem;
@@ -436,8 +437,10 @@ html, body {
     position: relative;
     left: 10%;
     margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
     margin-right: 0;
-    padding-bottom: 5rem; }
+    padding-bottom: 2rem; }
 
 #challenges {
   display: block;
@@ -783,7 +786,8 @@ footer {
 
 #applySection {
   background-color: #efefef;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  padding-top: 5%; }
   #applySection h2 {
     color: #042449;
     padding-bottom: 4rem;
@@ -794,14 +798,19 @@ footer {
     margin-bottom: 2%;
     font-weight: bold;
     padding-left: 0;
-    font-size: 2rem; }
+    font-size: 2rem;
+    margin-top: 5rem; }
   #applySection p {
     color: #193f55;
     font-size: 1.5rem;
-    width: 80vw;
+    width: 80%;
     position: relative;
-    left: 10.3vw;
-    margin-bottom: 0; }
+    left: 10%;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+    margin-right: 0;
+    padding-bottom: 2rem; }
 
 @-o-keyframes heart-beat {
   0% {

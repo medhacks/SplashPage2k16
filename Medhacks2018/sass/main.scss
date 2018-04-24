@@ -559,6 +559,7 @@ html, body {
         font-weight: bold;
         padding-left: 0;
         font-size: 2rem;
+        margin-top: 5rem;
     }
 
     p {
@@ -568,8 +569,10 @@ html, body {
         position:relative;
         left: 10%;
         margin-bottom: 0;
+        margin-top: 0;
+        padding-top: 0;
         margin-right: 0;
-        padding-bottom: 5rem;
+        padding-bottom: 2rem;
     }
 
 }
@@ -1015,6 +1018,7 @@ footer {
 #applySection {
     background-color: $background-color;
     margin-bottom: 0;
+    padding-top: 5%;
     h2 {
         color: $large-text-color;
         padding-bottom: 4rem;
@@ -1029,17 +1033,21 @@ footer {
         font-weight: bold;
         padding-left: 0;
         font-size: 2rem;
+        margin-top: 5rem;
     }
 
     p {
         color: $small-text-color;
         font-size: 1.5rem;
-        width: 80vw;
+        width: 80%;
         position:relative;
-        left: 10.3vw;
+        left: 10%;
         margin-bottom: 0;
+        margin-top: 0;
+        padding-top: 0;
+        margin-right: 0;
+        padding-bottom: 2rem;
     }
-
 }
 
 @-o-keyframes heart-beat {
