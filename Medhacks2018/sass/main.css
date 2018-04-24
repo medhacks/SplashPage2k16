@@ -521,7 +521,7 @@ footer {
     footer .column1 img {
       position: relative;
       right: 1.5vw;
-      width: 300vw; }
+      width: 22vw; }
       @media screen and (max-width: 600px) {
         footer .column1 img {
           width: 33vw; } }
