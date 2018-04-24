@@ -506,7 +506,8 @@ footer {
     margin-bottom: 0; }
     @media screen and (max-width: 600px) {
       footer .copyright {
-        top: 90%; } }
+        top: 90%;
+        display: none; } }
   footer .column1 {
     float: left;
     margin: 0 1%;
