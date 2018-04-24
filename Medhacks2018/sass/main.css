@@ -25,9 +25,9 @@ html, body {
   position: fixed;
   z-index: 3;
   height: 300rem;
-  left: 30%;
+  left: 25vw;
   top: 0%;
-  width: 100rem;
+  width: 75vw;
   opacity: 0.85;
   padding: 0; }
   #side-info ul {
@@ -201,7 +201,7 @@ html, body {
 .navbar, .navbar-default {
   z-index: 3;
   background-color: #FFFF;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   height: 6rem; }
   .navbar .nav-item, .navbar-default .nav-item {
@@ -318,6 +318,7 @@ html, body {
     position: relative;
     left: 10%;
     margin-bottom: 0;
+    margin-right: 0;
     padding-bottom: 5rem; }
 
 #challenges {
@@ -600,7 +601,7 @@ footer {
           font-size: 1.89rem; }
   #faq .faq-dropdown {
     position: relative;
-    left: 18%;
+    width: 80vw;
     font-size: 2rem; }
     @media screen and (min-width: 1000px) {
       #faq .faq-dropdown {
@@ -608,16 +609,15 @@ footer {
     #faq .faq-dropdown .dropdown-content {
       position: relative;
       padding-bottom: 0; }
-    #faq .faq-dropdown .dropdown .select-container {
-      right: 25%; }
     #faq .faq-dropdown .dropdown {
       margin-bottom: 3%;
-      position: relative;
-      right: 20%; }
+      position: relative; }
+    #faq .faq-dropdown .dropdown select {
+      right: 14vw; }
   #faq .faq-holder {
     width: 80vw;
     position: relative;
-    right: 10vw;
+    left: 10vw;
     border-collapse: collapse; }
     #faq .faq-holder h3 {
       color: #193d56;

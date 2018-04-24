@@ -39,9 +39,9 @@ html, body {
     position: fixed;
     z-index: 3;
     height: 300rem;
-    left: 30%;
+    left: 25vw;
     top: 0%;
-    width: 100rem;
+    width: 75vw;
     opacity: 0.85;
     padding: 0;
     ul {
@@ -263,7 +263,7 @@ html, body {
 .navbar, .navbar-default {
     z-index: 3;
     background-color: #FFFF;
-    width: 100%;
+    width: 100vw;
     position: fixed;
     height: 6rem;
     .nav-item {
@@ -411,6 +411,7 @@ html, body {
         position:relative;
         left: 10%;
         margin-bottom: 0;
+        margin-right: 0;
         padding-bottom: 5rem;
     }
 
@@ -775,20 +776,20 @@ footer {
         }
         @extend %center;
         position: relative;
-        left: 18%;
+        width: 80vw;
         font-size: 2rem;
 
         .dropdown-content {
            position: relative;
            padding-bottom: 0;
         }
-        .dropdown .select-container {
-            right: 25%;
-        }
         .dropdown {
             margin-bottom: 3%;
             position: relative;
-            right: 20%;
+        }
+
+        .dropdown select {
+            right: 14vw;
         }
     }
 
@@ -796,7 +797,7 @@ footer {
         // background-color: #fff;
         width: 80vw;
         position: relative;
-        right: 10vw;
+        left: 10vw;
         // border: 2px solid black;
         border-collapse: collapse;
         h3 {
