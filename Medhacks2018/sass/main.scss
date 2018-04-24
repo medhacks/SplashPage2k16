@@ -801,7 +801,10 @@ footer {
         // background-color: #fff;
         width: 80vw;
         position: relative;
-        left: 10vw;
+        @media screen and (max-width: 600px) {
+            left: 10vw;
+        }
+        right: 20vw;
         // border: 2px solid black;
         border-collapse: collapse;
         h3 {

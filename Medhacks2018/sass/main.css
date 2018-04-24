@@ -621,8 +621,11 @@ footer {
   #faq .faq-holder {
     width: 80vw;
     position: relative;
-    left: 10vw;
+    right: 20vw;
     border-collapse: collapse; }
+    @media screen and (max-width: 600px) {
+      #faq .faq-holder {
+        left: 10vw; } }
     #faq .faq-holder h3 {
       color: #193d56;
       margin: 0 0 0 0px;
