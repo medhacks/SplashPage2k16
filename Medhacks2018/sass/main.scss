@@ -647,6 +647,9 @@ footer {
         right: 2%;
         top: 1%;
         margin-bottom: 0;
+        @media screen and (max-width: 600px) {
+            top: 90%;
+        }
     }
 
     .column1 {
@@ -658,10 +661,17 @@ footer {
         margin-bottom: 0;
         position: relative;
         left: 8%;
+        @media screen and (max-width: 600px) {
+            width: 45%;
 
+        }
         img {
             position: relative;
             right: 1.5vw;
+            width: 300vw;
+            @media screen and (max-width: 600px) {
+                width: 33vw;
+            }
         }
         p {
             margin-top: 1.5rem;
@@ -669,13 +679,14 @@ footer {
     }
 
     .column2 {
-
         float: left;
         margin: 3% 1%;
         width: 11%;
         margin-left: 30%;
         margin-bottom: 0;
-
+        @media screen and (max-width: 600px) {
+            margin-left: 15%;
+        }
         ul {
             margin-top: 3.5rem;
             padding: 0;
@@ -691,6 +702,9 @@ footer {
     }
 
     .column3 {
+        @media screen and (max-width: 600px) {
+            display: none;
+        }
         float: left;
         margin: 3% 1%;
         width: 11%;

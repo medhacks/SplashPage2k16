@@ -141,11 +141,11 @@ $(document).ready(() => {
 });
 
 $('#schedule-select').change(function () {
-    if ($(this).val() == "Friday September 7") {
+    if ($(this).val() == "Friday, September 7") {
         $('#friday2').addClass('active');
         $('#saturday2').removeClass('active');
         $('#sunday2').removeClass('active');
-    } else if ($(this).val() == "Saturday September 8") {
+    } else if ($(this).val() == ("Saturday, September 8")) {
         $('#friday2').removeClass('active');
         $('#saturday2').addClass('active');
         $('#sunday2').removeClass('active');
