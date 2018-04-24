@@ -15,13 +15,13 @@ $(document).ready(() => {
         $('#header').goTo();
     });
     $('#applyBubble').on('click', () => {
-        $('#applySection').goTo();
+        $('#logistics').goTo();
     });
     $('#tracksBubble').on('click', () => {
         $('#challenges').goTo();
     });
     $('#logisticsBubble').on('click', () => {
-        $('#logistics').goTo();
+        $('#applySection').goTo();
     });
     $('#aboutBubble').on('click', () => {
         $('#aboutSection').goTo();
@@ -33,7 +33,7 @@ $(document).ready(() => {
         $('#ham-container').toggleClass('change');
     });
     $('#apply-small-button').on('click', () => {
-        $('#applySection').goTo();
+        $('#logistics').goTo();
         $('#side-info').slideToggle();
         $('#ham-container').toggleClass('change');
     });
@@ -43,7 +43,7 @@ $(document).ready(() => {
         $('#ham-container').toggleClass('change');
     });
     $('#logistics-small-button').on('click', () => {
-        $('#logistics').goTo();
+        $('#applySection').goTo();
         $('#ham-container').toggleClass('change');
         $('#side-info').slideToggle();
     });

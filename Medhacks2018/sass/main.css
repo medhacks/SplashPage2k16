@@ -291,11 +291,11 @@ html, body {
         bottom: 0.5rem; }
       #slider-container ul a .bubble #logBubP {
         position: relative;
-        right: 45.2rem;
+        right: 44.7rem;
         bottom: 0.5rem; }
       #slider-container ul a .bubble #applyBubP {
         position: relative;
-        right: 48.2rem;
+        right: 49.2rem;
         bottom: 0.5rem; }
     #slider-container ul a div {
       display: inline-block;
@@ -418,9 +418,11 @@ html, body {
   background-color: #efefef;
   margin-bottom: 0;
   padding-top: 5%; }
+  #aboutSection .top {
+    margin-top: 1rem; }
   #aboutSection h2 {
     color: #042449;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
     font-size: 3rem; }
   #aboutSection h3 {
     color: #042449;
@@ -788,9 +790,11 @@ footer {
   background-color: #efefef;
   margin-bottom: 0;
   padding-top: 5%; }
+  #applySection .top {
+    margin-top: 1rem; }
   #applySection h2 {
     color: #042449;
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
     font-size: 3rem; }
   #applySection h3 {
     color: #042449;
