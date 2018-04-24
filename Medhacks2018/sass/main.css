@@ -547,6 +547,7 @@ footer {
       font-size: 1rem; }
 
 #faq {
+  width: 100%;
   background-color: #efefef;
   margin-bottom: none; }
   #faq h2 {
@@ -599,11 +600,11 @@ footer {
   #faq .faq-holder {
     width: 80vw;
     position: relative;
-    right: 15%;
+    right: 10vw;
     border-collapse: collapse; }
     #faq .faq-holder h3 {
       color: #193d56;
-      margin: 0 0 16px;
+      margin: 0 0 0 0px;
       text-align: left;
       padding-top: 20px;
       padding-left: 10px; }
@@ -652,9 +653,9 @@ footer {
   #applySection p {
     color: #193f55;
     font-size: 1.5rem;
-    width: 80%;
+    width: 80vw;
     position: relative;
-    left: 10%;
+    left: 10.3vw;
     margin-bottom: 0; }
 
 @-o-keyframes heart-beat {

@@ -710,6 +710,7 @@ footer {
 
 
 #faq {
+    width: 100%;
     h2 {
         font-size: $section-header-size;
         padding-bottom: 1.5rem;
@@ -781,12 +782,12 @@ footer {
         // background-color: #fff;
         width: 80vw;
         position: relative;
-        right: 15%;
+        right: 10vw;
         // border: 2px solid black;
         border-collapse: collapse;
         h3 {
             color: #193d56;
-            margin: 0 0 16px;
+            margin: 0 0 0 0px;
             text-align: left;
             padding-top: 20px;
             padding-left: 10px;
@@ -850,9 +851,9 @@ footer {
     p {
         color: $small-text-color;
         font-size: 1.5rem;
-        width: 80%;
+        width: 80vw;
         position:relative;
-        left: 10%;
+        left: 10.3vw;
         margin-bottom: 0;
     }
 
