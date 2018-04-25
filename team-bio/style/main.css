@@ -244,7 +244,7 @@ hr.small {
     .header-navbar-scrolled .header-navbar-link,
     .header-navbar-link:hover,
     .header-navbar-scrolled .header-navbar-link:hover {
-        background: #fff;
+        background: transparent;
         color: #193d56;
         padding: 24px 32px;
         margin: 0;
