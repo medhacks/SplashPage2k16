@@ -367,7 +367,7 @@ hr.small {
   object-fit: cover;
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
 }
 
