@@ -558,7 +558,7 @@ html, body {
     h3 {
         color: $large-text-color;
         margin-left: 10%;
-        margin-bottom: 2%;
+        margin-bottom: 1.5%;
         font-weight: bold;
         padding-left: 0;
         font-size: 2rem;
@@ -582,20 +582,23 @@ html, body {
 
 #challenges {
     display: block;
-    height: 45rem;
   h2 {
       color: $large-text-color;
       padding-bottom: 4rem;
       font-size: $section-header-size;
   }
   img {
-      width: 40%;
+      width: 30%;
+      margin: none;
+      float: right;
       position: relative;
-      bottom: 35rem;
-      left: 55%;
-      padding: 0;
-      margin: 0;
-      display: block;
+      z-index: 0;
+      bottom: 23rem;
+      right: 10rem;
+  //     left: 55%;
+  //     padding: 0;
+  //     margin: 0;
+  //     display: block;
   }
   p {
       width: 34%;
@@ -604,6 +607,9 @@ html, body {
       color: $small-text-color;
       font-size: 1.5rem;
       text-align: center;
+      display: block;
+      overflow:auto;
+
   }
   background-color: $background-color;
   .track-container {
@@ -810,13 +816,13 @@ footer {
     color: #fff;
     margin-bottom: 0;
     width: 100%;
-    height: 16rem;
+    height: 20rem;
 
     .copyright {
         position: relative;
         float: right;
         right: 2%;
-        top: 4%;
+        top: 6.6rem;
         margin-bottom: 0;
         @media screen and (max-width: 600px) {
             top: 90%;
@@ -1030,12 +1036,15 @@ footer {
         padding-bottom: 1rem;
         font-size: $section-header-size;
         @extend %center;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
     }
 
     h3 {
         color: $large-text-color;
         margin-left: 10%;
-        margin-bottom: 2%;
+        margin-bottom: 1.5%;
         font-weight: bold;
         padding-left: 0;
         font-size: 2rem;
