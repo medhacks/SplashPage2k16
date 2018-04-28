@@ -60,15 +60,15 @@ html, body {
   @media screen and (max-width: 768px) {
     #header {
       background-image: none; } }
+  @media screen and (width: 320px) and (height: 568px) {
+    #header {
+      margin-bottom: 100px; } }
   @media screen and (width: 414px) and (height: 736px) {
     #header {
       margin-bottom: 100px; } }
   @media screen and (width: 375px) and (height: 667px) {
     #header {
       margin-bottom: 100px; } }
-  @media screen and (width: 320px) and (height: 568px) {
-    #header {
-      margin-bottom: 0px; } }
   @media screen and (width: 411px) and (height: 731px) {
     #header {
       margin-bottom: 100px; } }
