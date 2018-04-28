@@ -88,7 +88,7 @@ html, body {
     margin-right: auto; }
     @media screen and (max-width: 768px) {
       #header .description {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
         color: #BF4D42;
         position: relative;
         top: 85%;
@@ -96,7 +96,7 @@ html, body {
         width: 40rem; } }
     @media screen and (width: 360px) {
       #header .description {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
         color: #BF4D42;
         position: relative;
         top: 80%;
@@ -104,7 +104,7 @@ html, body {
         width: 40rem; } }
     @media screen and (width: 375px) and (height: 812px) {
       #header .description {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
         color: #BF4D42;
         position: relative;
         top: 70%;
@@ -112,7 +112,7 @@ html, body {
         width: 40rem; } }
     @media screen and (width: 414px) and (height: 736px) {
       #header .description {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
         color: #BF4D42;
         position: relative;
         top: 90%;
@@ -120,7 +120,7 @@ html, body {
         width: 40rem; } }
     @media screen and (width: 375px) and (height: 667px) {
       #header .description {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
         color: #BF4D42;
         position: relative;
         top: 90%;
@@ -128,7 +128,7 @@ html, body {
         width: 40rem; } }
     @media screen and (width: 320px) and (height: 568px) {
       #header .description {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
         color: #BF4D42;
         position: relative;
         top: 90%;
@@ -136,7 +136,7 @@ html, body {
         width: 40rem; } }
     @media screen and (width: 411px) and (height: 823px) {
       #header .description {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
         color: #BF4D42;
         position: relative;
         top: 80%;
@@ -144,7 +144,7 @@ html, body {
         width: 40rem; } }
     @media screen and (width: 411px) and (height: 731px) {
       #header .description {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
         color: #BF4D42;
         position: relative;
         top: 90%;
@@ -152,7 +152,7 @@ html, body {
         width: 40rem; } }
     @media screen and (width: 360px) and (height: 640px) {
       #header .description {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
         color: #BF4D42;
         position: relative;
         top: 90%;
@@ -433,7 +433,7 @@ html, body {
       margin: auto;
       width: 80%;
       color: #ffff;
-      font-size: 1.5rem;
+      font-size: 2.25rem;
       line-height: 3rem; }
 
 #aboutSection {
@@ -456,7 +456,7 @@ html, body {
     margin-top: 2.5rem; }
   #aboutSection p {
     color: #193f55;
-    font-size: 1.5rem;
+    font-size: 2.25rem;
     width: 80%;
     position: relative;
     left: 10%;
@@ -486,7 +486,7 @@ html, body {
     margin: 0% 10%;
     padding-top: 1rem;
     color: #193f55;
-    font-size: 1.5rem;
+    font-size: 2.25rem;
     text-align: center;
     display: block;
     overflow: auto; }
@@ -654,7 +654,7 @@ footer {
     position: relative;
     float: right;
     right: 2%;
-    top: 6.4rem;
+    top: 6.7rem;
     margin-bottom: 0; }
     @media screen and (max-width: 600px) {
       footer .copyright {
