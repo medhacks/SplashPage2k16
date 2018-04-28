@@ -220,6 +220,14 @@ html, body {
     }
 
     .applyButton {
+        a {
+            text-decoration: none;
+            h2 {
+                background-color: $background-color;
+                color: black;
+                transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
+            }
+        }
         position: relative;
         margin-left: auto;
         margin-right: auto;
@@ -232,10 +240,15 @@ html, body {
         transform: scale(0.85);
         transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
         &:hover {
+            text-decoration: none;
             transform: scale(1);
             background-color: $pop-color;
             color: #FFFF;
             cursor: pointer;
+            h2 {
+                background-color: $pop-color;
+                color: #ffff;
+            }
         }
 
         //general Phone
@@ -480,6 +493,14 @@ html, body {
         @media screen and (max-width: 800px){
             display: none;
         }
+        a {
+            text-decoration: none;
+            h2 {
+                background-color: $pop-color;
+                color: #ffff;
+                transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
+            }
+        }
         margin-right: 5.5rem;
         padding: 0.5rem;
         color: #FFFF;
@@ -494,6 +515,10 @@ html, body {
             background-color: $background-color;
             color: black;
             cursor: pointer;
+            h2 {
+                background-color: $background-color;
+                color: black;
+            }
         }
     }
 }
