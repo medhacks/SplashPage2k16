@@ -45,6 +45,9 @@ html, body {
       color: #193f55; }
   #side-info .apply {
     color: #BF4D42; }
+    #side-info .apply a {
+      text-decoration: none;
+      color: #BF4D42; }
 
 #header {
   background-color: #efefef;
