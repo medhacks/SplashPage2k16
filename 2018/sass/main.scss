@@ -7,6 +7,8 @@ $large-text-color: #042449;
 $pop-color: #BF4D42;
 
 $section-header-size: 3rem;
+$subsection-size: 2rem;
+$content-size: 1.5rem;
 
 $menu-background-color: #dbdbdb;
 
@@ -590,13 +592,13 @@ html, body {
         margin-bottom: 1.5%;
         font-weight: bold;
         padding-left: 0;
-        font-size: 2rem;
+        font-size: $subsection-size;
         margin-top: 2.5rem;
     }
 
     p {
         color: $small-text-color;
-        font-size: 1.85rem;
+        font-size: $content-size;
         width: 80%;
         position:relative;
         left: 10%;
@@ -634,7 +636,7 @@ html, body {
       margin: 0% 10%;
       padding-top: 1rem;
       color: $small-text-color;
-      font-size: 1.85rem;
+      font-size: $content-size;
       text-align: center;
       display: block;
       overflow:auto;
@@ -1015,6 +1017,7 @@ footer {
             text-align: left;
             padding-top: 20px;
             padding-left: 10px;
+            font-size: $subsection-size;
         }
 
         h3:after {
@@ -1027,7 +1030,7 @@ footer {
         }
 
         p {
-            font-size: 16px;
+            font-size: $content-size;
             line-height: 24px;
             margin: 4px 0;
             width: 100%;
@@ -1076,13 +1079,13 @@ footer {
         margin-bottom: 1.5%;
         font-weight: bold;
         padding-left: 0;
-        font-size: 2rem;
+        font-size: $subsection-size;
         margin-top: 2.5rem;
     }
 
     p {
         color: $small-text-color;
-        font-size: 1.5rem;
+        font-size: $content-size;
         width: 80%;
         position:relative;
         left: 10%;

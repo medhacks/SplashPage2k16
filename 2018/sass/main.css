@@ -456,7 +456,7 @@ html, body {
     margin-top: 2.5rem; }
   #aboutSection p {
     color: #193f55;
-    font-size: 1.85rem;
+    font-size: 1.5rem;
     width: 80%;
     position: relative;
     left: 10%;
@@ -486,7 +486,7 @@ html, body {
     margin: 0% 10%;
     padding-top: 1rem;
     color: #193f55;
-    font-size: 1.85rem;
+    font-size: 1.5rem;
     text-align: center;
     display: block;
     overflow: auto; }
@@ -780,7 +780,8 @@ footer {
       margin: 0 0 0 0px;
       text-align: left;
       padding-top: 20px;
-      padding-left: 10px; }
+      padding-left: 10px;
+      font-size: 2rem; }
     #faq .faq-holder h3:after {
       background-color: #D0D0D0;
       content: '';
@@ -789,7 +790,7 @@ footer {
       margin-top: 8px;
       width: 100%; }
     #faq .faq-holder p {
-      font-size: 16px;
+      font-size: 1.5rem;
       line-height: 24px;
       margin: 4px 0;
       width: 100%;
