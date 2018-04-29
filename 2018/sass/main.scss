@@ -134,7 +134,7 @@ html, body {
             font-size: 1.85rem;
             color: $pop-color;
             position: relative;
-            top: 85%;
+            top: 65%;
             z-index: 2;
             width: 40rem;
         }
@@ -267,7 +267,7 @@ html, body {
 
         //general Phone
         @media screen and (max-width: 768px) {
-            top: 64rem;
+            top: 110rem;
             z-index: 2;
             width: 20rem;
         }

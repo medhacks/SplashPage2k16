@@ -97,7 +97,7 @@ html, body {
         font-size: 1.85rem;
         color: #BF4D42;
         position: relative;
-        top: 85%;
+        top: 65%;
         z-index: 2;
         width: 40rem; } }
     @media screen and (width: 360px) {
@@ -202,7 +202,7 @@ html, body {
         color: #ffff; }
     @media screen and (max-width: 768px) {
       #header .applyButton {
-        top: 64rem;
+        top: 110rem;
         z-index: 2;
         width: 20rem; } }
     @media screen and (width: 360px) and (height: 740px) {
