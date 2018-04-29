@@ -772,7 +772,7 @@ footer {
     position: relative;
     right: 10vw;
     border-collapse: collapse; }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 1000px) {
       #faq .faq-holder {
         left: 10vw; } }
     #faq .faq-holder h3 {
