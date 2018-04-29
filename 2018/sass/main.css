@@ -63,6 +63,12 @@ html, body {
   @media screen and (max-width: 768px) {
     #header {
       background-image: none; } }
+  @media screen and (min-width: 600px) and (max-width: 768px) {
+    #header {
+      height: 180vh; } }
+  @media screen and (max-width: 600px) {
+    #header {
+      margin-bottom: 30vh; } }
   @media screen and (width: 320px) and (height: 568px) {
     #header {
       margin-bottom: 100px; } }
