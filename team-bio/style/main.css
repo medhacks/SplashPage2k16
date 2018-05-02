@@ -356,6 +356,7 @@ hr.small {
 .container-exec-lead {
   position: relative;
   width: 50%;
+  padding-bottom: 1rem;
 }
 
 .container-member {
@@ -373,6 +374,7 @@ hr.small {
 
 
 .overlay {
+  object-fit: cover;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -393,16 +395,37 @@ hr.small {
   opacity: .8;
 }
 
+/* style starts */
+/*@media only screen and (min width: 1030px) {
+  .overlay-img-text {
+    display: none;
+  }
+}*/
+
+/*@media only screen and (max width: 1030px) {*/
 .overlay-img-text {
-  color: white;
-  font-size: 19px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
+    color: white;
+    font-size: 19px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
 }
+
+@media screen and (max width: 1030px) {
+  p {
+    font-size: 8px;
+  }
+}
+@media screen and (min width: 1030px) {
+  p {
+    font-size: 19px;
+  }
+}
+/*}*/
+/* style ends */
 
 .column {
     float: left;
