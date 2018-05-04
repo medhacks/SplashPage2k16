@@ -659,8 +659,8 @@ footer {
   footer .copyright {
     position: relative;
     float: right;
-    right: 2%;
-    top: 6.4rem;
+    left: 15rem;
+    top: 18rem;
     margin-bottom: 0; }
     @media screen and (max-width: 600px) {
       footer .copyright {
@@ -688,10 +688,10 @@ footer {
     footer .column1 p {
       margin-top: 1.5rem; }
   footer .column2 {
-    float: left;
+    float: right;
     margin: 3% 1%;
     width: 11%;
-    margin-left: 30%;
+    margin-right: 10%;
     margin-bottom: 0; }
     @media screen and (max-width: 600px) {
       footer .column2 {
