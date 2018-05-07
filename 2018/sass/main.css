@@ -445,7 +445,8 @@ html, body {
 #aboutSection {
   background-color: #efefef;
   margin-bottom: 0;
-  padding-top: 5%; }
+  padding-top: 5%;
+  overflow: hidden; }
   #aboutSection .top {
     margin-top: 1rem; }
   #aboutSection h2 {
@@ -471,6 +472,14 @@ html, body {
     padding-top: 0;
     margin-right: 0;
     padding-bottom: 2rem; }
+  #aboutSection #melvin-text {
+    margin: 0% 10vw;
+    display: inline; }
+  #aboutSection img {
+    width: 22.5vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    float: right; }
 
 #challenges {
   display: block;

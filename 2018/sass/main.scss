@@ -616,7 +616,18 @@ html, body {
         margin-right: 0;
         padding-bottom: 2rem;
     }
+    overflow: hidden;
+    #melvin-text {
+        margin: 0% 10vw;
+        display: inline;
+    }
 
+    img {
+        width: 22.5vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        float: right;
+    }
 }
 
 #challenges {
