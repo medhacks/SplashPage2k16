@@ -182,6 +182,7 @@ html, body {
     padding: 0.5rem;
     background-color: #efefef;
     width: 225px;
+    vertical-align: center;
     border-radius: 5%;
     transform: scale(0.85);
     transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
@@ -388,6 +389,7 @@ html, body {
     color: #FFFF;
     background-color: #BF4D42;
     width: 15rem;
+    vertical-align: center;
     border-radius: 0.5rem;
     transform: scale(0.85);
     transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
@@ -399,7 +401,8 @@ html, body {
       .navbar .applyButton a h2, .navbar-default .applyButton a h2 {
         background-color: #BF4D42;
         color: #ffff;
-        transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out; }
+        transition: 0.2s background-color ease-out, .2s border-color ease-out, .2s transform ease-out;
+        vertical-align: center; }
     .navbar .applyButton:hover, .navbar-default .applyButton:hover {
       transform: scale(1);
       background-color: #efefef;
@@ -407,7 +410,8 @@ html, body {
       cursor: pointer; }
       .navbar .applyButton:hover h2, .navbar-default .applyButton:hover h2 {
         background-color: #efefef;
-        color: black; }
+        color: black;
+        vertical-align: center; }
 
 .header-text-actions {
   margin-top: 24px;
