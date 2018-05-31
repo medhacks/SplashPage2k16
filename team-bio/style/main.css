@@ -404,8 +404,8 @@ hr.small {
 
 /*@media only screen and (max width: 1030px) {*/
 .overlay-img-text {
-    color: white;
-    font-size: 19px;
+    color: cyan;
+    font-size: 19vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -416,12 +416,14 @@ hr.small {
 
 @media screen and (max width: 1030px) {
   p {
-    font-size: 8px;
+    font-size: 8vw;
+    color: cyan;
   }
 }
 @media screen and (min width: 1030px) {
   p {
-    font-size: 19px;
+    font-size: 19vw;
+    color: cyan;
   }
 }
 /*}*/
