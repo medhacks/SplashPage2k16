@@ -397,14 +397,15 @@ hr.small {
 }
 
 /* style starts */
-/*@media only screen and (min width: 1030px) {
+/* does not work but ideally it should in the end.
+@media only screen and (max width: 1030px) {
   .overlay-img-text {
     display: none;
   }
-}*/
-
-/*@media only screen and (max width: 1030px) {*/
-.overlay-img-text {
+}
+*/
+/*@media only screen and (min width: 1030px) {*/
+  .overlay-img-text {
     color: cyan;
     font-size: 5vw;
     position: absolute;
@@ -413,8 +414,14 @@ hr.small {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
-}
+  }
+/*}*/
 
+p {
+  font-size: 2vw;
+  color: yellow;
+}
+/*
 @media screen and (max width: 1030px) {
   p {
     display: none;
@@ -428,7 +435,7 @@ hr.small {
     color: cyan;
   }
 }
-/*}*/
+}*/
 /* style ends */
 
 .column {
