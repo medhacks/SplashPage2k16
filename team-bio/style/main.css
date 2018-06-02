@@ -357,7 +357,7 @@ hr.small {
 .container-exec-lead {
   position: relative;
   width: 50%;
-  padding-bottom: 1rem;
+  /*padding-bottom: 1rem;*/
 }
 
 .container-member {
@@ -407,7 +407,7 @@ hr.small {
 /*@media only screen and (min width: 1030px) {*/
   .overlay-img-text {
     color: cyan;
-    font-size: 5vw;
+    font-size: 2vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -418,7 +418,7 @@ hr.small {
 /*}*/
 
 p {
-  font-size: 2vw;
+  font-size: 1.55vw;
   color: yellow;
 }
 /*
