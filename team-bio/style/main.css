@@ -81,6 +81,7 @@ hr.small {
 }
 
 .header-navbar-item {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     float: left;
 }
 
@@ -419,7 +420,7 @@ hr.small {
 
 p {
   font-size: 1.55vw;
-  color: yellow;
+  color: black;
 }
 /*
 @media screen and (max width: 1030px) {
