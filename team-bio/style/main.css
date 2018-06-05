@@ -392,6 +392,8 @@ hr.small {
   opacity: 0;
   transition: .5s ease;
   background-color: #193e53;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .container-exec-lead:hover .overlay {
