@@ -280,7 +280,7 @@ hr.small {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 100%;
   position: relative;
   margin: auto;
 }
@@ -428,6 +428,7 @@ hr.small {
 p {
   font-size: 1.33vw;
   color: black;
+  padding-bottom: 0.7vw;
 }
 /*
 @media screen and (max width: 1030px) {
