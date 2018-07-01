@@ -414,7 +414,7 @@ hr.small {
 */
 /*@media only screen and (min width: 1030px) {*/
   .overlay-img-text {
-    color: cyan;
+    color: white;
     font-size: 2vw;
     position: absolute;
     top: 50%;
