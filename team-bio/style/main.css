@@ -357,13 +357,14 @@ hr.small {
 
 .container-exec-lead {
   position: relative;
-  width: 50%;
-  padding: 1rem;
+  width: 45%;
+  margin: 0.5rem;
 }
 
 .container-member {
   position: relative;
-  width: 33%;
+  width: 30%;
+  margin: 0.33rem;
 }
 
 .image {
@@ -410,7 +411,7 @@ hr.small {
 /*@media only screen and (min width: 1030px) {*/
   .overlay-img-text {
     color: white;
-    font-size: 2vw;
+    font-size: 1.5vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -421,9 +422,9 @@ hr.small {
 /*}*/
 
 p {
-  font-size: 1.33vw;
+  font-size: 1.2vw;
   color: black;
-  padding-bottom: 0.7vw;
+  padding-bottom: 0.5vw;
 }
 /*
 @media screen and (max width: 1030px) {
@@ -445,7 +446,7 @@ p {
 .column {
     float: left;
     width: 33.33%;
-    padding: 5px;
+    border: 5px;
 }
 
 .row {
