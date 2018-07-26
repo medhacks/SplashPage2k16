@@ -466,11 +466,11 @@ html, body {
     margin-bottom: 1.5%;
     font-weight: bold;
     padding-left: 0;
-    font-size: 2rem;
+    font-size: 2.3rem;
     margin-top: 2.5rem; }
   #aboutSection p {
     color: #193f55;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     width: 80%;
     position: relative;
     left: 10%;
@@ -504,7 +504,7 @@ html, body {
     float: top; }
   #challenges p {
     color: #193f55;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     width: 80%;
     position: relative;
     left: 10%;
@@ -842,7 +842,7 @@ footer {
     margin-top: 1rem; }
   #applySection h2 {
     color: #042449;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     font-size: 3rem;
     margin-left: auto;
     margin-right: auto;
@@ -853,11 +853,11 @@ footer {
     margin-bottom: 1.5%;
     font-weight: bold;
     padding-left: 0;
-    font-size: 2rem;
+    font-size: 2.3rem;
     margin-top: 2.5rem; }
   #applySection p {
     color: #193f55;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     width: 80%;
     position: relative;
     left: 10%;
