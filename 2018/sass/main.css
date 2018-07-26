@@ -498,7 +498,7 @@ html, body {
     width: 22.5vw;
     margin-left: 10vw;
     margin-right: 10vw;
-    float: right; }
+    float: top; }
   #challenges p {
     color: #193f55;
     font-size: 1.5rem;
