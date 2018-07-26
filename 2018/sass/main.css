@@ -179,7 +179,8 @@ html, body {
     margin-left: auto;
     margin-right: auto;
     top: 35rem;
-    padding: 0.5rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.05rem;
     background-color: #efefef;
     width: 225px;
     vertical-align: center;
@@ -385,7 +386,9 @@ html, body {
     background-repeat: no-repeat; }
   .navbar .applyButton, .navbar-default .applyButton {
     margin-right: 5.5rem;
-    padding: 0.5rem;
+    /*padding: 0.5rem;*/
+    padding-top: 0.4rem;
+    padding-bottom: 0.05rem;
     color: #FFFF;
     background-color: #BF4D42;
     width: 15rem;
@@ -486,29 +489,30 @@ html, body {
     float: right; }
 
 #challenges {
-  display: block;
-  background-color: #efefef; }
+  background-color: #efefef;
+  margin-bottom: 0;
+  padding-top: 5%;
+  overflow: hidden; }
   #challenges h2 {
     color: #042449;
     padding-bottom: 4rem;
     font-size: 3rem; }
   #challenges img {
-    width: 30%;
-    margin: none;
-    float: right;
-    position: relative;
-    z-index: 0;
-    bottom: 23rem;
-    right: 10rem; }
+    width: 22.5vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    float: top; }
   #challenges p {
-    width: 34%;
-    margin: 0% 10%;
-    padding-top: 1rem;
     color: #193f55;
     font-size: 1.5rem;
-    text-align: center;
-    display: block;
-    overflow: auto; }
+    width: 80%;
+    position: relative;
+    left: 10%;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+    margin-right: 0;
+    padding-bottom: 2rem; }
   #challenges .track-container {
     float: none;
     margin-left: 10%;
@@ -687,6 +691,7 @@ footer {
     margin-top: 02%;
     margin-bottom: 0;
     position: relative;
+    font-size: 1.25rem;
     left: 8%; }
     @media screen and (max-width: 600px) {
       footer .column1 {
@@ -714,7 +719,7 @@ footer {
       padding: 0;
       list-style-type: none;
       color: #efefef;
-      font-size: 1rem;
+      font-size: 1.25rem;
       padding-left: 0.5rem; }
       footer .column2 ul a {
         text-decoration: none;
