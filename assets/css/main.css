@@ -1047,8 +1047,8 @@ h2 {
 td, th {
     /*border: 2px solid #193e53;*/
     text-align: center;
-    padding: 3rem;
-    font-size: 2.2rem;
+    padding: 1.5rem;
+    font-size: 2rem;
     color: #193e53;
     background-color: #fff;
     border-bottom: 2px solid #193e53;
@@ -1056,6 +1056,9 @@ td, th {
     border-right: 2px solid #193e53;
 }
 
+table {
+  border: 2px solid #193f53
+}
 
 /* Sponsors */
 
