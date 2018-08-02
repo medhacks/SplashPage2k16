@@ -1045,12 +1045,15 @@ h2 {
 }
 
 td, th {
-    border: 2px solid #193e53;
+    /*border: 2px solid #193e53;*/
     text-align: center;
     padding: 3rem;
     font-size: 2.2rem;
     color: #193e53;
     background-color: #fff;
+    border-bottom: 2px solid #193e53;
+    border-left: 2px solid #193e53;
+    border-right: 2px solid #193e53;
 }
 
 
