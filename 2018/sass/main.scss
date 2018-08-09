@@ -878,11 +878,11 @@ html, body {
                     width: 55%;
                 } 
                 p {
-                    font-size: $content-size;
+                    font-size: $content-size - 0.25rem;
                     margin: auto;
                     margin-top: 2rem;
                     padding: none;
-                    width: 75%;
+                    width: 55%;
                     @extend %center;
                 }
             }
