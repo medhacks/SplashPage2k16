@@ -59,11 +59,11 @@ $(document).ready(() => {
         $curwindow = $('#track1-info');
     });
 
-    // $('#track2').on('click', () => {
-    //     $('.black-overlay').fadeIn('fast');
-    //     $('#track2-info').fadeIn('medium');
-    //     $curwindow = $('#track2-info');
-    // });
+    $('#track2').on('click', () => {
+        $('.black-overlay').fadeIn('fast');
+        $('#track2-info').fadeIn('medium');
+        $curwindow = $('#track2-info');
+    });
 
     $('.close').on('click', () => {
         $('.black-overlay').fadeOut('fast');
