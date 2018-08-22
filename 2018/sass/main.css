@@ -536,7 +536,7 @@ html, body {
     justify-items: center;
     padding-bottom: 5%;
     background-color: #efefef;
-    font-family: "Open Sans", sans-serif;
+    font-family: custom, sans-serif;
     color: #193f55; }
     #challenges .track-container #track1 {
       height: 20rem;
@@ -617,7 +617,7 @@ html, body {
     box-sizing: border-box;
     background-color: #efefef;
     top: 10%;
-    font-family: "Open Sans", sans-serif;
+    font-family: custom, sans-serif;
     color: #193f55;
     left: 10%; }
     #challenges .track-info .close {
