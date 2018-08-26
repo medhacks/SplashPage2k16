@@ -12,7 +12,7 @@ $content-size: 1.5rem;
 
 $menu-background-color: #dbdbdb;
 
-$font-fam: 'Open Sans', sans-serif;
+$font-fam: custom, sans-serif;
 
 @font-face {
     font-family: custom;
@@ -636,6 +636,17 @@ html, body {
 
 #challenges {
     display: block;
+    p {
+        //width: 34%;
+        margin: 0% 10%;
+        padding-top: 1rem;
+        color: $small-text-color;
+        font-size: $content-size;
+        text-align: center;
+        display: block;
+        overflow:auto;
+        margin-bottom: 5%;
+    }
   h2 {
       color: $large-text-color;
       padding-bottom: 4rem;
@@ -683,7 +694,7 @@ html, body {
         grid-template-areas: "track1 track2 track3";
         -webkit-grid-column-gap: 3rem;
         -moz-grid-column-gap: 3rem;
-        grid-column-gap: 1rem;
+        grid-column-gap: 2rem;
         grid-row-gap: 1rem;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
@@ -691,6 +702,62 @@ html, body {
         justify-items: center;
         padding-bottom: 5%;
         background-color: $background-color;
+        font-family: $font-fam;
+        color: $small-text-color;
+        #track1 {
+            height: 20rem;
+            width: 25rem;
+            background-color: #fff;
+            grid-area: track1;
+            h2 {
+                font-size: $subsection-size;
+                color: $small-text-color;
+            }
+            .imgrow {
+                
+                position: relative;
+                bottom: 2rem;
+                display: flex;
+                img {
+                    padding: 0.5rem;
+                    width: 40%;
+                    height: 40%;
+                    flex: 40%;
+                }
+            }
+        }
+
+        #track2 {
+            background-color: #fff;
+            height: 20rem;
+            width: 25rem;
+            grid-area: track2;
+            h2 {
+                font-size: $subsection-size;
+                color: $small-text-color;
+            }
+            img {
+                width: 12.50vw * 1.5;
+                height: 2.75vw * 1.5;
+                margin-top: 2rem;
+            }
+        }
+        #track3 {
+            //background-color: #fff;
+            grid-area: track3;
+            h2 {
+                font-size: $subsection-size;
+            }
+            .imgrow {
+                display: flex;
+                img {
+                    padding: 0.5rem;
+                    width: 40%;
+                    height: 40%;
+                    flex: 40%;
+                }
+            }
+        }
       .track {
           border: 3px solid $small-text-color;
           border-radius: 3rem;
@@ -701,16 +768,7 @@ html, body {
               height: 10rem;
           }
 
-          #track1 {
-              grid-area: track1;
-          }
-
-          #track2 {
-              grid-area: track2;
-          }
-          #track3 {
-              grid-area: track3;
-          }
+          
 
           &:hover {
               border-color: $pop-color;
@@ -734,18 +792,52 @@ html, body {
   }
 
   .track-info {
-      z-index: 4;
-      background-color: #ffff;
-      width: 70%;
-      height: 70%;
-      @extend %center;
-      display: none;
-      position: fixed;
-      box-sizing: border-box;
-      background-color: #FFFFFF;
-      top: 15%;
-      left: 15%;
-      border-radius: 3rem;
+        z-index: 4;
+        background-color: #ffff;
+        width: 80%;
+        height: 80%;
+        @extend %center;
+        display: none;
+        position: fixed;
+        box-sizing: border-box;
+        background-color: $background-color;
+        top: 10%;
+        font-family: $font-fam;
+        color: $small-text-color;
+        left: 10%;
+        .close {
+            float: right;
+            margin: 1rem;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        
+
+        .track-row {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            right: 1.5%;
+            .track-column {
+                h1 {
+                    padding: 3rem 0 2rem  0;
+                    font-size: $section-header-size * 0.75;
+                }
+                iframe {
+                    margin: 2rem;
+                    width: 100%;
+                }
+                h2 {
+                    font-size: $subsection-size;
+                    margin: 0;
+                    padding: 0.5rem;
+                }
+                p {
+                    font-size: $content-size * 0.7;
+                }
+            }
+        }
   }
 }
 
@@ -871,6 +963,9 @@ html, body {
             margin-bottom: 5rem;
             display: flex;
             .keynoteColumn {
+                h3 {
+                    padding-bottom: 2rem;
+                }
                 flex: 50%;
                 padding-right: 20px;
                 margin: 0;
