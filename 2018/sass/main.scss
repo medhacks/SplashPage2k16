@@ -1336,3 +1336,19 @@ select::-ms-expand {
 }
 
 
+.sponsor-section {
+    font-size: $section-header-size;
+    font-family: $font-fam;
+    margin-top: 3rem;
+    h2 {
+        margin: auto;
+        @extend %center;
+    }
+
+    .sponsor {
+        display: inline-block;
+        margin: 14px;
+        transition: .2s opacity ease-out;
+    }
+}
+

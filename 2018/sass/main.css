@@ -1,4 +1,4 @@
-#header .description, #header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #aboutSection h2, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #logistics .keynoteContainer .row .keynoteColumn p, #faq h2, #faq .faq-container ul li, #faq .faq-dropdown, #applySection h2 {
+#header .description, #header .applyButton, .navbar .applyButton, .navbar-default .applyButton, #basicInfo #infoContainer p, #basicInfo #infoContainer, #aboutSection h2, #challenges .track-container, #challenges .track-info, #logistics .scheduleContainer, #logistics .scheduleContainer ul li, #logistics .scheduleContainerDropdown, #logistics .keynoteContainer .row .keynoteColumn p, #faq h2, #faq .faq-container ul li, #faq .faq-dropdown, #applySection h2, .sponsor-section h2 {
   text-align: center;
   vertical-align: middle; }
 
@@ -1022,5 +1022,16 @@ select {
 
 select::-ms-expand {
   display: none; }
+
+.sponsor-section {
+  font-size: 3rem;
+  font-family: custom, sans-serif;
+  margin-top: 3rem; }
+  .sponsor-section h2 {
+    margin: auto; }
+  .sponsor-section .sponsor {
+    display: inline-block;
+    margin: 14px;
+    transition: .2s opacity ease-out; }
 
 /*# sourceMappingURL=main.css.map */
