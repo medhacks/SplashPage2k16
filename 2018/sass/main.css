@@ -568,16 +568,15 @@ html, body {
         height: 4.125vw;
         margin-top: 2rem; }
     #challenges .track-container #track3 {
-      grid-area: track3; }
+      background-color: #fff;
+      grid-area: track3;
+      height: 20rem;
+      width: 25rem; }
       #challenges .track-container #track3 h2 {
         font-size: 2rem; }
-      #challenges .track-container #track3 .imgrow {
-        display: flex; }
-        #challenges .track-container #track3 .imgrow img {
-          padding: 0.5rem;
-          width: 40%;
-          height: 40%;
-          flex: 40%; }
+      #challenges .track-container #track3 img {
+        width: 16.94vw;
+        height: 4.88vw; }
     #challenges .track-container .track {
       border: 3px solid #193f55;
       border-radius: 3rem;
@@ -625,6 +624,8 @@ html, body {
       margin: 1rem;
       font-size: 36px;
       font-weight: bold; }
+    #challenges .track-info ul {
+      list-style-position: inside; }
     #challenges .track-info .track-row {
       display: flex;
       align-items: center;
