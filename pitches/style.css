@@ -108,8 +108,8 @@ h3 {
 
 .inputText:focus {
     outline: none;
-    border-bottom: 1px solid rgba(239, 239, 239, 1);
-    color: rgba(239, 239, 239, 1);                
+    border-bottom: 1px solid rgba(25, 61, 86, 0.5);
+    color: rgba(25, 61, 86, 0.5);             
 }
 
 .inputTextGood {
@@ -691,7 +691,7 @@ textarea[class='inputText'] {
     width: 0%;
     height: 3px;
     top: 0;
-    background-color: rgba(239, 239, 239, 1);
+    background-color: rgba(25, 61, 86, 0.5);
     
     -webkit-transition: width 0.5s, background-color 0.5s;
     -ms-transition: width 0.5s, background-color 0.5s;
