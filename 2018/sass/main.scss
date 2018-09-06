@@ -233,6 +233,14 @@ html, body {
         }
     }
 
+    .longButton {
+        a {
+            h2 {
+                font-size: $section-header-size * 0.5;
+            }
+        }
+    }
+
     .applyButton {
         a {
             text-decoration: none;
