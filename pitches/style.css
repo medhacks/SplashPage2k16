@@ -108,8 +108,8 @@ h3 {
 
 .inputText:focus {
     outline: none;
-    border-bottom: 1px solid rgba(239, 239, 239, 1);
-    color: rgba(239, 239, 239, 1);                
+    border-bottom: 1px solid rgba(25, 61, 86, 1);
+    color: rgba(25, 61, 86, 1);              
 }
 
 .inputTextGood {
