@@ -188,7 +188,7 @@ textarea[class='inputText'] {
 }
 
 .check-inactive {
-    background-color: rgba(239, 239, 239, 0.5);
+    background-color: rgba(239, 239, 239, 1);
 }
 
 .button {
@@ -222,7 +222,7 @@ textarea[class='inputText'] {
     border: 1px solid rgba(239, 239, 239, 0.5);
     
     position: relative;
-    background-color: rgba(25, 61, 86, 1);
+    background-color: rgba(239, 239, 239, 1);
     font-family: custom;
     margin: 5px 0px;
     color: rgba(239, 239, 239, 0.5);
