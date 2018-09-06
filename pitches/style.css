@@ -58,7 +58,7 @@ body {
 }
 
 h1 {
-    color: rgba(239, 239, 239, 1);
+    color: rgba(25, 61, 86, 1);
     font-family: custom;
     font-size: 2.75em;
     padding: 0px;
@@ -197,8 +197,8 @@ textarea[class='inputText'] {
     font-family: custom;
     font-size: 1.5em;
     margin: 10px auto;
-    color: rgba(239, 239, 239, 1);
-    background-color: rgba(0, 0, 0, 0);
+    color: rgba(25, 61, 86, 1);
+    background-color: rgba(239, 239, 239, 0.5);
     cursor: pointer; 
     cursor: hand;
     border-radius: 3px;
@@ -746,7 +746,7 @@ textarea[class='inputText'] {
 }
 
 .disclaimer {
-    color: rgba(239, 239, 239, 0.5);
+    color: rgba(25, 61, 86, 1);
     font-family: custom;
     margin-top: 0.5em;
     margin-bottom: 1em;
