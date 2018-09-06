@@ -753,17 +753,16 @@ textarea[class='inputText'] {
 }
 
 ::-webkit-input-placeholder {
-   color: rgb(239, 239, 239, 1);
+   color: rgba(25, 61, 86, 1);
 }
 
-:-moz-placeholder { /* Firefox 18- */
-   color: rgb(239, 239, 239, 1);  
+::-moz-placeholder { /* Firefox 18- */
+   color: rgba(25, 61, 86, 1);
 }
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: rgb(239, 239, 239, 1);  
+::-moz-placeholder {  
+   color: rgba(25, 61, 86, 1);
 }
 
 :-ms-input-placeholder {  
-   color: rgb(239, 239, 239, 1);  
+   color: rgba(25, 61, 86, 1);
 }
