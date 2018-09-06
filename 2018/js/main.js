@@ -70,11 +70,11 @@ $(document).ready(() => {
         $curwindow.fadeOut('fast');
     });
 
-    // $('#track3').on('click', () => {
-    //     $('.black-overlay').fadeIn('fast');
-    //     $('#track3-info').fadeIn('medium');
-    //     $curwindow = $('#track3-info');
-    // });
+    $('#track3').on('click', () => {
+        $('.black-overlay').fadeIn('fast');
+        $('#track3-info').fadeIn('medium');
+        $curwindow = $('#track3-info');
+    });
 
     $('.black-overlay').on('click', () => {
         $('.black-overlay').fadeOut('fast');
